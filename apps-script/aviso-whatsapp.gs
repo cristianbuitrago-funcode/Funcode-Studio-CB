@@ -66,7 +66,8 @@ function enviarWhatsApp(texto) {
   }
 
   var url = 'https://api.callmebot.com/whatsapp.php' +
-    '?phone=' + encodeURIComponent(telefono) +
+    // La «@» del identificador @lid va sin codificar: CallMeBot no acepta «%40».
+    '?phone=' + encodeURIComponent(telefono).replace(/%40/g, '@') +
     '&text=' + encodeURIComponent(texto) +
     '&apikey=' + encodeURIComponent(apikey);
 
