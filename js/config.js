@@ -8,7 +8,6 @@
  * PENDIENTE DE REEMPLAZAR (marcado con TODO):
  *   - whatsapp       → número con indicativo de país, solo dígitos. Ej: '573001234567'
  *   - email          → correo público de contacto. Ej: 'hola@tudominio.com'
- *   - firebase       → datos de tu proyecto de Firebase (ver FIREBASE.md)
  *   - instagram / facebook / linkedin → URL completa del perfil
  */
 window.FUNCODE_CONFIG = {
@@ -18,15 +17,15 @@ window.FUNCODE_CONFIG = {
   // TODO: correo de contacto público.
   email: '',
 
-  // TODO: configuración de tu proyecto de Firebase (ver FIREBASE.md).
+  // Configuración del proyecto de Firebase (ver FIREBASE.md).
   // Con esto el formulario guarda cada solicitud en Firestore y el panel
   // del organizador (admin.html) las muestra. Firebase Console → Configuración
   // del proyecto → Tus apps → App web → objeto «firebaseConfig».
   firebase: {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    appId: ''
+    apiKey: 'AIzaSyBQQmAB4AEDXhM7b9zRpOUV255NTqb7Vts',
+    authDomain: 'funcode-studio-cb.firebaseapp.com',
+    projectId: 'funcode-studio-cb',
+    appId: '1:603572417154:web:8f72fcee78678b1a3b7a9b'
   },
 
   // Opcional: endpoint alternativo (Formspree, Getform...). Solo se usa si
