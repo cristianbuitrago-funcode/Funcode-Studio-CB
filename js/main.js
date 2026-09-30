@@ -373,6 +373,23 @@
     return fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
   }
 
+  // Aviso por WhatsApp al organizador (Google Apps Script + CallMeBot, ver AVISO-WHATSAPP.md).
+  // Solo se envía un resumen; si falla, la solicitud ya quedó guardada igual.
+  function notifyOwner() {
+    var url = isHttpUrl(config.avisoWhatsappUrl) ? config.avisoWhatsappUrl : '';
+    if (!url) return;
+    var f = form.elements;
+    var body = JSON.stringify({
+      nombre: f.nombre.value.trim(),
+      tipo: f.tipo.value,
+      presupuesto: f.presupuesto.value
+    });
+    try {
+      if (navigator.sendBeacon && navigator.sendBeacon(url, new Blob([body], { type: 'text/plain' }))) return;
+      fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: body }).catch(function () {});
+    } catch (err) { /* el aviso es opcional */ }
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     statusBox.hidden = true;
@@ -403,6 +420,7 @@
     request
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
+        notifyOwner();
         form.reset();
         form.querySelectorAll('[aria-invalid]').forEach(function (f) { f.removeAttribute('aria-invalid'); });
         renderStatus('ok', '¡Solicitud enviada!', 'Gracias por escribirnos. Revisaremos tu idea y te responderemos al correo que indicaste.', false);

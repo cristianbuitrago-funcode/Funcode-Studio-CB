@@ -26,6 +26,10 @@ window.FUNCODE_CONFIG = {
     appId: '1:603572417154:web:8f72fcee78678b1a3b7a9b'
   },
 
+  // Aviso por WhatsApp cuando llega una solicitud: dirección /exec de la aplicación web
+  // de Google Apps Script (ver AVISO-WHATSAPP.md). Vacío = sin aviso.
+  avisoWhatsappUrl: '',
+
   // Opcional: endpoint alternativo (Formspree, Getform...). Solo se usa si
   // Firebase no está configurado. Debe aceptar POST con FormData y responder 2xx.
   formEndpoint: '',

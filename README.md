@@ -12,6 +12,7 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `index.html`, `servicios.html`, `proyectos.html`, `precios.html`, `proceso.html`, `nosotros.html`, `contacto.html` | Páginas públicas **generadas**: no se editan directamente (ver «Editar las páginas») |
 | `src/pages/*.html` | Contenido de cada página pública |
 | `src/partials/*.html` | Partes comunes: `<head>`, menú, iconos (SVG sprite), pie de página y datos estructurados |
+| `apps-script/aviso-whatsapp.gs` | Código para Google Apps Script que te avisa por WhatsApp de cada solicitud (ver `AVISO-WHATSAPP.md`) |
 | `tools/build.py` | Une `src/partials` + `src/pages` y genera las páginas públicas |
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
 | `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes y endpoint del formulario |
