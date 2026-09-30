@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/sitemap.xml
