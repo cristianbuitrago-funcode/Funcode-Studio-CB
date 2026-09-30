@@ -96,32 +96,13 @@
     if (nav.classList.contains('is-open') && !header.contains(e.target)) setMenu(false);
   });
 
-  window.matchMedia('(min-width: 961px)').addEventListener('change', function (mq) {
+  window.matchMedia('(min-width: 1101px)').addEventListener('change', function (mq) {
     if (mq.matches) setMenu(false);
   });
 
   function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 12); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  /* ------------------------------------------------------------------
-   * Enlace activo del menú según la sección visible
-   * ------------------------------------------------------------------ */
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-list a'));
-  var byId = {};
-  navLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
-
-  if ('IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(function (a) { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
-        var link = byId[entry.target.id];
-        if (link) { link.classList.add('is-active'); link.setAttribute('aria-current', 'true'); }
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
-  }
 
   /* ------------------------------------------------------------------
    * Aparición suave de secciones

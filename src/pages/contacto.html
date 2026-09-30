@@ -1,0 +1,109 @@
+<!--meta
+title: Contacto | Funcode Studio CB
+description: Solicita la cotización de tu proyecto: página web, aplicación web, solución educativa, mejora de una página o integración de IA.
+nav: contacto
+-->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero-bg" aria-hidden="true"><span class="glow glow-a"></span><span class="grid-lines"></span></div>
+      <div class="container">
+        <p class="kicker">Contacto</p>
+        <h1 id="page-title">¿Tienes una idea? <span class="text-gradient">Hagámosla realidad.</span></h1>
+        <p class="page-lead">Cuéntanos qué necesitas y revisaremos si podemos ayudarte.</p>
+        <div class="btn-row">
+            <a class="btn btn-primary" href="#formulario">Llenar el formulario <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" data-link="whatsapp" data-label="Hablar por WhatsApp" href="#formulario"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> <span class="btn-label">Hablar por WhatsApp</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section--flush" id="formulario" aria-labelledby="contacto-title">
+      <div class="container contact">
+        <div class="contact-info reveal">
+          <p class="kicker">Formulario</p>
+          <h2 id="contacto-title">Solicita tu cotización</h2>
+          <p>Cuéntanos tu idea con el mayor detalle posible. Revisaremos si encaja con nuestro alcance y te responderemos con preguntas o con una propuesta.</p>
+          <ol class="next-steps">
+            <li><strong>Envías tu solicitud</strong> con la idea y lo que necesitas.</li>
+            <li><strong>La revisamos</strong> y, si hace falta, te pedimos más detalles.</li>
+            <li><strong>Recibes una propuesta</strong> con alcance, tiempos y valor.</li>
+          </ol>
+          <p class="track-note">¿Ya enviaste una solicitud? Sigue su avance en <a href="mis-solicitudes.html">Mis solicitudes</a> entrando con Google.</p>
+          <ul class="contact-direct">
+            <li><a data-link="whatsapp" data-label="WhatsApp" href="#formulario"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> <span class="btn-label">WhatsApp</span></a></li>
+            <li><a data-link="email" data-label="Correo" href="#formulario"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> <span class="btn-label">Correo</span></a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" required maxlength="80" aria-describedby="e-nombre">
+              <p class="field-error" id="e-nombre" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-negocio">Nombre del negocio <span class="opt">(opcional)</span></label>
+              <input id="f-negocio" name="negocio" type="text" autocomplete="organization" maxlength="100">
+              <p class="field-error" aria-hidden="true"></p>
+            </div>
+            <div class="field">
+              <label for="f-correo">Correo <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email" inputmode="email" required maxlength="120" aria-describedby="e-correo">
+              <p class="field-error" id="e-correo" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-whatsapp">WhatsApp <span class="opt">(opcional)</span></label>
+              <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="e-whatsapp" placeholder="+57 300 000 0000">
+              <p class="field-error" id="e-whatsapp" aria-live="polite"></p>
+            </div>
+            <div class="field field--full">
+              <label for="f-tipo">Tipo de proyecto <span class="req" aria-hidden="true">*</span></label>
+              <select id="f-tipo" name="tipo" required aria-describedby="e-tipo">
+                <option value="">Selecciona una opción</option>
+                <option>Página web</option>
+                <option>Aplicación web</option>
+                <option>Solución educativa</option>
+                <option>Mejora de página existente</option>
+                <option>Integración de IA</option>
+                <option>Otro</option>
+              </select>
+              <p class="field-error" id="e-tipo" aria-live="polite"></p>
+            </div>
+            <div class="field field--full">
+              <label for="f-idea">Descripción de la idea <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-idea" name="descripcion" rows="5" required minlength="20" maxlength="2000" aria-describedby="h-idea e-idea"></textarea>
+              <p class="field-hint" id="h-idea">¿Qué quieres lograr, para quién es y qué secciones o funciones imaginas?</p>
+              <p class="field-error" id="e-idea" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-presupuesto">Presupuesto aproximado</label>
+              <select id="f-presupuesto" name="presupuesto">
+                <option value="">Aún no lo sé</option>
+                <option>$160.000 – $400.000 COP</option>
+                <option>$400.000 – $800.000 COP</option>
+                <option>$800.000 – $1.500.000 COP</option>
+                <option>Más de $1.500.000 COP</option>
+              </select>
+              <p class="field-error" aria-hidden="true"></p>
+            </div>
+            <div class="field">
+              <label for="f-fecha">¿Para cuándo lo necesitas?</label>
+              <input id="f-fecha" name="fecha" type="date" aria-describedby="e-fecha">
+              <p class="field-error" id="e-fecha" aria-live="polite"></p>
+            </div>
+            <!-- Campo trampa contra spam: los humanos no lo ven -->
+            <div class="hp" aria-hidden="true">
+              <label for="f-web">Deja este campo vacío</label>
+              <input id="f-web" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+
+          <p class="form-privacy">Los campos con <span class="req">*</span> son obligatorios. Usaremos tus datos solo para responder a tu solicitud.</p>
+          <button class="btn btn-primary btn-block" type="submit">Enviar solicitud <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="form-mode" id="form-mode"></p>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </form>
+      </div>
+    </section>

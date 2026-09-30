@@ -9,7 +9,10 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 
 | Archivo | Qué contiene |
 |---|---|
-| `index.html` | Toda la página: hero, servicios, proyectos, productos propios, precios, alcance, proceso, IA, nosotros, FAQ, CTA, contacto y footer |
+| `index.html`, `servicios.html`, `proyectos.html`, `precios.html`, `proceso.html`, `nosotros.html`, `contacto.html` | Páginas públicas **generadas**: no se editan directamente (ver «Editar las páginas») |
+| `src/pages/*.html` | Contenido de cada página pública |
+| `src/partials/*.html` | Partes comunes: `<head>`, menú, iconos (SVG sprite), pie de página y datos estructurados |
+| `tools/build.py` | Une `src/partials` + `src/pages` y genera las páginas públicas |
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
 | `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes y endpoint del formulario |
 | `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
@@ -22,6 +25,18 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `assets/img/og-image.jpg` | Imagen para compartir en redes (1200×630) |
 | `assets/icons/` | Logo, favicon e iconos de la app |
 | `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` | Manifest, SEO y página de error |
+
+## Editar las páginas
+
+La página está dividida en 7 páginas que comparten menú, iconos y pie de página. Para no repetir
+esas partes en cada archivo, se escriben una sola vez en `src/partials/` y un script las une:
+
+1. Edita el contenido en `src/pages/<página>.html` (o el menú y pie en `src/partials/`).
+2. Genera las páginas: `python3 tools/build.py`
+3. Publica los archivos `.html` generados junto con los cambios de `src/`.
+
+`python3 tools/build.py --check` avisa si alguna página generada quedó desactualizada.
+Solo necesita Python 3, sin instalar nada. `admin.html` y `mis-solicitudes.html` se editan directamente.
 
 ## Ver la página en local
 

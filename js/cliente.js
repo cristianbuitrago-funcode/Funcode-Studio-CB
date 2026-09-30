@@ -75,8 +75,8 @@
 
     $('portal-greeting').textContent = (name ? 'Hola, ' + name.split(/\s+/)[0] + '. ' : '') +
       'Aquí ves en qué va cada proyecto. Se actualiza solo cuando hay cambios.';
-    $('new-request').href = './?correo=' + encodeURIComponent(email) +
-      (name ? '&nombre=' + encodeURIComponent(name) : '') + '#contacto';
+    $('new-request').href = 'contacto.html?correo=' + encodeURIComponent(email) +
+      (name ? '&nombre=' + encodeURIComponent(name) : '') + '#formulario';
 
     unsubscribe = db.collection('solicitudes').where('correo', '==', email).onSnapshot(function (snap) {
       var items = snap.docs.map(function (doc) {
