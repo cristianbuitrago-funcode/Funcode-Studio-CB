@@ -6,15 +6,14 @@
  * página como «Próximamente» y nunca como un enlace falso.
  *
  * PENDIENTE DE REEMPLAZAR (marcado con TODO):
- *   - email          → correo público de contacto. Ej: 'hola@tudominio.com'
- *   - instagram / facebook / linkedin → URL completa del perfil
+ *   - instagram / facebook → URL completa del perfil
  */
 window.FUNCODE_CONFIG = {
   // Número de WhatsApp (solo dígitos, con 57 para Colombia).
   whatsapp: '573202920181',
 
-  // TODO: correo de contacto público.
-  email: '',
+  // Correo de contacto público.
+  email: 'buitragocristianespinosa@gmail.com',
 
   // Configuración del proyecto de Firebase (ver FIREBASE.md).
   // Con esto el formulario guarda cada solicitud en Firestore y el panel
@@ -34,7 +33,7 @@ window.FUNCODE_CONFIG = {
   social: {
     instagram: '', // TODO
     facebook: '',  // TODO
-    linkedin: '',  // TODO
+    linkedin: 'https://www.linkedin.com/in/cristian-camilo-buitrago-espinosa-549044366/',
     github: 'https://github.com/cristianbuitrago-funcode'
   },
 
