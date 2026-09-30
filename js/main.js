@@ -180,6 +180,11 @@
   var pad = function (n) { return String(n).padStart(2, '0'); };
   dateInput.min = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
 
+  // Datos que envía el portal «Mis solicitudes» al pulsar «Nueva solicitud».
+  var params = new URLSearchParams(location.search);
+  if (params.get('correo')) form.elements.correo.value = params.get('correo').slice(0, 120);
+  if (params.get('nombre')) form.elements.nombre.value = params.get('nombre').slice(0, 80);
+
   if (!firebaseReady && !endpoint) {
     modeNote.textContent = 'Aviso: el envío automático del formulario todavía no está activo. Al pulsar «Enviar solicitud» te mostraremos cómo hacernos llegar tu mensaje.';
   }
@@ -358,9 +363,11 @@
       value = String(value || '').trim();
       if (value) fields[key] = { stringValue: value };
     }
-    ['nombre', 'negocio', 'correo', 'whatsapp', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
+    ['nombre', 'negocio', 'whatsapp', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
       put(name, f[name].value);
     });
+    // En minúsculas: así el cliente puede seguirla en «Mis solicitudes» entrando con ese correo.
+    put('correo', f.correo.value.toLowerCase());
     put('estado', 'nuevo');
     put('origen', (location.origin + location.pathname).slice(0, 200));
 
@@ -418,6 +425,12 @@
         form.reset();
         form.querySelectorAll('[aria-invalid]').forEach(function (f) { f.removeAttribute('aria-invalid'); });
         renderStatus('ok', '¡Solicitud enviada!', 'Gracias por escribirnos. Revisaremos tu idea y te responderemos al correo que indicaste.', false);
+        if (firebaseReady) {
+          var track = el('p', null, 'Puedes seguir el estado de tu solicitud en ');
+          track.appendChild(el('a', { href: 'mis-solicitudes.html' }, 'Mis solicitudes'));
+          track.appendChild(document.createTextNode(', entrando con la cuenta de Google de ese correo.'));
+          statusBox.appendChild(track);
+        }
       })
       .catch(function () {
         renderStatus('error', 'No pudimos enviar tu solicitud',

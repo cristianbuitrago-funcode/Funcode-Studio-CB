@@ -3,8 +3,10 @@
 Con Firebase, cada solicitud del formulario se guarda en **Firestore** y tú la ves en el
 **panel del organizador** (`admin.html`), entrando con tu cuenta de Google.
 
-- Cualquier visitante puede **enviar** una solicitud, pero nadie puede leerlas, modificarlas
-  ni borrarlas salvo el correo que autorices en las reglas.
+- Cualquier visitante puede **enviar** una solicitud, pero solo el organizador puede verlas
+  todas, cambiarlas o borrarlas.
+- Cada cliente puede seguir **sus** solicitudes en `mis-solicitudes.html`, entrando con la
+  cuenta de Google del correo que usó en el formulario.
 - La página sigue publicada en GitHub Pages; Firebase solo guarda los datos y controla el acceso.
 - El plan gratuito (Spark) es suficiente: permite miles de lecturas y escrituras al día.
 
@@ -62,8 +64,16 @@ Qué permiten estas reglas:
 | Quién | Qué puede hacer |
 |---|---|
 | Cualquier visitante | Crear una solicitud con los campos del formulario, con tamaños y tipo de proyecto válidos |
-| Tu correo (verificado) | Ver todas las solicitudes, cambiar su estado y notas, y eliminarlas |
+| Cliente con Google (correo verificado) | Ver solo las solicitudes enviadas con su mismo correo: estado y mensaje para el cliente |
+| Tu correo (organizador) | Ver todas las solicitudes, cambiar estado y mensaje, notas privadas y eliminar |
 | Cualquier otra persona | Nada: ni leer, ni editar, ni borrar |
+
+Las **notas privadas** se guardan en otra colección (`notas`) que solo tú puedes leer, así que
+los clientes nunca las ven.
+
+> **Cada vez que cambie `firestore.rules` hay que volver a pegarlas y publicarlas en Firebase.**
+> Si el panel dice «No se pudo guardar el cambio» o el cliente no ve sus solicitudes, lo más
+> probable es que las reglas publicadas sean de una versión anterior.
 
 ## 6. Probar
 
@@ -73,13 +83,26 @@ Qué permiten estas reglas:
    (también está el enlace **«Acceso del organizador»** al final de la página).
 4. Pulsa **Entrar con Google**: verás la solicitud. Las nuevas aparecen al instante.
 
+## Seguimiento para clientes («Mis solicitudes»)
+
+- Página: `https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/mis-solicitudes.html`
+  (enlazada desde el formulario, las preguntas frecuentes y el pie de página).
+- El cliente entra con Google y ve cada solicitud enviada con ese correo: el avance paso a paso
+  (Recibida → En revisión → Propuesta enviada → Aprobada → En desarrollo → Entregada), el
+  **mensaje para el cliente** que escribas en el panel y lo que envió.
+- Se actualiza en tiempo real cuando cambias el estado o el mensaje.
+- Si el cliente usó un correo que no es de Google, puede crear una cuenta de Google con ese
+  mismo correo o enviar una solicitud nueva con su Gmail.
+
 ## Qué puedes hacer en el panel
 
-- Filtrar por estado: **Nueva**, **En revisión**, **Respondida**, **Descartada**.
-- Buscar por nombre, negocio, correo, idea o notas.
+- Filtrar: **Nuevas**, **En curso**, **Entregadas**, **Descartadas**.
+- Cambiar el estado: Nueva, En revisión, Propuesta enviada, Aprobada, En desarrollo, Entregada o Descartada.
+- Escribir un **mensaje para el cliente** (lo ve en «Mis solicitudes»).
+- Buscar por nombre, negocio, correo, idea, mensaje o notas.
 - **Responder por correo** o **WhatsApp** con un mensaje inicial ya escrito.
 - **Copiar** la solicitud completa.
-- Escribir **notas privadas** (solo tú las ves) y **eliminar** solicitudes.
+- Escribir **notas privadas** (solo tú las ves; nunca aparecen al cliente) y **eliminar** solicitudes.
 - La pestaña del navegador muestra cuántas solicitudes nuevas tienes, por ejemplo `(2) Panel…`.
 
 ## Problemas comunes

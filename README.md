@@ -14,6 +14,8 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes y endpoint del formulario |
 | `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
 | `admin.html`, `js/admin.js`, `css/admin.css` | Panel del organizador: solicitudes en tiempo real (Firebase) |
+| `mis-solicitudes.html`, `js/cliente.js` | Portal del cliente: seguimiento de sus solicitudes con Google |
+| `js/estados.js` | Estados de una solicitud, compartidos por el panel y el portal |
 | `firestore.rules`, `firebase.json` | Reglas de seguridad de Firestore y configuración de emuladores |
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |
 | `assets/img/projects/` | Capturas reales de los proyectos (WebP) |

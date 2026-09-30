@@ -673,6 +673,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: var(--blue-soft); font-weight: 700; font-size: 0.88rem;
 }
 .next-steps strong { color: var(--text); }
+.track-note { margin: -8px 0 22px; padding: 12px 14px; border-radius: 12px; border: 1px dashed var(--line-strong); color: var(--muted); font-size: 0.93rem; }
 .contact-direct { display: flex; flex-wrap: wrap; gap: 10px; }
 .contact-direct a {
   display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
