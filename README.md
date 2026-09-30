@@ -1,0 +1,96 @@
+# Funcode Studio CB — sitio web oficial
+
+Página web de Funcode Studio CB: estudio tecnológico en crecimiento que desarrolla páginas web,
+aplicaciones y soluciones educativas para proyectos pequeños y medianos, y construye productos propios.
+
+HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y sin dependencias.
+
+## Estructura
+
+| Archivo | Qué contiene |
+|---|---|
+| `index.html` | Toda la página: hero, servicios, proyectos, productos propios, precios, alcance, proceso, IA, nosotros, FAQ, CTA, contacto y footer |
+| `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
+| `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes y endpoint del formulario |
+| `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
+| `assets/img/projects/` | Capturas reales de los proyectos (WebP) |
+| `assets/img/og-image.jpg` | Imagen para compartir en redes (1200×630) |
+| `assets/icons/` | Logo, favicon e iconos de la app |
+| `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` | Manifest, SEO y página de error |
+
+## Ver la página en local
+
+Abre `index.html` en el navegador, o sirve la carpeta (recomendado):
+
+```bash
+python3 -m http.server 8080
+# http://localhost:8080
+```
+
+## Pendiente de completar (marcado con `TODO` en `js/config.js`)
+
+Mientras un dato esté vacío, la página lo muestra como **«Próximamente»** y no como un enlace falso.
+
+- [ ] `whatsapp`: número con indicativo, solo dígitos (ej. `573001234567`). Al configurarlo aparecen
+      los botones «Hablar por WhatsApp» y el botón flotante.
+- [ ] `email`: correo público de contacto.
+- [ ] `social.instagram`, `social.facebook`, `social.linkedin`: URL completa de cada perfil.
+- [ ] `formEndpoint`: servicio que recibirá el formulario (ver abajo).
+
+`social.github` ya apunta a https://github.com/cristianbuitrago-funcode.
+
+## Conectar el formulario de contacto
+
+La página es estática, así que **el formulario no puede enviar datos por sí solo**. Hoy funciona así:
+
+- **Sin `formEndpoint`**: valida los datos y, al pulsar «Enviar solicitud», avisa claramente que el
+  envío automático no está activo. Ofrece «Copiar solicitud» y, si ya configuraste WhatsApp o correo,
+  botones para enviarla por esos medios con el mensaje ya escrito. Debajo del botón hay un aviso visible.
+- **Con `formEndpoint`**: envía los datos con `fetch` (POST, `FormData`) y muestra confirmación o error.
+  Si falla, conserva los datos y ofrece las mismas alternativas.
+
+Opción sencilla y gratuita, con [Formspree](https://formspree.io):
+
+1. Crea una cuenta y un formulario nuevo; te dará una URL como `https://formspree.io/f/abcdwxyz`.
+2. Pégala en `formEndpoint` dentro de `js/config.js`.
+3. Envía una solicitud de prueba y confirma el correo de activación que manda Formspree.
+
+Sirve cualquier servicio equivalente (Getform, Web3Forms, un backend propio o una Cloud Function de
+Firebase) que acepte POST con `FormData` y responda con un estado 2xx. El campo oculto `_gotcha`
+es una trampa anti-spam: si llega con contenido, la página no envía nada.
+
+Campos enviados: `nombre`, `negocio`, `correo`, `whatsapp`, `tipo`, `descripcion`, `presupuesto`,
+`fecha` y `_subject`.
+
+## Publicar en GitHub Pages
+
+1. En el repositorio: **Settings → Pages → Build and deployment → Deploy from a branch**.
+2. Elige la rama y la carpeta `/ (root)`, y guarda.
+3. La página quedará en `https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/`.
+
+Las URL absolutas (canonical, Open Graph, JSON-LD, `robots.txt`, `sitemap.xml` y los enlaces de
+`404.html`) ya usan esa dirección. **Si usas un dominio propio**, reemplaza
+`https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/` en esos archivos, y
+`/Funcode-Studio-CB/` por `/` en `404.html`.
+
+## Enlaces de los proyectos
+
+| Proyecto | «Ver proyecto» apunta a |
+|---|---|
+| LifeCoinQuest | Repositorio `Lifequest1` (README con capturas y el APK). Botón extra: descarga directa del APK desde *Releases* |
+| Ajedrez Inclusivo | https://cristianbuitrago-funcode.github.io/Lifequest/ (el repositorio `Lifequest` contiene hoy el ajedrez) |
+| Ofimática 9° | https://cristianbuitrago-funcode.github.io/PAGINA-WEB/ |
+
+Si publicas la versión web de LifeCoinQuest, cambia el `href` de su botón «Ver proyecto» en `index.html`.
+
+Las capturas de `assets/img/projects/` se tomaron ejecutando cada aplicación. Si cambian mucho,
+conviene reemplazarlas por capturas nuevas con el mismo nombre y tamaño (1200×750 escritorio,
+360×779 móvil).
+
+## Criterios de contenido
+
+La página vende sin exagerar: no incluye clientes, testimonios, cifras, años de experiencia ni
+certificaciones. Al agregar contenido nuevo, mantén ese criterio y usa solo proyectos y
+funcionalidades reales.
+
+© 2026 Funcode Studio CB
