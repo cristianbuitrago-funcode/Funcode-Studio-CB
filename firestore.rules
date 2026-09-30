@@ -1,0 +1,57 @@
+rules_version = '2';
+
+// Reglas de seguridad de Funcode Studio CB.
+// Solo los correos de isAdmin() pueden entrar al panel del organizador (admin.html).
+// Para autorizar a alguien más, agrégalo a la lista y vuelve a publicar las reglas.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['buitragocristianespinosa@gmail.com'];
+    }
+
+    function text(value, min, max) {
+      return value is string && value.size() >= min && value.size() <= max;
+    }
+
+    function optionalText(data, key, max) {
+      return !(key in data) || text(data[key], 0, max);
+    }
+
+    // Solicitudes que envían los visitantes desde el formulario de contacto.
+    match /solicitudes/{id} {
+      // Cualquiera puede CREAR una solicitud válida, pero no leer ni modificar.
+      allow create: if
+        request.resource.data.keys().hasOnly(['nombre', 'negocio', 'correo', 'whatsapp', 'tipo',
+          'descripcion', 'presupuesto', 'fecha', 'estado', 'creado', 'origen'])
+        && request.resource.data.keys().hasAll(['nombre', 'correo', 'tipo', 'descripcion', 'estado', 'creado'])
+        && text(request.resource.data.nombre, 1, 80)
+        && text(request.resource.data.correo, 5, 120)
+        && request.resource.data.correo.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}$')
+        && request.resource.data.tipo in ['Página web', 'Aplicación web', 'Solución educativa',
+          'Mejora de página existente', 'Integración de IA', 'Otro']
+        && text(request.resource.data.descripcion, 20, 2000)
+        && optionalText(request.resource.data, 'negocio', 100)
+        && optionalText(request.resource.data, 'whatsapp', 20)
+        && optionalText(request.resource.data, 'presupuesto', 60)
+        && optionalText(request.resource.data, 'fecha', 10)
+        && optionalText(request.resource.data, 'origen', 200)
+        && request.resource.data.estado == 'nuevo'
+        && request.resource.data.creado == request.time;
+
+      // Solo el organizador puede verlas, cambiar su estado o notas, y borrarlas.
+      allow read, delete: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estado', 'notas'])
+        && request.resource.data.estado in ['nuevo', 'revision', 'respondido', 'descartado']
+        && optionalText(request.resource.data, 'notas', 2000);
+    }
+
+    // Todo lo demás queda cerrado.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

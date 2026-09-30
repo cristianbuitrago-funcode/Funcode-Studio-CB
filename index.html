@@ -602,6 +602,7 @@
             <div class="field">
               <label for="f-negocio">Nombre del negocio <span class="opt">(opcional)</span></label>
               <input id="f-negocio" name="negocio" type="text" autocomplete="organization" maxlength="100">
+              <p class="field-error" aria-hidden="true"></p>
             </div>
             <div class="field">
               <label for="f-correo">Correo <span class="req" aria-hidden="true">*</span></label>
@@ -641,6 +642,7 @@
                 <option>$800.000 – $1.500.000 COP</option>
                 <option>Más de $1.500.000 COP</option>
               </select>
+              <p class="field-error" aria-hidden="true"></p>
             </div>
             <div class="field">
               <label for="f-fecha">¿Para cuándo lo necesitas?</label>
@@ -708,7 +710,10 @@
     </div>
     <div class="container footer-bottom">
       <p>© 2026 Funcode Studio CB</p>
-      <a href="#inicio" class="to-top">Volver arriba ↑</a>
+      <div class="footer-bottom-links">
+        <a href="admin.html" class="to-top">Acceso del organizador</a>
+        <a href="#inicio" class="to-top">Volver arriba ↑</a>
+      </div>
     </div>
   </footer>
 

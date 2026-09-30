@@ -13,6 +13,9 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
 | `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes y endpoint del formulario |
 | `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
+| `admin.html`, `js/admin.js`, `css/admin.css` | Panel del organizador: solicitudes en tiempo real (Firebase) |
+| `firestore.rules`, `firebase.json` | Reglas de seguridad de Firestore y configuración de emuladores |
+| `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |
 | `assets/img/projects/` | Capturas reales de los proyectos (WebP) |
 | `assets/img/og-image.jpg` | Imagen para compartir en redes (1200×630) |
 | `assets/icons/` | Logo, favicon e iconos de la app |
@@ -35,21 +38,26 @@ Mientras un dato esté vacío, la página lo muestra como **«Próximamente»** 
       los botones «Hablar por WhatsApp» y el botón flotante.
 - [ ] `email`: correo público de contacto.
 - [ ] `social.instagram`, `social.facebook`, `social.linkedin`: URL completa de cada perfil.
-- [ ] `formEndpoint`: servicio que recibirá el formulario (ver abajo).
+- [ ] `firebase`: datos de tu proyecto de Firebase para guardar las solicitudes (ver `FIREBASE.md`).
 
 `social.github` ya apunta a https://github.com/cristianbuitrago-funcode.
 
-## Conectar el formulario de contacto
+## Formulario de contacto y panel del organizador
 
-La página es estática, así que **el formulario no puede enviar datos por sí solo**. Hoy funciona así:
+**Recomendado: Firebase.** Sigue [`FIREBASE.md`](FIREBASE.md). Cada solicitud se guarda en
+Firestore y la ves en `admin.html` (enlace «Acceso del organizador» al final de la página),
+entrando con tu cuenta de Google. Solo el correo autorizado en `firestore.rules` puede leerlas.
 
-- **Sin `formEndpoint`**: valida los datos y, al pulsar «Enviar solicitud», avisa claramente que el
+El formulario elige automáticamente cómo enviar:
+
+- **Con `firebase` configurado**: guarda la solicitud en Firestore.
+- **Sin Firebase pero con `formEndpoint`**: la envía a ese servicio (ver abajo).
+- **Sin ninguno de los dos**: valida los datos y, al pulsar «Enviar solicitud», avisa claramente que el
   envío automático no está activo. Ofrece «Copiar solicitud» y, si ya configuraste WhatsApp o correo,
   botones para enviarla por esos medios con el mensaje ya escrito. Debajo del botón hay un aviso visible.
-- **Con `formEndpoint`**: envía los datos con `fetch` (POST, `FormData`) y muestra confirmación o error.
-  Si falla, conserva los datos y ofrece las mismas alternativas.
+- En los dos primeros casos, si falla, conserva los datos y ofrece las mismas alternativas.
 
-Opción sencilla y gratuita, con [Formspree](https://formspree.io):
+Alternativa sin Firebase, con [Formspree](https://formspree.io) (llega a tu correo):
 
 1. Crea una cuenta y un formulario nuevo; te dará una URL como `https://formspree.io/f/abcdwxyz`.
 2. Pégala en `formEndpoint` dentro de `js/config.js`.

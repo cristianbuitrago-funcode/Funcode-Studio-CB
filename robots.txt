@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /Funcode-Studio-CB/admin.html
 
 Sitemap: https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/sitemap.xml
