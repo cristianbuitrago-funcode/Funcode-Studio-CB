@@ -759,6 +759,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .footer-bottom p { margin: 0; }
 .to-top { color: var(--muted); text-decoration: none; }
+.to-top:hover { color: #fff; }
+.footer-bottom-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 
 .wa-float {
   position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 40;

@@ -169,6 +169,10 @@
   var modeNote = document.getElementById('form-mode');
   var submitBtn = form.querySelector('button[type="submit"]');
   var endpoint = isHttpUrl(config.formEndpoint) ? config.formEndpoint : '';
+  var fb = config.firebase || {};
+  var firebaseReady = !!(fb.apiKey && fb.projectId);
+  // Solo para pruebas locales: http://localhost:8080/?emulador usa los emuladores de Firebase.
+  var useEmulator = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]emulador\b/.test(location.search);
   var dateInput = form.elements.fecha;
 
   // No permitir fechas pasadas.
@@ -176,7 +180,7 @@
   var pad = function (n) { return String(n).padStart(2, '0'); };
   dateInput.min = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
 
-  if (!endpoint) {
+  if (!firebaseReady && !endpoint) {
     modeNote.textContent = 'Aviso: el envío automático del formulario todavía no está activo. Al pulsar «Enviar solicitud» te mostraremos cómo hacernos llegar tu mensaje.';
   }
 
@@ -190,6 +194,8 @@
   };
 
   var extraChecks = {
+    nombre: { test: /\S/, msg: 'valueMissing' },
+    descripcion: { test: /^[\s\S]{20,}$/, msg: 'tooShort' },
     correo: { test: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, msg: 'typeMismatch' },
     whatsapp: { test: /^\+?[0-9()\s-]{7,20}$/, msg: 'patternMismatch' }
   };
@@ -199,7 +205,7 @@
     var m = messages[field.name] || {};
     var extra = extraChecks[field.name];
     var value = field.value.trim();
-    if (v.valid && extra && value && !extra.test.test(value)) return m[extra.msg];
+    if (v.valid && extra && field.value && !extra.test.test(value)) return m[extra.msg];
     if (v.valid) return '';
     if (v.valueMissing) return m.valueMissing || 'Este campo es obligatorio.';
     if (v.typeMismatch) return m.typeMismatch || 'Revisa este dato.';
@@ -334,6 +340,51 @@
     return 'Copia tu solicitud y envíanosla por el mismo medio por el que conociste a Funcode (redes sociales, flyer o recomendación).';
   }
 
+  function randomId() {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var bytes = new Uint8Array(20);
+    window.crypto.getRandomValues(bytes);
+    return Array.prototype.map.call(bytes, function (b) { return chars[b % chars.length]; }).join('');
+  }
+
+  // Guarda la solicitud en Firestore con la API REST (sin cargar el SDK en la página pública).
+  // Las reglas de firestore.rules solo permiten crear solicitudes válidas; nadie más puede leerlas.
+  function saveToFirestore() {
+    var f = form.elements;
+    var docs = 'projects/' + fb.projectId + '/databases/(default)/documents';
+    var base = useEmulator ? 'http://127.0.0.1:8085/v1/' : 'https://firestore.googleapis.com/v1/';
+    var fields = {};
+    function put(key, value) {
+      value = String(value || '').trim();
+      if (value) fields[key] = { stringValue: value };
+    }
+    ['nombre', 'negocio', 'correo', 'whatsapp', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
+      put(name, f[name].value);
+    });
+    put('estado', 'nuevo');
+    put('origen', (location.origin + location.pathname).slice(0, 200));
+
+    var body = {
+      writes: [{
+        update: { name: docs + '/solicitudes/' + randomId(), fields: fields },
+        updateTransforms: [{ fieldPath: 'creado', setToServerValue: 'REQUEST_TIME' }],
+        currentDocument: { exists: false }
+      }]
+    };
+
+    return fetch(base + docs + ':commit?key=' + encodeURIComponent(fb.apiKey), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+  }
+
+  function postToEndpoint() {
+    var data = new FormData(form);
+    data.append('_subject', 'Nueva solicitud de proyecto: ' + form.elements.tipo.value);
+    return fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     statusBox.hidden = true;
@@ -343,7 +394,7 @@
     // Campo trampa: si un bot lo llenó, no se envía nada.
     if (form.elements._gotcha.value) return;
 
-    if (!endpoint) {
+    if (!firebaseReady && !endpoint) {
       renderStatus('info',
         'Tu solicitud está lista, pero aún no se ha enviado',
         'El formulario todavía no está conectado a un servidor, así que no recibimos los datos automáticamente. ' + fallbackText(),
@@ -351,14 +402,17 @@
       return;
     }
 
-    submitBtn.disabled = true;
+    // La petición se arma antes de bloquear los campos (FormData ignora los deshabilitados).
+    var request = firebaseReady ? saveToFirestore() : postToEndpoint();
+
+    // Bloquear el formulario mientras se envía.
+    var controls = Array.prototype.filter.call(form.elements, function (c) { return !c.disabled; });
+    controls.forEach(function (c) { c.disabled = true; });
+    form.setAttribute('aria-busy', 'true');
     var original = submitBtn.innerHTML;
     submitBtn.textContent = 'Enviando…';
 
-    var data = new FormData(form);
-    data.append('_subject', 'Nueva solicitud de proyecto: ' + form.elements.tipo.value);
-
-    fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+    request
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         form.reset();
@@ -371,7 +425,8 @@
           true);
       })
       .then(function () {
-        submitBtn.disabled = false;
+        controls.forEach(function (c) { c.disabled = false; });
+        form.removeAttribute('aria-busy');
         submitBtn.innerHTML = original;
       });
   });
