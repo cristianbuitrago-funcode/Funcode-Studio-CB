@@ -603,6 +603,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .about { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
 .about-copy p { color: #d0dbf3; font-size: 1.06rem; }
 .about-copy .signature { color: var(--gold); font-family: var(--font-display); font-weight: 600; margin-top: 18px; }
+.about-copy .signature span { display: block; margin-top: 2px; color: var(--muted); font-family: var(--font); font-weight: 400; font-size: 0.95rem; }
 .growth { display: grid; gap: 12px; position: relative; }
 .growth li {
   display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: center;

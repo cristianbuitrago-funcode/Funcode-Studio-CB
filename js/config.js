@@ -6,13 +6,12 @@
  * página como «Próximamente» y nunca como un enlace falso.
  *
  * PENDIENTE DE REEMPLAZAR (marcado con TODO):
- *   - whatsapp       → número con indicativo de país, solo dígitos. Ej: '573001234567'
  *   - email          → correo público de contacto. Ej: 'hola@tudominio.com'
  *   - instagram / facebook / linkedin → URL completa del perfil
  */
 window.FUNCODE_CONFIG = {
-  // TODO: número de WhatsApp (solo dígitos, con 57 para Colombia).
-  whatsapp: '',
+  // Número de WhatsApp (solo dígitos, con 57 para Colombia).
+  whatsapp: '573202920181',
 
   // TODO: correo de contacto público.
   email: '',
