@@ -73,7 +73,8 @@ nunca aparece en la página pública.
    - **Valor:** tu APIKEY de la Parte 1 (solo el número)
 4. Pulsa **«Agregar propiedad de la secuencia de comandos»** otra vez y llena la segunda:
    - **Propiedad:** `WHATSAPP_PHONE`
-   - **Valor:** `573202920181`
+   - **Valor:** el número **desde el que activaste CallMeBot**, con 57 y sin espacios
+     (por ejemplo `573114924385`). La llave solo funciona con ese número.
 5. Pulsa **«Guardar propiedades de la secuencia de comandos»**.
 
 Los nombres deben quedar exactamente así, en mayúsculas y con guion bajo.
@@ -127,6 +128,7 @@ Así la URL `/exec` sigue siendo la misma.
 | Qué pasa | Solución |
 |---|---|
 | «Faltan las propiedades CALLMEBOT_APIKEY o WHATSAPP_PHONE» | Parte 4: revisa que los nombres estén exactamente así y que guardaste |
-| «CallMeBot respondió 203» o un mensaje sobre la APIKEY | La llave está mal copiada o CallMeBot aún no la activó. Repite la Parte 1 |
+| La prueba dice «Ejecución completada» pero no llega nada | Mira en el registro la línea «Respuesta de CallMeBot». Si el número no es el mismo con el que activaste CallMeBot, corrige `WHATSAPP_PHONE` |
+| «CallMeBot respondió …» con un mensaje sobre la APIKEY | La llave está mal copiada o CallMeBot aún no la activó. Repite la Parte 1 |
 | La prueba funciona, pero no llegan avisos del formulario | Revisa que implementaste como **Aplicación web** con acceso **Cualquier usuario** y que la URL termina en `/exec` |
 | Llegan avisos, pero no todos | Se alcanzó el límite de 10 por hora o CallMeBot tuvo una falla. Las solicitudes siempre están en el panel |

@@ -49,8 +49,10 @@ function doPost(e) {
 /** Para probar desde el editor: selecciona «probarAviso» y pulsa «Ejecutar». */
 function probarAviso() {
   var resultado = enviarWhatsApp('✅ Prueba de Funcode Studio CB: los avisos por WhatsApp funcionan.');
-  Logger.log(JSON.stringify(resultado));
+  Logger.log('Número usado: ' + PropertiesService.getScriptProperties().getProperty('WHATSAPP_PHONE'));
+  Logger.log('Respuesta de CallMeBot: ' + (resultado.detalle || resultado.error));
   if (!resultado.ok) throw new Error('No se pudo enviar: ' + resultado.error);
+  Logger.log('Listo: revisa tu WhatsApp (puede tardar hasta 1 minuto).');
 }
 
 function enviarWhatsApp(texto) {
@@ -68,8 +70,12 @@ function enviarWhatsApp(texto) {
 
   var res = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
   var codigo = res.getResponseCode();
-  if (codigo >= 200 && codigo < 300) return { ok: true };
-  return { ok: false, error: 'CallMeBot respondió ' + codigo + ': ' + res.getContentText().slice(0, 200) };
+  // CallMeBot a veces responde 200 con un mensaje de error en el texto (p. ej. APIKey inválida).
+  var detalle = res.getContentText().replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 300);
+  if (codigo >= 200 && codigo < 300 && !/error|invalid|not valid|not activated|wrong/i.test(detalle)) {
+    return { ok: true, detalle: detalle };
+  }
+  return { ok: false, error: 'CallMeBot respondió ' + codigo + ': ' + detalle };
 }
 
 function dentroDelLimite() {
