@@ -39,7 +39,8 @@ nunca aparece en la página pública.
    ```
 
 4. Espera la respuesta (puede tardar hasta 2 minutos). Dirá algo como:
-   *«API Activated for your phone number. Your APIKEY is 1234567»*.
+   *«CallMeBot API Activated for 57300… (o 1090…@lid). Your apikey is: 1234567»*.
+   **Guarda las dos cosas:** lo que dice después de «Activated for» y la apikey.
 5. **Guarda ese número (tu APIKEY) en un lugar privado.** No lo compartas con nadie ni lo
    pegues en la página. Si no llega respuesta en unos minutos, vuelve a enviar el mensaje.
 
@@ -73,8 +74,10 @@ nunca aparece en la página pública.
    - **Valor:** tu APIKEY de la Parte 1 (solo el número)
 4. Pulsa **«Agregar propiedad de la secuencia de comandos»** otra vez y llena la segunda:
    - **Propiedad:** `WHATSAPP_PHONE`
-   - **Valor:** el número **desde el que activaste CallMeBot**, con 57 y sin espacios
-     (por ejemplo `573114924385`). La llave solo funciona con ese número.
+   - **Valor:** copia **exactamente** lo que dice el mensaje de CallMeBot después de
+     *«API Activated for»*. Puede ser un número (por ejemplo `573114924385`) o un
+     identificador que termina en `@lid` (por ejemplo `109040663277680@lid`). Si es un
+     `@lid`, cópialo completo, con el `@lid` incluido.
 5. Pulsa **«Guardar propiedades de la secuencia de comandos»**.
 
 Los nombres deben quedar exactamente así, en mayúsculas y con guion bajo.
@@ -128,7 +131,7 @@ Así la URL `/exec` sigue siendo la misma.
 | Qué pasa | Solución |
 |---|---|
 | «Faltan las propiedades CALLMEBOT_APIKEY o WHATSAPP_PHONE» | Parte 4: revisa que los nombres estén exactamente así y que guardaste |
-| La prueba dice «Ejecución completada» pero no llega nada | Mira en el registro la línea «Respuesta de CallMeBot». Si el número no es el mismo con el que activaste CallMeBot, corrige `WHATSAPP_PHONE` |
+| La prueba dice «Ejecución completada» pero no llega nada | Mira en el registro la línea «Respuesta de CallMeBot». `WHATSAPP_PHONE` debe ser exactamente lo que dice CallMeBot después de «Activated for» (a veces un `…@lid`, no tu número) |
 | «CallMeBot respondió …» con un mensaje sobre la APIKEY | La llave está mal copiada o CallMeBot aún no la activó. Repite la Parte 1 |
 | La prueba funciona, pero no llegan avisos del formulario | Revisa que implementaste como **Aplicación web** con acceso **Cualquier usuario** y que la URL termina en `/exec` |
 | Llegan avisos, pero no todos | Se alcanzó el límite de 10 por hora o CallMeBot tuvo una falla. Las solicitudes siempre están en el panel |

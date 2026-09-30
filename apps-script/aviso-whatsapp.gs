@@ -8,7 +8,9 @@
  *
  * Propiedades que debes crear (Configuración del proyecto → Propiedades de la secuencia de comandos):
  *   CALLMEBOT_APIKEY  → la llave que te envió CallMeBot por WhatsApp
- *   WHATSAPP_PHONE    → tu número con indicativo, solo dígitos. Ej: 573202920181
+ *   WHATSAPP_PHONE    → exactamente lo que dice el mensaje de CallMeBot después de «Activated for».
+ *                       Puede ser un número (573001234567) o un identificador que termina
+ *                       en @lid (109040663277680@lid). Cópialo tal cual.
  *
  * Instrucciones completas: AVISO-WHATSAPP.md en el repositorio.
  */
@@ -58,7 +60,7 @@ function probarAviso() {
 function enviarWhatsApp(texto) {
   var props = PropertiesService.getScriptProperties();
   var apikey = props.getProperty('CALLMEBOT_APIKEY');
-  var telefono = String(props.getProperty('WHATSAPP_PHONE') || '').replace(/\D/g, '');
+  var telefono = normalizarDestino(props.getProperty('WHATSAPP_PHONE'));
   if (!apikey || !telefono) {
     return { ok: false, error: 'Faltan las propiedades CALLMEBOT_APIKEY o WHATSAPP_PHONE' };
   }
@@ -76,6 +78,14 @@ function enviarWhatsApp(texto) {
     return { ok: true, detalle: detalle };
   }
   return { ok: false, error: 'CallMeBot respondió ' + codigo + ': ' + detalle };
+}
+
+// CallMeBot identifica el destino con un número o con un identificador de WhatsApp «...@lid».
+function normalizarDestino(valor) {
+  var texto = String(valor || '').trim().replace(/\s+/g, '');
+  var lid = texto.match(/^(\d+)@lid$/i);
+  if (lid) return lid[1] + '@lid';
+  return texto.replace(/\D/g, '');
 }
 
 function dentroDelLimite() {
