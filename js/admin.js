@@ -6,12 +6,8 @@
   var fb = config.firebase || {};
   var $ = function (id) { return document.getElementById(id); };
   var STATES = ['config', 'loading', 'login', 'denied', 'error', 'app'];
-  var ESTADOS = [
-    ['nuevo', 'Nueva'],
-    ['revision', 'En revisión'],
-    ['respondido', 'Respondida'],
-    ['descartado', 'Descartada']
-  ];
+  var ESTADOS = window.FUNCODE_ESTADOS || [];
+  var estadoDe = window.FUNCODE_ESTADO;
 
   function show(state) {
     STATES.forEach(function (s) { $('state-' + s).hidden = s !== state; });
@@ -36,6 +32,9 @@
   provider.setCustomParameters({ prompt: 'select_account' });
 
   var items = [];
+  var notas = {};        // notas privadas por id de solicitud (colección /notas)
+  var unsubscribeNotas = null;
+  var migrados = {};
   var filter = 'todas';
   var query = '';
   var unsubscribe = null;
@@ -75,6 +74,8 @@
 
   auth.onAuthStateChanged(function (user) {
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
+    if (unsubscribeNotas) { unsubscribeNotas(); unsubscribeNotas = null; }
+    notas = {};
     $('admin-user').hidden = !user;
     if (!user) {
       items = [];
@@ -94,9 +95,12 @@
       items = snap.docs.map(function (doc) {
         var data = doc.data({ serverTimestamps: 'estimate' });
         data.id = doc.id;
+        data.confirmado = !doc.metadata.hasPendingWrites;
         return data;
       });
       show('app');
+      listenNotes();
+      migrateNotes();
       render();
     }, function (err) {
       unsubscribe = null;
@@ -110,9 +114,43 @@
     });
   }
 
+  function listenNotes() {
+    if (unsubscribeNotas) return;
+    unsubscribeNotas = db.collection('notas').onSnapshot(function (snap) {
+      notas = {};
+      snap.forEach(function (doc) { notas[doc.id] = doc.data().texto || ''; });
+      render();
+    }, function () { unsubscribeNotas = null; });
+  }
+
+  function fail(err) {
+    window.alert('No se pudo guardar el cambio: ' + (err.message || err));
+  }
+
+  // Cambios visibles para el cliente: siempre con la fecha de actualización.
   function update(id, data) {
-    return db.collection('solicitudes').doc(id).update(data).catch(function (err) {
-      window.alert('No se pudo guardar el cambio: ' + (err.message || err));
+    data.actualizado = firebase.firestore.FieldValue.serverTimestamp();
+    return db.collection('solicitudes').doc(id).update(data).catch(fail);
+  }
+
+  function saveNote(id, texto) {
+    return db.collection('notas').doc(id).set({
+      texto: texto,
+      actualizado: firebase.firestore.FieldValue.serverTimestamp()
+    }).catch(fail);
+  }
+
+  // Versión anterior: las notas estaban dentro de la solicitud (y el cliente podría verlas).
+  // Se mueven a /notas y se borran de la solicitud.
+  function migrateNotes() {
+    items.forEach(function (item) {
+      if (typeof item.notas !== 'string' || !item.confirmado || migrados[item.id]) return;
+      migrados[item.id] = true;
+      var texto = item.notas.slice(0, 2000);
+      var previa = notas[item.id];
+      saveNote(item.id, previa ? previa + '\n' + texto : texto).then(function () {
+        return update(item.id, { notas: firebase.firestore.FieldValue.delete() });
+      });
     });
   }
 
@@ -171,15 +209,23 @@
   }
 
   /* ---------- Render ---------- */
+  function grupo(item) {
+    var paso = estadoDe(item.estado).paso;
+    if (paso === 0) return 'descartado';
+    if (paso === 1) return 'nuevo';
+    if (paso === 6) return 'entregado';
+    return 'encurso';
+  }
+
   function matches(item) {
-    if (filter !== 'todas' && item.estado !== filter) return false;
+    if (filter !== 'todas' && grupo(item) !== filter) return false;
     if (!query) return true;
-    return [item.nombre, item.negocio, item.correo, item.whatsapp, item.tipo, item.descripcion, item.notas]
+    return [item.nombre, item.negocio, item.correo, item.whatsapp, item.tipo, item.descripcion, item.mensaje, notas[item.id]]
       .join(' ').toLowerCase().indexOf(query) !== -1;
   }
 
   function card(item) {
-    var article = el('article', { class: 'request', 'data-estado': item.estado || 'nuevo' });
+    var article = el('article', { class: 'request', 'data-grupo': grupo(item) });
 
     var head = el('header', { class: 'request-head' });
     var who = el('div');
@@ -227,27 +273,38 @@
     var stateField = el('label', { class: 'request-field' });
     stateField.appendChild(el('span', null, 'Estado'));
     var select = el('select');
+    var actual = estadoDe(item.estado).id;
     ESTADOS.forEach(function (e) {
-      var option = el('option', { value: e[0] }, e[1]);
-      if ((item.estado || 'nuevo') === e[0]) option.selected = true;
+      var option = el('option', { value: e.id }, e.admin);
+      if (actual === e.id) option.selected = true;
       select.appendChild(option);
     });
     select.addEventListener('change', function () { update(item.id, { estado: select.value }); });
     stateField.appendChild(select);
     manage.appendChild(stateField);
 
-    var notesField = el('label', { class: 'request-field request-notes' });
-    notesField.appendChild(el('span', null, 'Notas privadas'));
-    var notes = el('textarea', { rows: '2', maxlength: '2000', placeholder: 'Ej.: le envié propuesta el martes' });
-    notes.value = item.notas || '';
-    notes.addEventListener('change', function () { update(item.id, { notas: notes.value.trim() }); });
+    var messageField = el('label', { class: 'request-field request-notes' });
+    messageField.appendChild(el('span', null, 'Mensaje para el cliente (lo ve en «Mis solicitudes»)'));
+    var message = el('textarea', { rows: '2', maxlength: '1000', placeholder: 'Ej.: Te envié la propuesta a tu correo' });
+    message.value = item.mensaje || '';
+    message.addEventListener('change', function () { update(item.id, { mensaje: message.value.trim() }); });
+    messageField.appendChild(message);
+    manage.appendChild(messageField);
+
+    var notesField = el('label', { class: 'request-field request-notes request-private' });
+    notesField.appendChild(el('span', null, 'Notas privadas (solo tú las ves)'));
+    var notes = el('textarea', { rows: '2', maxlength: '2000', placeholder: 'Ej.: llamar el lunes' });
+    notes.value = notas[item.id] || (typeof item.notas === 'string' ? item.notas : '');
+    notes.addEventListener('change', function () { saveNote(item.id, notes.value.trim()); });
     notesField.appendChild(notes);
     manage.appendChild(notesField);
 
     var del = el('button', { class: 'btn-link-danger', type: 'button' }, 'Eliminar');
     del.addEventListener('click', function () {
       if (window.confirm('¿Eliminar la solicitud de ' + item.nombre + '? No se puede deshacer.')) {
-        db.collection('solicitudes').doc(item.id).delete().catch(function (err) {
+        db.collection('solicitudes').doc(item.id).delete().then(function () {
+          return db.collection('notas').doc(item.id).delete();
+        }).catch(function (err) {
           window.alert('No se pudo eliminar: ' + (err.message || err));
         });
       }
@@ -267,8 +324,8 @@
     }
     pendingRender = false;
 
-    var counts = { todas: items.length, nuevo: 0, revision: 0, respondido: 0, descartado: 0 };
-    items.forEach(function (i) { counts[i.estado || 'nuevo'] = (counts[i.estado || 'nuevo'] || 0) + 1; });
+    var counts = { todas: items.length, nuevo: 0, encurso: 0, entregado: 0, descartado: 0 };
+    items.forEach(function (i) { counts[grupo(i)] += 1; });
     document.querySelectorAll('[data-count]').forEach(function (span) {
       span.textContent = counts[span.getAttribute('data-count')] || 0;
     });

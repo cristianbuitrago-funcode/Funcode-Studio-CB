@@ -12,6 +12,13 @@ service cloud.firestore {
         && request.auth.token.email in ['buitragocristianespinosa@gmail.com'];
     }
 
+    // Cliente que entró con Google usando el mismo correo que puso en el formulario.
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && resource.data.correo == request.auth.token.email.lower();
+    }
+
     function text(value, min, max) {
       return value is string && value.size() >= min && value.size() <= max;
     }
@@ -22,7 +29,7 @@ service cloud.firestore {
 
     // Solicitudes que envían los visitantes desde el formulario de contacto.
     match /solicitudes/{id} {
-      // Cualquiera puede CREAR una solicitud válida, pero no leer ni modificar.
+      // Cualquiera puede CREAR una solicitud válida, pero no modificarla.
       allow create: if
         request.resource.data.keys().hasOnly(['nombre', 'negocio', 'correo', 'whatsapp', 'tipo',
           'descripcion', 'presupuesto', 'fecha', 'estado', 'creado', 'origen'])
@@ -30,6 +37,7 @@ service cloud.firestore {
         && text(request.resource.data.nombre, 1, 80)
         && text(request.resource.data.correo, 5, 120)
         && request.resource.data.correo.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}$')
+        && request.resource.data.correo == request.resource.data.correo.lower()
         && request.resource.data.tipo in ['Página web', 'Aplicación web', 'Solución educativa',
           'Mejora de página existente', 'Integración de IA', 'Otro']
         && text(request.resource.data.descripcion, 20, 2000)
@@ -41,12 +49,29 @@ service cloud.firestore {
         && request.resource.data.estado == 'nuevo'
         && request.resource.data.creado == request.time;
 
-      // Solo el organizador puede verlas, cambiar su estado o notas, y borrarlas.
-      allow read, delete: if isAdmin();
+      // El organizador ve todas; cada cliente solo las enviadas con su correo.
+      allow read: if isAdmin() || isOwner();
+      allow delete: if isAdmin();
+
+      // Solo el organizador cambia el estado y el mensaje para el cliente.
+      // ('notas' solo se permite para borrarla: las notas privadas viven en /notas).
       allow update: if isAdmin()
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estado', 'notas'])
-        && request.resource.data.estado in ['nuevo', 'revision', 'respondido', 'descartado']
-        && optionalText(request.resource.data, 'notas', 2000);
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estado', 'mensaje', 'actualizado', 'notas'])
+        && request.resource.data.estado in ['nuevo', 'revision', 'propuesta', 'aprobado', 'desarrollo',
+          'entregado', 'descartado', 'respondido']
+        && optionalText(request.resource.data, 'mensaje', 1000)
+        && !('notas' in request.resource.data.diff(resource.data).addedKeys())
+        && !('notas' in request.resource.data.diff(resource.data).changedKeys())
+        && request.resource.data.actualizado == request.time;
+    }
+
+    // Notas privadas del organizador, separadas para que los clientes nunca las vean.
+    match /notas/{id} {
+      allow read, delete: if isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly(['texto', 'actualizado'])
+        && text(request.resource.data.texto, 0, 2000)
+        && request.resource.data.actualizado == request.time;
     }
 
     // Todo lo demás queda cerrado.

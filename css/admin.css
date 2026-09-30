@@ -55,10 +55,10 @@
   background: rgba(11, 23, 46, 0.75); border: 1px solid var(--line);
   border-left: 4px solid var(--line-strong);
 }
-.request[data-estado="nuevo"] { border-left-color: var(--gold); }
-.request[data-estado="revision"] { border-left-color: var(--blue-2); }
-.request[data-estado="respondido"] { border-left-color: var(--ok); }
-.request[data-estado="descartado"] { border-left-color: var(--faint); opacity: 0.75; }
+.request[data-grupo="nuevo"] { border-left-color: var(--gold); }
+.request[data-grupo="encurso"] { border-left-color: var(--blue-2); }
+.request[data-grupo="entregado"] { border-left-color: var(--ok); }
+.request[data-grupo="descartado"] { border-left-color: var(--faint); opacity: 0.75; }
 
 .request-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
 .request-head h2 { font-size: 1.2rem; margin: 0; }
@@ -70,7 +70,12 @@
 .request-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
 .request-email { color: var(--faint); font-size: 0.86rem; overflow-wrap: anywhere; }
 
-.request-manage { display: grid; grid-template-columns: 200px 1fr auto; gap: 12px; align-items: end; margin-top: 16px; }
+.request-manage { display: grid; grid-template-columns: 215px 1fr 1fr auto; gap: 12px; align-items: end; margin-top: 16px; }
+.request-private textarea { border-style: dashed; }
+@media (max-width: 1000px) {
+  .request-manage { grid-template-columns: 215px 1fr; }
+  .request-private { grid-column: 1 / -1; }
+}
 .request-field { display: grid; gap: 6px; }
 .request-field span { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
 .request-field select, .request-field textarea {
@@ -92,4 +97,55 @@
   .request-manage { grid-template-columns: 1fr; }
   .btn-link-danger { justify-self: start; padding: 0; }
   .request-contact .btn { flex: 1 1 auto; }
+}
+
+/* ---------- Portal del cliente «Mis solicitudes» ---------- */
+.portal-hint { font-size: 0.93rem; }
+.portal-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.portal-head p { margin: 0; }
+.status-pill {
+  padding: 4px 12px; border-radius: 999px; white-space: nowrap;
+  background: rgba(77, 141, 255, 0.16); border: 1px solid rgba(77, 141, 255, 0.45);
+  color: #dbe6ff; font-size: 0.85rem; font-weight: 600;
+}
+.request[data-grupo="nuevo"] .status-pill { background: rgba(242, 193, 78, 0.14); border-color: rgba(242, 193, 78, 0.5); color: var(--gold-soft); }
+.request[data-grupo="entregado"] .status-pill { background: rgba(74, 222, 128, 0.12); border-color: rgba(74, 222, 128, 0.5); color: #b8f5cd; }
+.portal-meta { margin: 6px 0 0; color: var(--faint); font-size: 0.86rem; }
+.portal-status { margin: 14px 0 0; color: #d7e2fb; }
+
+.steps-track { display: grid; grid-template-columns: repeat(6, 1fr); margin: 22px 0 4px; position: relative; }
+.steps-track li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.steps-track li:not(:last-child)::after {
+  content: ""; position: absolute; top: 8px; left: calc(50% + 12px); right: calc(-50% + 12px); height: 2px;
+  background: rgba(140, 170, 255, 0.2);
+}
+.steps-track li.is-done:not(:last-child)::after { background: var(--blue-2); }
+.steps-track .dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(140, 170, 255, 0.35); background: var(--bg); }
+.steps-track .is-done .dot { border-color: var(--blue-2); background: var(--blue-2); }
+.steps-track .is-current .dot { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 0 5px rgba(242, 193, 78, 0.18); }
+.steps-track .label { font-size: 0.8rem; color: var(--faint); line-height: 1.25; }
+.steps-track .is-done .label { color: var(--muted); }
+.steps-track .is-current .label { color: #fff; font-weight: 600; }
+
+.portal-message {
+  margin-top: 16px; padding: 14px 16px; border-radius: 12px;
+  background: rgba(77, 141, 255, 0.08); border: 1px solid rgba(77, 141, 255, 0.3);
+}
+.portal-message-title { margin: 0 0 4px; color: var(--blue-soft); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.portal-message-text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.portal-details { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
+.portal-details summary { cursor: pointer; color: var(--blue-soft); font-weight: 600; font-size: 0.93rem; min-height: 32px; display: flex; align-items: center; }
+.portal-details dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 12px 0 0; }
+.portal-details dt { color: var(--faint); font-size: 0.88rem; }
+.portal-details dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-empty p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .steps-track { grid-template-columns: 1fr; gap: 0; }
+  .steps-track li { flex-direction: row; text-align: left; gap: 12px; padding-bottom: 14px; }
+  .steps-track li:not(:last-child)::after { top: 20px; bottom: 0; left: 8px; right: auto; width: 2px; height: auto; }
+  .steps-track .label { font-size: 0.9rem; }
+  .portal-details dl { grid-template-columns: 1fr; }
+  .portal-head .btn { width: 100%; }
 }
