@@ -52,7 +52,7 @@ firebase: {
 ## 5. Publicar las reglas de seguridad
 
 1. Abre el archivo `firestore.rules` de este repositorio.
-2. Reemplaza `TU_CORREO@gmail.com` por el correo de Google con el que vas a entrar al panel.
+2. Revisa que el correo de `isAdmin()` sea el de Google con el que vas a entrar al panel.
    Para autorizar a más personas: `['correo1@gmail.com', 'correo2@gmail.com']`.
 3. En Firebase: **Firestore Database → Reglas**, borra lo que haya, pega el contenido completo
    y pulsa **Publicar**.
