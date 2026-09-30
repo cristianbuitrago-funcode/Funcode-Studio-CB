@@ -5,4 +5,34 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/servicios.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/proyectos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/precios.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/proceso.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/nosotros.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/contacto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

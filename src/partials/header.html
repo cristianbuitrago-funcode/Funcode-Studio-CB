@@ -1,0 +1,27 @@
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Funcode Studio CB, ir al inicio">
+        <img src="assets/icons/logo.svg" alt="" width="36" height="36">
+        <span class="brand-name">Funcode <span>Studio CB</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <nav class="site-nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="./"{{current:inicio}}>Inicio</a></li>
+          <li><a href="servicios.html"{{current:servicios}}>Servicios</a></li>
+          <li><a href="proyectos.html"{{current:proyectos}}>Proyectos</a></li>
+          <li><a href="precios.html"{{current:precios}}>Precios</a></li>
+          <li><a href="proceso.html"{{current:proceso}}>Cómo trabajamos</a></li>
+          <li><a href="nosotros.html"{{current:nosotros}}>Nosotros</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm nav-cta" href="contacto.html"{{current:contacto}}>Solicitar proyecto</a>
+      </nav>
+    </div>
+  </header>
