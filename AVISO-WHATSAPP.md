@@ -1,6 +1,16 @@
-# Aviso por WhatsApp cuando llega una solicitud
+# Aviso por correo y WhatsApp cuando llega una solicitud
 
-Cuando un cliente envía el formulario, te llega un WhatsApp como este:
+Cuando un cliente envía el formulario:
+
+1. **Siempre te llega un correo** a tu Gmail (lo envía Google, es gratis y confiable). Activa las
+   notificaciones de la app de Gmail en el celular para enterarte al instante.
+2. **Además te llega un WhatsApp** si configuraste CallMeBot (opcional).
+
+Para recibir solo el correo, basta con las Partes 2, 3, 5 y 6: la Parte 1 (CallMeBot) y las
+propiedades de WhatsApp de la Parte 4 son opcionales. Para enviar los avisos a otro correo, crea la
+propiedad `AVISO_EMAIL` con esa dirección.
+
+El WhatsApp se ve así:
 
 ```
 🔔 Nueva solicitud en Funcode Studio CB
@@ -39,7 +49,8 @@ nunca aparece en la página pública.
    ```
 
 4. Espera la respuesta (puede tardar hasta 2 minutos). Dirá algo como:
-   *«API Activated for your phone number. Your APIKEY is 1234567»*.
+   *«CallMeBot API Activated for 57300… (o 1090…@lid). Your apikey is: 1234567»*.
+   **Guarda las dos cosas:** lo que dice después de «Activated for» y la apikey.
 5. **Guarda ese número (tu APIKEY) en un lugar privado.** No lo compartas con nadie ni lo
    pegues en la página. Si no llega respuesta en unos minutos, vuelve a enviar el mensaje.
 
@@ -73,7 +84,10 @@ nunca aparece en la página pública.
    - **Valor:** tu APIKEY de la Parte 1 (solo el número)
 4. Pulsa **«Agregar propiedad de la secuencia de comandos»** otra vez y llena la segunda:
    - **Propiedad:** `WHATSAPP_PHONE`
-   - **Valor:** `573202920181`
+   - **Valor:** copia **exactamente** lo que dice el mensaje de CallMeBot después de
+     *«API Activated for»*. Puede ser un número (por ejemplo `573114924385`) o un
+     identificador que termina en `@lid` (por ejemplo `109040663277680@lid`). Si es un
+     `@lid`, cópialo completo, con el `@lid` incluido.
 5. Pulsa **«Guardar propiedades de la secuencia de comandos»**.
 
 Los nombres deben quedar exactamente así, en mayúsculas y con guion bajo.
@@ -89,11 +103,12 @@ Los nombres deben quedar exactamente así, en mayúsculas y con guion bajo.
    2. Aparece **«Google no verificó esta app»**. Es normal: la app es tuya.
       Pulsa **«Configuración avanzada»** y luego
       **«Ir a Aviso WhatsApp Funcode (no seguro)»**.
-   3. Pulsa **«Permitir»**. El permiso es para «conectarse a un servicio externo», que es
-      CallMeBot.
+   3. Pulsa **«Permitir»**. Los permisos son para **enviar correos como tú** (los avisos) y para
+      **conectarse a un servicio externo** (CallMeBot).
 5. Abajo aparece el **Registro de ejecución**. Debe terminar en **«Ejecución completada»**.
-6. En unos segundos te llega por WhatsApp:
-   *«✅ Prueba de Funcode Studio CB: los avisos por WhatsApp funcionan.»*
+6. El registro muestra dos líneas: **«Correo: enviado a …»** y **«WhatsApp: …»**. Te llega un
+   correo *«🔔 Nueva solicitud: Cliente de prueba – Página web»* y, si CallMeBot funciona, también
+   el WhatsApp.
 
 Si sale un error, revisa la tabla del final.
 
@@ -127,6 +142,9 @@ Así la URL `/exec` sigue siendo la misma.
 | Qué pasa | Solución |
 |---|---|
 | «Faltan las propiedades CALLMEBOT_APIKEY o WHATSAPP_PHONE» | Parte 4: revisa que los nombres estén exactamente así y que guardaste |
-| «CallMeBot respondió 203» o un mensaje sobre la APIKEY | La llave está mal copiada o CallMeBot aún no la activó. Repite la Parte 1 |
+| «CallMeBot respondió …: Phone number format is incorrect» con un `…@lid` | CallMeBot te registró con un identificador interno de WhatsApp que su propio sistema no acepta. Vuelve a enviar el mensaje de activación desde la **app del celular** (no WhatsApp Web) y usa el número que te indique. Mientras tanto, el correo sigue funcionando |
+| «APIKey is invalid» usando tu número | La llave quedó asociada a otro destino (por ejemplo, un `…@lid`). Pide una llave nueva (Parte 1) |
+| La prueba dice «Ejecución completada» pero no llega nada | Mira en el registro la línea «Respuesta de CallMeBot». `WHATSAPP_PHONE` debe ser exactamente lo que dice CallMeBot después de «Activated for» (a veces un `…@lid`, no tu número) |
+| «CallMeBot respondió …» con un mensaje sobre la APIKEY | La llave está mal copiada o CallMeBot aún no la activó. Repite la Parte 1 |
 | La prueba funciona, pero no llegan avisos del formulario | Revisa que implementaste como **Aplicación web** con acceso **Cualquier usuario** y que la URL termina en `/exec` |
 | Llegan avisos, pero no todos | Se alcanzó el límite de 10 por hora o CallMeBot tuvo una falla. Las solicitudes siempre están en el panel |
