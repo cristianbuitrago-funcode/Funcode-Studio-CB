@@ -384,9 +384,18 @@
       tipo: f.tipo.value,
       presupuesto: f.presupuesto.value
     });
+    // Sin cookies (credentials: 'omit'): si el visitante tiene sesión de Google abierta, Apps Script
+    // redirige la petición a /u/N/… y el envío se pierde antes de llegar a doPost.
+    // keepalive permite que el aviso salga aunque la persona cambie de página enseguida.
     try {
-      if (navigator.sendBeacon && navigator.sendBeacon(url, new Blob([body], { type: 'text/plain' }))) return;
-      fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: body }).catch(function () {});
+      fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        credentials: 'omit',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: body
+      }).catch(function () { /* el aviso es opcional */ });
     } catch (err) { /* el aviso es opcional */ }
   }
 
