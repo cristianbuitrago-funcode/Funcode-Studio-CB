@@ -880,6 +880,28 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .price-band h2 { font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.3rem); }
 .price-band p:not(.kicker) { color: var(--muted); margin: 0; }
 
+/* ---------- Reseñas (Inicio) ---------- */
+.stars { color: var(--gold); letter-spacing: 2px; font-size: 1.05rem; line-height: 1; }
+.reviews-empty {
+  max-width: 640px; margin: 0 auto; padding: 22px 24px; border-radius: var(--radius);
+  border: 1px dashed var(--line-strong); color: var(--muted); text-align: center;
+}
+.reviews-summary { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; color: var(--muted); }
+.reviews-summary strong { font-family: var(--font-display); font-size: 2rem; color: var(--text); }
+.reviews-summary .stars { font-size: 1.3rem; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 360px)); justify-content: center; gap: 18px; }
+.review-card {
+  display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: var(--radius);
+  border: 1px solid var(--line); background: rgba(11, 23, 46, 0.7);
+}
+.review-quote { margin: 0; color: #d7e2fb; white-space: pre-wrap; overflow-wrap: anywhere; flex: 1; }
+.review-quote::before { content: "“"; color: var(--gold); font-family: var(--font-display); font-size: 1.6rem; line-height: 0; margin-right: 2px; vertical-align: -0.35em; }
+.review-author { display: grid; gap: 2px; margin: 0; font-size: 0.9rem; color: var(--faint); }
+.review-author strong { color: var(--text); font-size: 0.98rem; }
+.verified { display: inline-flex; align-items: center; gap: 6px; color: var(--ok) !important; font-weight: 600; font-size: 0.8rem; }
+.verified::before { content: "✓"; display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: rgba(74, 222, 128, 0.16); font-size: 0.7rem; }
+.reviews-more { display: flex; margin: 22px auto 0; }
+
 /* ---------- Animación de aparición ---------- */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 .js .reveal.is-in { opacity: 1; transform: none; }
@@ -902,6 +924,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .pricing { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
   .scope { grid-template-columns: 1fr; }
   .teaser-grid, .why-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
   .cv-grid, .project--compact { grid-template-columns: 1fr; }
   .project-media--icon { min-height: 140px; }
   .steps { grid-template-columns: repeat(2, 1fr); }

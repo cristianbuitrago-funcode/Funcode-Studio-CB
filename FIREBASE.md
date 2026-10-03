@@ -94,6 +94,17 @@ los clientes nunca las ven.
 - Si el cliente usó un correo que no es de Google, puede crear una cuenta de Google con ese
   mismo correo o enviar una solicitud nueva con su Gmail.
 
+## Reseñas
+
+- Solo puede escribir una reseña un cliente que entra con Google en «Mis solicitudes» y tiene
+  una solicitud en estado **Entregada**. Una reseña por proyecto entregado.
+- La reseña (1 a 5 estrellas, comentario y nombre público) llega a la pestaña **Reseñas** del
+  panel como **Pendiente**. Tú decides: **Publicar**, **No publicar** o **Eliminar**.
+- Solo las publicadas aparecen en la página de Inicio, con el promedio y la marca
+  «Cliente verificado». Si el cliente edita su reseña, vuelve a quedar pendiente.
+- Las reglas impiden que alguien se autopublique, califique proyectos no entregados o escriba
+  reseñas a nombre de otro cliente.
+
 ## Qué puedes hacer en el panel
 
 - Filtrar: **Nuevas**, **En curso**, **Entregadas**, **Descartadas**.

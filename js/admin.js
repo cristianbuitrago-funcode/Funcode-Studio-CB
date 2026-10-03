@@ -35,6 +35,9 @@
   var notas = {};        // notas privadas por id de solicitud (colección /notas)
   var unsubscribeNotas = null;
   var migrados = {};
+  var resenas = [];
+  var unsubscribeResenas = null;
+  var filtroResenas = 'pendiente';
   var filter = 'todas';
   var query = '';
   var unsubscribe = null;
@@ -75,6 +78,8 @@
   auth.onAuthStateChanged(function (user) {
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
     if (unsubscribeNotas) { unsubscribeNotas(); unsubscribeNotas = null; }
+    if (unsubscribeResenas) { unsubscribeResenas(); unsubscribeResenas = null; }
+    resenas = [];
     notas = {};
     $('admin-user').hidden = !user;
     if (!user) {
@@ -100,6 +105,7 @@
       });
       show('app');
       listenNotes();
+      listenResenas();
       migrateNotes();
       render();
     }, function (err) {
@@ -122,6 +128,117 @@
       render();
     }, function () { unsubscribeNotas = null; });
   }
+
+  /* ---------- Reseñas ---------- */
+  function listenResenas() {
+    if (unsubscribeResenas) return;
+    unsubscribeResenas = db.collection('resenas').orderBy('creada', 'desc').onSnapshot(function (snap) {
+      resenas = snap.docs.map(function (doc) {
+        var data = doc.data({ serverTimestamps: 'estimate' });
+        data.id = doc.id;
+        return data;
+      });
+      renderResenas();
+      render();
+    }, function () { unsubscribeResenas = null; });
+  }
+
+  var ESTADOS_RESENA = { pendiente: 'Pendiente', publicada: 'Publicada', oculta: 'No publicada' };
+
+  function cambiarResena(id, estado) {
+    db.collection('resenas').doc(id).update({ estado: estado }).catch(fail);
+  }
+
+  function resenaCard(r) {
+    var article = el('article', { class: 'request review-admin', 'data-resena': r.estado });
+    var head = el('header', { class: 'request-head' });
+    var who = el('div');
+    who.appendChild(el('h3', null, r.nombre));
+    who.appendChild(el('p', { class: 'request-business' }, r.tipo || ''));
+    head.appendChild(who);
+    head.appendChild(el('span', { class: 'status-pill' }, ESTADOS_RESENA[r.estado] || r.estado));
+    article.appendChild(head);
+
+    var stars = el('p', { class: 'stars', role: 'img', 'aria-label': r.estrellas + ' de 5 estrellas' });
+    stars.textContent = '★★★★★'.slice(0, r.estrellas) + '☆☆☆☆☆'.slice(0, 5 - r.estrellas);
+    article.appendChild(stars);
+    article.appendChild(el('p', { class: 'request-text' }, r.texto));
+
+    var solicitud = items.filter(function (i) { return i.id === r.id; })[0];
+    var meta = 'Recibida: ' + created({ creado: r.creada }) + (r.actualizada ? ' · Editada: ' + created({ creado: r.actualizada }) : '');
+    if (solicitud) meta += ' · Cliente: ' + solicitud.nombre + ' (' + solicitud.correo + ')';
+    article.appendChild(el('p', { class: 'request-email' }, meta));
+
+    var actions = el('div', { class: 'request-contact' });
+    if (r.estado !== 'publicada') {
+      var pub = el('button', { class: 'btn btn-primary btn-sm', type: 'button' }, 'Publicar');
+      pub.addEventListener('click', function () { cambiarResena(r.id, 'publicada'); });
+      actions.appendChild(pub);
+    }
+    if (r.estado !== 'oculta') {
+      var hide = el('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, r.estado === 'publicada' ? 'Quitar de la página' : 'No publicar');
+      hide.addEventListener('click', function () { cambiarResena(r.id, 'oculta'); });
+      actions.appendChild(hide);
+    }
+    var del = el('button', { class: 'btn-link-danger', type: 'button' }, 'Eliminar');
+    del.addEventListener('click', function () {
+      if (window.confirm('¿Eliminar la reseña de ' + r.nombre + '? El cliente podrá escribir una nueva.')) {
+        db.collection('resenas').doc(r.id).delete().catch(fail);
+      }
+    });
+    actions.appendChild(del);
+    article.appendChild(actions);
+    return article;
+  }
+
+  function renderResenas() {
+    var counts = { todas: resenas.length, pendiente: 0, publicada: 0, oculta: 0 };
+    resenas.forEach(function (r) { counts[r.estado] = (counts[r.estado] || 0) + 1; });
+    document.querySelectorAll('[data-count-r]').forEach(function (span) {
+      span.textContent = counts[span.getAttribute('data-count-r')] || 0;
+    });
+    var badge = $('resenas-pendientes');
+    badge.textContent = counts.pendiente;
+    badge.hidden = !counts.pendiente;
+
+    var visibles = resenas.filter(function (r) { return filtroResenas === 'todas' || r.estado === filtroResenas; });
+    var listR = $('resenas-list');
+    listR.innerHTML = '';
+    visibles.forEach(function (r) { listR.appendChild(resenaCard(r)); });
+    var empty = $('resenas-empty');
+    empty.hidden = visibles.length > 0;
+    empty.textContent = resenas.length
+      ? 'No hay reseñas con este filtro.'
+      : 'Todavía no hay reseñas. Los clientes pueden escribir una desde «Mis solicitudes» cuando marcas su proyecto como Entregada.';
+  }
+
+  document.querySelectorAll('.filter-r').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filtroResenas = btn.getAttribute('data-filter-r');
+      document.querySelectorAll('.filter-r').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      renderResenas();
+    });
+  });
+
+  // Pestañas Solicitudes / Reseñas (teclado: flechas izquierda y derecha).
+  var tabs = [$('tab-solicitudes'), $('tab-resenas')];
+  function selectTab(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      $(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectTab(t); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      selectTab(next);
+      next.focus();
+    });
+  });
 
   function fail(err) {
     window.alert('No se pudo guardar el cambio: ' + (err.message || err));
@@ -329,7 +446,8 @@
     document.querySelectorAll('[data-count]').forEach(function (span) {
       span.textContent = counts[span.getAttribute('data-count')] || 0;
     });
-    document.title = (counts.nuevo ? '(' + counts.nuevo + ') ' : '') + 'Panel del organizador | Funcode Studio CB';
+    var pendientes = counts.nuevo + resenas.filter(function (r) { return r.estado === 'pendiente'; }).length;
+    document.title = (pendientes ? '(' + pendientes + ') ' : '') + 'Panel del organizador | Funcode Studio CB';
 
     var visible = items.filter(matches);
     list.innerHTML = '';
@@ -346,10 +464,10 @@
     setTimeout(function () { if (pendingRender) render(); }, 0);
   });
 
-  document.querySelectorAll('.filter').forEach(function (btn) {
+  document.querySelectorAll('.filter[data-filter]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       filter = btn.getAttribute('data-filter');
-      document.querySelectorAll('.filter').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      document.querySelectorAll('.filter[data-filter]').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
       render();
     });
   });

@@ -19,6 +19,7 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
 | `admin.html`, `js/admin.js`, `css/admin.css` | Panel del organizador: solicitudes en tiempo real (Firebase) |
 | `mis-solicitudes.html`, `js/cliente.js` | Portal del cliente: seguimiento de sus solicitudes con Google |
+| Reseñas | Colección `resenas` en Firestore: las escriben clientes con proyecto entregado desde `mis-solicitudes.html`, se moderan en `admin.html` y las publicadas se muestran en Inicio (`js/main.js`) |
 | `js/estados.js` | Estados de una solicitud, compartidos por el panel y el portal |
 | `firestore.rules`, `firebase.json` | Reglas de seguridad de Firestore y configuración de emuladores |
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |

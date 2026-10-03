@@ -31,7 +31,15 @@
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account' });
   var unsubscribe = null;
+  var unsubscribeResenas = null;
   var list = $('requests');
+  var currentUser = null;
+  var lastItems = [];
+  var lastEmail = '';
+  var resenas = {};      // reseñas del cliente por id de solicitud
+  var editando = {};     // solicitudes cuya reseña se está editando
+  var avisos = {};       // mensajes tras guardar una reseña
+  var pendingRender = false;
 
   /* ---------- Sesión ---------- */
   function loginError(err) {
@@ -61,6 +69,9 @@
 
   auth.onAuthStateChanged(function (user) {
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
+    if (unsubscribeResenas) { unsubscribeResenas(); unsubscribeResenas = null; }
+    currentUser = user;
+    resenas = {}; editando = {}; avisos = {};
     $('admin-user').hidden = !user;
     if (!user) { show('login'); return; }
     $('admin-email').textContent = user.email || '';
@@ -78,6 +89,7 @@
     $('new-request').href = 'contacto.html?correo=' + encodeURIComponent(email) +
       (name ? '&nombre=' + encodeURIComponent(name) : '') + '#formulario';
 
+    listenResenas(user);
     unsubscribe = db.collection('solicitudes').where('correo', '==', email).onSnapshot(function (snap) {
       var items = snap.docs.map(function (doc) {
         var data = doc.data({ serverTimestamps: 'estimate' });
@@ -85,6 +97,8 @@
         return data;
       });
       items.sort(function (a, b) { return millis(b.creado) - millis(a.creado); });
+      lastItems = items;
+      lastEmail = email;
       show('app');
       render(items, email);
     }, function (err) {
@@ -94,6 +108,138 @@
         : (err.message || String(err));
       show('error');
     });
+  }
+
+  function listenResenas(user) {
+    if (unsubscribeResenas) return;
+    unsubscribeResenas = db.collection('resenas').where('uid', '==', user.uid).onSnapshot(function (snap) {
+      resenas = {};
+      snap.forEach(function (doc) { resenas[doc.id] = doc.data(); });
+      render(lastItems, lastEmail);
+    }, function () { unsubscribeResenas = null; });
+  }
+
+  /* ---------- Reseñas ---------- */
+  var ESTADO_RESENA = {
+    pendiente: 'En revisión: la publicaremos pronto.',
+    publicada: 'Publicada en la página de Funcode.',
+    oculta: 'No publicada.'
+  };
+
+  function starsText(n) {
+    var span = el('span', { class: 'stars', role: 'img', 'aria-label': n + ' de 5 estrellas' });
+    span.textContent = '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n);
+    return span;
+  }
+
+  function nombrePublico(user) {
+    var partes = String(user.displayName || '').trim().split(/\s+/).filter(Boolean);
+    if (!partes.length) return '';
+    return partes[0] + (partes[1] ? ' ' + partes[1].charAt(0).toUpperCase() + '.' : '');
+  }
+
+  function reviewBlock(item) {
+    var r = resenas[item.id];
+    var box = el('section', { class: 'review-box', 'aria-label': 'Tu reseña de este proyecto' });
+
+    if (avisos[item.id]) box.appendChild(el('p', { class: 'review-notice', role: 'status' }, avisos[item.id]));
+
+    if (r && !editando[item.id]) {
+      box.appendChild(el('p', { class: 'portal-message-title' }, 'Tu reseña'));
+      box.appendChild(starsText(r.estrellas));
+      box.appendChild(el('p', { class: 'review-text' }, r.texto));
+      box.appendChild(el('p', { class: 'portal-meta' }, 'Firmada como ' + r.nombre + ' · ' + (ESTADO_RESENA[r.estado] || '')));
+      var edit = el('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, 'Editar reseña');
+      edit.addEventListener('click', function () { editando[item.id] = true; delete avisos[item.id]; render(lastItems, lastEmail); });
+      box.appendChild(edit);
+      return box;
+    }
+
+    var form = el('form', { class: 'review-form', novalidate: '' });
+    form.appendChild(el('p', { class: 'portal-message-title' }, r ? 'Edita tu reseña' : '¿Cómo te fue con tu proyecto?'));
+    if (!r) form.appendChild(el('p', { class: 'portal-meta' }, 'Tu opinión ayuda a otras personas a decidir. Revisamos cada reseña antes de publicarla.'));
+
+    var fs = el('fieldset', { class: 'stars-input' });
+    fs.appendChild(el('legend', null, 'Calificación'));
+    var group = 'estrellas-' + item.id;
+    for (var n = 5; n >= 1; n--) {
+      var id = group + '-' + n;
+      var input = el('input', { type: 'radio', name: group, id: id, value: String(n) });
+      if (r && r.estrellas === n) input.checked = true;
+      var label = el('label', { for: id, title: n + (n === 1 ? ' estrella' : ' estrellas') });
+      label.appendChild(el('span', { 'aria-hidden': 'true' }, '★'));
+      label.appendChild(el('span', { class: 'sr-only' }, n + (n === 1 ? ' estrella' : ' estrellas')));
+      fs.appendChild(input);
+      fs.appendChild(label);
+    }
+    form.appendChild(fs);
+
+    var textoId = 'texto-' + item.id;
+    var tl = el('label', { class: 'request-field', for: textoId });
+    tl.appendChild(el('span', null, 'Tu comentario'));
+    var texto = el('textarea', { id: textoId, rows: '3', minlength: '10', maxlength: '600', placeholder: 'Ej.: Me mostraron avances durante el proceso y la página quedó como la necesitaba.' });
+    texto.value = r ? r.texto : '';
+    tl.appendChild(texto);
+    form.appendChild(tl);
+
+    var nombreId = 'nombre-' + item.id;
+    var nl = el('label', { class: 'request-field', for: nombreId });
+    nl.appendChild(el('span', null, 'Nombre con el que aparecerá'));
+    var nombre = el('input', { id: nombreId, type: 'text', maxlength: '60', placeholder: 'Ej.: Ana P.' });
+    nombre.value = r ? r.nombre : nombrePublico(currentUser || {});
+    nl.appendChild(nombre);
+    form.appendChild(nl);
+
+    var error = el('p', { class: 'admin-error', role: 'alert', hidden: '' });
+    form.appendChild(error);
+
+    var actions = el('div', { class: 'btn-row' });
+    var submit = el('button', { class: 'btn btn-primary btn-sm', type: 'submit' }, r ? 'Guardar cambios' : 'Enviar reseña');
+    actions.appendChild(submit);
+    if (r) {
+      var cancel = el('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, 'Cancelar');
+      cancel.addEventListener('click', function () { delete editando[item.id]; render(lastItems, lastEmail); });
+      actions.appendChild(cancel);
+    }
+    form.appendChild(actions);
+
+    form.addEventListener('input', function () { error.hidden = true; });
+    form.addEventListener('change', function () { error.hidden = true; });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var elegido = form.querySelector('input[name="' + group + '"]:checked');
+      var datos = { estrellas: elegido ? Number(elegido.value) : 0, texto: texto.value.trim(), nombre: nombre.value.trim() };
+      var problema = !datos.estrellas ? 'Elige de 1 a 5 estrellas.'
+        : datos.texto.length < 10 ? 'Escribe un comentario de al menos 10 caracteres.'
+        : datos.nombre.length < 2 ? 'Escribe el nombre con el que quieres aparecer.' : '';
+      if (problema) { error.textContent = problema; error.hidden = false; return; }
+      error.hidden = true;
+      submit.disabled = true;
+      submit.textContent = 'Guardando…';
+
+      var ref = db.collection('resenas').doc(item.id);
+      var ahora = firebase.firestore.FieldValue.serverTimestamp();
+      var guardar = r
+        ? ref.update({ nombre: datos.nombre, estrellas: datos.estrellas, texto: datos.texto, estado: 'pendiente', actualizada: ahora })
+        : ref.set({ nombre: datos.nombre, estrellas: datos.estrellas, texto: datos.texto, tipo: item.tipo, uid: currentUser.uid, estado: 'pendiente', creada: ahora });
+      guardar.then(function () {
+        delete editando[item.id];
+        avisos[item.id] = '¡Gracias! Recibimos tu reseña. Aparecerá en la página cuando la revisemos.';
+        document.activeElement && document.activeElement.blur && document.activeElement.blur();
+        render(lastItems, lastEmail);
+      }).catch(function (err) {
+        submit.disabled = false;
+        submit.textContent = r ? 'Guardar cambios' : 'Enviar reseña';
+        error.textContent = err.code === 'permission-denied'
+          ? 'No pudimos guardar la reseña. Solo se pueden calificar proyectos entregados.'
+          : 'No pudimos guardar la reseña. Revisa tu conexión e inténtalo de nuevo.';
+        error.hidden = false;
+      });
+    });
+
+    box.appendChild(form);
+    return box;
   }
 
   /* ---------- Render ---------- */
@@ -166,10 +312,19 @@
     details.appendChild(dl);
     article.appendChild(details);
 
+    if (estado.paso === 6) article.appendChild(reviewBlock(item));
+
     return article;
   }
 
   function render(items, email) {
+    // No redibujar mientras el cliente escribe su reseña.
+    var active = document.activeElement;
+    if (active && list.contains(active) && /^(TEXTAREA|INPUT)$/.test(active.tagName)) {
+      pendingRender = true;
+      return;
+    }
+    pendingRender = false;
     list.innerHTML = '';
     items.forEach(function (item) { list.appendChild(card(item)); });
 
@@ -184,4 +339,9 @@
       empty.appendChild(p);
     }
   }
+  list.addEventListener('focusout', function () {
+    setTimeout(function () {
+      if (pendingRender && !list.contains(document.activeElement)) render(lastItems, lastEmail);
+    }, 0);
+  });
 })();

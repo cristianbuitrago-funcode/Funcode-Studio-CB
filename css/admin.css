@@ -39,7 +39,7 @@
 }
 .filter span { min-width: 22px; padding: 1px 7px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: var(--text); }
 .filter[aria-pressed="true"] { background: rgba(77, 141, 255, 0.18); border-color: var(--blue-2); color: #fff; }
-.filter[data-filter="nuevo"] span { background: rgba(242, 193, 78, 0.2); color: var(--gold-soft); }
+.filter[data-filter="nuevo"] span, .filter[data-filter-r="pendiente"] span { background: rgba(242, 193, 78, 0.2); color: var(--gold-soft); }
 
 .search input {
   width: 100%; min-height: 46px; padding: 10px 16px; border-radius: 12px;
@@ -149,3 +149,45 @@
   .portal-details dl { grid-template-columns: 1fr; }
   .portal-head .btn { width: 100%; }
 }
+
+/* ---------- Pestañas del panel ---------- */
+.view-tabs { display: flex; gap: 6px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
+.view-tabs [role="tab"] {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px;
+  border: 0; border-bottom: 3px solid transparent; background: none; cursor: pointer;
+  color: var(--muted); font-family: var(--font-display); font-weight: 600; font-size: 1.02rem;
+}
+.view-tabs [role="tab"][aria-selected="true"] { color: #fff; border-bottom-color: var(--blue-2); }
+.tab-badge { min-width: 22px; padding: 1px 7px; border-radius: 999px; background: var(--gold); color: #1d1500; font-size: 0.78rem; font-weight: 700; }
+.admin-subtitle { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); margin-bottom: 4px; }
+.request[data-resena="pendiente"] { border-left-color: var(--gold); }
+.request[data-resena="publicada"] { border-left-color: var(--ok); }
+.request[data-resena="oculta"] { border-left-color: var(--faint); opacity: 0.75; }
+.review-admin .stars { margin: 10px 0 8px; }
+.review-admin .request-contact { border-bottom: 0; padding-bottom: 0; margin-top: 12px; }
+
+/* ---------- Reseña del cliente («Mis solicitudes») ---------- */
+.review-box { margin-top: 16px; padding: 16px; border-radius: 12px; border: 1px solid rgba(242, 193, 78, 0.35); background: rgba(242, 193, 78, 0.06); }
+.review-box .portal-message-title { color: var(--gold); }
+.review-text { margin: 8px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.review-notice { margin: 0 0 10px; color: var(--ok); font-weight: 600; }
+.review-form { display: grid; gap: 12px; }
+.review-form .portal-meta { margin-top: -6px; }
+.review-form .request-field input {
+  width: 100%; min-height: 44px; padding: 10px 12px; border-radius: 10px;
+  background: rgba(5, 10, 24, 0.75); border: 1px solid var(--line-strong); font-size: 1rem;
+}
+.review-form .request-field textarea { min-height: 90px; }
+.review-form .request-field input:focus { outline: none; border-color: var(--blue-2); box-shadow: 0 0 0 3px rgba(77, 141, 255, 0.3); }
+.review-form .admin-error { margin: 0; }
+
+/* Estrellas seleccionables: los radios van de 5 a 1 y la fila se invierte. */
+.stars-input { display: inline-flex; flex-direction: row-reverse; justify-content: flex-end; gap: 2px; margin: 0; padding: 0; border: 0; }
+.stars-input legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.stars-input input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.stars-input label { cursor: pointer; padding: 2px 3px; font-size: 1.9rem; line-height: 1; color: rgba(140, 170, 255, 0.35); transition: color 0.15s, transform 0.15s; }
+.stars-input label:hover,
+.stars-input label:hover ~ label,
+.stars-input input:checked ~ label { color: var(--gold); }
+.stars-input label:hover { transform: scale(1.12); }
+.stars-input input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
