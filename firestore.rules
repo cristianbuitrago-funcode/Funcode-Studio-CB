@@ -74,6 +74,53 @@ service cloud.firestore {
         && request.resource.data.actualizado == request.time;
     }
 
+    // Reseñas: solo clientes con un proyecto entregado. Una por solicitud (id = id de la solicitud).
+    // Llegan como «pendiente» y el organizador decide si se publican.
+    match /resenas/{id} {
+      function solicitud() {
+        return get(/databases/$(database)/documents/solicitudes/$(id)).data;
+      }
+      function esClienteDeLaSolicitud() {
+        return request.auth != null
+          && request.auth.token.email_verified == true
+          && solicitud().correo == request.auth.token.email.lower();
+      }
+      function resenaValida(d) {
+        return d.keys().hasOnly(['nombre', 'estrellas', 'texto', 'tipo', 'uid', 'estado', 'creada', 'actualizada'])
+          && d.keys().hasAll(['nombre', 'estrellas', 'texto', 'tipo', 'uid', 'estado', 'creada'])
+          && text(d.nombre, 2, 60)
+          && d.estrellas is int && d.estrellas >= 1 && d.estrellas <= 5
+          && text(d.texto, 10, 600)
+          && d.tipo == solicitud().tipo
+          && d.uid == request.auth.uid;
+      }
+
+      // Cualquiera ve las publicadas; cada cliente ve las suyas; el organizador ve todas.
+      allow read: if resource.data.estado == 'publicada'
+        || isAdmin()
+        || (request.auth != null && resource.data.uid == request.auth.uid);
+
+      allow create: if esClienteDeLaSolicitud()
+        && solicitud().estado == 'entregado'
+        && resenaValida(request.resource.data)
+        && request.resource.data.estado == 'pendiente'
+        && request.resource.data.creada == request.time
+        && !('actualizada' in request.resource.data);
+
+      // El cliente puede corregir su reseña (vuelve a revisión); el organizador solo cambia el estado.
+      allow update: if (isAdmin()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estado'])
+          && request.resource.data.estado in ['pendiente', 'publicada', 'oculta'])
+        || (esClienteDeLaSolicitud()
+          && resource.data.uid == request.auth.uid
+          && resenaValida(request.resource.data)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nombre', 'estrellas', 'texto', 'estado', 'actualizada'])
+          && request.resource.data.estado == 'pendiente'
+          && request.resource.data.actualizada == request.time);
+
+      allow delete: if isAdmin();
+    }
+
     // Todo lo demás queda cerrado.
     match /{document=**} {
       allow read, write: if false;

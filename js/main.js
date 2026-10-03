@@ -141,6 +141,113 @@
   }
 
   /* ------------------------------------------------------------------
+   * Reseñas publicadas (Inicio)
+   * Se leen con la API REST de Firestore; las reglas solo dejan leer las
+   * reseñas con estado «publicada», que escriben clientes con proyecto entregado.
+   * ------------------------------------------------------------------ */
+  var reviewsBox = document.querySelector('[data-reviews]');
+  if (reviewsBox) loadReviews(reviewsBox);
+
+  function loadReviews(box) {
+    var fbc = config.firebase || {};
+    function message(text) {
+      box.innerHTML = '';
+      var p = document.createElement('p');
+      p.className = 'reviews-empty';
+      p.textContent = text;
+      box.appendChild(p);
+    }
+    if (!(fbc.apiKey && fbc.projectId)) { message('Las reseñas estarán disponibles pronto.'); return; }
+
+    var emulator = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]emulador\b/.test(location.search);
+    var base = emulator ? 'http://127.0.0.1:8085/v1/' : 'https://firestore.googleapis.com/v1/';
+    var url = base + 'projects/' + fbc.projectId + '/databases/(default)/documents:runQuery?key=' + encodeURIComponent(fbc.apiKey);
+    var query = {
+      structuredQuery: {
+        from: [{ collectionId: 'resenas' }],
+        where: { fieldFilter: { field: { fieldPath: 'estado' }, op: 'EQUAL', value: { stringValue: 'publicada' } } },
+        limit: 100
+      }
+    };
+
+    fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(query) })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (rows) {
+        var list = (rows || []).filter(function (r) { return r.document; }).map(function (r) {
+          var f = r.document.fields || {};
+          var val = function (k) { return f[k] ? (f[k].stringValue || f[k].integerValue || f[k].timestampValue || '') : ''; };
+          return {
+            nombre: val('nombre'),
+            texto: val('texto'),
+            tipo: val('tipo'),
+            estrellas: Math.max(1, Math.min(5, Number(val('estrellas')) || 0)),
+            fecha: val('creada')
+          };
+        }).filter(function (r) { return r.nombre && r.texto; });
+        list.sort(function (a, b) { return String(b.fecha).localeCompare(String(a.fecha)); });
+        renderReviews(box, list, message);
+      })
+      .catch(function () { message('No pudimos cargar las reseñas en este momento.'); });
+  }
+
+  function renderReviews(box, list, message) {
+    if (!list.length) {
+      message('Todavía no hay reseñas publicadas. Solo pueden escribirlas clientes con un proyecto entregado, así que aquí solo verás opiniones reales.');
+      return;
+    }
+    function make(tag, cls, text) {
+      var node = document.createElement(tag);
+      if (cls) node.className = cls;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+    function stars(n) {
+      var s = make('span', 'stars', '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n));
+      s.setAttribute('role', 'img');
+      s.setAttribute('aria-label', n + ' de 5 estrellas');
+      return s;
+    }
+    var month = new Intl.DateTimeFormat('es-CO', { month: 'long', year: 'numeric' });
+
+    box.innerHTML = '';
+    var avg = list.reduce(function (t, r) { return t + r.estrellas; }, 0) / list.length;
+    var summary = make('p', 'reviews-summary');
+    summary.appendChild(make('strong', null, avg.toFixed(1).replace('.', ',')));
+    summary.appendChild(stars(Math.round(avg)));
+    summary.appendChild(make('span', null, list.length + (list.length === 1 ? ' reseña verificada' : ' reseñas verificadas')));
+    box.appendChild(summary);
+
+    var grid = make('ul', 'reviews-grid');
+    list.forEach(function (r, i) {
+      var li = make('li', 'review-card');
+      if (i >= 6) li.hidden = true;
+      li.appendChild(stars(r.estrellas));
+      li.appendChild(make('blockquote', 'review-quote', r.texto));
+      var foot = make('p', 'review-author');
+      foot.appendChild(make('strong', null, r.nombre));
+      var detail = [r.tipo, r.fecha ? month.format(new Date(r.fecha)) : ''].filter(Boolean).join(' · ');
+      if (detail) foot.appendChild(make('span', null, detail));
+      foot.appendChild(make('span', 'verified', 'Cliente verificado'));
+      li.appendChild(foot);
+      grid.appendChild(li);
+    });
+    box.appendChild(grid);
+
+    if (list.length > 6) {
+      var more = make('button', 'btn btn-ghost btn-sm reviews-more', 'Ver todas las reseñas (' + list.length + ')');
+      more.type = 'button';
+      more.addEventListener('click', function () {
+        grid.querySelectorAll('li[hidden]').forEach(function (li) { li.hidden = false; });
+        more.remove();
+      });
+      box.appendChild(more);
+    }
+  }
+
+  /* ------------------------------------------------------------------
    * Formulario de contacto
    * ------------------------------------------------------------------ */
   var form = document.getElementById('contact-form');

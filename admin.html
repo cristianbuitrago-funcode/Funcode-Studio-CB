@@ -73,6 +73,12 @@
 
     <!-- Panel -->
     <section id="state-app" hidden aria-labelledby="app-title">
+      <div class="view-tabs" role="tablist" aria-label="Secciones del panel">
+        <button type="button" role="tab" id="tab-solicitudes" aria-controls="view-solicitudes" aria-selected="true">Solicitudes</button>
+        <button type="button" role="tab" id="tab-resenas" aria-controls="view-resenas" aria-selected="false" tabindex="-1">Reseñas <span class="tab-badge" id="resenas-pendientes" hidden></span></button>
+      </div>
+
+      <div id="view-solicitudes" role="tabpanel" aria-labelledby="tab-solicitudes">
       <div class="admin-head">
         <div>
           <h1 id="app-title">Solicitudes</h1>
@@ -96,6 +102,26 @@
 
       <p class="admin-empty" id="empty" hidden></p>
       <div class="requests" id="requests"></div>
+      </div>
+
+      <div id="view-resenas" role="tabpanel" aria-labelledby="tab-resenas" hidden>
+        <div class="admin-head">
+          <div>
+            <h2 class="admin-subtitle">Reseñas</h2>
+            <p>Las escriben clientes con un proyecto entregado. Solo las <strong>publicadas</strong> aparecen en la página.</p>
+          </div>
+        </div>
+        <div class="admin-toolbar">
+          <div class="filters" role="group" aria-label="Filtrar reseñas">
+            <button type="button" class="filter filter-r" data-filter-r="pendiente" aria-pressed="true">Pendientes <span data-count-r="pendiente">0</span></button>
+            <button type="button" class="filter filter-r" data-filter-r="publicada" aria-pressed="false">Publicadas <span data-count-r="publicada">0</span></button>
+            <button type="button" class="filter filter-r" data-filter-r="oculta" aria-pressed="false">No publicadas <span data-count-r="oculta">0</span></button>
+            <button type="button" class="filter filter-r" data-filter-r="todas" aria-pressed="false">Todas <span data-count-r="todas">0</span></button>
+          </div>
+        </div>
+        <p class="admin-empty" id="resenas-empty" hidden></p>
+        <div class="requests" id="resenas-list"></div>
+      </div>
     </section>
   </main>
 
