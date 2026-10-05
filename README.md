@@ -15,11 +15,13 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `apps-script/aviso-whatsapp.gs` | Código para Google Apps Script que te avisa por WhatsApp de cada solicitud (ver `AVISO-WHATSAPP.md`) |
 | `tools/build.py` | Une `src/partials` + `src/pages` y genera las páginas públicas |
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
-| `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes y endpoint del formulario |
+| `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes, endpoint del formulario y datos de Funcode para cotizaciones y propuestas (`estudio`) |
 | `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
 | `admin.html`, `js/admin.js`, `css/admin.css` | Panel del organizador: solicitudes en tiempo real (Firebase) |
 | `mis-solicitudes.html`, `js/cliente.js` | Portal del cliente: seguimiento de sus solicitudes con Google |
 | Reseñas | Colección `resenas` en Firestore: las escriben clientes con proyecto entregado desde `mis-solicitudes.html`, se moderan en `admin.html` y las publicadas se muestran en Inicio (`js/main.js`) |
+| `js/documentos.js`, `js/documentos-modelo.js`, `js/documentos-archivos.js` | Generador de documentos del panel: cotizaciones y propuestas (plantillas oficiales) con vista previa y descarga en Word y PDF. Borradores en la colección `documentos` |
+| `assets/vendor/jspdf/` | jsPDF 4.2.1 (MIT): crea los PDF del generador. Se carga solo al generar el primer PDF |
 | `js/estados.js` | Estados de una solicitud, compartidos por el panel y el portal |
 | `firestore.rules`, `firebase.json` | Reglas de seguridad de Firestore y configuración de emuladores |
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |

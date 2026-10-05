@@ -81,6 +81,7 @@
     if (unsubscribeResenas) { unsubscribeResenas(); unsubscribeResenas = null; }
     resenas = [];
     notas = {};
+    if (window.FuncodeDocs) window.FuncodeDocs.detener();
     $('admin-user').hidden = !user;
     if (!user) {
       items = [];
@@ -106,6 +107,9 @@
       show('app');
       listenNotes();
       listenResenas();
+      if (window.FuncodeDocs) {
+        window.FuncodeDocs.iniciar({ db: db, abrir: function () { selectTab($('tab-documentos')); } });
+      }
       migrateNotes();
       render();
     }, function (err) {
@@ -220,8 +224,8 @@
     });
   });
 
-  // Pestañas Solicitudes / Reseñas (teclado: flechas izquierda y derecha).
-  var tabs = [$('tab-solicitudes'), $('tab-resenas')];
+  // Pestañas Solicitudes / Reseñas / Documentos (teclado: flechas izquierda y derecha).
+  var tabs = [$('tab-solicitudes'), $('tab-resenas'), $('tab-documentos')];
   function selectTab(tab) {
     tabs.forEach(function (t) {
       var on = t === tab;
@@ -382,6 +386,15 @@
     var copyBtn = el('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, 'Copiar');
     copyBtn.addEventListener('click', function () { copy(summary(item), copyBtn); });
     contact.appendChild(copyBtn);
+
+    // Generador de documentos con los datos de esta solicitud ya escritos.
+    if (window.FuncodeDocs) {
+      [['cotizacion', 'Crear cotización'], ['propuesta', 'Crear propuesta']].forEach(function (d) {
+        var b = el('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, d[1]);
+        b.addEventListener('click', function () { window.FuncodeDocs.desdeSolicitud(item, d[0]); });
+        contact.appendChild(b);
+      });
+    }
     contact.appendChild(el('span', { class: 'request-email' }, item.correo + (item.whatsapp ? ' · ' + item.whatsapp : '')));
     article.appendChild(contact);
 

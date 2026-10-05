@@ -105,6 +105,21 @@ los clientes nunca las ven.
 - Las reglas impiden que alguien se autopublique, califique proyectos no entregados o escriba
   reseñas a nombre de otro cliente.
 
+## Generador de documentos (cotizaciones y propuestas)
+
+- Pestaña **Documentos** del panel: **Nueva cotización** o **Nueva propuesta**, llenas
+  Datos → Contenido, revisas la **Vista previa** y descargas en **Word (.docx)** o **PDF**.
+- También puedes empezar desde una solicitud con **Crear cotización** o **Crear propuesta**: el
+  nombre, correo, WhatsApp y la idea del cliente quedan escritos.
+- Los archivos se crean en tu navegador; los datos del cliente no se envían a ningún servicio externo.
+- **Guardar borrador** guarda el documento en la colección `documentos` de Firestore (solo tu
+  cuenta puede leerla o escribirla). Así lo encuentras en **Documentos recientes** desde el
+  celular o el computador, con las opciones **Editar**, **Duplicar** y **Eliminar**.
+- Tus datos fijos (nombre del fundador, página, lema, logo) están en el bloque `estudio` de
+  `js/config.js`; el WhatsApp y el correo se toman de `whatsapp` y `email` del mismo archivo.
+- Si no publicaste las reglas nuevas, el generador igual descarga archivos, pero avisa que no
+  pudo guardar en Documentos recientes.
+
 ## Qué puedes hacer en el panel
 
 - Filtrar: **Nuevas**, **En curso**, **Entregadas**, **Descartadas**.
