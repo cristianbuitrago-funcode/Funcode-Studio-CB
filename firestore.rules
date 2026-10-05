@@ -121,6 +121,30 @@ service cloud.firestore {
       allow delete: if isAdmin();
     }
 
+    // Cotizaciones y propuestas del Generador de documentos: solo el organizador.
+    match /documentos/{id} {
+      function documentoValido(d) {
+        return d.keys().hasOnly(['tipo', 'numero', 'cliente', 'proyecto', 'fecha', 'estado', 'datos', 'creado', 'actualizado'])
+          && d.keys().hasAll(['tipo', 'numero', 'cliente', 'proyecto', 'fecha', 'estado', 'datos', 'creado', 'actualizado'])
+          && d.tipo in ['cotizacion', 'propuesta']
+          && d.estado in ['borrador', 'generado', 'enviado', 'aceptado', 'rechazado']
+          && text(d.numero, 0, 20)
+          && text(d.cliente, 0, 100)
+          && text(d.proyecto, 0, 120)
+          && text(d.fecha, 0, 10)
+          && d.datos is map
+          && d.actualizado == request.time;
+      }
+
+      allow read, delete: if isAdmin();
+      allow create: if isAdmin()
+        && documentoValido(request.resource.data)
+        && request.resource.data.creado == request.time;
+      allow update: if isAdmin()
+        && documentoValido(request.resource.data)
+        && request.resource.data.creado == resource.data.creado;
+    }
+
     // Todo lo demás queda cerrado.
     match /{document=**} {
       allow read, write: if false;

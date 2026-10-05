@@ -76,6 +76,7 @@
       <div class="view-tabs" role="tablist" aria-label="Secciones del panel">
         <button type="button" role="tab" id="tab-solicitudes" aria-controls="view-solicitudes" aria-selected="true">Solicitudes</button>
         <button type="button" role="tab" id="tab-resenas" aria-controls="view-resenas" aria-selected="false" tabindex="-1">Reseñas <span class="tab-badge" id="resenas-pendientes" hidden></span></button>
+        <button type="button" role="tab" id="tab-documentos" aria-controls="view-documentos" aria-selected="false" tabindex="-1">Documentos</button>
       </div>
 
       <div id="view-solicitudes" role="tabpanel" aria-labelledby="tab-solicitudes">
@@ -122,6 +123,302 @@
         <p class="admin-empty" id="resenas-empty" hidden></p>
         <div class="requests" id="resenas-list"></div>
       </div>
+
+      <!-- Generador de documentos: cotizaciones y propuestas en Word y PDF (js/documentos*.js) -->
+      <div id="view-documentos" role="tabpanel" aria-labelledby="tab-documentos" hidden>
+
+        <div id="docs-home">
+          <div class="admin-head">
+            <div>
+              <h2 class="admin-subtitle">📄 Generador de documentos</h2>
+              <p>Crea cotizaciones y propuestas con las plantillas de Funcode y descárgalas en Word o PDF. Tus datos de contacto y el logo se agregan solos.</p>
+            </div>
+          </div>
+          <div class="docs-new">
+            <button type="button" class="doc-new-card" data-nuevo="cotizacion">
+              <span class="doc-new-icon" aria-hidden="true">🧾</span>
+              <strong>Nueva cotización</strong>
+              <span>Alcance, valor, forma de pago, tiempo y aceptación.</span>
+            </button>
+            <button type="button" class="doc-new-card" data-nuevo="propuesta">
+              <span class="doc-new-icon" aria-hidden="true">💡</span>
+              <strong>Nueva propuesta</strong>
+              <span>Necesidad del cliente, solución, alcance, proceso y próximo paso.</span>
+            </button>
+          </div>
+
+          <div class="docs-recent-head">
+            <h3 class="docs-title">Documentos recientes</h3>
+            <label class="search docs-search">
+              <span class="sr-only">Buscar documentos</span>
+              <input type="search" id="docs-search" placeholder="Buscar por cliente, proyecto o número" autocomplete="off">
+            </label>
+          </div>
+          <p class="admin-empty" id="docs-empty" hidden></p>
+          <div class="docs-recent" id="docs-recent"></div>
+          <button type="button" class="btn btn-ghost btn-sm docs-more" id="docs-more" hidden>Ver todos</button>
+        </div>
+
+        <div id="docs-editor" hidden>
+          <div class="doc-editor-top">
+            <button type="button" class="btn btn-ghost btn-sm" id="doc-volver">← Documentos</button>
+            <p class="doc-save-state" id="doc-save-state" aria-live="polite"></p>
+            <button type="button" class="btn-link-danger" id="doc-eliminar" hidden>🗑️ Eliminar borrador</button>
+          </div>
+          <h2 class="admin-subtitle" id="doc-editor-title" tabindex="-1">Nueva cotización</h2>
+
+          <nav class="doc-steps" aria-label="Pasos del documento">
+            <ol>
+              <li><button type="button" data-ir="1" aria-current="step"><span>1</span> Datos</button></li>
+              <li><button type="button" data-ir="2"><span>2</span> Contenido</button></li>
+              <li><button type="button" data-ir="3"><span>3</span> Vista previa</button></li>
+              <li><button type="button" data-ir="4"><span>4</span> Descargar</button></li>
+            </ol>
+          </nav>
+
+          <div class="form-status is-error doc-errors" id="doc-errors" role="alert" tabindex="-1" hidden>
+            <h3>Revisa estos datos antes de continuar</h3>
+            <ul id="doc-errors-list"></ul>
+          </div>
+
+          <form id="doc-form" novalidate autocomplete="off">
+            <!-- Paso 1: Datos -->
+            <section class="doc-panel" data-paso="1" aria-labelledby="doc-p1">
+              <h3 class="doc-panel-title" id="doc-p1">Datos generales</h3>
+              <fieldset class="doc-type">
+                <legend>Tipo de documento</legend>
+                <label><input type="radio" name="tipo" value="cotizacion" checked> <span>Cotización</span></label>
+                <label><input type="radio" name="tipo" value="propuesta"> <span>Propuesta de proyecto</span></label>
+              </fieldset>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="doc-numero">Número de documento *</label>
+                  <input id="doc-numero" name="numero" type="text" inputmode="numeric" maxlength="20" required>
+                  <p class="field-hint" id="doc-numero-hint">Se sugiere el siguiente número disponible.</p>
+                </div>
+                <div class="field">
+                  <label for="doc-fecha">Fecha *</label>
+                  <input id="doc-fecha" name="fecha" type="date" required>
+                </div>
+                <div class="field field--full">
+                  <label for="doc-cliente">Nombre del cliente *</label>
+                  <input id="doc-cliente" name="cliente" type="text" maxlength="100" autocomplete="off" required>
+                </div>
+                <div class="field">
+                  <label for="doc-telefono">Teléfono</label>
+                  <input id="doc-telefono" name="telefono" type="tel" inputmode="tel" maxlength="25" placeholder="Ej.: 320 292 0181">
+                </div>
+                <div class="field">
+                  <label for="doc-correo">Correo electrónico</label>
+                  <input id="doc-correo" name="correo" type="email" inputmode="email" maxlength="120" placeholder="nombre@correo.com">
+                </div>
+                <div class="field field--full">
+                  <label for="doc-proyecto">Nombre del proyecto *</label>
+                  <input id="doc-proyecto" name="proyecto" type="text" maxlength="120" required placeholder="Ej.: Página web de Panadería La Espiga">
+                </div>
+                <div class="field">
+                  <label for="doc-tipoProyecto">Tipo de proyecto *</label>
+                  <select id="doc-tipoProyecto" name="tipoProyecto"></select>
+                </div>
+                <div class="field" id="doc-tipoOtro-field" hidden>
+                  <label for="doc-tipoOtro">¿Cuál? *</label>
+                  <input id="doc-tipoOtro" name="tipoOtro" type="text" maxlength="60" placeholder="Ej.: Tienda en línea">
+                </div>
+              </div>
+            </section>
+
+            <!-- Paso 2: Contenido -->
+            <section class="doc-panel" data-paso="2" aria-labelledby="doc-p2" hidden>
+              <h3 class="doc-panel-title" id="doc-p2">Contenido</h3>
+
+              <fieldset class="doc-group" data-solo="cotizacion">
+                <legend>1. Proyecto</legend>
+                <div class="field">
+                  <label for="doc-descripcion">Descripción del proyecto *</label>
+                  <textarea id="doc-descripcion" name="descripcion" rows="4" maxlength="3000" placeholder="Explicación breve de lo que se desarrollará y qué problema busca solucionar."></textarea>
+                </div>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="propuesta">
+                <legend>1. Sobre el proyecto</legend>
+                <div class="field">
+                  <label for="doc-problema">Problema o necesidad del cliente *</label>
+                  <textarea id="doc-problema" name="problema" rows="3" maxlength="3000" placeholder="Ej.: recibir pedidos por internet sin depender solo de llamadas."></textarea>
+                  <p class="field-hint">En el documento aparece después de «[Cliente] busca una solución que permita:».</p>
+                </div>
+                <div class="field">
+                  <label for="doc-solucionNombre">Nombre de la solución</label>
+                  <input id="doc-solucionNombre" name="solucionNombre" type="text" maxlength="120" placeholder="Si lo dejas vacío, se usa el nombre del proyecto">
+                </div>
+                <div class="field">
+                  <label for="doc-solucion">Solución propuesta *</label>
+                  <textarea id="doc-solucion" name="solucion" rows="3" maxlength="3000" placeholder="Explicación sencilla de qué se va a crear y cómo ayudará al cliente."></textarea>
+                </div>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="propuesta">
+                <legend>2. Solución propuesta</legend>
+                <p class="field-hint">Cada funcionalidad aparece con su nombre y descripción.</p>
+                <div class="doc-list doc-list--cards" data-lista="funcionalidades" id="doc-funcionalidades"></div>
+                <button type="button" class="btn btn-ghost btn-sm doc-add" data-agregar="funcionalidades">+ Agregar funcionalidad</button>
+                <p class="doc-sublabel" id="doc-diseno-label">Diseño y experiencia</p>
+                <div class="doc-list" data-lista="diseno" id="doc-diseno" aria-labelledby="doc-diseno-label"></div>
+                <button type="button" class="btn btn-ghost btn-sm doc-add" data-agregar="diseno">+ Agregar elemento</button>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="cotizacion">
+                <legend>2. Alcance incluido</legend>
+                <p class="field-hint">Cada elemento es una viñeta de «El proyecto incluye». Ej.: Página principal, Galería, Botón de WhatsApp.</p>
+                <div class="doc-list" data-lista="alcance" id="doc-alcance"></div>
+                <button type="button" class="btn btn-ghost btn-sm doc-add" data-agregar="alcance">+ Agregar elemento</button>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="propuesta">
+                <legend>3. Alcance del proyecto</legend>
+                <p class="doc-sublabel" id="doc-incluye-label">Incluye *</p>
+                <div class="doc-list" data-lista="incluye" id="doc-incluye" aria-labelledby="doc-incluye-label"></div>
+                <button type="button" class="btn btn-ghost btn-sm doc-add" data-agregar="incluye">+ Agregar elemento</button>
+                <p class="doc-sublabel" id="doc-noIncluye-label">No incluye</p>
+                <div class="doc-list" data-lista="noIncluye" id="doc-noIncluye" aria-labelledby="doc-noIncluye-label"></div>
+                <button type="button" class="btn btn-ghost btn-sm doc-add" data-agregar="noIncluye">+ Agregar elemento</button>
+              </fieldset>
+
+              <fieldset class="doc-group">
+                <legend><span data-solo="cotizacion">3.</span><span data-solo="propuesta">4.</span> Inversión</legend>
+                <p class="field-hint">Escribe el valor acordado con este cliente. Los precios de la página son solo de referencia.</p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="doc-valor"><span data-solo="cotizacion">Valor del proyecto *</span><span data-solo="propuesta">Valor estimado *</span></label>
+                    <div class="doc-money">
+                      <span aria-hidden="true">$</span>
+                      <input id="doc-valor" name="valor" type="text" inputmode="numeric" maxlength="15" placeholder="0" aria-describedby="doc-valor-cop">
+                      <span id="doc-valor-cop">COP</span>
+                    </div>
+                  </div>
+                  <div class="field" data-solo="cotizacion">
+                    <label for="doc-formaPago">Forma de pago *</label>
+                    <input id="doc-formaPago" name="formaPago" type="text" maxlength="200" list="doc-pagos" placeholder="Ej.: 50 % al iniciar y 50 % al entregar">
+                    <datalist id="doc-pagos">
+                      <option value="50 % al iniciar y 50 % al entregar">
+                      <option value="100 % al iniciar">
+                      <option value="Pago total al entregar">
+                      <option value="40 % al iniciar, 30 % en la revisión y 30 % al entregar">
+                    </datalist>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="doc-group">
+                <legend><span data-solo="cotizacion">4.</span><span data-solo="propuesta">5.</span> Tiempo estimado</legend>
+                <div class="field">
+                  <label for="doc-tiempo">Tiempo estimado de desarrollo *</label>
+                  <input id="doc-tiempo" name="tiempo" type="text" maxlength="80" list="doc-tiempos" placeholder="Ej.: 2 semanas">
+                  <datalist id="doc-tiempos">
+                    <option value="1 semana">
+                    <option value="2 semanas">
+                    <option value="3 semanas">
+                    <option value="1 mes">
+                    <option value="10 días hábiles">
+                  </datalist>
+                </div>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="cotizacion">
+                <legend>5. Cambios y ajustes</legend>
+                <div class="field">
+                  <label for="doc-cambios">Texto de la sección *</label>
+                  <textarea id="doc-cambios" name="cambios" rows="5" maxlength="3000"></textarea>
+                  <p class="field-hint">Deja una línea en blanco entre párrafos. Una línea que empieza con «- » se convierte en viñeta.</p>
+                </div>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="cotizacion">
+                <legend>6. Condiciones básicas</legend>
+                <div class="field">
+                  <label for="doc-condiciones">Condiciones</label>
+                  <textarea id="doc-condiciones" name="condiciones" rows="6" maxlength="3000"></textarea>
+                  <p class="field-hint">Una condición por línea, empezando con «- ». La vigencia se agrega sola al final.</p>
+                </div>
+                <div class="field doc-narrow">
+                  <label for="doc-vigencia">Vigencia (días) *</label>
+                  <input id="doc-vigencia" name="vigencia" type="number" inputmode="numeric" min="1" max="365" step="1">
+                </div>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="cotizacion">
+                <legend>7. Aceptación</legend>
+                <p class="field-hint">El documento incluye espacio para la firma, el nombre y la fecha del cliente, la firma de Funcode Studio CB y el valor acordado. No hay que llenar nada aquí.</p>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="propuesta">
+                <legend>6. Proceso de trabajo</legend>
+                <p class="field-hint">Son las 5 etapas de la plantilla. Puedes ajustar el texto si este proyecto lo necesita.</p>
+                <div class="doc-list doc-list--cards" id="doc-proceso"></div>
+                <button type="button" class="btn btn-ghost btn-sm doc-add" id="doc-proceso-reset">Restaurar texto original de las etapas</button>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="propuesta">
+                <legend>7. Compromiso de Funcode Studio CB</legend>
+                <p class="field-hint">Texto fijo de la plantilla. Aparece igual en todas las propuestas:</p>
+                <blockquote class="doc-fixed" id="doc-compromiso"></blockquote>
+              </fieldset>
+
+              <fieldset class="doc-group" data-solo="propuesta">
+                <legend>8. Próximo paso</legend>
+                <div class="field">
+                  <label for="doc-proximoPaso">Texto de la sección *</label>
+                  <textarea id="doc-proximoPaso" name="proximoPaso" rows="8" maxlength="3000"></textarea>
+                  <p class="field-hint">Una línea que empieza con «- » se convierte en viñeta.</p>
+                </div>
+              </fieldset>
+            </section>
+          </form>
+
+          <!-- Paso 3: Vista previa -->
+          <section class="doc-panel" data-paso="3" aria-labelledby="doc-p3" hidden>
+            <div class="doc-preview-bar">
+              <h3 class="doc-panel-title" id="doc-p3">👁️ Vista previa</h3>
+              <div class="btn-row">
+                <button type="button" class="btn btn-ghost btn-sm" data-ir="2">Editar</button>
+                <button type="button" class="btn btn-ghost btn-sm" data-generar="docx">📝 Generar Word</button>
+                <button type="button" class="btn btn-primary btn-sm" data-generar="pdf">📄 Generar PDF</button>
+              </div>
+            </div>
+            <p class="field-hint">Así se verá aproximadamente. Lo marcado en amarillo falta por llenar. El archivo final se divide en páginas tamaño carta.</p>
+            <div class="doc-preview">
+              <article class="doc-paper" id="doc-preview" aria-label="Vista previa del documento"></article>
+            </div>
+          </section>
+
+          <!-- Paso 4: Descargar -->
+          <section class="doc-panel" data-paso="4" aria-labelledby="doc-p4" hidden>
+            <h3 class="doc-panel-title" id="doc-p4">Descargar</h3>
+            <div class="doc-download">
+              <button type="button" class="doc-file" data-generar="docx">
+                <span class="doc-file-icon" aria-hidden="true">📝</span>
+                <strong>Generar Word</strong>
+                <span class="doc-file-name" data-archivo="docx"></span>
+              </button>
+              <button type="button" class="doc-file" data-generar="pdf">
+                <span class="doc-file-icon" aria-hidden="true">📄</span>
+                <strong>Generar PDF</strong>
+                <span class="doc-file-name" data-archivo="pdf"></span>
+              </button>
+            </div>
+            <div class="form-status" id="doc-result" tabindex="-1" hidden></div>
+            <div class="field doc-narrow">
+              <label for="doc-estado">Estado del documento</label>
+              <select id="doc-estado" name="estado"></select>
+            </div>
+          </section>
+
+          <div class="doc-actions">
+            <button type="button" class="btn btn-ghost btn-sm" id="doc-prev">Anterior</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="doc-guardar">💾 Guardar<span class="doc-hide-sm"> borrador</span></button>
+            <button type="button" class="btn btn-primary btn-sm" id="doc-next">Siguiente</button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -130,6 +427,9 @@
   <script src="assets/vendor/firebase/firebase-app-compat.js"></script>
   <script src="assets/vendor/firebase/firebase-auth-compat.js"></script>
   <script src="assets/vendor/firebase/firebase-firestore-compat.js"></script>
+  <script src="js/documentos-modelo.js"></script>
+  <script src="js/documentos-archivos.js"></script>
+  <script src="js/documentos.js"></script>
   <script src="js/admin.js"></script>
 </body>
 </html>

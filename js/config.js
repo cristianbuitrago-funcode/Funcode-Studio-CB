@@ -15,6 +15,19 @@ window.FUNCODE_CONFIG = {
   // Correo de contacto público.
   email: 'buitragocristianespinosa@gmail.com',
 
+  // Datos de Funcode para las cotizaciones y propuestas del Generador de documentos
+  // (panel del organizador). El WhatsApp y el correo se toman de los campos de arriba.
+  estudio: {
+    nombre: 'Funcode Studio CB',
+    fundador: 'Cristian Camilo Buitrago Espinosa',
+    firma: 'Cristian Buitrago',   // nombre que firma las propuestas
+    cargo: 'Fundador',
+    sitio: 'https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/',
+    lema: 'Soluciones digitales, productos propios y aprendizaje continuo.',
+    frase: 'Aprender, crear, mejorar y convertir ideas en soluciones digitales.',
+    logo: 'assets/icons/icon-192.png'
+  },
+
   // Configuración del proyecto de Firebase (ver FIREBASE.md).
   // Con esto el formulario guarda cada solicitud en Firestore y el panel
   // del organizador (admin.html) las muestra. Firebase Console → Configuración

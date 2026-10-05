@@ -1,0 +1,2 @@
+jsPDF 4.2.1, copiado de npm sin modificar (dist/jspdf.umd.min.js). Licencia MIT.
+Solo lo usa el Generador de documentos del panel y se carga al generar el primer PDF.
