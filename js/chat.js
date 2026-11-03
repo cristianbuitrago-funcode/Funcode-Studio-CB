@@ -136,8 +136,10 @@
       if (!p) return;
       if (i % 2 === 1) {
         var a = document.createElement('a');
-        a.href = p;
-        a.textContent = /^https:\/\/wa\.me/.test(p) ? 'WhatsApp' : p.replace(/\.html.*$/, '').replace('mis-solicitudes', 'Mis solicitudes').replace('index', 'Inicio');
+        var esWa = /^https:\/\/wa\.me/.test(p);
+        // Un enlace de WhatsApp escrito por la IA siempre se cambia por el número oficial de Funcode.
+        a.href = esWa ? (whatsappUrl() || 'contacto.html') : p;
+        a.textContent = esWa ? 'WhatsApp' : p.replace(/\.html.*$/, '').replace('mis-solicitudes', 'Mis solicitudes').replace('index', 'Inicio');
         if (/^https:/.test(p)) { a.target = '_blank'; a.rel = 'noopener'; }
         el.appendChild(a);
       } else {

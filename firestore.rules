@@ -36,15 +36,19 @@ service cloud.firestore {
         && request.resource.data.keys().hasAll(['nombre', 'correo', 'tipo', 'descripcion', 'estado', 'creado'])
         && text(request.resource.data.nombre, 1, 80)
         && text(request.resource.data.correo, 5, 120)
-        && request.resource.data.correo.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}$')
+        // Solo caracteres normales de correo: evita que un «correo» lleve parámetros (?cc=…) a los enlaces mailto.
+        && request.resource.data.correo.matches('^[a-z0-9._%+-]+@[a-z0-9-]+([.][a-z0-9-]+)*[.][a-z]{2,}$')
         && request.resource.data.correo == request.resource.data.correo.lower()
         && request.resource.data.tipo in ['Página web', 'Aplicación web', 'Solución educativa',
           'Mejora de página existente', 'Integración de IA', 'Otro']
         && text(request.resource.data.descripcion, 20, 2000)
         && optionalText(request.resource.data, 'negocio', 100)
         && optionalText(request.resource.data, 'whatsapp', 20)
-        && optionalText(request.resource.data, 'presupuesto', 60)
+        && (!('whatsapp' in request.resource.data) || request.resource.data.whatsapp.matches('^[+]?[0-9() -]{7,20}$'))
+        && (!('presupuesto' in request.resource.data) || request.resource.data.presupuesto in ['$160.000 – $400.000 COP',
+          '$400.000 – $800.000 COP', '$800.000 – $1.500.000 COP', 'Más de $1.500.000 COP'])
         && optionalText(request.resource.data, 'fecha', 10)
+        && (!('fecha' in request.resource.data) || request.resource.data.fecha.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$'))
         && optionalText(request.resource.data, 'origen', 200)
         && request.resource.data.estado == 'nuevo'
         && request.resource.data.creado == request.time;
