@@ -26,6 +26,7 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | Reseñas | Colección `resenas` en Firestore: las escriben clientes con proyecto entregado desde `mis-solicitudes.html`, se moderan en `admin.html` y las publicadas se muestran en Inicio (`js/main.js`) |
 | `js/documentos.js`, `js/documentos-modelo.js`, `js/documentos-archivos.js` | Generador de documentos del panel: cotizaciones y propuestas (plantillas oficiales) con vista previa y descarga en Word y PDF. Borradores en la colección `documentos` |
 | `assets/vendor/jspdf/` | jsPDF 4.2.1 (MIT): crea los PDF del generador. Se carga solo al generar el primer PDF |
+| `js/seguridad.js`, `SEGURIDAD.md` | Protección contra clickjacking del panel y del portal; resumen de las medidas de seguridad y tareas pendientes |
 | `js/estados.js` | Estados de una solicitud, compartidos por el panel y el portal |
 | `firestore.rules`, `firebase.json` | Reglas de seguridad de Firestore y configuración de emuladores |
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |

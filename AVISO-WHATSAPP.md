@@ -85,8 +85,8 @@ nunca aparece en la página pública.
 4. Pulsa **«Agregar propiedad de la secuencia de comandos»** otra vez y llena la segunda:
    - **Propiedad:** `WHATSAPP_PHONE`
    - **Valor:** copia **exactamente** lo que dice el mensaje de CallMeBot después de
-     *«API Activated for»*. Puede ser un número (por ejemplo `573114924385`) o un
-     identificador que termina en `@lid` (por ejemplo `109040663277680@lid`). Si es un
+     *«API Activated for»*. Puede ser un número (por ejemplo `573001234567`) o un
+     identificador que termina en `@lid` (por ejemplo `123456789012345@lid`). Si es un
      `@lid`, cópialo completo, con el `@lid` incluido.
 5. Pulsa **«Guardar propiedades de la secuencia de comandos»**.
 

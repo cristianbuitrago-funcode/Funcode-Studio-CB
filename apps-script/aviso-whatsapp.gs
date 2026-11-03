@@ -17,6 +17,7 @@
 
 var PANEL_URL = 'https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/admin.html';
 var TIPOS = ['Página web', 'Aplicación web', 'Solución educativa', 'Mejora de página existente', 'Integración de IA', 'Otro'];
+var PRESUPUESTOS = ['$160.000 – $400.000 COP', '$400.000 – $800.000 COP', '$800.000 – $1.500.000 COP', 'Más de $1.500.000 COP'];
 var MAX_AVISOS_POR_HORA = 10; // protección contra spam
 
 /** La página llama a esta función cada vez que alguien envía el formulario. */
@@ -30,7 +31,8 @@ function doPost(e) {
 
   var nombre = limpiar(datos.nombre, 80);
   var tipo = limpiar(datos.tipo, 40);
-  var presupuesto = limpiar(datos.presupuesto, 60) || 'Aún no lo sabe';
+  // Solo se aceptan las opciones del formulario: así nadie puede meter texto arbitrario en el aviso.
+  var presupuesto = PRESUPUESTOS.indexOf(datos.presupuesto) !== -1 ? datos.presupuesto : 'Aún no lo sabe';
   if (!nombre || TIPOS.indexOf(tipo) === -1) {
     return respuesta({ ok: false, error: 'solicitud incompleta' });
   }
@@ -122,8 +124,16 @@ function dentroDelLimite() {
   }
 }
 
+// Quita saltos de línea, formato de WhatsApp y enlaces: el aviso nunca lleva links escritos por terceros.
 function limpiar(valor, max) {
-  return String(valor || '').replace(/[\r\n\t]+/g, ' ').replace(/[*_~`]/g, '').trim().slice(0, max);
+  return String(valor || '')
+    .replace(/[\u0000-\u001f\u007f]+/g, ' ')
+    .replace(/[*_~`<>]/g, '')
+    .replace(/(https?:\/\/|www\.)\S*/gi, '[enlace]')
+    .replace(/\b[\w-]+(\.[\w-]+)*\.(com|co|net|org|io|me|ly|link|xyz|info|app|site|online|click|top|gl)\b\S*/gi, '[enlace]')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, max);
 }
 
 function respuesta(obj) {

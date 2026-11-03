@@ -365,13 +365,15 @@
     article.appendChild(el('p', { class: 'request-text' }, item.descripcion));
 
     var contact = el('div', { class: 'request-contact' });
-    var mail = el('a', {
-      class: 'btn btn-primary btn-sm',
-      href: 'mailto:' + item.correo +
-        '?subject=' + encodeURIComponent('Tu solicitud en Funcode Studio CB') +
-        '&body=' + encodeURIComponent('Hola, ' + firstName(item) + ':\n\nGracias por escribirnos sobre tu proyecto (' + item.tipo + ').\n\n')
-    }, 'Responder por correo');
-    contact.appendChild(mail);
+    // Solo se arma el enlace mailto con un correo de formato seguro (sin «?», «&» ni otros parámetros).
+    if (/^[a-z0-9._%+-]+@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i.test(item.correo || '')) {
+      contact.appendChild(el('a', {
+        class: 'btn btn-primary btn-sm',
+        href: 'mailto:' + item.correo +
+          '?subject=' + encodeURIComponent('Tu solicitud en Funcode Studio CB') +
+          '&body=' + encodeURIComponent('Hola, ' + firstName(item) + ':\n\nGracias por escribirnos sobre tu proyecto (' + item.tipo + ').\n\n')
+      }, 'Responder por correo'));
+    }
 
     var wa = waNumber(item.whatsapp);
     if (wa) {
