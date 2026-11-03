@@ -5,7 +5,7 @@ nav: inicio
 social_title: Funcode Studio CB — Soluciones digitales y productos tecnológicos
 -->
     <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <section class="hero" id="inicio" aria-labelledby="hero-title" data-mascota="¡Hola! Soy Funi, la mascota de Funcode. Te acompaño mientras recorres la página.">
       <div class="hero-bg" aria-hidden="true">
         <span class="glow glow-a"></span>
         <span class="glow glow-b"></span>
@@ -59,6 +59,12 @@ social_title: Funcode Studio CB — Soluciones digitales y productos tecnológic
       </div>
     </section>
 
+    <!-- ============ CINTA DE CÓDIGO (decorativa) ============ -->
+    <div class="code-marquee" aria-hidden="true">
+      <div class="cm-row"><span>&lt;header&gt;</span><span>git commit -m "nueva idea"</span><span>const web = crear(idea);</span><span>display: grid;</span><span>npm run build</span><span>@media (max-width: 600px)</span><span>✓ 0 errores</span><span>function aprender() {}</span></div>
+      <div class="cm-row cm-row--rev"><span>&lt;button&gt;Enviar&lt;/button&gt;</span><span>if (responsive) mostrar();</span><span>fetch('/solicitud')</span><span>deploy → GitHub Pages</span><span>let avance = 62;</span><span>&lt;/&gt;</span><span>import { ideas } from './tu-negocio'</span><span>while (aprendo) mejoro();</span></div>
+    </div>
+
     <!-- ============ SERVICIOS (resumen) ============ -->
     <section class="section" aria-labelledby="home-servicios">
       <div class="container">
@@ -80,7 +86,7 @@ social_title: Funcode Studio CB — Soluciones digitales y productos tecnológic
     </section>
 
     <!-- ============ PROYECTOS (resumen) ============ -->
-    <section class="section section--tinted" aria-labelledby="home-proyectos">
+    <section class="section section--tinted" aria-labelledby="home-proyectos" data-mascota="Estos proyectos son reales y están publicados. ¡Échales un vistazo!">
       <div class="container">
         <header class="section-head reveal">
           <p class="kicker">Portafolio</p>
@@ -153,8 +159,70 @@ social_title: Funcode Studio CB — Soluciones digitales y productos tecnológic
       </div>
     </section>
 
+    <!-- ============ DEL CÓDIGO A TU PROYECTO ============ -->
+    <section class="section section--tinted" id="codigo" aria-labelledby="home-codigo" data-mascota="Mira: así se ve el código por dentro. Cada línea se escribe y se prueba.">
+      <div class="container code-split">
+        <div class="code-copy reveal">
+          <p class="kicker">Del código a tu proyecto</p>
+          <h2 id="home-codigo">Cada proyecto empieza con una idea… <span class="text-gradient">y muchas líneas de código</span></h2>
+          <p>Escribimos el código a la medida de lo que necesitas, lo probamos y te mostramos avances antes de publicarlo.</p>
+          <ul class="code-points">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> Código hecho para tu proyecto</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg> Versiones preliminares para revisar</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Pruebas antes de publicar</li>
+          </ul>
+        </div>
+        <figure class="code-editor reveal anim-scope" aria-label="Animación decorativa: un código de ejemplo se escribe solo">
+          <div class="editor-bar" aria-hidden="true">
+            <span class="win-dots"><i></i><i></i><i></i></span>
+            <span class="editor-tab">tu-proyecto.js</span>
+          </div>
+          <pre class="editor-code" aria-hidden="true"><code data-typing></code></pre>
+          <p class="editor-terminal" aria-hidden="true"><span class="et-prompt">$</span> <span class="et-out" data-typing-out></span></p>
+          <div class="editor-bit" aria-hidden="true">{{char:bit}}</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PERSONAJES ============ -->
+    <section class="section" id="personajes" aria-labelledby="home-personajes" data-mascota="Ellos son mis amigos. Toca a cualquiera para saludarlo.">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="kicker kicker--gold">Personajes</p>
+          <h2 id="home-personajes">Conoce a los personajes de Funcode</h2>
+          <p>Son ilustraciones que representan lo que hacemos. Funcode Studio CB es un estudio pequeño: detrás de cada proyecto está su fundador.</p>
+        </header>
+        <ul class="cast">
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art">{{char:bit}}</div>
+            <h3>Bit</h3>
+            <p class="cast-role">El robot programador</p>
+            <p>Escribe el código de páginas web y aplicaciones.</p>
+          </li>
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art">{{char:pixela}}</div>
+            <h3>Pixela</h3>
+            <p class="cast-role">La diseñadora</p>
+            <p>Dibuja interfaces claras que se ven bien en celular y computador.</p>
+          </li>
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art">{{char:profe}}</div>
+            <h3>Profe Byte</h3>
+            <p class="cast-role">El búho profesor</p>
+            <p>Representa la tecnología educativa y la formación en programación.</p>
+          </li>
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art">{{char:chispa}}</div>
+            <h3>Chispa</h3>
+            <p class="cast-role">La inteligencia artificial</p>
+            <p>Una herramienta que nos ayuda, siempre con pruebas y revisión humana.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ============ RESEÑAS ============ -->
-    <section class="section section--tinted" id="resenas" aria-labelledby="home-resenas">
+    <section class="section section--tinted" id="resenas" aria-labelledby="home-resenas" data-mascota="Aquí solo opinan clientes con un proyecto entregado.">
       <div class="container">
         <header class="section-head reveal">
           <p class="kicker kicker--gold">Reseñas</p>
@@ -170,7 +238,7 @@ social_title: Funcode Studio CB — Soluciones digitales y productos tecnológic
     </section>
 
     <!-- ============ PRECIO ============ -->
-    <section class="section" aria-labelledby="home-precio">
+    <section class="section" aria-labelledby="home-precio" data-mascota="Los proyectos empiezan desde $160.000 COP y cada uno se cotiza según lo que necesita.">
       <div class="container">
         <div class="price-band reveal">
           <div>
@@ -187,7 +255,7 @@ social_title: Funcode Studio CB — Soluciones digitales y productos tecnológic
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="cta-band" aria-labelledby="cta-title">
+    <section class="cta-band" aria-labelledby="cta-title" data-mascota="¿Tienes una idea? ¡Cuéntanosla y revisamos si podemos ayudarte!" data-mascota-mood="happy">
       <div class="container">
         <div class="cta-card reveal">
           <h2 id="cta-title">¿Tienes una idea? <span class="text-gradient">Hagámosla realidad.</span></h2>

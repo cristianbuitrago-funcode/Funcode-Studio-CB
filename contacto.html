@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animaciones.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -98,7 +99,7 @@
   </header>
 
   <main id="contenido">
-    <section class="page-hero" aria-labelledby="page-title">
+    <section class="page-hero" aria-labelledby="page-title" data-mascota="Llena el formulario y cuéntanos tu idea. ¡Yo espero aquí!">
       <div class="page-hero-bg" aria-hidden="true"><span class="glow glow-a"></span><span class="grid-lines"></span></div>
       <div class="container">
         <p class="kicker">Contacto</p>
@@ -109,6 +110,29 @@
             <a class="btn btn-ghost" data-link="whatsapp" data-label="Hablar por WhatsApp" href="#formulario"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> <span class="btn-label">Hablar por WhatsApp</span></a>
         </div>
       </div>
+      <div class="page-hero-char anim-scope" aria-hidden="true"><svg class="char char-bit" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="110" cy="178" rx="80" ry="7"/>
+  <g class="bit-bits">
+    <text class="bit-bit b1" x="84" y="100">&lt;/&gt;</text>
+    <text class="bit-bit b2" x="122" y="100">{ }</text>
+    <text class="bit-bit b3" x="106" y="100">;</text>
+  </g>
+  <g class="bit-body">
+    <g class="bit-antenna"><path d="M110 34V18"/><circle cx="110" cy="14" r="6"/></g>
+    <rect class="bit-ear" x="62" y="54" width="10" height="22" rx="4"/>
+    <rect class="bit-ear" x="148" y="54" width="10" height="22" rx="4"/>
+    <rect class="bit-head" x="70" y="32" width="80" height="66" rx="22"/>
+    <rect class="bit-face" x="80" y="44" width="60" height="40" rx="12"/>
+    <g class="bit-eyes ch-blink"><rect x="94" y="55" width="9" height="15" rx="4.5"/><rect x="117" y="55" width="9" height="15" rx="4.5"/></g>
+    <path class="bit-mouth" d="M101 75q9 6 18 0"/>
+    <rect class="bit-torso" x="82" y="94" width="56" height="44" rx="14"/>
+  </g>
+  <rect class="bit-screen" x="64" y="104" width="92" height="58" rx="8"/>
+  <text class="bit-logo" x="110" y="139">&lt;/&gt;</text>
+  <g class="bit-arm bit-arm-l"><path d="M86 100Q58 108 58 150"/><circle cx="58" cy="154" r="7"/></g>
+  <g class="bit-arm bit-arm-r"><path d="M134 100Q162 108 162 150"/><circle cx="162" cy="154" r="7"/></g>
+  <path class="bit-base" d="M38 172H182L170 160H50Z"/>
+</svg></div>
     </section>
 
     <!-- ============ CONTACTO ============ -->
@@ -213,6 +237,7 @@
           <span class="brand-name">Funcode <span>Studio CB</span></span>
         </a>
         <p>Soluciones digitales. Productos propios. Aprendizaje continuo.</p>
+        <p class="footer-console" aria-hidden="true"><span class="fc-prompt">funcode@studio:~$</span> <span class="fc-text" data-typing-line="echo &quot;Hecho con código y aprendizaje continuo&quot;"></span><span class="fc-caret"></span></p>
       </div>
 
       <nav aria-label="Pie de página">
@@ -252,6 +277,7 @@
     <div class="container footer-bottom">
       <p>© 2026 Funcode Studio CB</p>
       <div class="footer-bottom-links">
+        <button type="button" class="to-top mascota-show" id="mascota-show" hidden>Mostrar a Funi</button>
         <a href="admin.html" class="to-top">Acceso del organizador</a>
         <a href="#top" class="to-top">Volver arriba ↑</a>
       </div>
@@ -263,7 +289,39 @@
     <span class="sr-only">Escribir por WhatsApp</span>
   </a>
 
+  <!-- Funi, la mascota (js/animaciones.js la muestra y la mueve con la página) -->
+  <div class="mascota" id="mascota" hidden>
+    <p class="mascota-bubble" id="mascota-bubble"></p>
+    <button class="mascota-btn" type="button" aria-label="Funi, la mascota de Funcode. Toca para ver un dato">
+      <svg class="funi" viewBox="0 0 120 150" aria-hidden="true" focusable="false">
+        <g class="fu-flame"><path class="fu-flame-out" d="M49 112Q60 150 71 112Z"/><path class="fu-flame-in" d="M54 112Q60 134 66 112Z"/></g>
+        <g class="fu-all">
+          <g class="fu-arm fu-arm-l"><path d="M24 74Q10 66 9 52"/><circle cx="9" cy="49" r="6"/></g>
+          <g class="fu-arm fu-arm-r"><path d="M96 74Q110 82 110 96"/><circle cx="110" cy="99" r="6"/></g>
+          <g class="fu-antenna"><path d="M60 24V11"/><circle cx="60" cy="8" r="6"/></g>
+          <rect class="fu-jet" x="48" y="102" width="24" height="10" rx="3"/>
+          <rect class="fu-body" x="18" y="22" width="84" height="84" rx="32"/>
+          <path class="fu-shine" d="M33 38q8-9 22-9"/>
+          <rect class="fu-face" x="30" y="37" width="60" height="44" rx="18"/>
+          <g class="fu-eye-open">
+            <circle class="fu-eye" cx="47" cy="58" r="7.5"/><circle class="fu-eye" cx="73" cy="58" r="7.5"/>
+            <g class="fu-pupils"><circle cx="47" cy="58" r="3.2"/><circle cx="73" cy="58" r="3.2"/></g>
+          </g>
+          <g class="fu-eye-happy"><path d="M40 61q7-9 14 0M66 61q7-9 14 0"/></g>
+          <g class="fu-eye-sleep"><path d="M40 59h14M66 59h14"/></g>
+          <path class="fu-mouth" d="M53 70q7 6 14 0"/>
+          <ellipse class="fu-mouth-open" cx="60" cy="72" rx="5" ry="4"/>
+          <circle class="ch-cheek" cx="36" cy="72" r="4"/><circle class="ch-cheek" cx="84" cy="72" r="4"/>
+          <text class="fu-chest" x="60" y="98">&lt;/&gt;</text>
+          <g class="fu-zz"><text x="94" y="32">z</text><text x="104" y="18">z</text></g>
+        </g>
+      </svg>
+    </button>
+    <button class="mascota-close" type="button" aria-label="Ocultar a Funi"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/animaciones.js" defer></script>
 </body>
 </html>
