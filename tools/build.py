@@ -49,7 +49,13 @@ def parse(path):
     return meta, text[match.end():]
 
 
+def characters(body):
+    """{{char:bit}} → contenido de src/partials/personajes/bit.html (ilustraciones SVG)."""
+    return re.sub(r'\{\{char:([a-z]+)\}\}', lambda m: partial('personajes/' + m.group(1)).strip(), body)
+
+
 def render(name, meta, body):
+    body = characters(body)
     filename = 'index.html' if name == 'index' else f'{name}.html'
     url = SITE if name == 'index' else SITE + filename
     extra_head = partial('schema') if name == 'index' else ''
@@ -82,8 +88,11 @@ def render(name, meta, body):
         + body.rstrip('\n')
         + '\n  </main>\n\n'
         + partial('footer')
+        + '\n'
+        + partial('mascota')
         + '\n  <script src="js/config.js" defer></script>\n'
         + '  <script src="js/main.js" defer></script>\n'
+        + '  <script src="js/animaciones.js" defer></script>\n'
         + '</body>\n</html>\n'
     )
     leftover = re.findall(r'\{\{[^}]+\}\}', page)

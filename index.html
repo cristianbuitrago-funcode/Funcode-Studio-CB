@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animaciones.css">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
@@ -116,7 +117,7 @@
 
   <main id="contenido">
     <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <section class="hero" id="inicio" aria-labelledby="hero-title" data-mascota="¡Hola! Soy Funi, la mascota de Funcode. Te acompaño mientras recorres la página.">
       <div class="hero-bg" aria-hidden="true">
         <span class="glow glow-a"></span>
         <span class="glow glow-b"></span>
@@ -170,6 +171,12 @@
       </div>
     </section>
 
+    <!-- ============ CINTA DE CÓDIGO (decorativa) ============ -->
+    <div class="code-marquee" aria-hidden="true">
+      <div class="cm-row"><span>&lt;header&gt;</span><span>git commit -m "nueva idea"</span><span>const web = crear(idea);</span><span>display: grid;</span><span>npm run build</span><span>@media (max-width: 600px)</span><span>✓ 0 errores</span><span>function aprender() {}</span></div>
+      <div class="cm-row cm-row--rev"><span>&lt;button&gt;Enviar&lt;/button&gt;</span><span>if (responsive) mostrar();</span><span>fetch('/solicitud')</span><span>deploy → GitHub Pages</span><span>let avance = 62;</span><span>&lt;/&gt;</span><span>import { ideas } from './tu-negocio'</span><span>while (aprendo) mejoro();</span></div>
+    </div>
+
     <!-- ============ SERVICIOS (resumen) ============ -->
     <section class="section" aria-labelledby="home-servicios">
       <div class="container">
@@ -191,7 +198,7 @@
     </section>
 
     <!-- ============ PROYECTOS (resumen) ============ -->
-    <section class="section section--tinted" aria-labelledby="home-proyectos">
+    <section class="section section--tinted" aria-labelledby="home-proyectos" data-mascota="Estos proyectos son reales y están publicados. ¡Échales un vistazo!">
       <div class="container">
         <header class="section-head reveal">
           <p class="kicker">Portafolio</p>
@@ -264,8 +271,189 @@
       </div>
     </section>
 
+    <!-- ============ DEL CÓDIGO A TU PROYECTO ============ -->
+    <section class="section section--tinted" id="codigo" aria-labelledby="home-codigo" data-mascota="Mira: así se ve el código por dentro. Cada línea se escribe y se prueba.">
+      <div class="container code-split">
+        <div class="code-copy reveal">
+          <p class="kicker">Del código a tu proyecto</p>
+          <h2 id="home-codigo">Cada proyecto empieza con una idea… <span class="text-gradient">y muchas líneas de código</span></h2>
+          <p>Escribimos el código a la medida de lo que necesitas, lo probamos y te mostramos avances antes de publicarlo.</p>
+          <ul class="code-points">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> Código hecho para tu proyecto</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg> Versiones preliminares para revisar</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Pruebas antes de publicar</li>
+          </ul>
+        </div>
+        <figure class="code-editor reveal anim-scope" aria-label="Animación decorativa: un código de ejemplo se escribe solo">
+          <div class="editor-bar" aria-hidden="true">
+            <span class="win-dots"><i></i><i></i><i></i></span>
+            <span class="editor-tab">tu-proyecto.js</span>
+          </div>
+          <pre class="editor-code" aria-hidden="true"><code data-typing></code></pre>
+          <p class="editor-terminal" aria-hidden="true"><span class="et-prompt">$</span> <span class="et-out" data-typing-out></span></p>
+          <div class="editor-bit" aria-hidden="true"><svg class="char char-bit" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="110" cy="178" rx="80" ry="7"/>
+  <g class="bit-bits">
+    <text class="bit-bit b1" x="84" y="100">&lt;/&gt;</text>
+    <text class="bit-bit b2" x="122" y="100">{ }</text>
+    <text class="bit-bit b3" x="106" y="100">;</text>
+  </g>
+  <g class="bit-body">
+    <g class="bit-antenna"><path d="M110 34V18"/><circle cx="110" cy="14" r="6"/></g>
+    <rect class="bit-ear" x="62" y="54" width="10" height="22" rx="4"/>
+    <rect class="bit-ear" x="148" y="54" width="10" height="22" rx="4"/>
+    <rect class="bit-head" x="70" y="32" width="80" height="66" rx="22"/>
+    <rect class="bit-face" x="80" y="44" width="60" height="40" rx="12"/>
+    <g class="bit-eyes ch-blink"><rect x="94" y="55" width="9" height="15" rx="4.5"/><rect x="117" y="55" width="9" height="15" rx="4.5"/></g>
+    <path class="bit-mouth" d="M101 75q9 6 18 0"/>
+    <rect class="bit-torso" x="82" y="94" width="56" height="44" rx="14"/>
+  </g>
+  <rect class="bit-screen" x="64" y="104" width="92" height="58" rx="8"/>
+  <text class="bit-logo" x="110" y="139">&lt;/&gt;</text>
+  <g class="bit-arm bit-arm-l"><path d="M86 100Q58 108 58 150"/><circle cx="58" cy="154" r="7"/></g>
+  <g class="bit-arm bit-arm-r"><path d="M134 100Q162 108 162 150"/><circle cx="162" cy="154" r="7"/></g>
+  <path class="bit-base" d="M38 172H182L170 160H50Z"/>
+</svg></div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PERSONAJES ============ -->
+    <section class="section" id="personajes" aria-labelledby="home-personajes" data-mascota="Ellos son mis amigos. Toca a cualquiera para saludarlo.">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="kicker kicker--gold">Personajes</p>
+          <h2 id="home-personajes">Conoce a los personajes de Funcode</h2>
+          <p>Son ilustraciones que representan lo que hacemos. Funcode Studio CB es un estudio pequeño: detrás de cada proyecto está su fundador.</p>
+        </header>
+        <ul class="cast">
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art"><svg class="char char-bit" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="110" cy="178" rx="80" ry="7"/>
+  <g class="bit-bits">
+    <text class="bit-bit b1" x="84" y="100">&lt;/&gt;</text>
+    <text class="bit-bit b2" x="122" y="100">{ }</text>
+    <text class="bit-bit b3" x="106" y="100">;</text>
+  </g>
+  <g class="bit-body">
+    <g class="bit-antenna"><path d="M110 34V18"/><circle cx="110" cy="14" r="6"/></g>
+    <rect class="bit-ear" x="62" y="54" width="10" height="22" rx="4"/>
+    <rect class="bit-ear" x="148" y="54" width="10" height="22" rx="4"/>
+    <rect class="bit-head" x="70" y="32" width="80" height="66" rx="22"/>
+    <rect class="bit-face" x="80" y="44" width="60" height="40" rx="12"/>
+    <g class="bit-eyes ch-blink"><rect x="94" y="55" width="9" height="15" rx="4.5"/><rect x="117" y="55" width="9" height="15" rx="4.5"/></g>
+    <path class="bit-mouth" d="M101 75q9 6 18 0"/>
+    <rect class="bit-torso" x="82" y="94" width="56" height="44" rx="14"/>
+  </g>
+  <rect class="bit-screen" x="64" y="104" width="92" height="58" rx="8"/>
+  <text class="bit-logo" x="110" y="139">&lt;/&gt;</text>
+  <g class="bit-arm bit-arm-l"><path d="M86 100Q58 108 58 150"/><circle cx="58" cy="154" r="7"/></g>
+  <g class="bit-arm bit-arm-r"><path d="M134 100Q162 108 162 150"/><circle cx="162" cy="154" r="7"/></g>
+  <path class="bit-base" d="M38 172H182L170 160H50Z"/>
+</svg></div>
+            <h3>Bit</h3>
+            <p class="cast-role">El robot programador</p>
+            <p>Escribe el código de páginas web y aplicaciones.</p>
+          </li>
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art"><svg class="char char-pixela" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="112" cy="178" rx="84" ry="7"/>
+  <g class="px-easel">
+    <path class="px-leg" d="M146 150 136 178M186 150 196 178"/>
+    <rect class="px-canvas" x="120" y="44" width="90" height="108" rx="8"/>
+    <path class="px-draw d1" pathLength="100" d="M131 55h68v11h-68z"/>
+    <path class="px-draw px-fill d2" pathLength="100" d="M131 74h68v32h-68z"/>
+    <path class="px-draw d3" pathLength="100" d="M131 116h56"/>
+    <path class="px-draw d4" pathLength="100" d="M131 126h42"/>
+    <path class="px-draw px-btn d5" pathLength="100" d="M136 134h22a5 5 0 0 1 0 10h-22a5 5 0 0 1 0-10z"/>
+  </g>
+  <g class="px-body">
+    <path class="px-shirt" d="M46 178 54 120Q72 106 90 120L98 178Z"/>
+    <g class="px-palette-arm"><path class="px-sleeve" d="M56 126Q40 136 38 152"/><ellipse class="px-palette" cx="34" cy="158" rx="16" ry="10"/><circle cx="27" cy="156" r="2.6" class="px-c1"/><circle cx="35" cy="153" r="2.6" class="px-c2"/><circle cx="42" cy="157" r="2.6" class="px-c3"/></g>
+    <rect class="px-skin" x="66" y="104" width="12" height="10" rx="3"/>
+    <circle class="px-skin" cx="72" cy="84" r="25"/>
+    <circle class="px-hair" cx="72" cy="52" r="11"/>
+    <path class="px-hair" d="M47 84Q46 58 72 58Q98 58 97 84Q90 70 76 68Q62 74 47 84Z"/>
+    <g class="ch-blink px-eyes"><circle cx="63" cy="86" r="3"/><circle cx="81" cy="86" r="3"/></g>
+    <circle class="ch-cheek" cx="57" cy="94" r="4"/><circle class="ch-cheek" cx="87" cy="94" r="4"/>
+    <path class="px-mouth" d="M66 96q6 5 12 0"/>
+    <g class="px-arm"><path class="px-sleeve" d="M86 124Q102 120 116 104"/><circle class="px-skin" cx="117" cy="103" r="5"/><path class="px-stylus" d="M117 103 129 90"/><circle class="px-tip" cx="130" cy="89" r="2.2"/></g>
+  </g>
+</svg></div>
+            <h3>Pixela</h3>
+            <p class="cast-role">La diseñadora</p>
+            <p>Dibuja interfaces claras que se ven bien en celular y computador.</p>
+          </li>
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art"><svg class="char char-profe" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="110" cy="178" rx="84" ry="7"/>
+  <g class="ow-board">
+    <rect class="ow-frame" x="124" y="30" width="88" height="74" rx="6"/>
+    <text class="ow-line l1" x="133" y="52">if (aprendo) {</text>
+    <text class="ow-line l2" x="141" y="68">mejoro();</text>
+    <text class="ow-line l3" x="133" y="84">}</text>
+    <path class="ow-chalk" d="M180 98h20"/>
+  </g>
+  <g class="ow-owl">
+    <path class="ow-feet" d="M62 170l-6 6M68 171v7M74 170l6 6M88 170l-6 6M94 171v7M100 170l6 6"/>
+    <ellipse class="ow-wing-l" cx="44" cy="128" rx="12" ry="28"/>
+    <ellipse class="ow-body" cx="80" cy="126" rx="40" ry="46"/>
+    <ellipse class="ow-belly" cx="80" cy="136" rx="25" ry="30"/>
+    <path class="ow-feather" d="M68 124q6 6 12 0q6 6 12 0M66 138q7 6 14 0q7 6 14 0M70 152q5 5 10 0q5 5 10 0"/>
+    <g class="ow-head">
+      <path class="ow-body" d="M50 74 46 52 66 64ZM110 74 114 52 94 64Z"/>
+      <ellipse class="ow-body" cx="80" cy="86" rx="37" ry="30"/>
+      <circle class="ow-disc" cx="66" cy="86" r="14"/><circle class="ow-disc" cx="94" cy="86" r="14"/>
+      <g class="ow-eyes ch-blink"><circle cx="66" cy="87" r="6"/><circle cx="94" cy="87" r="6"/><circle class="ow-shine" cx="68" cy="85" r="2"/><circle class="ow-shine" cx="96" cy="85" r="2"/></g>
+      <path class="ow-glasses" d="M51 86a15 15 0 1 0 30 0a15 15 0 1 0-30 0M79 86a15 15 0 1 0 30 0a15 15 0 1 0-30 0M80 85h0"/>
+      <path class="ow-beak" d="M75 98h10l-5 8z"/>
+      <path class="ow-cap" d="M50 56 80 44 110 56 80 68Z"/>
+      <path class="ow-capband" d="M64 61v8q16 7 32 0v-8"/>
+      <g class="ow-tassel"><path d="M80 56 104 60V74"/><circle cx="104" cy="77" r="3.5"/></g>
+    </g>
+    <g class="ow-pointer"><ellipse class="ow-wing-r" cx="116" cy="128" rx="11" ry="24"/><path class="ow-stick" d="M120 116 132 90"/><circle class="ow-stick-tip" cx="133" cy="88" r="2.5"/></g>
+  </g>
+</svg></div>
+            <h3>Profe Byte</h3>
+            <p class="cast-role">El búho profesor</p>
+            <p>Representa la tecnología educativa y la formación en programación.</p>
+          </li>
+          <li class="cast-card reveal anim-scope">
+            <div class="cast-art"><svg class="char char-chispa" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="110" cy="178" rx="80" ry="7"/>
+  <g class="cs-card">
+    <rect class="cs-paper" x="116" y="86" width="90" height="84" rx="10"/>
+    <rect class="cs-box" x="128" y="100" width="12" height="12" rx="3"/><path class="cs-text" d="M148 106h44"/>
+    <rect class="cs-box" x="128" y="122" width="12" height="12" rx="3"/><path class="cs-text" d="M148 128h36"/>
+    <rect class="cs-box" x="128" y="144" width="12" height="12" rx="3"/><path class="cs-text" d="M148 150h40"/>
+    <path class="cs-check c1" pathLength="100" d="M130 106l3 3 6-7"/>
+    <path class="cs-check c2" pathLength="100" d="M130 128l3 3 6-7"/>
+    <path class="cs-check c3" pathLength="100" d="M130 150l3 3 6-7"/>
+  </g>
+  <circle class="cs-glow" cx="74" cy="84" r="50"/>
+  <g class="cs-body">
+    <path class="cs-star" d="M74 26C80 62 90 72 126 82C90 92 80 102 74 138C68 102 58 92 22 82C58 72 68 62 74 26Z"/>
+    <g class="ch-blink cs-eyes"><circle cx="66" cy="80" r="3.4"/><circle cx="82" cy="80" r="3.4"/></g>
+    <circle class="ch-cheek" cx="60" cy="89" r="3.5"/><circle class="ch-cheek" cx="88" cy="89" r="3.5"/>
+    <path class="cs-mouth" d="M68 89q6 5 12 0"/>
+  </g>
+  <g class="cs-lens"><path class="cs-handle" d="M158 120l12 12"/><circle class="cs-glass" cx="150" cy="112" r="12"/></g>
+  <g class="cs-twinkles">
+    <path class="cs-tw t1" d="M28 40l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
+    <path class="cs-tw t2" d="M124 30l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+    <path class="cs-tw t3" d="M30 140l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+  </g>
+</svg></div>
+            <h3>Chispa</h3>
+            <p class="cast-role">La inteligencia artificial</p>
+            <p>Una herramienta que nos ayuda, siempre con pruebas y revisión humana.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ============ RESEÑAS ============ -->
-    <section class="section section--tinted" id="resenas" aria-labelledby="home-resenas">
+    <section class="section section--tinted" id="resenas" aria-labelledby="home-resenas" data-mascota="Aquí solo opinan clientes con un proyecto entregado.">
       <div class="container">
         <header class="section-head reveal">
           <p class="kicker kicker--gold">Reseñas</p>
@@ -281,7 +469,7 @@
     </section>
 
     <!-- ============ PRECIO ============ -->
-    <section class="section" aria-labelledby="home-precio">
+    <section class="section" aria-labelledby="home-precio" data-mascota="Los proyectos empiezan desde $160.000 COP y cada uno se cotiza según lo que necesita.">
       <div class="container">
         <div class="price-band reveal">
           <div>
@@ -298,7 +486,7 @@
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="cta-band" aria-labelledby="cta-title">
+    <section class="cta-band" aria-labelledby="cta-title" data-mascota="¿Tienes una idea? ¡Cuéntanosla y revisamos si podemos ayudarte!" data-mascota-mood="happy">
       <div class="container">
         <div class="cta-card reveal">
           <h2 id="cta-title">¿Tienes una idea? <span class="text-gradient">Hagámosla realidad.</span></h2>
@@ -321,6 +509,7 @@
           <span class="brand-name">Funcode <span>Studio CB</span></span>
         </a>
         <p>Soluciones digitales. Productos propios. Aprendizaje continuo.</p>
+        <p class="footer-console" aria-hidden="true"><span class="fc-prompt">funcode@studio:~$</span> <span class="fc-text" data-typing-line="echo &quot;Hecho con código y aprendizaje continuo&quot;"></span><span class="fc-caret"></span></p>
       </div>
 
       <nav aria-label="Pie de página">
@@ -360,6 +549,7 @@
     <div class="container footer-bottom">
       <p>© 2026 Funcode Studio CB</p>
       <div class="footer-bottom-links">
+        <button type="button" class="to-top mascota-show" id="mascota-show" hidden>Mostrar a Funi</button>
         <a href="admin.html" class="to-top">Acceso del organizador</a>
         <a href="#top" class="to-top">Volver arriba ↑</a>
       </div>
@@ -371,7 +561,39 @@
     <span class="sr-only">Escribir por WhatsApp</span>
   </a>
 
+  <!-- Funi, la mascota (js/animaciones.js la muestra y la mueve con la página) -->
+  <div class="mascota" id="mascota" hidden>
+    <p class="mascota-bubble" id="mascota-bubble"></p>
+    <button class="mascota-btn" type="button" aria-label="Funi, la mascota de Funcode. Toca para ver un dato">
+      <svg class="funi" viewBox="0 0 120 150" aria-hidden="true" focusable="false">
+        <g class="fu-flame"><path class="fu-flame-out" d="M49 112Q60 150 71 112Z"/><path class="fu-flame-in" d="M54 112Q60 134 66 112Z"/></g>
+        <g class="fu-all">
+          <g class="fu-arm fu-arm-l"><path d="M24 74Q10 66 9 52"/><circle cx="9" cy="49" r="6"/></g>
+          <g class="fu-arm fu-arm-r"><path d="M96 74Q110 82 110 96"/><circle cx="110" cy="99" r="6"/></g>
+          <g class="fu-antenna"><path d="M60 24V11"/><circle cx="60" cy="8" r="6"/></g>
+          <rect class="fu-jet" x="48" y="102" width="24" height="10" rx="3"/>
+          <rect class="fu-body" x="18" y="22" width="84" height="84" rx="32"/>
+          <path class="fu-shine" d="M33 38q8-9 22-9"/>
+          <rect class="fu-face" x="30" y="37" width="60" height="44" rx="18"/>
+          <g class="fu-eye-open">
+            <circle class="fu-eye" cx="47" cy="58" r="7.5"/><circle class="fu-eye" cx="73" cy="58" r="7.5"/>
+            <g class="fu-pupils"><circle cx="47" cy="58" r="3.2"/><circle cx="73" cy="58" r="3.2"/></g>
+          </g>
+          <g class="fu-eye-happy"><path d="M40 61q7-9 14 0M66 61q7-9 14 0"/></g>
+          <g class="fu-eye-sleep"><path d="M40 59h14M66 59h14"/></g>
+          <path class="fu-mouth" d="M53 70q7 6 14 0"/>
+          <ellipse class="fu-mouth-open" cx="60" cy="72" rx="5" ry="4"/>
+          <circle class="ch-cheek" cx="36" cy="72" r="4"/><circle class="ch-cheek" cx="84" cy="72" r="4"/>
+          <text class="fu-chest" x="60" y="98">&lt;/&gt;</text>
+          <g class="fu-zz"><text x="94" y="32">z</text><text x="104" y="18">z</text></g>
+        </g>
+      </svg>
+    </button>
+    <button class="mascota-close" type="button" aria-label="Ocultar a Funi"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/animaciones.js" defer></script>
 </body>
 </html>

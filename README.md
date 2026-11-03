@@ -14,6 +14,8 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `src/partials/*.html` | Partes comunes: `<head>`, menú, iconos (SVG sprite), pie de página y datos estructurados |
 | `apps-script/aviso-whatsapp.gs` | Código para Google Apps Script que te avisa por WhatsApp de cada solicitud (ver `AVISO-WHATSAPP.md`) |
 | `tools/build.py` | Une `src/partials` + `src/pages` y genera las páginas públicas |
+| `css/animaciones.css`, `js/animaciones.js` | Animaciones de código (lluvia de símbolos, cinta de código, editor que escribe solo, títulos que se descifran), los personajes ilustrados y la mascota Funi. Todo decorativo y quieto con «movimiento reducido» |
+| `src/partials/personajes/*.html`, `src/partials/mascota.html` | Personajes en SVG (Bit, Pixela, Profe Byte, Chispa) y la mascota Funi. En las páginas se insertan con `{{char:bit}}` |
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
 | `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes, endpoint del formulario y datos de Funcode para cotizaciones y propuestas (`estudio`) |
 | `js/main.js` | Menú móvil, animaciones de aparición, enlace activo, enlaces de contacto y formulario |
@@ -119,7 +121,8 @@ conviene reemplazarlas por capturas nuevas con el mismo nombre y tamaño (1200×
 ## Criterios de contenido
 
 La página vende sin exagerar: no incluye clientes, testimonios, cifras, años de experiencia ni
-certificaciones. Al agregar contenido nuevo, mantén ese criterio y usa solo proyectos y
+certificaciones. Los personajes y la mascota son ilustraciones y se presentan como tales; sus
+mensajes solo dicen cosas que son ciertas sobre Funcode. Al agregar contenido nuevo, mantén ese criterio y usa solo proyectos y
 funcionalidades reales.
 
 © 2026 Funcode Studio CB
