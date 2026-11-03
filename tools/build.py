@@ -87,12 +87,13 @@ def render(name, meta, body):
         + '\n  <main id="contenido">\n'
         + body.rstrip('\n')
         + '\n  </main>\n\n'
-        + partial('footer')
+        + characters(partial('footer'))
         + '\n'
         + partial('mascota')
         + '\n  <script src="js/config.js" defer></script>\n'
         + '  <script src="js/main.js" defer></script>\n'
         + '  <script src="js/animaciones.js" defer></script>\n'
+        + '  <script src="js/chat.js" defer></script>\n'
         + '</body>\n</html>\n'
     )
     leftover = re.findall(r'\{\{[^}]+\}\}', page)

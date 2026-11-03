@@ -39,6 +39,7 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animaciones.css">
+  <link rel="stylesheet" href="css/chat.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -245,6 +246,31 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
+    <div class="footer-flyer anim-scope" aria-hidden="true"><svg class="char char-chispa" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
+  <ellipse class="ch-shadow" cx="110" cy="178" rx="80" ry="7"/>
+  <g class="cs-card">
+    <rect class="cs-paper" x="116" y="86" width="90" height="84" rx="10"/>
+    <rect class="cs-box" x="128" y="100" width="12" height="12" rx="3"/><path class="cs-text" d="M148 106h44"/>
+    <rect class="cs-box" x="128" y="122" width="12" height="12" rx="3"/><path class="cs-text" d="M148 128h36"/>
+    <rect class="cs-box" x="128" y="144" width="12" height="12" rx="3"/><path class="cs-text" d="M148 150h40"/>
+    <path class="cs-check c1" pathLength="100" d="M130 106l3 3 6-7"/>
+    <path class="cs-check c2" pathLength="100" d="M130 128l3 3 6-7"/>
+    <path class="cs-check c3" pathLength="100" d="M130 150l3 3 6-7"/>
+  </g>
+  <circle class="cs-glow" cx="74" cy="84" r="50"/>
+  <g class="cs-body">
+    <path class="cs-star" d="M74 26C80 62 90 72 126 82C90 92 80 102 74 138C68 102 58 92 22 82C58 72 68 62 74 26Z"/>
+    <g class="ch-blink cs-eyes"><circle cx="66" cy="80" r="3.4"/><circle cx="82" cy="80" r="3.4"/></g>
+    <circle class="ch-cheek" cx="60" cy="89" r="3.5"/><circle class="ch-cheek" cx="88" cy="89" r="3.5"/>
+    <path class="cs-mouth" d="M68 89q6 5 12 0"/>
+  </g>
+  <g class="cs-lens"><path class="cs-handle" d="M158 120l12 12"/><circle class="cs-glass" cx="150" cy="112" r="12"/></g>
+  <g class="cs-twinkles">
+    <path class="cs-tw t1" d="M28 40l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
+    <path class="cs-tw t2" d="M124 30l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+    <path class="cs-tw t3" d="M30 140l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+  </g>
+</svg></div>
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand" href="./">
@@ -292,7 +318,6 @@
     <div class="container footer-bottom">
       <p>© 2026 Funcode Studio CB</p>
       <div class="footer-bottom-links">
-        <button type="button" class="to-top mascota-show" id="mascota-show" hidden>Mostrar a Funi</button>
         <a href="admin.html" class="to-top">Acceso del organizador</a>
         <a href="#top" class="to-top">Volver arriba ↑</a>
       </div>
@@ -307,7 +332,8 @@
   <!-- Funi, la mascota (js/animaciones.js la muestra y la mueve con la página) -->
   <div class="mascota" id="mascota" hidden>
     <p class="mascota-bubble" id="mascota-bubble"></p>
-    <button class="mascota-btn" type="button" aria-label="Funi, la mascota de Funcode. Toca para ver un dato">
+    <span class="mascota-chip" aria-hidden="true">💬 Pregúntame</span>
+    <button class="mascota-btn" type="button" aria-label="Pregúntale a Funi: abrir el chat de Funcode" aria-controls="chat" aria-expanded="false">
       <svg class="funi" viewBox="0 0 120 150" aria-hidden="true" focusable="false">
         <g class="fu-flame"><path class="fu-flame-out" d="M49 112Q60 150 71 112Z"/><path class="fu-flame-in" d="M54 112Q60 134 66 112Z"/></g>
         <g class="fu-all">
@@ -332,11 +358,31 @@
         </g>
       </svg>
     </button>
-    <button class="mascota-close" type="button" aria-label="Ocultar a Funi"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
+
+  <!-- Chat de Funi (js/chat.js). Responde con assets/chat/conocimiento.json o, si está configurado, con IA. -->
+  <section class="chat" id="chat" role="dialog" aria-labelledby="chat-title" aria-describedby="chat-sub" hidden>
+    <header class="chat-head">
+      <svg class="chat-avatar" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><path d="M60 22V9" stroke="#7cb4ff" stroke-width="4" stroke-linecap="round"/><circle cx="60" cy="7" r="6" fill="#f2c14e"/><rect x="14" y="20" width="92" height="84" rx="32" fill="#11285e" stroke="#4d8dff" stroke-width="4"/><rect x="28" y="36" width="64" height="44" rx="18" fill="#050b1a"/><circle cx="46" cy="57" r="7.5" fill="#5ee0ff"/><circle cx="74" cy="57" r="7.5" fill="#5ee0ff"/><path d="M52 69q8 6 16 0" fill="none" stroke="#5ee0ff" stroke-width="3.5" stroke-linecap="round"/></svg>
+      <div class="chat-title-wrap">
+        <h2 class="chat-title" id="chat-title">Pregúntale a Funi</h2>
+        <p class="chat-sub" id="chat-sub">Asistente automático de Funcode</p>
+      </div>
+      <button class="chat-close" type="button" id="chat-close" aria-label="Cerrar el chat"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-label="Conversación con Funi"></div>
+    <div class="chat-suggest" id="chat-suggest" aria-label="Preguntas sugeridas"></div>
+    <form class="chat-form" id="chat-form" autocomplete="off">
+      <label class="sr-only" for="chat-input">Escribe tu pregunta</label>
+      <textarea id="chat-input" rows="1" maxlength="500" placeholder="Escribe tu pregunta…" enterkeyhint="send"></textarea>
+      <button class="chat-send" type="submit" aria-label="Enviar pregunta"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </form>
+    <p class="chat-note">Respuestas automáticas: pueden tener errores. Para cotizar o datos de tu proyecto, habla con Cristian. No escribas datos privados aquí.</p>
+  </section>
 
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/animaciones.js" defer></script>
+  <script src="js/chat.js" defer></script>
 </body>
 </html>
