@@ -258,8 +258,6 @@
 }
 .fc-prompt { color: var(--blue-soft); }
 .fc-caret { width: 0.5em; height: 1em; background: var(--gold); animation: caret 1s steps(1) infinite; }
-.mascota-show { padding: 0; border: 0; background: none; cursor: pointer; font: inherit; }
-.mascota-show[hidden] { display: none; }
 
 /* ==========================================================================
    Funi, la mascota
@@ -281,6 +279,20 @@
 /* Modo «asomado»: celulares y tablets, Funi se asoma desde la esquina para no tapar el contenido. */
 .mascota.is-peek { transform: translate3d(-46%, 0, 0) rotate(12deg); }
 .mascota.is-peek.is-talking, .mascota.is-peek:hover, .mascota.is-peek:focus-within { transform: none; }
+.mascota.is-chatting { opacity: 0; pointer-events: none; }
+
+/* Etiqueta «Pregúntame» */
+.mascota-chip {
+  position: absolute; left: calc(100% - 6px); bottom: 22px; padding: 6px 12px; border-radius: 999px; white-space: nowrap;
+  background: var(--gold); color: #1d1500; font-size: 0.78rem; font-weight: 700; pointer-events: none;
+  box-shadow: 0 10px 24px -8px rgba(242, 193, 78, 0.7); animation: chip-pop 3.2s ease-in-out infinite;
+  transition: opacity 0.2s;
+}
+@keyframes chip-pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.08) rotate(-3deg); } 90% { transform: scale(1) rotate(2deg); } }
+.mascota.is-talking .mascota-chip { opacity: 0; }
+.mascota.is-wide .mascota-chip { left: 50%; bottom: auto; top: calc(100% + 4px); transform: translateX(-50%); animation: none; }
+.mascota.is-peek .mascota-chip { left: calc(100% - 4px); }
+.mascota.is-peek:not(.is-talking):not(:hover) .mascota-chip { left: 100%; transform: rotate(-12deg); animation: none; }
 
 .mascota-btn {
   display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer;
@@ -348,15 +360,50 @@
 .mascota.is-talking .mascota-bubble { opacity: 1; transform: none; }
 .mascota.is-wide .mascota-bubble { left: calc(100% + 6px); bottom: auto; top: 0; border-radius: 16px 16px 16px 4px; transform-origin: 0 0; }
 
-.mascota-close {
-  position: absolute; top: -6px; right: -10px; display: grid; place-items: center; width: 28px; height: 28px; padding: 0;
-  border-radius: 50%; border: 1px solid var(--line-strong); background: rgba(8, 16, 34, 0.92); color: var(--muted); cursor: pointer;
-  opacity: 0; transition: opacity 0.2s;
+/* ---------- Barra de progreso de lectura ---------- */
+.scroll-code {
+  position: fixed; z-index: 51; top: var(--header-h); left: 0; right: 0; height: 3px; pointer-events: none;
+  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--gold));
+  transform: scaleX(0); transform-origin: 0 50%; box-shadow: 0 0 10px rgba(56, 198, 255, 0.6);
 }
-.mascota-close .icon { width: 14px; height: 14px; }
-.mascota:hover .mascota-close, .mascota:focus-within .mascota-close, .mascota.is-talking .mascota-close { opacity: 1; }
-.mascota.is-peek:not(.is-talking):not(:hover):not(:focus-within) .mascota-close { pointer-events: none; }
-@media (hover: none) { .mascota.is-peek.is-talking .mascota-close { opacity: 1; } }
+
+/* ---------- Rastro de código y explosión de símbolos ---------- */
+.code-trail, .code-burst {
+  position: fixed; z-index: 70; pointer-events: none; translate: -50% -50%;
+  font: 700 13px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--cyan);
+  text-shadow: 0 0 8px rgba(56, 198, 255, 0.8);
+}
+.code-trail { animation: trail 0.9s ease-out forwards; }
+.code-trail:nth-of-type(3n) { color: var(--gold); text-shadow: 0 0 8px rgba(242, 193, 78, 0.8); }
+@keyframes trail { from { opacity: 0.9; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-26px) scale(0.6); } }
+.code-burst { font-size: 14px; color: var(--gold); animation: burst 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
+@keyframes burst { from { opacity: 1; transform: translate(0, 0) scale(0.6); } to { opacity: 0; transform: translate(var(--bx), var(--by)) scale(1.2) rotate(25deg); } }
+
+/* ---------- Tarjetas que se inclinan ---------- */
+.tilt { transform-style: preserve-3d; }
+.tilt.is-tilting {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px) !important;
+  transition: transform 0.08s linear !important;
+  box-shadow: 0 24px 50px -24px rgba(47, 107, 255, 0.7), 0 0 0 1px rgba(124, 180, 255, 0.35);
+}
+
+/* ---------- Brillo del texto con degradado ---------- */
+.hero .text-gradient, .page-hero .text-gradient, .cta-card .text-gradient {
+  background-size: 220% auto; animation: shimmer 7s ease-in-out infinite alternate;
+}
+@keyframes shimmer { to { background-position: 100% 50%; } }
+
+/* ---------- Chispa vuela por el pie de página ---------- */
+.site-footer { position: relative; overflow: hidden; }
+.footer-flyer { position: absolute; top: 6px; left: 0; width: 70px; pointer-events: none; opacity: 0.85; animation: flyer 26s linear infinite; }
+@keyframes flyer {
+  0% { transform: translate3d(-90px, 10px, 0); }
+  25% { transform: translate3d(25vw, -2px, 0); }
+  50% { transform: translate3d(50vw, 14px, 0); }
+  75% { transform: translate3d(75vw, 0, 0); }
+  100% { transform: translate3d(calc(100vw + 20px), 8px, 0); }
+}
+.footer-flyer .cs-card, .footer-flyer .cs-lens, .footer-flyer .ch-shadow { display: none; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
@@ -395,4 +442,7 @@
   .ow-line, .bit-bit { opacity: 1; }
   .bit-bit { display: none; }
   .mascota, .mascota.is-peek, .mascota.is-peek.is-talking { transform: none; transition: none; }
+  .footer-flyer, .mascota-chip { animation: none; }
+  .footer-flyer { left: auto; right: 16px; }
+  .scroll-code { display: none; }
 }

@@ -1,7 +1,8 @@
   <!-- Funi, la mascota (js/animaciones.js la muestra y la mueve con la página) -->
   <div class="mascota" id="mascota" hidden>
     <p class="mascota-bubble" id="mascota-bubble"></p>
-    <button class="mascota-btn" type="button" aria-label="Funi, la mascota de Funcode. Toca para ver un dato">
+    <span class="mascota-chip" aria-hidden="true">💬 Pregúntame</span>
+    <button class="mascota-btn" type="button" aria-label="Pregúntale a Funi: abrir el chat de Funcode" aria-controls="chat" aria-expanded="false">
       <svg class="funi" viewBox="0 0 120 150" aria-hidden="true" focusable="false">
         <g class="fu-flame"><path class="fu-flame-out" d="M49 112Q60 150 71 112Z"/><path class="fu-flame-in" d="M54 112Q60 134 66 112Z"/></g>
         <g class="fu-all">
@@ -26,5 +27,24 @@
         </g>
       </svg>
     </button>
-    <button class="mascota-close" type="button" aria-label="Ocultar a Funi"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
+
+  <!-- Chat de Funi (js/chat.js). Responde con assets/chat/conocimiento.json o, si está configurado, con IA. -->
+  <section class="chat" id="chat" role="dialog" aria-labelledby="chat-title" aria-describedby="chat-sub" hidden>
+    <header class="chat-head">
+      <svg class="chat-avatar" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><path d="M60 22V9" stroke="#7cb4ff" stroke-width="4" stroke-linecap="round"/><circle cx="60" cy="7" r="6" fill="#f2c14e"/><rect x="14" y="20" width="92" height="84" rx="32" fill="#11285e" stroke="#4d8dff" stroke-width="4"/><rect x="28" y="36" width="64" height="44" rx="18" fill="#050b1a"/><circle cx="46" cy="57" r="7.5" fill="#5ee0ff"/><circle cx="74" cy="57" r="7.5" fill="#5ee0ff"/><path d="M52 69q8 6 16 0" fill="none" stroke="#5ee0ff" stroke-width="3.5" stroke-linecap="round"/></svg>
+      <div class="chat-title-wrap">
+        <h2 class="chat-title" id="chat-title">Pregúntale a Funi</h2>
+        <p class="chat-sub" id="chat-sub">Asistente automático de Funcode</p>
+      </div>
+      <button class="chat-close" type="button" id="chat-close" aria-label="Cerrar el chat"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-label="Conversación con Funi"></div>
+    <div class="chat-suggest" id="chat-suggest" aria-label="Preguntas sugeridas"></div>
+    <form class="chat-form" id="chat-form" autocomplete="off">
+      <label class="sr-only" for="chat-input">Escribe tu pregunta</label>
+      <textarea id="chat-input" rows="1" maxlength="500" placeholder="Escribe tu pregunta…" enterkeyhint="send"></textarea>
+      <button class="chat-send" type="submit" aria-label="Enviar pregunta"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </form>
+    <p class="chat-note">Respuestas automáticas: pueden tener errores. Para cotizar o datos de tu proyecto, habla con Cristian. No escribas datos privados aquí.</p>
+  </section>

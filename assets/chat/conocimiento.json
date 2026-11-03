@@ -1,0 +1,611 @@
+{
+ "version": 1,
+ "actualizado": "2026-11-03",
+ "datos": "Funcode Studio CB es un estudio tecnológico en crecimiento de Bogotá, Colombia. Lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de sexto semestre de Licenciatura en Informática en la Corporación Universitaria Minuto de Dios (UNIMINUTO). Detrás de cada proyecto está él; los personajes de la página (Bit, Pixela, Profe Byte, Chispa y la mascota Funi) son ilustraciones, no personas.\n\nSERVICIOS: desarrollo web (páginas modernas y responsive); soluciones digitales (aplicaciones y herramientas web pequeñas y medianas, incluidas automatizaciones con Google Apps Script); tecnología educativa (plataformas, herramientas y experiencias digitales para educación); inteligencia artificial (como herramienta de desarrollo e implementación de herramientas de IA en proyectos); formación (cursos y talleres de programación e IA, robótica educativa con Scratch, Arduino y Tinkercad, y convivencia digital); mantenimiento y mejoras de páginas y proyectos existentes.\nTrabajan principalmente proyectos pequeños y medianos: páginas web, aplicaciones web, plataformas educativas, herramientas digitales, integraciones con servicios externos, proyectos con Firebase y prototipos funcionales. Se evalúan caso por caso: sistemas con gran cantidad de usuarios, arquitecturas complejas, bases de datos de gran escala e infraestructura avanzada. Si un proyecto supera el alcance actual, lo dicen con transparencia antes de prometer algo que no puedan entregar bien.\nLos videojuegos son productos propios de Funcode y NO se ofrecen como servicio por encargo.\n\nPRECIOS (de referencia, «desde», no tarifas fijas; cada proyecto se cotiza según alcance, diseño, funcionalidades y complejidad, y antes de empezar el cliente recibe una propuesta con el alcance y el valor acordados):\n- Básico: desde $160.000 COP. Landing pages, página informativa, información del negocio, galería, botones de WhatsApp y redes, diseño responsive.\n- Profesional: desde $400.000 COP. Varias secciones, diseño personalizado, formularios, catálogos, interacciones y funcionalidades adicionales.\n- Personalizado: con cotización. Aplicaciones web, sistemas educativos, usuarios, Firebase, integraciones y funcionalidades específicas.\nLa forma de pago se acuerda en la cotización de cada proyecto (no hay una forma de pago publicada).\n\nTIEMPOS: los proyectos básicos pueden estar listos en pocos días; se establece un plazo de hasta 7 días hábiles para proyectos básicos, según el alcance y que el cliente entregue el material necesario. Proyectos más grandes: el tiempo se define en la propuesta.\n\nPROCESO (6 etapas): 1) Entendemos la idea y las necesidades. 2) Proponemos alcance, funcionalidades y presupuesto. 3) Desarrollamos. 4) Mostramos avances con versiones preliminares. 5) Probamos funcionamiento, responsive y errores. 6) Entregamos y publicamos el proyecto acordado. El cliente ve avances y puede pedir ajustes antes del final.\nIA: la usan como herramienta de apoyo (explorar ideas, acelerar tareas, analizar problemas), siempre con revisión, pruebas y decisiones humanas.\n\nPROYECTOS REALES: LifeCoinQuest (producto propio, productividad gamificada para Android y web), Ajedrez Inclusivo (aplicación web educativa de ajedrez accesible), Ofimática 9° (plataforma educativa de Word y Excel para grado 9°, con Firebase y panel docente) y Camisas Col (sitio web con automatización en Google Apps Script para una marca textil, mayo de 2026).\nRESEÑAS: solo pueden escribirlas clientes con un proyecto entregado; aparecen en Inicio cuando se publican.\n\nCONTACTO: formulario en contacto.html; WhatsApp +57 320 292 0181; correo buitragocristianespinosa@gmail.com. Después de enviar el formulario, el cliente puede seguir su solicitud en mis-solicitudes.html entrando con la cuenta de Google del correo que usó.\nPáginas del sitio: precios.html, servicios.html, proyectos.html, proceso.html, nosotros.html, contacto.html, mis-solicitudes.html.",
+ "intenciones": [
+  {
+   "id": "saludo",
+   "claves": [
+    "hola",
+    "buenas",
+    "buenos dias",
+    "buenas tardes",
+    "buenas noches",
+    "hey",
+    "saludos",
+    "que tal"
+   ],
+   "respuesta": "¡Hola! Soy Funi, el asistente de Funcode Studio CB. Pregúntame por precios, tiempos, servicios o cómo pedir tu proyecto."
+  },
+  {
+   "id": "gracias",
+   "claves": [
+    "gracias",
+    "muchas gracias",
+    "genial",
+    "perfecto",
+    "listo",
+    "vale"
+   ],
+   "respuesta": "¡Con gusto! Si quieres avanzar con tu proyecto, puedes llenar el formulario o escribirnos por WhatsApp.",
+   "enlaces": [
+    {
+     "texto": "Solicitar proyecto",
+     "href": "contacto.html"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "funi",
+   "claves": [
+    "quien eres",
+    "que eres",
+    "eres un robot",
+    "eres humano",
+    "eres una ia",
+    "funi",
+    "mascota"
+   ],
+   "respuesta": "Soy Funi, la mascota de Funcode. Respondo preguntas frecuentes de forma automática, así que puedo equivocarme. Para algo puntual de tu proyecto, lo mejor es hablar con Cristian por WhatsApp.",
+   "whatsapp": true
+  },
+  {
+   "id": "precio",
+   "claves": [
+    "cuanto cuesta",
+    "cuanto vale",
+    "cuanto cobran",
+    "precio",
+    "precios",
+    "costo",
+    "costos",
+    "valor",
+    "tarifa",
+    "presupuesto",
+    "barato",
+    "economico",
+    "cotizacion cuanto",
+    "cuanto cuesta una pagina",
+    "cuanto vale una pagina",
+    "precio de una pagina",
+    "cuanto cobran por una pagina",
+    "cuanto cuesta una app",
+    "cuanto cuesta una aplicacion"
+   ],
+   "respuesta": "Los proyectos empiezan desde $160.000 COP (plan Básico). El plan Profesional es desde $400.000 COP y los proyectos personalizados se cotizan. Son precios de referencia: el valor final depende del alcance, el diseño y las funcionalidades, y lo recibes en una propuesta antes de empezar.",
+   "enlaces": [
+    {
+     "texto": "Ver precios",
+     "href": "precios.html"
+    },
+    {
+     "texto": "Pedir cotización",
+     "href": "contacto.html"
+    }
+   ]
+  },
+  {
+   "id": "planes",
+   "claves": [
+    "plan",
+    "planes",
+    "basico",
+    "profesional",
+    "personalizado",
+    "que incluye",
+    "incluye"
+   ],
+   "respuesta": "Básico (desde $160.000 COP): landing page o página informativa, galería, botones de WhatsApp y redes, diseño responsive. Profesional (desde $400.000 COP): varias secciones, diseño personalizado, formularios, catálogos e interacciones. Personalizado (con cotización): aplicaciones web, sistemas educativos, usuarios, Firebase e integraciones.",
+   "enlaces": [
+    {
+     "texto": "Ver planes",
+     "href": "precios.html"
+    }
+   ]
+  },
+  {
+   "id": "tiempo",
+   "claves": [
+    "cuanto tarda",
+    "cuanto demora",
+    "cuanto se demora",
+    "demora",
+    "tarda",
+    "tiempo",
+    "tiempos",
+    "plazo",
+    "dias",
+    "semanas",
+    "rapido",
+    "urgente",
+    "cuando estaria",
+    "entrega"
+   ],
+   "respuesta": "Los proyectos básicos pueden estar listos en pocos días: el plazo es de hasta 7 días hábiles, según el alcance y que entregues a tiempo el material (textos, fotos, logo). En proyectos más grandes el tiempo se define en la propuesta.",
+   "enlaces": [
+    {
+     "texto": "Cómo trabajamos",
+     "href": "proceso.html"
+    }
+   ]
+  },
+  {
+   "id": "servicios",
+   "claves": [
+    "que hacen",
+    "servicios",
+    "ofrecen",
+    "a que se dedican",
+    "que trabajos",
+    "en que me pueden ayudar",
+    "que hacen ustedes"
+   ],
+   "respuesta": "Hacemos páginas web, aplicaciones y herramientas web, tecnología educativa, integración de inteligencia artificial, formación en programación y robótica educativa, y mantenimiento de páginas existentes. Sobre todo para proyectos pequeños y medianos.",
+   "enlaces": [
+    {
+     "texto": "Ver servicios",
+     "href": "servicios.html"
+    }
+   ]
+  },
+  {
+   "id": "web",
+   "claves": [
+    "pagina web",
+    "sitio web",
+    "pagina",
+    "landing",
+    "landing page",
+    "pagina para mi negocio",
+    "web para mi negocio",
+    "pagina informativa"
+   ],
+   "respuesta": "¡Sí! Las páginas web son nuestro servicio principal. Una landing o página informativa entra en el plan Básico (desde $160.000 COP) y una página con varias secciones, formularios o catálogo en el Profesional (desde $400.000 COP). Todas se adaptan a celular y computador.",
+   "enlaces": [
+    {
+     "texto": "Ver precios",
+     "href": "precios.html"
+    },
+    {
+     "texto": "Solicitar mi página",
+     "href": "contacto.html"
+    }
+   ]
+  },
+  {
+   "id": "tienda",
+   "claves": [
+    "tienda en linea",
+    "tienda virtual",
+    "tienda online",
+    "ecommerce",
+    "e-commerce",
+    "carrito",
+    "vender en linea",
+    "pagos en linea",
+    "pasarela",
+    "catalogo",
+    "productos",
+    "tiendas",
+    "vender por internet"
+   ],
+   "respuesta": "Los catálogos de productos entran en el plan Profesional. Para una tienda con carrito o pagos en línea hay que revisar tu caso: cuéntanos qué necesitas y te decimos con claridad si podemos hacerlo bien y cuánto costaría.",
+   "enlaces": [
+    {
+     "texto": "Contar mi idea",
+     "href": "contacto.html"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "movil",
+   "claves": [
+    "app movil",
+    "aplicacion movil",
+    "android",
+    "iphone",
+    "ios",
+    "play store",
+    "app store",
+    "celular app"
+   ],
+   "respuesta": "Las aplicaciones web que hacemos funcionan en el celular. Una app para tiendas como Play Store o App Store se evalúa según el proyecto; LifeCoinQuest, uno de nuestros productos propios, tiene versión para Android. Cuéntanos tu idea y la revisamos.",
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    },
+    {
+     "texto": "Contar mi idea",
+     "href": "contacto.html"
+    }
+   ]
+  },
+  {
+   "id": "app",
+   "claves": [
+    "aplicacion",
+    "aplicacion web",
+    "app",
+    "sistema",
+    "software",
+    "plataforma",
+    "inventario",
+    "agenda",
+    "reservas",
+    "login",
+    "usuarios",
+    "base de datos",
+    "firebase"
+   ],
+   "respuesta": "Desarrollamos aplicaciones y herramientas web pequeñas y medianas (con usuarios, Firebase o integraciones). Se cotizan según lo que necesites. Los sistemas muy grandes o con muchísimos usuarios se evalúan caso por caso.",
+   "enlaces": [
+    {
+     "texto": "Pedir cotización",
+     "href": "contacto.html"
+    },
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ]
+  },
+  {
+   "id": "educacion",
+   "claves": [
+    "educacion",
+    "educativa",
+    "colegio",
+    "docente",
+    "profesor",
+    "estudiantes",
+    "curso",
+    "cursos",
+    "clases",
+    "taller",
+    "talleres",
+    "robotica",
+    "scratch",
+    "arduino",
+    "tinkercad",
+    "capacitacion",
+    "formacion",
+    "enseñar",
+    "aprender a programar"
+   ],
+   "respuesta": "La tecnología educativa es parte de Funcode: plataformas y herramientas para educación (como Ofimática 9°) y formación en programación, IA, robótica educativa (Scratch, Arduino, Tinkercad) y convivencia digital.",
+   "enlaces": [
+    {
+     "texto": "Ver servicios",
+     "href": "servicios.html"
+    },
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ]
+  },
+  {
+   "id": "ia",
+   "claves": [
+    "inteligencia artificial",
+    "ia",
+    "chatgpt",
+    "chatbot",
+    "bot",
+    "automatizar",
+    "automatizacion",
+    "apps script"
+   ],
+   "respuesta": "Usamos la IA como herramienta de apoyo, siempre con revisión y pruebas, y también podemos integrar herramientas de IA o automatizaciones (por ejemplo con Google Apps Script) en tu proyecto. Cada caso se cotiza.",
+   "enlaces": [
+    {
+     "texto": "IA como herramienta",
+     "href": "servicios.html#ia"
+    }
+   ]
+  },
+  {
+   "id": "videojuegos",
+   "claves": [
+    "videojuego",
+    "videojuegos",
+    "juego",
+    "juegos",
+    "game"
+   ],
+   "respuesta": "Los videojuegos son productos propios de Funcode y por ahora no se hacen por encargo. Sí hacemos experiencias educativas con gamificación, como Ofimática 9°.",
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ]
+  },
+  {
+   "id": "grande",
+   "claves": [
+    "proyecto grande",
+    "grandes",
+    "muchos usuarios",
+    "escala",
+    "empresa grande",
+    "complejo",
+    "complejos"
+   ],
+   "respuesta": "Trabajamos sobre todo proyectos pequeños y medianos. Los de mayor complejidad se evalúan uno por uno, y si algo supera nuestro alcance te lo decimos con transparencia antes de empezar.",
+   "enlaces": [
+    {
+     "texto": "Qué proyectos hacemos",
+     "href": "servicios.html#alcance"
+    }
+   ]
+  },
+  {
+   "id": "mejoras",
+   "claves": [
+    "ya tengo pagina",
+    "mejorar mi pagina",
+    "arreglar",
+    "mantenimiento",
+    "actualizar",
+    "modificar mi pagina",
+    "rediseño",
+    "rediseñar",
+    "soporte"
+   ],
+   "respuesta": "Sí, hacemos mantenimiento y mejoras: ajustes, correcciones y nuevas funciones para páginas y proyectos que ya existen. Cuéntanos qué tienes y qué quieres cambiar.",
+   "enlaces": [
+    {
+     "texto": "Solicitar mejora",
+     "href": "contacto.html"
+    }
+   ]
+  },
+  {
+   "id": "avances",
+   "claves": [
+    "avances",
+    "ver el avance",
+    "progreso",
+    "como va",
+    "revisar antes",
+    "cambios",
+    "ajustes",
+    "correcciones"
+   ],
+   "respuesta": "Sí. Durante el proceso te mostramos versiones preliminares para que veas el avance y pidas ajustes relacionados con el alcance acordado antes de la entrega.",
+   "enlaces": [
+    {
+     "texto": "Cómo trabajamos",
+     "href": "proceso.html"
+    }
+   ]
+  },
+  {
+   "id": "proceso",
+   "claves": [
+    "como trabajan",
+    "proceso",
+    "pasos",
+    "como funciona",
+    "metodologia",
+    "etapas"
+   ],
+   "respuesta": "Trabajamos en 6 etapas: entendemos tu idea, proponemos alcance y presupuesto, desarrollamos, te mostramos avances, probamos y entregamos el proyecto publicado.",
+   "enlaces": [
+    {
+     "texto": "Ver el proceso",
+     "href": "proceso.html"
+    }
+   ]
+  },
+  {
+   "id": "cotizar",
+   "claves": [
+    "cotizar",
+    "cotizacion",
+    "contratar",
+    "empezar",
+    "quiero una",
+    "quiero un",
+    "necesito una",
+    "necesito un",
+    "como pido",
+    "solicitar",
+    "pedir",
+    "me interesa"
+   ],
+   "respuesta": "¡Genial! Llena el formulario con tu idea y te enviamos una propuesta con alcance, tiempo y valor. Si prefieres, escríbenos por WhatsApp.",
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "contacto",
+   "claves": [
+    "contacto",
+    "whatsapp",
+    "telefono",
+    "numero",
+    "celular",
+    "correo",
+    "email",
+    "llamar",
+    "hablar con alguien",
+    "asesor",
+    "humano",
+    "persona"
+   ],
+   "respuesta": "Puedes escribir a Cristian por WhatsApp al +57 320 292 0181, al correo buitragocristianespinosa@gmail.com o usar el formulario de la página.",
+   "enlaces": [
+    {
+     "texto": "Formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "seguimiento",
+   "claves": [
+    "mi solicitud",
+    "estado",
+    "seguimiento",
+    "ya envie",
+    "ya llene",
+    "respuesta",
+    "mis solicitudes"
+   ],
+   "respuesta": "Entra a «Mis solicitudes» con la cuenta de Google del correo que pusiste en el formulario. Ahí ves el estado y los mensajes de tu solicitud en tiempo real.",
+   "enlaces": [
+    {
+     "texto": "Mis solicitudes",
+     "href": "mis-solicitudes.html"
+    }
+   ]
+  },
+  {
+   "id": "portafolio",
+   "claves": [
+    "portafolio",
+    "proyectos",
+    "ejemplos",
+    "trabajos",
+    "que han hecho",
+    "clientes",
+    "referencias",
+    "muestras"
+   ],
+   "respuesta": "Puedes ver proyectos reales: LifeCoinQuest, Ajedrez Inclusivo, Ofimática 9° y el sitio con automatización de Camisas Col.",
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ]
+  },
+  {
+   "id": "nosotros",
+   "claves": [
+    "quien esta",
+    "quienes son",
+    "fundador",
+    "cristian",
+    "dueño",
+    "equipo",
+    "donde estan",
+    "ubicacion",
+    "ciudad",
+    "bogota",
+    "de donde son"
+   ],
+   "respuesta": "Funcode Studio CB lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de Licenciatura en Informática en UNIMINUTO, en Bogotá, Colombia.",
+   "enlaces": [
+    {
+     "texto": "Conocer más",
+     "href": "nosotros.html"
+    }
+   ]
+  },
+  {
+   "id": "resenas",
+   "claves": [
+    "reseña",
+    "reseñas",
+    "opiniones",
+    "comentarios",
+    "testimonios",
+    "confiable",
+    "confianza"
+   ],
+   "respuesta": "Las reseñas de la página solo las pueden escribir clientes con un proyecto entregado, así que cada una es de alguien que trabajó con Funcode.",
+   "enlaces": [
+    {
+     "texto": "Ver reseñas",
+     "href": "index.html#resenas"
+    }
+   ]
+  },
+  {
+   "id": "pago",
+   "claves": [
+    "forma de pago",
+    "formas de pago",
+    "pagar",
+    "pago",
+    "anticipo",
+    "cuotas",
+    "nequi",
+    "daviplata",
+    "transferencia",
+    "tarjeta",
+    "efectivo",
+    "paga",
+    "se paga",
+    "como pago",
+    "metodos de pago",
+    "medios de pago",
+    "pago por partes"
+   ],
+   "respuesta": "La forma de pago se acuerda en la cotización de cada proyecto. Para confirmar opciones, escríbenos por WhatsApp.",
+   "enlaces": [
+    {
+     "texto": "Pedir cotización",
+     "href": "contacto.html"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "hosting",
+   "claves": [
+    "dominio",
+    "hosting",
+    "alojamiento",
+    "servidor",
+    "publicar",
+    "subir mi pagina",
+    "punto com"
+   ],
+   "respuesta": "La entrega incluye publicar el proyecto acordado. Qué incluye exactamente (por ejemplo, dominio o alojamiento) se define en la propuesta de tu proyecto, así que pregúntanos al cotizar.",
+   "enlaces": [
+    {
+     "texto": "Pedir cotización",
+     "href": "contacto.html"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "responsive",
+   "claves": [
+    "responsive",
+    "celular",
+    "movil",
+    "adaptable",
+    "se ve en el celular"
+   ],
+   "respuesta": "Sí, todas las páginas que hacemos se adaptan a celular, tablet y computador.",
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ]
+  }
+ ],
+ "sugerencias": [
+  "¿Cuánto cuesta una página web?",
+  "¿Cuánto se demora?",
+  "¿Qué servicios ofrecen?",
+  "¿Cómo pido una cotización?"
+ ],
+ "sinRespuesta": "No tengo una respuesta segura para eso. Para no inventarte nada, te recomiendo escribirle a Cristian por WhatsApp o contarnos tu idea en el formulario."
+}

@@ -232,15 +232,107 @@
   });
 
   /* ------------------------------------------------------------------
+   * Barra de progreso de lectura («compilando» la página)
+   * ------------------------------------------------------------------ */
+  var bar = document.createElement('div');
+  bar.className = 'scroll-code';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  var barFrame = 0;
+  function updateBar() {
+    barFrame = 0;
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    bar.style.transform = 'scaleX(' + Math.min(1, window.pageYOffset / max).toFixed(4) + ')';
+  }
+  window.addEventListener('scroll', function () { if (!barFrame) barFrame = requestAnimationFrame(updateBar); }, { passive: true });
+  updateBar();
+
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ------------------------------------------------------------------
+   * Rastro de código que sigue al puntero (computador)
+   * ------------------------------------------------------------------ */
+  if (!reduceMotion && finePointer) {
+    var TRAIL = ['0', '1', '<', '>', '/', '{', '}', ';'];
+    var lastX = 0;
+    var lastYp = 0;
+    var alive = 0;
+    window.addEventListener('pointermove', function (e) {
+      var dx = e.clientX - lastX;
+      var dy = e.clientY - lastYp;
+      if (dx * dx + dy * dy < 900 || alive > 18) return;
+      lastX = e.clientX;
+      lastYp = e.clientY;
+      var t = document.createElement('span');
+      t.className = 'code-trail';
+      t.setAttribute('aria-hidden', 'true');
+      t.textContent = pick(TRAIL);
+      t.style.left = e.clientX + 'px';
+      t.style.top = e.clientY + 'px';
+      document.body.appendChild(t);
+      alive++;
+      setTimeout(function () { t.remove(); alive--; }, 900);
+    }, { passive: true });
+  }
+
+  /* ------------------------------------------------------------------
+   * Explosión de símbolos al tocar los botones principales
+   * ------------------------------------------------------------------ */
+  if (!reduceMotion) {
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('.btn-primary');
+      if (!b) return;
+      var r = b.getBoundingClientRect();
+      var x = e.clientX || r.left + r.width / 2;
+      var y = e.clientY || r.top + r.height / 2;
+      for (var i = 0; i < 10; i++) {
+        var p = document.createElement('span');
+        p.className = 'code-burst';
+        p.setAttribute('aria-hidden', 'true');
+        p.textContent = pick(GLYPHS);
+        var ang = (Math.PI * 2 * i) / 10 + rand(-0.3, 0.3);
+        var dist = rand(40, 90);
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+        p.style.setProperty('--bx', (Math.cos(ang) * dist).toFixed(0) + 'px');
+        p.style.setProperty('--by', (Math.sin(ang) * dist).toFixed(0) + 'px');
+        document.body.appendChild(p);
+        setTimeout(p.remove.bind(p), 800);
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------
+   * Tarjetas que se inclinan en 3D con el puntero (computador)
+   * ------------------------------------------------------------------ */
+  if (!reduceMotion && finePointer) {
+    document.querySelectorAll('.teaser a, .service-card, .why, .plan, .cast-card, .mini-card').forEach(function (card) {
+      card.classList.add('tilt');
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty('--ry', (px * 8).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', (-py * 8).toFixed(2) + 'deg');
+        card.style.setProperty('--gx', ((px + 0.5) * 100).toFixed(0) + '%');
+        card.style.setProperty('--gy', ((py + 0.5) * 100).toFixed(0) + '%');
+        card.classList.add('is-tilting');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.classList.remove('is-tilting');
+        card.style.removeProperty('--rx');
+        card.style.removeProperty('--ry');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------
    * Funi, la mascota
    * ------------------------------------------------------------------ */
   var root = document.getElementById('mascota');
   if (!root) return;
   var bubble = document.getElementById('mascota-bubble');
   var btn = root.querySelector('.mascota-btn');
-  var closeBtn = root.querySelector('.mascota-close');
-  var showBtn = document.getElementById('mascota-show');
-  var KEY = 'funcode-mascota';
 
   var TIPS = [
     'Usamos inteligencia artificial como herramienta, siempre con revisión.',
@@ -252,13 +344,6 @@
     'Los proyectos empiezan desde $160.000 COP.',
     'Durante el proceso ves avances, no solo el último día.'
   ];
-
-  function oculta() {
-    try { return localStorage.getItem(KEY) === 'oculta'; } catch (e) { return false; }
-  }
-  function guardar(valor) {
-    try { if (valor) localStorage.setItem(KEY, valor); else localStorage.removeItem(KEY); } catch (e) { /* sin almacenamiento */ }
-  }
 
   var talkTimer = null;
   var lastTalk = 0;
@@ -273,7 +358,7 @@
 
   function say(text, opts) {
     opts = opts || {};
-    if (root.hidden) return;
+    if (root.classList.contains('is-chatting')) return;
     wake();
     lastTalk = Date.now();
     // Solo se anuncia a lectores de pantalla cuando la persona tocó a Funi.
@@ -285,43 +370,38 @@
     talkTimer = setTimeout(function () { root.classList.remove('is-talking'); }, opts.ms || Math.max(3800, text.length * 70));
   }
 
-  function mostrar() {
-    root.hidden = false;
-    if (showBtn) showBtn.hidden = true;
-  }
-  function ocultar() {
-    root.hidden = true;
-    root.classList.remove('is-talking');
-    if (showBtn) showBtn.hidden = false;
-  }
-
-  closeBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    guardar('oculta');
-    ocultar();
-    if (showBtn) showBtn.focus();
-  });
-  if (showBtn) {
-    showBtn.addEventListener('click', function () {
-      guardar('');
-      mostrar();
-      layout();
-      say('¡Volví! Gracias por llamarme.', { mood: 'happy', anunciar: true });
-    });
+  function truco() {
+    if (reduceMotion) return;
+    var trick = Math.random() < 0.3 ? 'is-spin' : 'is-jump';
+    root.classList.remove('is-jump', 'is-spin');
+    void root.offsetWidth;
+    root.classList.add(trick);
+    setTimeout(function () { root.classList.remove(trick); }, 900);
   }
 
+  // Tocar a Funi abre el chat (js/chat.js). Si el chat no está, da un dato.
   var tipIndex = Math.floor(Math.random() * TIPS.length);
   btn.addEventListener('click', function () {
-    if (!reduceMotion) {
-      var trick = Math.random() < 0.25 ? 'is-spin' : 'is-jump';
-      root.classList.remove('is-jump', 'is-spin');
-      void root.offsetWidth;
-      root.classList.add(trick);
-      setTimeout(function () { root.classList.remove(trick); }, 900);
-    }
+    truco();
+    if (window.FuncodeChat) { window.FuncodeChat.alternar(); return; }
     tipIndex = (tipIndex + 1) % TIPS.length;
     say(TIPS[tipIndex], { mood: 'happy', anunciar: true });
   });
+  document.addEventListener('funi:chat', function (e) {
+    var abierto = !!(e.detail && e.detail.abierto);
+    root.classList.toggle('is-chatting', abierto);
+    btn.setAttribute('aria-expanded', String(abierto));
+    if (abierto) { root.classList.remove('is-talking', 'is-sleeping'); clearTimeout(talkTimer); }
+  });
+
+  // De vez en cuando Funi hace un truco o recuerda que puede responder preguntas.
+  if (!reduceMotion) {
+    setInterval(function () {
+      if (document.hidden || root.classList.contains('is-chatting') || root.classList.contains('is-sleeping')) return;
+      if (Date.now() - lastTalk > 25000) say(pick(['¿Tienes preguntas? Tócame y te respondo.', '¡Pregúntame lo que quieras sobre Funcode!', 'Psst… también sé de precios y tiempos.']), { mood: 'happy' });
+      else truco();
+    }, 45000);
+  }
 
   /* Dormir si no pasa nada por un rato */
   var idleTimer = null;
@@ -430,11 +510,7 @@
     secs.forEach(function (s) { io.observe(s); });
   }
 
-  if (oculta()) {
-    ocultar();
-  } else {
-    mostrar();
-  }
+  root.hidden = false;
   layout();
   wake();
   // Pequeña pausa para que Funi llegue antes de hablar.

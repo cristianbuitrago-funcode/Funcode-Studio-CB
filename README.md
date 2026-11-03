@@ -15,6 +15,8 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `apps-script/aviso-whatsapp.gs` | Código para Google Apps Script que te avisa por WhatsApp de cada solicitud (ver `AVISO-WHATSAPP.md`) |
 | `tools/build.py` | Une `src/partials` + `src/pages` y genera las páginas públicas |
 | `css/animaciones.css`, `js/animaciones.js` | Animaciones de código (lluvia de símbolos, cinta de código, editor que escribe solo, títulos que se descifran), los personajes ilustrados y la mascota Funi. Todo decorativo y quieto con «movimiento reducido» |
+| `js/chat.js`, `css/chat.css`, `assets/chat/conocimiento.json` | Chat «Pregúntale a Funi»: responde con las preguntas frecuentes del JSON y, si se configura `chatUrl`, con IA (ver `CHAT-FUNI.md`) |
+| `apps-script/chat-funi.gs` | Código para Google Apps Script que conecta el chat con la API de Claude (opcional) |
 | `src/partials/personajes/*.html`, `src/partials/mascota.html` | Personajes en SVG (Bit, Pixela, Profe Byte, Chispa) y la mascota Funi. En las páginas se insertan con `{{char:bit}}` |
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
 | `js/config.js` | **Único archivo que hay que editar**: WhatsApp, correo, redes, endpoint del formulario y datos de Funcode para cotizaciones y propuestas (`estudio`) |
