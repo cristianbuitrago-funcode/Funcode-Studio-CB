@@ -93,6 +93,7 @@ def render(name, meta, body):
         + '\n  <script src="js/config.js" defer></script>\n'
         + '  <script src="js/main.js" defer></script>\n'
         + '  <script src="js/animaciones.js" defer></script>\n'
+        + '  <script src="js/chat-motor.js" defer></script>\n'
         + '  <script src="js/chat.js" defer></script>\n'
         + '</body>\n</html>\n'
     )

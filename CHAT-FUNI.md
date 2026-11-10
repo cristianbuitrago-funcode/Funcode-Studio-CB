@@ -16,7 +16,9 @@ plazos, clientes o promesas, y nunca pide datos personales.
 
 Todo está en **`assets/chat/conocimiento.json`**:
 
-- `intenciones`: las preguntas frecuentes. Cada una tiene palabras clave (`claves`), la respuesta y botones (`enlaces`). Si tiene `"whatsapp": true`, agrega el botón de WhatsApp.
+- `intenciones`: las preguntas frecuentes. Cada una tiene un `titulo` (el botón que aparece cuando Funi no entiende), palabras clave (`claves`), la respuesta y botones (`enlaces`). Si tiene `"whatsapp": true`, agrega el botón de WhatsApp.
+  Las claves pueden ser palabras o frases cortas; no hace falta escribir tildes, plurales ni variantes: `js/chat-motor.js` entiende errores de ortografía, abreviaturas («q», «xq», «wsp») y palabras en otro orden.
+- `temas`: los temas que Funi ofrece como botones cuando no entiende una pregunta. Solo si vuelve a fallar sugiere hablar con Cristian.
 - `datos`: el texto que lee la inteligencia artificial. Si cambian los precios o los servicios, actualízalo aquí también.
 - `sugerencias`: las preguntas que aparecen como botones al abrir el chat.
 
