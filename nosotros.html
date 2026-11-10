@@ -8,6 +8,9 @@
   <meta name="description" content="Cristian Camilo Buitrago Espinosa, estudiante de Licenciatura en Informática (UNIMINUTO) en Bogotá, creó Funcode Studio CB para construir software, productos propios y formación en programación.">
   <meta name="theme-color" content="#050a18">
   <meta name="color-scheme" content="dark">
+  <!-- Seguridad (ver SEGURIDAD.md): solo se cargan scripts y conexiones de orígenes conocidos. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://firestore.googleapis.com https://script.google.com https://script.googleusercontent.com http://127.0.0.1:8085; manifest-src 'self'; frame-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/nosotros.html">
 
   <!-- Open Graph / redes sociales -->
@@ -27,7 +30,7 @@
   <meta name="twitter:image" content="https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/assets/img/og-image.jpg">
 
   <!-- Iconos y manifest -->
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
@@ -76,7 +79,7 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="./" aria-label="Funcode Studio CB, ir al inicio">
-        <img src="assets/icons/logo.svg" alt="" width="36" height="36">
+        <img src="assets/icons/emblema.webp" alt="" width="36" height="36">
         <span class="brand-name">Funcode <span>Studio CB</span></span>
       </a>
 
@@ -107,35 +110,9 @@
         <h1 id="page-title">Detrás de Funcode</h1>
         <p class="page-lead">Aprendo, construyo, mejoro y te ayudo con tu proyecto dentro de un alcance claro.</p>
       </div>
-      <div class="page-hero-char anim-scope" aria-hidden="true"><svg class="char char-profe" viewBox="0 0 220 190" aria-hidden="true" focusable="false">
-  <ellipse class="ch-shadow" cx="110" cy="178" rx="84" ry="7"/>
-  <g class="ow-board">
-    <rect class="ow-frame" x="124" y="30" width="88" height="74" rx="6"/>
-    <text class="ow-line l1" x="133" y="52">if (aprendo) {</text>
-    <text class="ow-line l2" x="141" y="68">mejoro();</text>
-    <text class="ow-line l3" x="133" y="84">}</text>
-    <path class="ow-chalk" d="M180 98h20"/>
-  </g>
-  <g class="ow-owl">
-    <path class="ow-feet" d="M62 170l-6 6M68 171v7M74 170l6 6M88 170l-6 6M94 171v7M100 170l6 6"/>
-    <ellipse class="ow-wing-l" cx="44" cy="128" rx="12" ry="28"/>
-    <ellipse class="ow-body" cx="80" cy="126" rx="40" ry="46"/>
-    <ellipse class="ow-belly" cx="80" cy="136" rx="25" ry="30"/>
-    <path class="ow-feather" d="M68 124q6 6 12 0q6 6 12 0M66 138q7 6 14 0q7 6 14 0M70 152q5 5 10 0q5 5 10 0"/>
-    <g class="ow-head">
-      <path class="ow-body" d="M50 74 46 52 66 64ZM110 74 114 52 94 64Z"/>
-      <ellipse class="ow-body" cx="80" cy="86" rx="37" ry="30"/>
-      <circle class="ow-disc" cx="66" cy="86" r="14"/><circle class="ow-disc" cx="94" cy="86" r="14"/>
-      <g class="ow-eyes ch-blink"><circle cx="66" cy="87" r="6"/><circle cx="94" cy="87" r="6"/><circle class="ow-shine" cx="68" cy="85" r="2"/><circle class="ow-shine" cx="96" cy="85" r="2"/></g>
-      <path class="ow-glasses" d="M51 86a15 15 0 1 0 30 0a15 15 0 1 0-30 0M79 86a15 15 0 1 0 30 0a15 15 0 1 0-30 0M80 85h0"/>
-      <path class="ow-beak" d="M75 98h10l-5 8z"/>
-      <path class="ow-cap" d="M50 56 80 44 110 56 80 68Z"/>
-      <path class="ow-capband" d="M64 61v8q16 7 32 0v-8"/>
-      <g class="ow-tassel"><path d="M80 56 104 60V74"/><circle cx="104" cy="77" r="3.5"/></g>
-    </g>
-    <g class="ow-pointer"><ellipse class="ow-wing-r" cx="116" cy="128" rx="11" ry="24"/><path class="ow-stick" d="M120 116 132 90"/><circle class="ow-stick-tip" cx="133" cy="88" r="2.5"/></g>
-  </g>
-</svg></div>
+      <div class="page-hero-char page-hero-logo">
+        <img src="assets/img/logo-funcode.webp" alt="Logo de Funcode Studio CB: aprende, crea, innova" width="720" height="720" decoding="async">
+      </div>
     </section>
 
     <!-- ============ NOSOTROS ============ -->
@@ -279,9 +256,8 @@
 </svg></div>
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="./">
-          <img src="assets/icons/logo.svg" alt="" width="36" height="36">
-          <span class="brand-name">Funcode <span>Studio CB</span></span>
+        <a class="footer-logo" href="./" aria-label="Funcode Studio CB, ir al inicio">
+          <img src="assets/img/logo-funcode.webp" alt="Logo de Funcode Studio CB: aprende, crea, innova" width="200" height="200" loading="lazy" decoding="async">
         </a>
         <p>Soluciones digitales. Productos propios. Aprendizaje continuo.</p>
         <p class="footer-console" aria-hidden="true"><span class="fc-prompt">funcode@studio:~$</span> <span class="fc-text" data-typing-line="echo &quot;Hecho con código y aprendizaje continuo&quot;"></span><span class="fc-caret"></span></p>
@@ -389,6 +365,7 @@
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/animaciones.js" defer></script>
+  <script src="js/chat-motor.js" defer></script>
   <script src="js/chat.js" defer></script>
 </body>
 </html>

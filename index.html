@@ -8,6 +8,9 @@
   <meta name="description" content="Funcode Studio CB es un estudio tecnológico en crecimiento. Desarrollamos páginas web, aplicaciones y soluciones educativas para proyectos pequeños y medianos, y construimos productos propios. Proyectos desde $160.000 COP.">
   <meta name="theme-color" content="#050a18">
   <meta name="color-scheme" content="dark">
+  <!-- Seguridad (ver SEGURIDAD.md): solo se cargan scripts y conexiones de orígenes conocidos. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://firestore.googleapis.com https://script.google.com https://script.googleusercontent.com http://127.0.0.1:8085; manifest-src 'self'; frame-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/">
 
   <!-- Open Graph / redes sociales -->
@@ -27,7 +30,7 @@
   <meta name="twitter:image" content="https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/assets/img/og-image.jpg">
 
   <!-- Iconos y manifest -->
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
@@ -93,7 +96,7 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="./" aria-label="Funcode Studio CB, ir al inicio">
-        <img src="assets/icons/logo.svg" alt="" width="36" height="36">
+        <img src="assets/icons/emblema.webp" alt="" width="36" height="36">
         <span class="brand-name">Funcode <span>Studio CB</span></span>
       </a>
 
@@ -490,6 +493,7 @@
     <section class="cta-band" aria-labelledby="cta-title" data-mascota="¿Tienes una idea? ¡Cuéntanosla y revisamos si podemos ayudarte!" data-mascota-mood="happy">
       <div class="container">
         <div class="cta-card reveal">
+          <img class="cta-logo" src="assets/img/logo-funcode.webp" alt="" width="140" height="140" loading="lazy" decoding="async">
           <h2 id="cta-title">¿Tienes una idea? <span class="text-gradient">Hagámosla realidad.</span></h2>
           <p>Cuéntanos qué necesitas y revisaremos si podemos ayudarte.</p>
           <div class="btn-row btn-row--center">
@@ -530,9 +534,8 @@
 </svg></div>
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="./">
-          <img src="assets/icons/logo.svg" alt="" width="36" height="36">
-          <span class="brand-name">Funcode <span>Studio CB</span></span>
+        <a class="footer-logo" href="./" aria-label="Funcode Studio CB, ir al inicio">
+          <img src="assets/img/logo-funcode.webp" alt="Logo de Funcode Studio CB: aprende, crea, innova" width="200" height="200" loading="lazy" decoding="async">
         </a>
         <p>Soluciones digitales. Productos propios. Aprendizaje continuo.</p>
         <p class="footer-console" aria-hidden="true"><span class="fc-prompt">funcode@studio:~$</span> <span class="fc-text" data-typing-line="echo &quot;Hecho con código y aprendizaje continuo&quot;"></span><span class="fc-caret"></span></p>
@@ -640,6 +643,7 @@
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/animaciones.js" defer></script>
+  <script src="js/chat-motor.js" defer></script>
   <script src="js/chat.js" defer></script>
 </body>
 </html>

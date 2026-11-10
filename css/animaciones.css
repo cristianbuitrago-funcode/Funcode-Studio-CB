@@ -446,3 +446,24 @@
   .footer-flyer { left: auto; right: 16px; }
   .scroll-code { display: none; }
 }
+
+/* ---------- Logo de Funcode ---------- */
+.brand img { object-fit: cover; box-shadow: 0 0 0 1px rgba(124, 180, 255, 0.25), 0 0 18px -4px rgba(77, 141, 255, 0.6); }
+.footer-logo { display: inline-block; border-radius: 22px; line-height: 0; }
+.footer-logo img { width: 170px; height: auto; border-radius: 22px; box-shadow: 0 0 0 1px rgba(124, 180, 255, 0.2), 0 18px 40px -18px rgba(77, 141, 255, 0.7); }
+.page-hero-logo { width: clamp(200px, 24vw, 300px); }
+.page-hero-logo img {
+  display: block; width: 100%; height: auto; border-radius: 28px;
+  box-shadow: 0 0 0 1px rgba(124, 180, 255, 0.25), 0 30px 60px -24px rgba(77, 141, 255, 0.75);
+  animation: logo-glow 5s ease-in-out infinite alternate;
+}
+@keyframes logo-glow { to { box-shadow: 0 0 0 1px rgba(124, 180, 255, 0.4), 0 30px 70px -18px rgba(56, 198, 255, 0.85); } }
+.cta-logo { display: block; width: 120px; height: auto; margin: 0 auto 18px; border-radius: 22px; box-shadow: 0 0 0 1px rgba(124, 180, 255, 0.25), 0 18px 40px -16px rgba(77, 141, 255, 0.8); }
+@media (max-width: 900px) {
+  .page-hero-logo { width: 200px; margin: 22px auto 0 16px; }
+}
+@media (max-width: 600px) {
+  .page-hero-logo { width: 170px; }
+  .cta-logo { width: 96px; }
+}
+@media (prefers-reduced-motion: reduce) { .page-hero-logo img { animation: none; } }

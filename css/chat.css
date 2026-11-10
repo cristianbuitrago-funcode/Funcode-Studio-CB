@@ -73,3 +73,4 @@
 @media (prefers-reduced-motion: reduce) {
   .chat, .chat-msg, .chat-avatar, .chat-typing span { animation: none; }
 }
+.chat-topics { display: flex; flex-wrap: wrap; gap: 6px; }

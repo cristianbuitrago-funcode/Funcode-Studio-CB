@@ -24,9 +24,11 @@
   var KEY = 'funi-chat';
   var remoto = /^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(config.chatUrl || '');
 
+  var motor = window.FuncodeChatMotor;
   var saber = null;
   var historial = cargar();
   var ocupado = false;
+  var fallos = 0; // preguntas seguidas sin respuesta
 
   sub.textContent = remoto ? 'Asistente con inteligencia artificial · puede equivocarse' : 'Asistente automático de Funcode';
 
@@ -44,55 +46,9 @@
     return fetch('assets/chat/conocimiento.json', { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (data) {
-        data.intenciones.forEach(function (it) { it._claves = it.claves.map(raices); });
-        saber = data;
-        return data;
+        saber = motor.preparar(data);
+        return saber;
       });
-  }
-
-  function norm(t) {
-    return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
-      .replace(/[^a-z0-9ñ]+/g, ' ').replace(/\s+/g, ' ').trim();
-  }
-
-  // Plural → singular sencillo para comparar («tiendas virtuales» = «tienda virtual»).
-  function raiz(w) {
-    if (w.length > 5 && /es$/.test(w)) return w.slice(0, -2);
-    if (w.length > 4 && /s$/.test(w)) return w.slice(0, -1);
-    return w;
-  }
-  function raices(t) { return norm(t).split(' ').map(raiz).join(' '); }
-
-  // Puntúa cada intención según las palabras de la pregunta (frases completas pesan más).
-  function buscar(pregunta) {
-    var texto = ' ' + raices(pregunta) + ' ';
-    var palabras = texto.trim().split(' ');
-    var mejor = null;
-    var mejorPuntos = 0;
-    var cortesia = null;
-    var cortesiaPuntos = 0;
-    saber.intenciones.forEach(function (it) {
-      var puntos = 0;
-      it._claves.forEach(function (k) {
-        if (k.indexOf(' ') !== -1) {
-          if (texto.indexOf(' ' + k + ' ') !== -1) puntos += 2 + k.split(' ').length;
-          return;
-        }
-        palabras.forEach(function (w) {
-          if (w === k) puntos += 1.5;
-          else if (k.length >= 5 && w.length >= 5 && (w.indexOf(k) === 0 || k.indexOf(w) === 0)) puntos += 1;
-        });
-      });
-      // Saludos y agradecimientos solo ganan si no hay una pregunta concreta.
-      if (it.id === 'saludo' || it.id === 'gracias') {
-        if (puntos > cortesiaPuntos) { cortesia = it; cortesiaPuntos = puntos; }
-      } else if (puntos > mejorPuntos) {
-        mejor = it;
-        mejorPuntos = puntos;
-      }
-    });
-    if (mejorPuntos >= 1) return mejor;
-    return cortesiaPuntos >= 1 ? cortesia : null;
   }
 
   function whatsappUrl(texto) {
@@ -100,14 +56,51 @@
     return n ? 'https://wa.me/' + n + '?text=' + encodeURIComponent(texto || config.whatsappMessage || '') : '';
   }
 
+  function porId(id) {
+    for (var i = 0; i < saber.intenciones.length; i++) if (saber.intenciones[i].id === id) return saber.intenciones[i];
+    return null;
+  }
+
+  // Arma la respuesta con una o dos intenciones (si la pregunta traía dos temas).
+  function componer(intenciones, pregunta) {
+    fallos = 0;
+    var dos = intenciones.length > 1;
+    var texto = intenciones.map(function (it) { return (dos ? it.titulo + ': ' : '') + it.respuesta; }).join('\n\n');
+    var enlaces = [];
+    intenciones.forEach(function (it) {
+      (it.enlaces || []).forEach(function (e) {
+        if (!enlaces.some(function (x) { return x.href === e.href; })) enlaces.push(e);
+      });
+    });
+    var conWa = intenciones.some(function (it) { return it.whatsapp; });
+    return {
+      texto: texto,
+      enlaces: enlaces.slice(0, 3),
+      wa: conWa ? whatsappUrl('Hola, Funcode. ' + (pregunta ? 'Tengo una pregunta: ' + pregunta.slice(0, 300) : '')) : ''
+    };
+  }
+
   function respuestaLocal(pregunta) {
     return conocimiento().then(function () {
-      var it = buscar(pregunta);
-      var wa = whatsappUrl('Hola, Funcode. Tengo una pregunta: ' + pregunta.slice(0, 300));
-      if (!it) {
-        return { texto: saber.sinRespuesta, enlaces: [{ texto: 'Ir al formulario', href: 'contacto.html#formulario' }], wa: wa };
+      var r = motor.buscar(saber, pregunta);
+      if (r.respuestas.length) return componer(r.respuestas, pregunta);
+      fallos++;
+      if (fallos >= 2) {
+        // Segunda pregunta seguida sin respuesta: ahí sí conviene hablar con una persona.
+        fallos = 0;
+        return {
+          texto: saber.sinRespuestaOtraVez,
+          enlaces: [{ texto: 'Ir al formulario', href: 'contacto.html#formulario' }],
+          wa: whatsappUrl('Hola, Funcode. Tengo una pregunta: ' + pregunta.slice(0, 300))
+        };
       }
-      return { texto: it.respuesta, enlaces: it.enlaces || [], wa: it.whatsapp ? wa : '' };
+      // Primera vez: proponer temas parecidos y el menú de temas, sin mandar a WhatsApp.
+      var ids = r.sugerencias.slice(0, 2).map(function (it) { return it.id; });
+      saber.temas.forEach(function (id) { if (ids.indexOf(id) === -1 && ids.length < 6) ids.push(id); });
+      return {
+        texto: saber.sinRespuesta,
+        temas: ids.map(function (id) { var it = porId(id); return it ? { id: id, titulo: it.titulo } : null; }).filter(Boolean)
+      };
     });
   }
 
@@ -136,8 +129,10 @@
       if (!p) return;
       if (i % 2 === 1) {
         var a = document.createElement('a');
-        a.href = p;
-        a.textContent = /^https:\/\/wa\.me/.test(p) ? 'WhatsApp' : p.replace(/\.html.*$/, '').replace('mis-solicitudes', 'Mis solicitudes').replace('index', 'Inicio');
+        var esWa = /^https:\/\/wa\.me/.test(p);
+        // Un enlace de WhatsApp escrito por la IA siempre se cambia por el número oficial de Funcode.
+        a.href = esWa ? (whatsappUrl() || 'contacto.html') : p;
+        a.textContent = esWa ? 'WhatsApp' : p.replace(/\.html.*$/, '').replace('mis-solicitudes', 'Mis solicitudes').replace('index', 'Inicio');
         if (/^https:/.test(p)) { a.target = '_blank'; a.rel = 'noopener'; }
         el.appendChild(a);
       } else {
@@ -165,6 +160,19 @@
       conEnlaces(bubble, m.texto);
     }
     row.appendChild(bubble);
+    if (m.temas && m.temas.length) {
+      var temas = document.createElement('div');
+      temas.className = 'chat-topics';
+      m.temas.forEach(function (t) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chat-chip';
+        b.textContent = t.titulo;
+        b.addEventListener('click', function () { elegirTema(t); });
+        temas.appendChild(b);
+      });
+      row.appendChild(temas);
+    }
     var acciones = (m.enlaces || []).slice(0, 3).map(function (e) { return { texto: e.texto, href: e.href }; });
     if (m.wa) acciones.push({ texto: 'Escribir por WhatsApp', href: m.wa, wa: true });
     if (acciones.length) {
@@ -238,10 +246,26 @@
       // Una pequeña pausa para que se note que Funi «piensa».
       setTimeout(function () {
         escribiendo(false);
-        agregar({ rol: 'funi', texto: r.texto, enlaces: r.enlaces, wa: r.wa });
+        agregar({ rol: 'funi', texto: r.texto, enlaces: r.enlaces, wa: r.wa, temas: r.temas });
         ocupado = false;
       }, Math.max(0, 700 - (Date.now() - inicio)));
     });
+  }
+
+  // Tocar un tema propuesto responde ese tema directamente (sin volver a adivinar).
+  function elegirTema(t) {
+    if (ocupado || !saber) return;
+    var it = porId(t.id);
+    if (!it) return;
+    agregar({ rol: 'usuario', texto: t.titulo });
+    var r = componer([it], '');
+    escribiendo(true);
+    ocupado = true;
+    setTimeout(function () {
+      escribiendo(false);
+      agregar({ rol: 'funi', texto: r.texto, enlaces: r.enlaces, wa: r.wa });
+      ocupado = false;
+    }, 500);
   }
 
   form.addEventListener('submit', function (e) {

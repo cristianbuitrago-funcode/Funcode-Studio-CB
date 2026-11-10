@@ -289,7 +289,8 @@
   var extraChecks = {
     nombre: { test: /\S/, msg: 'valueMissing' },
     descripcion: { test: /^[\s\S]{20,}$/, msg: 'tooShort' },
-    correo: { test: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, msg: 'typeMismatch' },
+    // Igual que en firestore.rules: solo caracteres normales de un correo.
+    correo: { test: /^[a-z0-9._%+-]+@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i, msg: 'typeMismatch' },
     whatsapp: { test: /^\+?[0-9()\s-]{7,20}$/, msg: 'patternMismatch' }
   };
 
@@ -451,9 +452,11 @@
       value = String(value || '').trim();
       if (value) fields[key] = { stringValue: value };
     }
-    ['nombre', 'negocio', 'whatsapp', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
+    ['nombre', 'negocio', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
       put(name, f[name].value);
     });
+    // Cualquier espacio raro (tabulación, espacio duro) se vuelve un espacio normal, como exigen las reglas.
+    put('whatsapp', f.whatsapp.value.replace(/\s+/g, ' '));
     // En minúsculas: así el cliente puede seguirla en «Mis solicitudes» entrando con ese correo.
     put('correo', f.correo.value.toLowerCase());
     put('estado', 'nuevo');
