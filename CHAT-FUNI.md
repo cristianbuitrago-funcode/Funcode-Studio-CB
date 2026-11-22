@@ -6,19 +6,62 @@ En todas las páginas, al tocar a **Funi** (la mascota) se abre el chat **«Preg
 
 | Modo | Qué hace | Qué necesita |
 |---|---|---|
-| **Preguntas frecuentes** (activo ahora) | Responde precios, tiempos, servicios, proceso, contacto, pagos, proyectos y más con la información real de la página. Si no sabe algo, lo dice y ofrece WhatsApp o el formulario. | Nada. Es gratis. |
-| **Inteligencia artificial** (opcional) | Entiende preguntas escritas de cualquier forma y responde con Claude, usando solo la información de Funcode. Si la IA falla, responde el modo de preguntas frecuentes. | Una llave de la API de Claude (de pago) y un Google Apps Script. |
+| **Preguntas frecuentes** (activo ahora) | Responde unas 75 preguntas reales sobre Funcode: servicios, precios, tiempos, proceso, pagos, portafolio, tecnologías y más. Si no sabe algo, lo dice y ofrece WhatsApp. | Nada. Es gratis. |
+| **Inteligencia artificial** (opcional) | Entiende preguntas escritas de cualquier forma y responde con Claude, usando solo la información de Funcode y las 12 reglas del asistente. Si la IA falla, responde el modo de preguntas frecuentes. | Una llave de la API de Claude (de pago) y un Google Apps Script. |
 
-En los dos modos, Funi avisa que es un asistente automático. Tiene prohibido inventar precios,
-plazos, clientes o promesas, y nunca pide datos personales.
+En los dos modos, Funi se presenta como el asistente virtual de Funcode Studio CB. Tiene prohibido inventar
+precios, descuentos, plazos, clientes, garantías o promesas, y no emite cotizaciones definitivas.
+
+## Qué hace Funi
+
+- **Entiende la intención**, no solo palabras exactas: errores de ortografía, abreviaturas («q», «wsp»), plurales y
+  palabras en otro orden. Si una pregunta trae dos temas, responde los dos.
+- **Pregunta cuando algo es ambiguo**: ante «quiero una aplicación» pregunta si es para Android, iPhone o el navegador,
+  con botones.
+- **Recuerda el tema**: si la persona habló de una tienda y luego pregunta «¿cuánto cuesta?», responde el precio de una
+  tienda; y si prepara su solicitud, no le vuelve a preguntar qué servicio quiere.
+- **Dice el estado de cada proyecto**: disponible (LifeCoinQuest, Ofimática 9°, Ajedrez Inclusivo), realizado
+  (Camisas Col) o en desarrollo (Funcode Academy, Funcode Code Analyzer).
+- **Si no sabe algo**, usa la respuesta recomendada («prefiero no darte una respuesta incorrecta…»), propone temas y
+  ofrece WhatsApp.
+
+## «📝 Preparar mi solicitud»
+
+Cuando alguien muestra interés en un servicio, Funi le ofrece (sin insistir) preparar su solicitud: preguntas cortas, de una
+en una, y todas se pueden omitir:
+
+1. qué quiere desarrollar (página web, tienda, aplicación, plataforma educativa, sistema, clases, mejorar un proyecto);
+2. su idea o el problema que quiere resolver;
+3. para qué negocio o institución es;
+4. según el servicio: la plataforma (apps), su nivel (clases) o las funciones principales;
+5. para cuándo lo quiere;
+6. su presupuesto aproximado (opcional, «prefiero no decirlo»);
+7. su nombre (opcional).
+
+Al final muestra un resumen y el botón **«Enviar por WhatsApp»**, que abre WhatsApp con un mensaje organizado para ti,
+con la **categoría** (desarrollo web, software, educativo, formación, mantenimiento o consulta general) y el **nivel de
+interés** (alto, medio o no calificado), como pide la guía de clasificación.
+
+**Privacidad:** nada de esto se guarda en un servidor. Las respuestas quedan solo en el navegador de la persona
+(se borran al cerrar la pestaña) y solo te llegan si ella toca «Enviar por WhatsApp». Con la IA activada, las respuestas
+de la solicitud tampoco se envían a la IA.
 
 ## Cambiar lo que Funi sabe
 
 Todo está en **`assets/chat/conocimiento.json`**:
 
-- `intenciones`: las preguntas frecuentes. Cada una tiene un `titulo` (el botón que aparece cuando Funi no entiende), palabras clave (`claves`), la respuesta y botones (`enlaces`). Si tiene `"whatsapp": true`, agrega el botón de WhatsApp.
-  Las claves pueden ser palabras o frases cortas; no hace falta escribir tildes, plurales ni variantes: `js/chat-motor.js` entiende errores de ortografía, abreviaturas («q», «xq», «wsp») y palabras en otro orden.
-- `temas`: los temas que Funi ofrece como botones cuando no entiende una pregunta. Solo si vuelve a fallar sugiere hablar con Cristian.
+- `intenciones`: las preguntas frecuentes. Cada una tiene un `titulo` (el botón que aparece cuando Funi no entiende),
+  palabras clave (`claves`), la respuesta y botones (`enlaces`). Si tiene `"whatsapp": true`, agrega el botón de WhatsApp.
+  - Las claves pueden ser palabras o frases cortas; no hace falta escribir tildes, plurales ni variantes:
+    `js/chat-motor.js` entiende errores de ortografía, abreviaturas y palabras en otro orden.
+  - `cuesta|vale|precio tienda` significa «(cuesta o vale o precio) y tienda».
+  - `quienes +son` obliga a que esté la palabra «son» (las palabras comunes como «son», «que» o «no» se ignoran si
+    no llevan `+`).
+  - `opciones`: botones con otras preguntas (por ejemplo, Android / iPhone / navegador).
+  - `contexto` y `segunContexto`: el tema que recuerda Funi y la respuesta que cambia según ese tema.
+  - `ofrecerSolicitud`: ofrece «📝 Preparar mi solicitud» después de esa respuesta.
+- `solicitud`: los textos, los pasos y las categorías de «Preparar mi solicitud».
+- `temas`: los temas que Funi ofrece como botones cuando no entiende una pregunta.
 - `datos`: el texto que lee la inteligencia artificial. Si cambian los precios o los servicios, actualízalo aquí también.
 - `sugerencias`: las preguntas que aparecen como botones al abrir el chat.
 
@@ -94,5 +137,5 @@ Así la URL `/exec` no cambia.
 | `probarChat` dice «Falta la propiedad ANTHROPIC_API_KEY» | Parte 3: revisa el nombre exacto y que guardaste |
 | «Claude respondió 401» | La llave está mal copiada o la borraste. Crea otra (Parte 1) |
 | «Claude respondió 400» con un mensaje de créditos | No tienes saldo: agrega créditos en Billing |
-| El chat responde, pero sigue diciendo «Asistente automático» | `chatUrl` está vacío o no termina en `/exec` |
+| El chat responde, pero sigue diciendo «Asistente virtual de Funcode» | `chatUrl` está vacío o no termina en `/exec` |
 | Funi responde preguntas frecuentes en vez de usar la IA | Se alcanzó el límite por hora o por día, o la API falló. Funi usa las preguntas frecuentes como respaldo |

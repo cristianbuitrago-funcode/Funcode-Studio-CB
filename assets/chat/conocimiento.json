@@ -1,7 +1,7 @@
 {
- "version": 2,
- "actualizado": "2026-11-10",
- "datos": "Funcode Studio CB es un estudio tecnológico en crecimiento de Bogotá, Colombia. Lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de sexto semestre de Licenciatura en Informática en la Corporación Universitaria Minuto de Dios (UNIMINUTO). Detrás de cada proyecto está él; los personajes de la página (Bit, Pixela, Profe Byte, Chispa y la mascota Funi) son ilustraciones, no personas.\n\nSERVICIOS: desarrollo web (páginas modernas y responsive); soluciones digitales (aplicaciones y herramientas web pequeñas y medianas, incluidas automatizaciones con Google Apps Script); tecnología educativa (plataformas, herramientas y experiencias digitales para educación); inteligencia artificial (como herramienta de desarrollo e implementación de herramientas de IA en proyectos); formación (cursos y talleres de programación e IA, robótica educativa con Scratch, Arduino y Tinkercad, y convivencia digital); mantenimiento y mejoras de páginas y proyectos existentes.\nTrabajan principalmente proyectos pequeños y medianos: páginas web, aplicaciones web, plataformas educativas, herramientas digitales, integraciones con servicios externos, proyectos con Firebase y prototipos funcionales. Se evalúan caso por caso: sistemas con gran cantidad de usuarios, arquitecturas complejas, bases de datos de gran escala e infraestructura avanzada. Si un proyecto supera el alcance actual, lo dicen con transparencia antes de prometer algo que no puedan entregar bien.\nLos videojuegos son productos propios de Funcode y NO se ofrecen como servicio por encargo.\n\nPRECIOS (de referencia, «desde», no tarifas fijas; cada proyecto se cotiza según alcance, diseño, funcionalidades y complejidad, y antes de empezar el cliente recibe una propuesta con el alcance y el valor acordados):\n- Básico: desde $160.000 COP. Landing pages, página informativa, información del negocio, galería, botones de WhatsApp y redes, diseño responsive.\n- Profesional: desde $400.000 COP. Varias secciones, diseño personalizado, formularios, catálogos, interacciones y funcionalidades adicionales.\n- Personalizado: con cotización. Aplicaciones web, sistemas educativos, usuarios, Firebase, integraciones y funcionalidades específicas.\nLa forma de pago se acuerda en la cotización de cada proyecto (no hay una forma de pago publicada).\n\nTIEMPOS: los proyectos básicos pueden estar listos en pocos días; se establece un plazo de hasta 7 días hábiles para proyectos básicos, según el alcance y que el cliente entregue el material necesario. Proyectos más grandes: el tiempo se define en la propuesta.\n\nPROCESO (6 etapas): 1) Entendemos la idea y las necesidades. 2) Proponemos alcance, funcionalidades y presupuesto. 3) Desarrollamos. 4) Mostramos avances con versiones preliminares. 5) Probamos funcionamiento, responsive y errores. 6) Entregamos y publicamos el proyecto acordado. El cliente ve avances y puede pedir ajustes antes del final.\nIA: la usan como herramienta de apoyo (explorar ideas, acelerar tareas, analizar problemas), siempre con revisión, pruebas y decisiones humanas.\n\nPROYECTOS REALES: LifeCoinQuest (producto propio, productividad gamificada para Android y web), Ajedrez Inclusivo (aplicación web educativa de ajedrez accesible), Ofimática 9° (plataforma educativa de Word y Excel para grado 9°, con Firebase y panel docente) y Camisas Col (sitio web con automatización en Google Apps Script para una marca textil, mayo de 2026).\nRESEÑAS: solo pueden escribirlas clientes con un proyecto entregado; aparecen en Inicio cuando se publican.\n\nCONTACTO: formulario en contacto.html; WhatsApp +57 320 292 0181; correo buitragocristianespinosa@gmail.com. Después de enviar el formulario, el cliente puede seguir su solicitud en mis-solicitudes.html entrando con la cuenta de Google del correo que usó.\nPáginas del sitio: precios.html, servicios.html, proyectos.html, proceso.html, nosotros.html, contacto.html, mis-solicitudes.html.\n\nCAMBIOS Y AJUSTES (de las cotizaciones de Funcode): durante el desarrollo se pueden pedir ajustes relacionados con el alcance acordado. Los cambios que impliquen nuevas funcionalidades, modificaciones importantes o ampliaciones pueden tener un costo adicional, siempre informado antes al cliente.\nPARA EMPEZAR: el cliente debe entregar la información y los materiales del proyecto (textos, fotos, logo, datos del negocio). El tiempo de desarrollo empieza a contar cuando se reciben.\nTECNOLOGÍAS usadas en los proyectos publicados: HTML, CSS, JavaScript, Firebase, Google Apps Script y Capacitor (Android).\nREDES: LinkedIn y GitHub (cristianbuitrago-funcode). Instagram y Facebook todavía no están publicados en la página.\nPRIVACIDAD: los datos del formulario se guardan en Firebase y solo el organizador puede leerlos; cada cliente ve únicamente sus propias solicitudes.\nNO SE OFRECEN (no aparecen entre los servicios): diseño de logos o identidad gráfica, ni videojuegos por encargo. Sobre posicionamiento en Google (SEO), descuentos u horarios no hay información publicada.",
+ "version": 3,
+ "actualizado": "2026-11-22",
+ "datos": "Funcode Studio CB es un emprendimiento tecnológico independiente y en crecimiento, dedicado al desarrollo de software, páginas web, plataformas y herramientas educativas, videojuegos propios y formación en programación. Opera en Colombia (su fundador, Cristian Camilo Buitrago Espinosa, estudiante de sexto semestre de Licenciatura en Informática en la Corporación Universitaria Minuto de Dios (UNIMINUTO), está en Bogotá) y atiende de forma digital, principalmente por WhatsApp. Moneda de referencia: pesos colombianos (COP). No es una gran empresa ni una agencia con departamentos o un equipo numeroso: detrás de cada proyecto está su fundador. No tiene oficinas, sedes, certificaciones, clientes destacados ni alianzas que se puedan mencionar. Los personajes de la página (Bit, Pixela, Profe Byte, Chispa y la mascota Funi) son ilustraciones.\n\nPROPÓSITO: usar la tecnología para resolver necesidades reales, facilitar procesos, crear experiencias digitales y acercar la programación a más personas. Usa herramientas modernas e inteligencia artificial como apoyo a la programación, el diseño y la construcción de soluciones.\nFILOSOFÍA: crear soluciones útiles y funcionales; entender primero las necesidades del cliente; ofrecer soluciones acordes con el alcance; comunicación transparente; no prometer funcionalidades que no se puedan garantizar; reconocer cuando un proyecto supera las capacidades actuales; mejorar continuamente.\nPÚBLICO: emprendedores, pequeñas empresas, negocios locales, instituciones educativas, docentes, estudiantes, personas que quieren aprender programación y personas u organizaciones que necesitan soluciones digitales.\n\nSERVICIOS: desarrollo de software; diseño y desarrollo web (desde cero o mejorando páginas existentes); aplicaciones (web; Android y multiplataforma se evalúan; iPhone se evalúa revisando requisitos, herramientas y publicación); conversión de páginas web en aplicación con Capacitor (previa revisión); catálogos y tiendas virtuales (pagos en línea, inventario e integraciones se analizan individualmente; integraciones con proveedores de pago, Nequi o Daviplata dependen del proveedor, sus requisitos y comisiones, sin garantía de integración automática); herramientas administrativas de alcance definido (sistemas empresariales complejos requieren evaluación especial); automatizaciones con Google Apps Script; plataformas educativas, simuladores y ejercicios interactivos; formación y acompañamiento en programación, también desde cero (además: inteligencia artificial, robótica educativa con Scratch, Arduino y Tinkercad, y convivencia digital); mantenimiento, correcciones y mejoras de proyectos existentes; revisión de errores de código; evaluación de aspectos técnicos de seguridad dentro de un alcance acordado (no es una auditoría certificada ni garantiza invulnerabilidad). Los videojuegos son principalmente proyectos propios: una propuesta de un cliente se puede recibir para evaluar si hay una modalidad de colaboración. El diseño de logos o piezas gráficas no está entre los servicios.\nALCANCE: principalmente proyectos pequeños y medianos (páginas web, aplicaciones web, plataformas educativas, herramientas digitales, integraciones con servicios externos, proyectos con Firebase y prototipos funcionales). Se evalúan caso por caso: sistemas con gran cantidad de usuarios, arquitecturas complejas, bases de datos de gran escala e infraestructura avanzada. Si un proyecto supera las capacidades actuales, se dice con transparencia antes de empezar. Frase sugerida para esos casos: «Queremos ser transparentes contigo. Por las características de tu proyecto, necesitamos realizar una evaluación técnica antes de confirmar si podemos desarrollarlo».\nTECNOLOGÍAS: Java, JavaScript, HTML, CSS, PHP y herramientas relacionadas; en los proyectos publicados también Firebase, Google Apps Script y Capacitor (Android). Bases de datos SQL: se pueden evaluar. Otras tecnologías deben confirmarse.\nINTELIGENCIA ARTIFICIAL: se usa como herramienta de apoyo para desarrollo, aprendizaje, análisis y productividad; no desarrolla todo automáticamente: los resultados se analizan, revisan, prueban y validan.\n\nPRECIOS: no hay un precio único; depende del diseño, funcionalidades, número de secciones, integraciones, plataformas y complejidad. Referencias publicadas en la página de precios («desde», no tarifas fijas): plan Básico desde $160.000 COP (landing o página informativa, galería, botones de WhatsApp y redes, diseño responsive); plan Profesional desde $400.000 COP (varias secciones, diseño personalizado, formularios, catálogos, interacciones); plan Personalizado con cotización (aplicaciones web, sistemas educativos, usuarios, Firebase, integraciones). El asistente no inventa precios, no da valores por hora o por funcionalidad, no asume que proyectos parecidos cuestan lo mismo, no ofrece descuentos y no emite cotizaciones definitivas: explica de qué depende el precio y ofrece una cotización. Una evaluación inicial de la idea se puede pedir; las condiciones de una consultoría o análisis especializado se confirman antes. Con poco presupuesto se pueden estudiar alternativas y priorizar lo esencial para una primera versión. Las modalidades de pago (incluido el pago por partes) se establecen en la propuesta; el asistente no puede confirmarlas. Dominio, alojamiento, servidores, licencias y servicios externos no están incluidos necesariamente: se evalúan, se cotizan y quedan especificados en la propuesta.\nTIEMPOS: dependen del alcance y la complejidad; se estima un tiempo después de revisar los requisitos. Como referencia publicada, para proyectos básicos se establece un plazo de hasta 7 días hábiles, según el alcance y que el cliente entregue el material necesario; el tiempo empieza a contar cuando se recibe. En proyectos más grandes, el tiempo se define en la propuesta.\nPROCESO: conocer la necesidad, evaluar su viabilidad, definir el alcance y preparar una propuesta con condiciones y costos. Etapas de trabajo (página proceso.html): 1) entender la idea y las necesidades; 2) proponer alcance, funcionalidades y presupuesto; 3) desarrollar; 4) mostrar avances con versiones preliminares (su forma y frecuencia se acuerdan según el proyecto); 5) probar funcionamiento, diseño responsive y errores; 6) entregar y publicar lo acordado. Cambios: se manejan según las condiciones y rondas de cambios de la propuesta; lo que implique nuevas funcionalidades puede tener costo adicional, informado antes. Para comenzar se necesita saber qué se quiere desarrollar, para quién, qué funcionalidades y el presupuesto aproximado; luego los materiales (textos, fotos, logo). Proyectos ya comenzados: se evalúan conociendo sus tecnologías, estado, acceso al código y documentación. Ninguna idea se garantiza sin evaluarla y ningún software puede garantizar ausencia total de errores.\n\nPORTAFOLIO (estado de cada proyecto):\n- LifeCoinQuest (disponible, producto propio): productividad gamificada con hábitos, misiones, experiencia (XP), monedas virtuales, pilares personales y sincronización con Google; versión web y experiencia para Android (APK) con temática de videojuego.\n- Ofimática 9° (disponible): plataforma educativa para grado 9° (con Firebase) para practicar Word y Excel, con niveles, explicaciones, simulaciones, retos, recompensas y panel docente.\n- Ajedrez Inclusivo (disponible): ajedrez web accesible, sin instalación ni registro, con clic, pantalla táctil, teclado, voz y texto, e incluye batalla de peones.\n- Camisas Col (proyecto realizado, mayo de 2026): sitio web con automatización en Google Apps Script para una marca textil.\n- Funcode Academy (en desarrollo, no disponible al público): academia digital para aprender Java con rutas progresivas, ejercicios prácticos y gamificación.\n- Funcode Code Analyzer (en desarrollo o planificación, no es un producto comercial): herramienta para analizar la estructura de proyectos de software.\n\nRESEÑAS: solo las escriben clientes con proyecto entregado. CONTACTO: botón de WhatsApp de la página, formulario en contacto.html y correo buitragocristianespinosa@gmail.com. Seguimiento de solicitudes en mis-solicitudes.html. Imágenes o documentos del proyecto se comparten por WhatsApp. Reuniones: se solicitan por WhatsApp y su modalidad se confirma directamente. El asistente responde en cualquier momento; la atención humana depende de la agenda. REDES: LinkedIn y GitHub (Instagram y Facebook aún no están en la página). PRIVACIDAD: los datos del formulario se guardan en Firebase y solo el organizador los lee; cada cliente ve solo sus solicitudes. No hay información publicada sobre horario fijo, descuentos ni posicionamiento SEO.\nPáginas del sitio: precios.html, servicios.html, proyectos.html, proceso.html, nosotros.html, contacto.html, mis-solicitudes.html.",
  "intenciones": [
   {
    "id": "saludo",
@@ -24,7 +24,7 @@
     "buen dia",
     "parce"
    ],
-   "respuesta": "¡Hola! 👋 Soy Funi, el asistente de Funcode Studio CB. Pregúntame lo que quieras: precios, tiempos, servicios, cómo trabajamos o cómo pedir tu proyecto."
+   "respuesta": "¡Hola! 👋 Soy Funi, el asistente virtual de Funcode Studio CB. Puedo contarte sobre nuestros servicios, precios, tiempos, proyectos o ayudarte a preparar tu solicitud. ¿En qué te ayudo?"
   },
   {
    "id": "gracias",
@@ -51,11 +51,11 @@
   },
   {
    "id": "funi",
-   "titulo": "Sobre Funi",
+   "titulo": "¿Eres una persona?",
    "tipo": "funcode",
    "claves": [
     "quien eres",
-    "que eres",
+    "que +eres",
     "eres un robot",
     "eres robot",
     "eres humano",
@@ -64,10 +64,887 @@
     "como te llamas",
     "tu nombre",
     "funi",
-    "mascota"
+    "mascota",
+    "eres real",
+    "hablo con un bot",
+    "eres el dueno",
+    "eres un chatbot",
+    "eres bot",
+    "con quien hablo",
+    "estoy hablando con"
    ],
-   "respuesta": "Soy Funi, la mascota de Funcode 🤖. Respondo de forma automática las preguntas frecuentes con la información de esta página. Si algo de tu proyecto necesita una respuesta personalizada, Cristian te la da.",
-   "grupo": "funi"
+   "respuesta": "Soy Funi, el asistente virtual de Funcode Studio CB 🤖. Estoy aquí para orientarte y resolver tus dudas con la información de Funcode. Si necesitas atención personalizada, puedo dirigirte a nuestro WhatsApp.",
+   "grupo": "funi",
+   "whatsapp": true
+  },
+  {
+   "id": "empresa",
+   "titulo": "¿Qué es Funcode?",
+   "tipo": "funcode",
+   "claves": [
+    "que es funcode",
+    "que es funcode studio",
+    "empresa de software",
+    "empresa de desarrollo",
+    "que hace funcode",
+    "emprendimiento",
+    "que es funcode studio cb",
+    "a que se dedica"
+   ],
+   "respuesta": "Funcode Studio CB es un emprendimiento tecnológico en crecimiento dedicado al desarrollo de software, páginas web, plataformas educativas, videojuegos propios y formación en programación. Nuestro propósito es usar la tecnología para resolver necesidades reales y acercar la programación a más personas.",
+   "grupo": "empresa",
+   "prioridad": 1.1,
+   "enlaces": [
+    {
+     "texto": "Conocer más",
+     "href": "nosotros.html"
+    },
+    {
+     "texto": "Ver servicios",
+     "href": "servicios.html"
+    }
+   ]
+  },
+  {
+   "id": "grande",
+   "titulo": "¿Son una empresa grande?",
+   "tipo": "funcode",
+   "claves": [
+    "empresa grande",
+    "cuantos empleados",
+    "cuantas personas trabajan",
+    "tienen equipo",
+    "agencia",
+    "tamano",
+    "son una agencia",
+    "equipo de trabajo",
+    "cuanta gente",
+    "gente trabaja|trabajan",
+    "personas trabajan|trabaja",
+    "cuantos son",
+    "empresa persona"
+   ],
+   "respuesta": "Somos un emprendimiento tecnológico independiente en crecimiento, no una agencia grande. Trabajamos con un enfoque personalizado y transparente: detrás de cada proyecto está el fundador de Funcode.",
+   "grupo": "empresa",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "Quiénes somos",
+     "href": "nosotros.html"
+    }
+   ]
+  },
+  {
+   "id": "nosotros",
+   "titulo": "Quiénes somos",
+   "tipo": "funcode",
+   "claves": [
+    "quien esta detras",
+    "quienes +son",
+    "fundador",
+    "dueno",
+    "equipo",
+    "donde +estan",
+    "donde quedan",
+    "ubicados",
+    "ubicacion",
+    "ciudad",
+    "bogota",
+    "donde +son",
+    "quien hizo esta pagina",
+    "oficina",
+    "sede",
+    "local fisico",
+    "direccion",
+    "colombia",
+    "son de colombia",
+    "+tienen local"
+   ],
+   "respuesta": "Funcode Studio CB opera en Colombia y atiende de forma digital, principalmente por WhatsApp. Lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de Licenciatura en Informática en UNIMINUTO, en Bogotá. No hay una oficina o sede publicada para atención presencial.",
+   "grupo": "nosotros",
+   "enlaces": [
+    {
+     "texto": "Conocer más",
+     "href": "nosotros.html"
+    }
+   ]
+  },
+  {
+   "id": "paises",
+   "titulo": "Clientes de otros países",
+   "tipo": "funcode",
+   "claves": [
+    "otros paises",
+    "otro pais",
+    "fuera de colombia",
+    "extranjero",
+    "internacional",
+    "mexico",
+    "espana",
+    "estados unidos",
+    "venezuela",
+    "peru",
+    "ecuador",
+    "chile",
+    "argentina",
+    "trabajan con clientes de"
+   ],
+   "respuesta": "Podemos evaluar proyectos de clientes de otros países. La viabilidad depende del alcance, la comunicación, los requisitos técnicos y las condiciones de contratación. Los precios de referencia están en pesos colombianos (COP).",
+   "grupo": "paises",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "publico",
+   "titulo": "¿Con quién trabajan?",
+   "tipo": "funcode",
+   "claves": [
+    "con quien trabajan",
+    "para quien trabajan",
+    "clientes ideales",
+    "trabajan con emprendedores",
+    "trabajan con colegios",
+    "trabajan con empresas",
+    "publico",
+    "para quienes +trabajan",
+    "trabajan con negocios",
+    "trabajan con instituciones"
+   ],
+   "respuesta": "Trabajamos con emprendedores, pequeñas empresas, negocios locales, instituciones educativas, docentes, estudiantes, personas que quieren aprender programación y cualquier persona u organización que necesite una solución digital.",
+   "grupo": "publico",
+   "enlaces": [
+    {
+     "texto": "Ver servicios",
+     "href": "servicios.html"
+    }
+   ]
+  },
+  {
+   "id": "filosofia",
+   "titulo": "Nuestra forma de trabajar",
+   "tipo": "funcode",
+   "claves": [
+    "filosofia",
+    "valores",
+    "principios",
+    "por que elegirlos",
+    "por que funcode",
+    "que los diferencia",
+    "son confiables",
+    "mision",
+    "proposito"
+   ],
+   "respuesta": "Nuestra forma de trabajar: entender primero tu necesidad, ofrecer soluciones acordes con el alcance, comunicarnos con transparencia, no prometer funcionalidades que no podamos garantizar y decirte con claridad si un proyecto supera nuestras capacidades actuales.",
+   "grupo": "filosofia",
+   "enlaces": [
+    {
+     "texto": "Cómo trabajamos",
+     "href": "proceso.html"
+    }
+   ]
+  },
+  {
+   "id": "servicios",
+   "titulo": "Servicios",
+   "tipo": "funcode",
+   "claves": [
+    "que hacen",
+    "servicios",
+    "servicio",
+    "ofrecen",
+    "se dedican",
+    "pueden ayudar",
+    "que trabajos hacen",
+    "que tipo de proyectos",
+    "a que se dedican"
+   ],
+   "respuesta": "En Funcode ofrecemos:\n• Desarrollo de software y aplicaciones\n• Diseño y desarrollo web\n• Plataformas y herramientas educativas\n• Formación en programación\n• Mantenimiento y mejoras de proyectos existentes\n• Automatizaciones e integración de inteligencia artificial\nTambién desarrollamos videojuegos propios.",
+   "grupo": "servicios",
+   "enlaces": [
+    {
+     "texto": "Ver servicios",
+     "href": "servicios.html"
+    }
+   ],
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "web",
+   "titulo": "Páginas web",
+   "tipo": "funcode",
+   "claves": [
+    "pagina web",
+    "pagina",
+    "web",
+    "landing",
+    "landing page",
+    "pagina para mi negocio",
+    "pagina informativa",
+    "sitio web",
+    "pagina para restaurante",
+    "pagina para empresa",
+    "pagina para emprendimiento",
+    "crear pagina",
+    "montar mi negocio en internet",
+    "negocio en internet",
+    "sitio para mi emprendimiento",
+    "web para vender",
+    "presencia en internet",
+    "pagina desde cero",
+    "web desde cero"
+   ],
+   "respuesta": "¡Sí! Podemos crear tu página web desde cero: primero conocemos tu idea y las funcionalidades que necesitas para definir el alcance. Como referencia, una landing o página informativa empieza desde $160.000 COP y una página con varias secciones, formularios o catálogo desde $400.000 COP. Todas se adaptan a celular y computador.",
+   "grupo": "web",
+   "prioridad": 0.6,
+   "enlaces": [
+    {
+     "texto": "Ver precios",
+     "href": "precios.html"
+    }
+   ],
+   "contexto": "web",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "tienda",
+   "titulo": "Tiendas y catálogos",
+   "tipo": "funcode",
+   "claves": [
+    "tienda",
+    "tienda virtual",
+    "tienda online",
+    "tienda en linea",
+    "vender por internet",
+    "vender en linea",
+    "vender productos",
+    "carrito",
+    "pagos en linea",
+    "pagar con tarjeta",
+    "pasarela de pago",
+    "catalogo",
+    "catalogo de productos",
+    "productos",
+    "vender ropa",
+    "vender mis productos",
+    "ecommerce",
+    "comercio electronico",
+    "pedidos en linea"
+   ],
+   "respuesta": "Podemos evaluar catálogos de productos, sitios de comercio electrónico y funciones de venta. Para definir tu tienda hay que revisar varios aspectos: cómo se muestran los productos, cómo se gestionan los pedidos, si necesitas pagos en línea (dependen del proveedor de pagos y sus comisiones) y quién la administrará. Los catálogos entran desde el plan Profesional; lo demás se analiza en una cotización.",
+   "grupo": "tienda",
+   "enlaces": [
+    {
+     "texto": "Ver planes",
+     "href": "precios.html"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "tienda",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "pagos_integracion",
+   "titulo": "Pagos en línea en mi página",
+   "tipo": "funcode",
+   "claves": [
+    "integrar pagos",
+    "pagos con tarjeta",
+    "pagar con tarjeta",
+    "pasarela",
+    "pasarela de pago",
+    "boton de pago",
+    "cobrar en linea",
+    "integrar nequi",
+    "integrar daviplata",
+    "nequi en mi pagina",
+    "pagos en mi pagina",
+    "recibir pagos",
+    "mercado pago",
+    "wompi",
+    "payu",
+    "pse",
+    "nequi|daviplata|tarjeta|pasarela|pse tienda|web|pagina|ecommerce|catalogo|linea",
+    "clientes paguen|pagar|pago|paga",
+    "cobrar|cobro clientes|linea",
+    "pagos|pago tienda|ecommerce|catalogo"
+   ],
+   "respuesta": "Podemos evaluar integraciones con proveedores de pago. La disponibilidad depende del proveedor, sus requisitos, comisiones, documentación y compatibilidad técnica. Con Nequi o Daviplata podemos estudiar alternativas, pero no garantizamos una integración automática sin revisar antes las posibilidades técnicas y comerciales.",
+   "grupo": "tienda",
+   "prioridad": 1.25,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "tienda",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "app",
+   "titulo": "Aplicaciones",
+   "tipo": "funcode",
+   "claves": [
+    "app",
+    "app web",
+    "sistema",
+    "software",
+    "plataforma",
+    "inventario",
+    "agenda",
+    "agendar citas",
+    "reservas",
+    "login",
+    "usuarios",
+    "base de datos",
+    "firebase",
+    "cuanto cuesta app",
+    "cuanto vale app",
+    "herramienta",
+    "automatizar",
+    "automatizacion",
+    "apps script",
+    "quiero una aplicacion",
+    "necesito una app",
+    "crear una app",
+    "hacen aplicaciones",
+    "app movil",
+    "app celular",
+    "app para celular",
+    "descargar app"
+   ],
+   "respuesta": "¡Claro! Antes de confirmar evaluamos el tipo de aplicación, sus funcionalidades, las plataformas donde debe funcionar y su complejidad. ¿Tu aplicación sería para Android, iPhone o para usarse directamente desde el navegador?",
+   "grupo": "app",
+   "contexto": "app",
+   "opciones": [
+    {
+     "id": "android",
+     "titulo": "Android"
+    },
+    {
+     "id": "iphone",
+     "titulo": "iPhone"
+    },
+    {
+     "id": "app_web",
+     "titulo": "Desde el navegador"
+    },
+    {
+     "id": "multiplataforma",
+     "titulo": "Varias / no sé"
+    }
+   ],
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "android",
+   "titulo": "Apps para Android",
+   "tipo": "funcode",
+   "claves": [
+    "android",
+    "play store",
+    "playstore",
+    "apk",
+    "app android"
+   ],
+   "respuesta": "Podemos evaluar aplicaciones Android y proyectos multiplataforma según sus características. Tenemos experiencia publicada: LifeCoinQuest, uno de nuestros productos propios, tiene versión para Android.",
+   "grupo": "app",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "Ver LifeCoinQuest",
+     "href": "proyectos.html#p-lcq"
+    }
+   ],
+   "contexto": "app",
+   "ofrecerSolicitud": true,
+   "plataforma": "Android"
+  },
+  {
+   "id": "iphone",
+   "titulo": "Apps para iPhone",
+   "tipo": "funcode",
+   "claves": [
+    "iphone",
+    "ios",
+    "app store",
+    "apple",
+    "ipad"
+   ],
+   "respuesta": "Podemos evaluar una app para iPhone, pero antes debemos revisar los requisitos técnicos, las herramientas de desarrollo, la publicación en la App Store y la compatibilidad para confirmar que podemos asumirla.",
+   "grupo": "app",
+   "prioridad": 1.25,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "app",
+   "ofrecerSolicitud": true,
+   "plataforma": "iPhone"
+  },
+  {
+   "id": "app_web",
+   "titulo": "Aplicaciones web",
+   "tipo": "funcode",
+   "claves": [
+    "app web",
+    "aplicacion web",
+    "desde el navegador",
+    "navegador",
+    "sin instalar",
+    "web app"
+   ],
+   "respuesta": "Las aplicaciones web funcionan desde el navegador del celular o el computador, sin instalar nada. Desarrollamos herramientas web pequeñas y medianas: con usuarios, base de datos (Firebase), formularios, paneles o automatizaciones con Google Apps Script. Se cotizan según lo que necesites.",
+   "grupo": "app",
+   "prioridad": 1.1,
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ],
+   "contexto": "app",
+   "ofrecerSolicitud": true,
+   "plataforma": "Desde el navegador"
+  },
+  {
+   "id": "multiplataforma",
+   "titulo": "Varias plataformas",
+   "tipo": "funcode",
+   "claves": [
+    "multiplataforma",
+    "varias plataformas",
+    "android y iphone",
+    "todas las plataformas",
+    "celular y computador app",
+    "android iphone",
+    "iphone android",
+    "android ios",
+    "app android iphone",
+    "app iphone android",
+    "app android ios"
+   ],
+   "respuesta": "Si todavía no sabes en qué plataforma la necesitas, no hay problema: una opción es empezar con una aplicación web (funciona en cualquier celular desde el navegador) y, si se requiere, evaluar luego una versión instalable. Lo definimos juntos al revisar tu idea.",
+   "grupo": "app",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "contexto": "app",
+   "ofrecerSolicitud": true,
+   "plataforma": "Varias / no sé"
+  },
+  {
+   "id": "web_a_app",
+   "titulo": "Convertir mi web en app",
+   "tipo": "funcode",
+   "claves": [
+    "convertir pagina en app",
+    "convertir mi pagina",
+    "pagina a aplicacion",
+    "web en aplicacion",
+    "capacitor",
+    "volver app",
+    "pasar a app"
+   ],
+   "respuesta": "Sí, algunas páginas web pueden adaptarse a una aplicación usando tecnologías como Capacitor (así lo hicimos con LifeCoinQuest para Android). Primero debemos revisar la estructura y las funcionalidades de tu sitio.",
+   "grupo": "app",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "contexto": "app",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "sistemas",
+   "titulo": "Sistemas administrativos",
+   "tipo": "funcode",
+   "claves": [
+    "sistema administrativo",
+    "sistema de inventario",
+    "inventario",
+    "administrar mi negocio",
+    "sistema de ventas",
+    "facturacion",
+    "panel administrativo",
+    "control de clientes",
+    "sistema para mi empresa",
+    "crm",
+    "erp",
+    "nomina"
+   ],
+   "respuesta": "Podemos desarrollar herramientas administrativas de alcance definido (por ejemplo, inventario, registro de clientes o paneles de gestión). Los sistemas empresariales complejos requieren una evaluación especial antes de confirmar si podemos asumirlos.",
+   "grupo": "app",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "app",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "educacion",
+   "titulo": "Plataformas educativas",
+   "tipo": "funcode",
+   "claves": [
+    "plataforma educativa",
+    "educacion",
+    "educativa",
+    "educativo",
+    "colegio",
+    "docente",
+    "profesor",
+    "estudiante",
+    "alumno",
+    "simulador",
+    "ejercicios interactivos",
+    "material educativo",
+    "institucion educativa",
+    "plataforma|herramienta|app|pagina|juego docente|profesor|estudiante|colegio|alumno|escuela|universidad"
+   ],
+   "respuesta": "Sí. Desarrollamos herramientas de aprendizaje, simuladores, ejercicios interactivos y experiencias educativas digitales, como Ofimática 9° (Word y Excel con niveles, retos y panel docente).",
+   "grupo": "educacion",
+   "prioridad": 1.1,
+   "enlaces": [
+    {
+     "texto": "Ver Ofimática 9°",
+     "href": "proyectos.html#p-ofi"
+    }
+   ],
+   "contexto": "educacion",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "clases",
+   "titulo": "Clases de programación",
+   "tipo": "funcode",
+   "claves": [
+    "clases",
+    "clase",
+    "curso",
+    "cursos",
+    "aprender programar",
+    "ensenar programar",
+    "ensenan",
+    "taller",
+    "talleres",
+    "robotica",
+    "scratch",
+    "arduino",
+    "tinkercad",
+    "capacitacion",
+    "formacion",
+    "no se nada de programacion",
+    "principiante",
+    "aprender java",
+    "tutorias",
+    "aprender desde cero",
+    "programacion desde cero",
+    "ensenar desde cero"
+   ],
+   "respuesta": "Sí. Ofrecemos formación y acompañamiento en programación, también para personas que empiezan desde cero, con explicaciones progresivas y ejercicios prácticos. Además trabajamos inteligencia artificial y robótica educativa (Scratch, Arduino, Tinkercad). El contenido y las condiciones se definen según tu nivel y tus objetivos.",
+   "grupo": "clases",
+   "prioridad": 1.15,
+   "enlaces": [
+    {
+     "texto": "Ver servicios",
+     "href": "servicios.html"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "clases",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "ia",
+   "titulo": "Inteligencia artificial",
+   "tipo": "funcode",
+   "claves": [
+    "inteligencia artificial",
+    "inteligencia",
+    "chatbot",
+    "asistente virtual",
+    "automatizar con inteligencia"
+   ],
+   "respuesta": "Sí. Usamos herramientas de inteligencia artificial como apoyo para el desarrollo, el aprendizaje, el análisis y la productividad, y podemos evaluar integrar herramientas de IA en tu proyecto, como un asistente que responda preguntas. (Este chat también lo desarrollamos en Funcode 😉.)",
+   "grupo": "ia",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "IA como herramienta",
+     "href": "servicios.html#ia"
+    }
+   ],
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "ia_auto",
+   "titulo": "¿La IA lo hace todo?",
+   "tipo": "funcode",
+   "claves": [
+    "ia hace todo",
+    "inteligencia lo hace todo",
+    "lo hace una maquina",
+    "hecho con ia",
+    "hecho por inteligencia",
+    "la ia lo hace todo",
+    "todo con inteligencia",
+    "inteligencia automaticamente"
+   ],
+   "respuesta": "No necesariamente. La inteligencia artificial es una herramienta de apoyo: los resultados se analizan, revisan, prueban y validan antes de entregarse.",
+   "grupo": "ia",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "IA como herramienta",
+     "href": "servicios.html#ia"
+    }
+   ]
+  },
+  {
+   "id": "videojuegos",
+   "titulo": "Videojuegos",
+   "tipo": "funcode",
+   "claves": [
+    "videojuego",
+    "juego",
+    "game",
+    "juegos",
+    "desarrollar un juego",
+    "juego para mi"
+   ],
+   "respuesta": "Nuestra línea de videojuegos está orientada principalmente a proyectos propios. Si tienes una propuesta relacionada, podemos recibirla y evaluar si existe una modalidad de colaboración. También hacemos experiencias educativas con gamificación, como Ofimática 9°.",
+   "grupo": "juegos",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "mejoras",
+   "titulo": "Mejorar o mantener una página",
+   "tipo": "funcode",
+   "claves": [
+    "mejorar",
+    "mejorarla",
+    "arreglar",
+    "arreglen",
+    "mantenimiento",
+    "actualizar",
+    "modificar",
+    "rediseno",
+    "redisenar",
+    "soporte",
+    "pagina vieja",
+    "agregar funciones",
+    "pagina existente",
+    "mi pagina actual",
+    "mejorar pagina",
+    "arreglar pagina",
+    "mejorarla",
+    "desactualizada",
+    "desactualizado",
+    "renovar",
+    "renovarla",
+    "cambiar diseno",
+    "nuevo diseno",
+    "mantenimiento de paginas",
+    "actualizaciones",
+    "acompanamiento",
+    "actualizar mi pagina",
+    "renovar mi pagina"
+   ],
+   "respuesta": "Sí. Podemos revisar tu proyecto y evaluar cambios visuales, correcciones, actualizaciones, nuevas funcionalidades y acompañamiento. Cuéntanos qué tienes y qué quieres cambiar.",
+   "grupo": "mejoras",
+   "prioridad": 1.1,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "contexto": "mejoras",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "proyecto_existente",
+   "titulo": "Proyectos ya comenzados",
+   "tipo": "funcode",
+   "claves": [
+    "continuar un proyecto",
+    "terminar mi proyecto",
+    "otro programador",
+    "proyecto a medias",
+    "retomar",
+    "codigo de otra persona",
+    "proyecto existente",
+    "proyecto avanzado",
+    "proyecto ya empezado",
+    "proyecto que otro hizo",
+    "proyecto comenzado",
+    "proyecto empezado"
+   ],
+   "respuesta": "Sí, podemos evaluar proyectos que ya están comenzados. Para eso necesitamos conocer sus tecnologías, su estado actual, el acceso al código y la documentación disponible.",
+   "grupo": "mejoras",
+   "prioridad": 1.0,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "mejoras",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "errores",
+   "titulo": "Corregir errores",
+   "tipo": "funcode",
+   "claves": [
+    "error",
+    "errores",
+    "falla",
+    "fallas",
+    "bug",
+    "no funciona",
+    "se dano",
+    "arreglar codigo",
+    "corregir codigo",
+    "problema en mi pagina",
+    "se cae",
+    "cayo",
+    "se cayo",
+    "caida",
+    "no carga",
+    "no abre",
+    "no sirve",
+    "dejo de funcionar",
+    "danada",
+    "danado"
+   ],
+   "respuesta": "Podemos evaluar errores de software: revisar el código y determinar qué tipo de corrección o intervención se necesita. Para revisarlo, lo mejor es que nos compartas detalles y capturas por WhatsApp.",
+   "grupo": "mejoras",
+   "prioridad": 1.15,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "mejoras"
+  },
+  {
+   "id": "seguridad_rev",
+   "titulo": "Revisión de seguridad",
+   "tipo": "funcode",
+   "claves": [
+    "revisar seguridad",
+    "seguridad de mi pagina",
+    "auditoria",
+    "hackeo",
+    "hackearon",
+    "vulnerabilidad",
+    "pentesting",
+    "proteger mi pagina"
+   ],
+   "respuesta": "Podemos evaluar aspectos técnicos de seguridad de tu página dentro de un alcance acordado. Eso no equivale a una auditoría de seguridad certificada, y ningún sistema se puede garantizar como completamente invulnerable.",
+   "grupo": "seguridad",
+   "prioridad": 1.25,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "grande_proyecto",
+   "titulo": "Proyectos grandes",
+   "tipo": "funcode",
+   "claves": [
+    "proyecto grande",
+    "grandes",
+    "muchos usuarios",
+    "gran escala",
+    "empresa grande",
+    "complejo",
+    "muy grande"
+   ],
+   "respuesta": "Trabajamos sobre todo proyectos pequeños y medianos. Los de mayor complejidad se evalúan uno por uno y, si algo supera nuestras capacidades actuales, te lo decimos con transparencia antes de empezar.",
+   "grupo": "alcance",
+   "enlaces": [
+    {
+     "texto": "Qué proyectos hacemos",
+     "href": "servicios.html#alcance"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "no_pueden",
+   "titulo": "¿Y si no pueden hacerlo?",
+   "tipo": "funcode",
+   "claves": [
+    "no son capaces",
+    "supera sus capacidades",
+    "fuera de su alcance",
+    "no lo pueden hacer",
+    "no es viable",
+    "proyecto no viable",
+    "rechazan proyectos",
+    "que pasa si no pueden desarrollar",
+    "pasa si no lo logran"
+   ],
+   "respuesta": "Te lo diremos con transparencia. Preferimos explicar nuestras limitaciones antes que aceptar un trabajo que no podamos realizar adecuadamente. Por las características de algunos proyectos, primero hacemos una evaluación técnica para darte una respuesta realista.",
+   "grupo": "alcance",
+   "prioridad": 1.2
+  },
+  {
+   "id": "garantia",
+   "titulo": "¿Garantizan resultados?",
+   "tipo": "funcode",
+   "claves": [
+    "garantizan",
+    "garantia",
+    "garantizar",
+    "cualquier idea",
+    "nunca falle",
+    "seguro que funciona",
+    "prometen",
+    "garantizan que funcione",
+    "libre de errores"
+   ],
+   "respuesta": "No garantizamos que cualquier idea se pueda desarrollar: cada proyecto se evalúa y, si no es viable o supera nuestras capacidades, te lo decimos. Y ningún software puede garantizar que nunca falle; lo que sí hacemos es aplicar pruebas y controles para reducir los riesgos.",
+   "grupo": "alcance",
+   "prioridad": 1.2
   },
   {
    "id": "precio",
@@ -103,19 +980,20 @@
     "sale pagina",
     "cobra pagina"
    ],
-   "respuesta": "Los proyectos empiezan desde $160.000 COP (plan Básico: landing o página informativa). El plan Profesional es desde $400.000 COP y los proyectos personalizados, como aplicaciones, se cotizan. Son precios de referencia: el valor final depende del alcance, el diseño y las funcionalidades, y lo recibes en una propuesta antes de empezar.",
+   "respuesta": "No hay un precio único: depende del diseño, las funcionalidades, la cantidad de secciones, las integraciones y la complejidad. Como referencia, en la página de precios los proyectos empiezan desde $160.000 COP (plan Básico) y $400.000 COP (plan Profesional); los proyectos personalizados se cotizan. El valor definitivo se confirma en una cotización según tu proyecto.",
    "grupo": "precio",
+   "prioridad": 1.15,
    "enlaces": [
     {
      "texto": "Ver precios",
      "href": "precios.html"
-    },
-    {
-     "texto": "Pedir cotización",
-     "href": "contacto.html#formulario"
     }
    ],
-   "prioridad": 1.15
+   "segunContexto": {
+    "tienda": "precio_tienda",
+    "app": "precio_app"
+   },
+   "ofrecerSolicitud": true
   },
   {
    "id": "planes",
@@ -134,12 +1012,256 @@
     "basico",
     "profesional"
    ],
-   "respuesta": "• Básico (desde $160.000 COP): landing o página informativa, información del negocio, galería, botones de WhatsApp y redes, diseño adaptable a celular.\n• Profesional (desde $400.000 COP): varias secciones, diseño personalizado, formularios, catálogos e interacciones.\n• Personalizado (con cotización): aplicaciones web, sistemas educativos, usuarios, Firebase e integraciones.",
+   "respuesta": "• Básico (desde $160.000 COP): landing o página informativa, información del negocio, galería, botones de WhatsApp y redes, diseño adaptable a celular.\n• Profesional (desde $400.000 COP): varias secciones, diseño personalizado, formularios, catálogos e interacciones.\n• Personalizado (con cotización): aplicaciones web, sistemas educativos, usuarios, Firebase e integraciones.\nSon precios de referencia «desde»: el valor final depende de tu proyecto.",
    "grupo": "precio",
    "enlaces": [
     {
      "texto": "Ver planes",
      "href": "precios.html"
+    }
+   ]
+  },
+  {
+   "id": "precio_app",
+   "titulo": "Precio de una aplicación",
+   "tipo": "funcode",
+   "claves": [
+    "cuanto cuesta app",
+    "cuanto vale app",
+    "precio app",
+    "costo app",
+    "cuanto cuesta una aplicacion",
+    "precio de una aplicacion",
+    "cuanto cuesta un sistema",
+    "precio sistema",
+    "cuesta|vale|cobra|cobran|precio|costo|sale|valor|cotizar|cotizacion|presupuesto app|sistema|plataforma"
+   ],
+   "respuesta": "No existe un precio único para una aplicación: depende de las plataformas, las funcionalidades, el diseño, las integraciones y la complejidad técnica. Entra en el plan Personalizado, que se cotiza después de conocer tu idea.",
+   "grupo": "precio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver planes",
+     "href": "precios.html"
+    }
+   ],
+   "whatsapp": true,
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "precio_tienda",
+   "titulo": "Precio de una tienda virtual",
+   "tipo": "funcode",
+   "claves": [
+    "cuanto cuesta tienda",
+    "cuanto vale tienda",
+    "precio tienda",
+    "costo tienda",
+    "precio de una tienda",
+    "cuanto cuesta un catalogo",
+    "precio catalogo",
+    "cuesta|vale|cobra|cobran|precio|costo|sale|valor|cotizar|cotizacion|presupuesto tienda|catalogo|ecommerce"
+   ],
+   "respuesta": "El precio de una tienda virtual depende del catálogo, la gestión de productos y pedidos, los pagos y la administración. Como referencia, los catálogos entran desde el plan Profesional (desde $400.000 COP); una tienda con pagos en línea se cotiza según lo que necesite.",
+   "grupo": "precio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver planes",
+     "href": "precios.html"
+    }
+   ],
+   "whatsapp": true,
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "cotizacion_gratis",
+   "titulo": "¿La cotización tiene costo?",
+   "tipo": "funcode",
+   "claves": [
+    "cotizacion gratis",
+    "cotizacion gratuita",
+    "cobran por cotizar",
+    "cuesta cotizar",
+    "evaluacion gratis",
+    "asesoria gratis",
+    "consulta gratis",
+    "cotizar es gratis",
+    "no cobran por cotizar",
+    "cotizacion tiene costo",
+    "evaluacion tiene costo"
+   ],
+   "respuesta": "Puedes compartir tu idea y solicitar una evaluación inicial. Si se necesita una consultoría técnica o un análisis especializado, sus condiciones se confirman contigo antes.",
+   "grupo": "cotizacion",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "presupuesto_antes",
+   "titulo": "Presupuesto antes de contratar",
+   "tipo": "funcode",
+   "claves": [
+    "precio antes de contratar",
+    "presupuesto antes de contratar",
+    "cotizacion antes de contratar",
+    "valor antes de contratar",
+    "conocer el precio",
+    "precio primero",
+    "presupuesto primero",
+    "cotizar primero"
+   ],
+   "respuesta": "Sí. Es importante conocer el alcance del proyecto y las condiciones económicas antes de comenzar: recibes una propuesta con alcance, tiempo y valor antes de empezar.",
+   "grupo": "cotizacion",
+   "prioridad": 1.25,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "poco_presupuesto",
+   "titulo": "Poco presupuesto",
+   "tipo": "funcode",
+   "claves": [
+    "presupuesto bajo",
+    "bajo presupuesto",
+    "presupuesto limitado",
+    "presupuesto pequeno",
+    "presupuesto corto",
+    "poca plata",
+    "poca dinero",
+    "primera version",
+    "pagina sencilla y barata",
+    "no me alcanza",
+    "alcanza el dinero",
+    "adaptarse a mi presupuesto",
+    "adaptar al presupuesto",
+    "ajustarse a mi presupuesto",
+    "ajustar al presupuesto",
+    "mucho presupuesto",
+    "poco presupuesto",
+    "poco dinero",
+    "mucho dinero",
+    "presupuesto ajustado"
+   ],
+   "respuesta": "Sí. Podemos estudiar alternativas, priorizar las funcionalidades esenciales y ver si existe una primera versión viable para tu presupuesto. El plan Básico empieza desde $160.000 COP como referencia.",
+   "grupo": "cotizacion",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver precios",
+     "href": "precios.html"
+    }
+   ],
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "descuentos",
+   "titulo": "Descuentos",
+   "tipo": "funcode",
+   "claves": [
+    "descuento",
+    "descuentos",
+    "promocion",
+    "promociones",
+    "oferta",
+    "rebaja",
+    "gratis",
+    "negociar",
+    "negociable",
+    "rebajar el precio"
+   ],
+   "respuesta": "No tenemos descuentos ni promociones publicados y no puedo ofrecerlos desde este chat. Si quieres conversar sobre las condiciones de tu proyecto, puedes hacerlo directamente por WhatsApp.",
+   "grupo": "precio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver precios",
+     "href": "precios.html"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "pago",
+   "titulo": "Formas de pago",
+   "tipo": "funcode",
+   "claves": [
+    "forma de pago",
+    "formas de pago",
+    "como se paga",
+    "como pago",
+    "pagar",
+    "pago",
+    "paga",
+    "anticipo",
+    "cuotas",
+    "nequi",
+    "daviplata",
+    "transferencia",
+    "tarjeta",
+    "efectivo",
+    "medios de pago",
+    "metodos de pago",
+    "por partes",
+    "aceptan nequi",
+    "pagar por nequi",
+    "financiacion",
+    "pagar despues",
+    "pagar por adelantado",
+    "pago adelantado",
+    "todo por adelantado",
+    "adelantado"
+   ],
+   "respuesta": "Las modalidades de pago (por ejemplo, si se paga por partes) se establecen en la propuesta de cada proyecto y no puedo confirmarlas desde este chat. Todavía no hay medios de pago publicados en la página; se acuerdan directamente.",
+   "grupo": "pago",
+   "prioridad": 1.1,
+   "enlaces": [
+    {
+     "texto": "Pedir cotización",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "hosting",
+   "titulo": "Dominio y hosting",
+   "tipo": "funcode",
+   "claves": [
+    "dominio",
+    "hosting",
+    "alojamiento",
+    "servidor",
+    "publicar",
+    "publicacion",
+    "subir pagina",
+    "en internet",
+    "punto com",
+    "incluye dominio",
+    "hosting incluido",
+    "dominio incluido",
+    "licencias",
+    "servicios externos",
+    "incluye hosting",
+    "dominio|hosting|alojamiento aparte|adicional|extra",
+    "paga|cobra|va aparte"
+   ],
+   "respuesta": "No necesariamente. El dominio, el alojamiento web (hosting), servidores, licencias y servicios externos se evalúan y cotizan según el proyecto, y quedan especificados en la propuesta.",
+   "grupo": "hosting",
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
     }
    ]
   },
@@ -173,312 +1295,42 @@
     "lista para",
     "tenerla lista"
    ],
-   "respuesta": "Los proyectos básicos pueden estar listos en pocos días: el plazo es de hasta 7 días hábiles, según el alcance y que entregues a tiempo el material (textos, fotos, logo). En proyectos más grandes el tiempo se define en la propuesta.",
+   "respuesta": "Depende del alcance y la complejidad: después de revisar los requisitos establecemos un tiempo estimado. Como referencia, para proyectos básicos se establece un plazo de hasta 7 días hábiles, siempre que tengamos el material necesario (textos, fotos, logo).",
    "grupo": "tiempo",
+   "prioridad": 1.15,
    "enlaces": [
     {
      "texto": "Cómo trabajamos",
      "href": "proceso.html"
     }
-   ],
-   "prioridad": 1.15
-  },
-  {
-   "id": "servicios",
-   "titulo": "Servicios",
-   "tipo": "funcode",
-   "claves": [
-    "que hacen",
-    "servicios",
-    "servicio",
-    "ofrecen",
-    "se dedican",
-    "pueden ayudar",
-    "que trabajos hacen",
-    "que tipo de proyectos",
-    "a que se dedican"
-   ],
-   "respuesta": "En Funcode hacemos:\n• Páginas web\n• Aplicaciones y herramientas web (también automatizaciones con Google Apps Script)\n• Tecnología educativa\n• Integración de inteligencia artificial\n• Cursos y talleres de programación y robótica\n• Mantenimiento y mejoras de páginas existentes\nSobre todo para proyectos pequeños y medianos.",
-   "grupo": "servicios",
-   "enlaces": [
-    {
-     "texto": "Ver servicios",
-     "href": "servicios.html"
-    }
    ]
   },
   {
-   "id": "web",
-   "titulo": "Páginas web",
+   "id": "disponibilidad",
+   "titulo": "Disponibilidad",
    "tipo": "funcode",
    "claves": [
-    "pagina web",
-    "pagina",
-    "web",
-    "landing",
-    "landing page",
-    "pagina para mi negocio",
-    "pagina informativa",
-    "sitio web",
-    "pagina para restaurante",
-    "pagina para empresa",
-    "pagina para emprendimiento"
-   ],
-   "respuesta": "¡Sí! Las páginas web son nuestro servicio principal. Una landing o página informativa entra en el plan Básico (desde $160.000 COP) y una página con varias secciones, formularios o catálogo en el Profesional (desde $400.000 COP). Todas se adaptan a celular y computador, y ves avances antes de la entrega.",
-   "grupo": "web",
-   "prioridad": 0.6,
-   "enlaces": [
-    {
-     "texto": "Ver precios",
-     "href": "precios.html"
-    },
-    {
-     "texto": "Solicitar mi página",
-     "href": "contacto.html#formulario"
-    }
-   ]
-  },
-  {
-   "id": "tienda",
-   "titulo": "Tiendas y catálogos",
-   "tipo": "funcode",
-   "claves": [
-    "tienda",
-    "tienda virtual",
-    "tienda online",
-    "tienda en linea",
-    "vender por internet",
-    "vender en linea",
-    "vender productos",
-    "carrito",
-    "pagos en linea",
-    "pagar con tarjeta",
-    "pasarela de pago",
-    "catalogo",
-    "catalogo de productos",
-    "productos"
-   ],
-   "respuesta": "Los catálogos de productos entran en el plan Profesional (desde $400.000 COP). Una tienda con carrito o pagos en línea se evalúa según lo que necesites: cuéntanos tu caso en el formulario y te decimos con claridad si podemos hacerlo bien y cuánto costaría.",
-   "grupo": "tienda",
-   "enlaces": [
-    {
-     "texto": "Ver planes",
-     "href": "precios.html"
-    },
-    {
-     "texto": "Contar mi idea",
-     "href": "contacto.html#formulario"
-    }
-   ]
-  },
-  {
-   "id": "app",
-   "titulo": "Aplicaciones",
-   "tipo": "funcode",
-   "claves": [
-    "app",
-    "app web",
-    "sistema",
-    "software",
-    "plataforma",
-    "inventario",
+    "disponibilidad",
+    "tienen cupo",
+    "estan disponibles",
     "agenda",
-    "agendar citas",
-    "reservas",
-    "login",
-    "usuarios",
-    "base de datos",
-    "firebase",
-    "cuanto cuesta app",
-    "cuanto vale app",
-    "herramienta",
-    "automatizar",
-    "automatizacion",
-    "apps script"
+    "empezar pronto",
+    "empezar inmediatamente",
+    "cupo disponible",
+    "cuando pueden empezar",
+    "cuando empiezan",
+    "cuando podrian empezar"
    ],
-   "respuesta": "Desarrollamos aplicaciones y herramientas web pequeñas y medianas: con usuarios, base de datos (Firebase), formularios, paneles o automatizaciones con Google Apps Script. Se cotizan según lo que necesites (plan Personalizado). Los sistemas muy grandes se evalúan caso por caso.",
-   "grupo": "app",
+   "respuesta": "La disponibilidad para empezar un proyecto se confirma directamente, según la agenda del momento. Escríbenos por WhatsApp con tu idea y te respondemos.",
+   "grupo": "tiempo",
+   "prioridad": 1.25,
    "enlaces": [
     {
-     "texto": "Ver proyectos",
-     "href": "proyectos.html"
-    },
-    {
-     "texto": "Pedir cotización",
+     "texto": "Ir al formulario",
      "href": "contacto.html#formulario"
     }
-   ]
-  },
-  {
-   "id": "movil",
-   "titulo": "Apps para celular",
-   "tipo": "funcode",
-   "claves": [
-    "app movil",
-    "app celular",
-    "android",
-    "iphone",
-    "ios",
-    "play store",
-    "app store",
-    "playstore",
-    "descargar app"
    ],
-   "respuesta": "Las aplicaciones web que hacemos funcionan en el celular desde el navegador. Una app para Play Store o App Store se evalúa según el proyecto: LifeCoinQuest, uno de nuestros productos propios, tiene versión para Android.",
-   "grupo": "app",
-   "prioridad": 1.2,
-   "enlaces": [
-    {
-     "texto": "Ver proyectos",
-     "href": "proyectos.html"
-    },
-    {
-     "texto": "Contar mi idea",
-     "href": "contacto.html#formulario"
-    }
-   ]
-  },
-  {
-   "id": "educacion",
-   "titulo": "Educación y cursos",
-   "tipo": "funcode",
-   "claves": [
-    "educacion",
-    "educativa",
-    "educativo",
-    "colegio",
-    "docente",
-    "profesor",
-    "estudiante",
-    "alumno",
-    "curso",
-    "clase",
-    "taller",
-    "robotica",
-    "scratch",
-    "arduino",
-    "tinkercad",
-    "capacitacion",
-    "formacion",
-    "aprender programar",
-    "enseñar",
-    "plataforma educativa"
-   ],
-   "respuesta": "La tecnología educativa es parte central de Funcode: plataformas y herramientas para educación (como Ofimática 9°, con panel docente) y formación en programación, inteligencia artificial, robótica educativa (Scratch, Arduino, Tinkercad) y convivencia digital.",
-   "grupo": "educacion",
-   "prioridad": 1.1,
-   "enlaces": [
-    {
-     "texto": "Ver servicios",
-     "href": "servicios.html"
-    },
-    {
-     "texto": "Ver Ofimática 9°",
-     "href": "proyectos.html#p-ofi"
-    }
-   ]
-  },
-  {
-   "id": "ia",
-   "titulo": "Inteligencia artificial",
-   "tipo": "funcode",
-   "claves": [
-    "inteligencia artificial",
-    "inteligencia",
-    "chatbot",
-    "asistente virtual",
-    "automatizar con inteligencia"
-   ],
-   "respuesta": "Usamos la inteligencia artificial como herramienta de apoyo, siempre con revisión y pruebas humanas. También podemos integrar herramientas de IA en tu proyecto, como un asistente o chatbot (este chat es un ejemplo 😉). Cada caso se cotiza.",
-   "grupo": "ia",
-   "prioridad": 1.2,
-   "enlaces": [
-    {
-     "texto": "IA como herramienta",
-     "href": "servicios.html#ia"
-    }
-   ]
-  },
-  {
-   "id": "videojuegos",
-   "titulo": "Videojuegos",
-   "tipo": "funcode",
-   "claves": [
-    "videojuego",
-    "juego",
-    "game",
-    "juegos"
-   ],
-   "respuesta": "Los videojuegos son productos propios de Funcode y por ahora no se hacen por encargo. Sí hacemos experiencias educativas con gamificación, como Ofimática 9° o LifeCoinQuest.",
-   "grupo": "juegos",
-   "prioridad": 1.2,
-   "enlaces": [
-    {
-     "texto": "Ver proyectos",
-     "href": "proyectos.html"
-    }
-   ]
-  },
-  {
-   "id": "grande",
-   "titulo": "Proyectos grandes",
-   "tipo": "funcode",
-   "claves": [
-    "proyecto grande",
-    "grandes",
-    "muchos usuarios",
-    "gran escala",
-    "empresa grande",
-    "complejo",
-    "muy grande"
-   ],
-   "respuesta": "Trabajamos sobre todo proyectos pequeños y medianos. Los de mayor complejidad se evalúan uno por uno y, si algo supera nuestro alcance actual, te lo decimos con transparencia antes de empezar.",
-   "grupo": "alcance",
-   "enlaces": [
-    {
-     "texto": "Qué proyectos hacemos",
-     "href": "servicios.html#alcance"
-    }
-   ]
-  },
-  {
-   "id": "mejoras",
-   "titulo": "Mejorar una página",
-   "tipo": "funcode",
-   "claves": [
-    "mejorar",
-    "mejorarla",
-    "arreglar",
-    "arreglen",
-    "mantenimiento",
-    "actualizar",
-    "modificar",
-    "rediseno",
-    "redisenar",
-    "soporte",
-    "pagina vieja",
-    "agregar funciones",
-    "pagina existente",
-    "mi pagina actual",
-    "mejorar pagina",
-    "arreglar pagina",
-    "mejorarla",
-    "desactualizada",
-    "desactualizado",
-    "renovar",
-    "renovarla",
-    "cambiar diseno",
-    "nuevo diseno"
-   ],
-   "respuesta": "Sí, hacemos mantenimiento y mejoras: ajustes, correcciones y nuevas funciones para páginas y proyectos que ya existen. Cuéntanos qué tienes y qué quieres cambiar.",
-   "grupo": "mejoras",
-   "prioridad": 1.1,
-   "enlaces": [
-    {
-     "texto": "Solicitar mejora",
-     "href": "contacto.html#formulario"
-    }
-   ]
+   "whatsapp": true
   },
   {
    "id": "avances",
@@ -491,9 +1343,13 @@
     "progreso",
     "version preliminar",
     "revisar antes",
-    "ver antes"
+    "ver antes",
+    "mostrando",
+    "como va quedando",
+    "van mostrando",
+    "ir viendo"
    ],
-   "respuesta": "Sí. Durante el proceso te mostramos versiones preliminares para que veas cómo va el proyecto y opines antes de la entrega.",
+   "respuesta": "Sí, en general se presentan versiones preliminares para confirmar que el proyecto va en la dirección correcta. La forma y la frecuencia de los avances se acuerdan según el tipo de proyecto.",
    "grupo": "proceso",
    "enlaces": [
     {
@@ -515,10 +1371,10 @@
     "correcciones",
     "corregir",
     "modificaciones",
-    "no me gusta",
+    "+no gusta",
     "despues de entregado"
    ],
-   "respuesta": "Durante el desarrollo puedes pedir ajustes relacionados con lo acordado. Si un cambio implica nuevas funcionalidades o ampliar el proyecto, puede tener un costo adicional, que siempre se te informa antes. Después de la entrega, los cambios se trabajan como mantenimiento y mejoras.",
+   "respuesta": "Sí. Los cambios se manejan según las condiciones y rondas de cambios definidas en la propuesta: los ajustes dentro del alcance acordado se atienden durante el desarrollo, y lo que implique nuevas funcionalidades o ampliar el proyecto puede tener un costo adicional, siempre informado antes.",
    "grupo": "proceso",
    "enlaces": [
     {
@@ -529,7 +1385,7 @@
   },
   {
    "id": "proceso",
-   "titulo": "Cómo trabajamos",
+   "titulo": "Cómo contratar y trabajar",
    "tipo": "funcode",
    "claves": [
     "como trabajan",
@@ -539,16 +1395,26 @@
     "metodologia",
     "etapas",
     "como es el proceso",
-    "forma de trabajo"
+    "forma de trabajo",
+    "como contrato",
+    "como los contrato",
+    "como contratar",
+    "pasos para contratar",
+    "contratar un proyecto",
+    "contratar sus servicios",
+    "contrata",
+    "contratan",
+    "como se contrata"
    ],
-   "respuesta": "Trabajamos en 6 etapas: 1) entendemos tu idea, 2) proponemos alcance, tiempo y valor, 3) desarrollamos, 4) te mostramos avances, 5) probamos y 6) entregamos el proyecto publicado.",
+   "respuesta": "Así funciona: 1) conocemos tu necesidad, 2) evaluamos si es viable, 3) definimos el alcance y 4) te enviamos una propuesta con condiciones y costos. Después desarrollamos, te mostramos avances, probamos y entregamos.",
    "grupo": "proceso",
    "enlaces": [
     {
      "texto": "Ver el proceso",
      "href": "proceso.html"
     }
-   ]
+   ],
+   "ofrecerSolicitud": true
   },
   {
    "id": "materiales",
@@ -566,17 +1432,18 @@
     "textos",
     "contenido",
     "requisitos",
-    "que necesitan"
+    "que necesitan",
+    "que necesitan saber",
+    "que informacion necesitan",
+    "tener listo",
+    "listo para empezar",
+    "necesito para empezar|comenzar|arrancar",
+    "preparar antes"
    ],
-   "respuesta": "Para empezar necesitamos tu idea y los materiales del proyecto: textos, fotos, logo y datos del negocio (por ejemplo WhatsApp y redes). El tiempo de desarrollo empieza a contar cuando los recibimos. Si aún no los tienes todos, igual puedes pedir la cotización.",
+   "respuesta": "Para empezar necesitamos saber qué quieres desarrollar, para quién está dirigido, qué funcionalidades necesitas y tu presupuesto aproximado. Luego, los materiales del proyecto (textos, fotos, logo). Si quieres, te ayudo a organizar esa información ahora mismo.",
    "grupo": "materiales",
    "prioridad": 1.1,
-   "enlaces": [
-    {
-     "texto": "Pedir cotización",
-     "href": "contacto.html#formulario"
-    }
-   ]
+   "ofrecerSolicitud": true
   },
   {
    "id": "cotizar",
@@ -595,9 +1462,20 @@
     "me interesa",
     "quiero contratar",
     "quiero empezar",
-    "como hago"
+    "como hago",
+    "quiero una cotizacion",
+    "solicitar cotizacion",
+    "pedir presupuesto",
+    "me interesa contratar",
+    "empezar mi proyecto",
+    "comenzar mi proyecto",
+    "iniciar mi proyecto",
+    "empezar un proyecto",
+    "preparar solicitud",
+    "preparar mi solicitud",
+    "armar mi solicitud"
    ],
-   "respuesta": "¡Genial! 🚀 Llena el formulario de la página con tu idea: te enviamos una propuesta con alcance, tiempo y valor, y puedes seguir tu solicitud en «Mis solicitudes». Si prefieres, también puedes escribir por WhatsApp.",
+   "respuesta": "¡Genial! 🚀 Puedo ayudarte a preparar tu solicitud con unas preguntas rápidas y enviarla por WhatsApp para que recibas atención directa. Si prefieres, también puedes llenar el formulario de la página.",
    "grupo": "cotizar",
    "enlaces": [
     {
@@ -605,11 +1483,13 @@
      "href": "contacto.html#formulario"
     }
    ],
-   "whatsapp": true
+   "whatsapp": true,
+   "ofrecerSolicitud": true,
+   "iniciaSolicitud": true
   },
   {
    "id": "contacto",
-   "titulo": "Contacto",
+   "titulo": "Hablar con una persona",
    "tipo": "funcode",
    "claves": [
     "contacto",
@@ -626,16 +1506,113 @@
     "asesor",
     "humano",
     "persona real",
-    "cristian"
+    "cristian",
+    "atencion humana",
+    "persona de verdad",
+    "alguien real",
+    "asesor humano",
+    "hablar dueno|cristian|fundador|encargado|responsable|director"
    ],
-   "respuesta": "Puedes escribir a Cristian por WhatsApp al +57 320 292 0181, al correo buitragocristianespinosa@gmail.com o usar el formulario de la página.",
+   "respuesta": "¡Por supuesto! Puedes continuar la conversación por nuestro WhatsApp (+57 320 292 0181, botón de abajo) para recibir atención humana. También puedes usar el formulario de la página o escribir al correo buitragocristianespinosa@gmail.com.",
    "grupo": "contacto",
    "enlaces": [
     {
-     "texto": "Formulario",
+     "texto": "Ir al formulario",
      "href": "contacto.html#formulario"
     }
    ],
+   "whatsapp": true
+  },
+  {
+   "id": "documentos",
+   "titulo": "Enviar imágenes o documentos",
+   "tipo": "funcode",
+   "claves": [
+    "enviar imagenes",
+    "enviar fotos",
+    "enviar documentos",
+    "mandar archivos",
+    "adjuntar",
+    "pdf",
+    "compartir archivos",
+    "enviar mi logo",
+    "mandar fotos",
+    "mandar imagenes",
+    "mandar documentos",
+    "mandar archivo"
+   ],
+   "respuesta": "Sí, puedes compartir imágenes, documentos o archivos de tu proyecto por WhatsApp para facilitar su evaluación (por este chat no se pueden enviar archivos).",
+   "grupo": "contacto",
+   "prioridad": 1.25,
+   "whatsapp": true
+  },
+  {
+   "id": "reunion",
+   "titulo": "Solicitar una reunión",
+   "tipo": "funcode",
+   "claves": [
+    "reunion",
+    "reunirnos",
+    "videollamada",
+    "llamada",
+    "meet",
+    "zoom",
+    "cita",
+    "agendar reunion",
+    "reunion en persona",
+    "vernos en persona",
+    "reunion presencial"
+   ],
+   "respuesta": "Puedes solicitar una reunión por WhatsApp. La disponibilidad y la modalidad se confirman directamente.",
+   "grupo": "contacto",
+   "prioridad": 1.2,
+   "whatsapp": true
+  },
+  {
+   "id": "horario",
+   "titulo": "Horario de atención",
+   "tipo": "funcode",
+   "claves": [
+    "horario",
+    "horarios",
+    "hora|horas atencion|atienden|abren|responden",
+    "atienden",
+    "atencion",
+    "fin de semana",
+    "domingo",
+    "sabado",
+    "24 horas",
+    "todo el dia",
+    "responden rapido",
+    "cuando responden"
+   ],
+   "respuesta": "Yo, como asistente virtual, respondo en cualquier momento. La atención humana depende de la agenda: puedes escribir por WhatsApp o enviar el formulario cuando quieras y te responderemos.",
+   "grupo": "horario",
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ]
+  },
+  {
+   "id": "reclamo",
+   "titulo": "Problema o reclamo",
+   "tipo": "funcode",
+   "claves": [
+    "reclamo",
+    "queja",
+    "inconveniente",
+    "problema con mi proyecto",
+    "no estoy satisfecho",
+    "insatisfecho",
+    "molesto",
+    "devolucion",
+    "reembolso"
+   ],
+   "respuesta": "Lamento el inconveniente. Para revisarlo con atención personalizada, escríbenos por WhatsApp con los detalles de tu proyecto; así podemos darte una respuesta precisa.",
+   "grupo": "contacto",
+   "prioridad": 1.3,
    "whatsapp": true
   },
   {
@@ -650,10 +1627,11 @@
     "ya llene",
     "envie el formulario",
     "mi pedido",
-    "en que va",
-    "como va mi",
     "mis solicitudes",
-    "respuesta a mi solicitud"
+    "respuesta a mi solicitud",
+    "como va mi solicitud|pedido|proyecto",
+    "en que va mi solicitud|pedido|proyecto",
+    "estado solicitud|pedido"
    ],
    "respuesta": "Entra a «Mis solicitudes» con la cuenta de Google del correo que pusiste en el formulario. Ahí ves el estado de tu solicitud y los mensajes que te dejemos, en tiempo real.",
    "grupo": "seguimiento",
@@ -681,8 +1659,177 @@
     "referencias",
     "demo"
    ],
-   "respuesta": "Puedes ver proyectos reales: LifeCoinQuest (productividad gamificada, Android y web), Ajedrez Inclusivo (ajedrez accesible), Ofimática 9° (plataforma educativa) y el sitio con automatización de Camisas Col.",
+   "respuesta": "Estos son nuestros proyectos:\n• Disponibles: LifeCoinQuest (productividad gamificada), Ofimática 9° (Word y Excel interactivos) y Ajedrez Inclusivo (ajedrez accesible).\n• Realizado: sitio con automatización para Camisas Col.\n• En desarrollo: Funcode Academy (aprender Java) y Funcode Code Analyzer (análisis de proyectos de software).",
    "grupo": "portafolio",
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html"
+    }
+   ],
+   "opciones": [
+    {
+     "id": "lifecoinquest",
+     "titulo": "LifeCoinQuest"
+    },
+    {
+     "id": "ofimatica",
+     "titulo": "Ofimática 9°"
+    },
+    {
+     "id": "ajedrez",
+     "titulo": "Ajedrez Inclusivo"
+    },
+    {
+     "id": "academy",
+     "titulo": "Funcode Academy"
+    },
+    {
+     "id": "analyzer",
+     "titulo": "Code Analyzer"
+    }
+   ]
+  },
+  {
+   "id": "lifecoinquest",
+   "titulo": "LifeCoinQuest",
+   "tipo": "funcode",
+   "claves": [
+    "lifecoinquest",
+    "lifequest",
+    "life coin quest",
+    "productividad",
+    "habitos",
+    "misiones",
+    "app de productividad"
+   ],
+   "respuesta": "LifeCoinQuest (disponible) es nuestra herramienta de productividad gamificada: combina hábitos, misiones, experiencia (XP), monedas virtuales y pilares personales para motivarte a cumplir objetivos, con sincronización mediante Google. Funciona en la web y tiene versión para Android, con estética de videojuego.",
+   "grupo": "portafolio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver LifeCoinQuest",
+     "href": "proyectos.html#p-lcq"
+    }
+   ]
+  },
+  {
+   "id": "ofimatica",
+   "titulo": "Ofimática 9°",
+   "tipo": "funcode",
+   "claves": [
+    "ofimatica",
+    "word",
+    "excel",
+    "ofimatica 9"
+   ],
+   "respuesta": "Ofimática 9° (disponible) es un proyecto educativo para practicar Word y Excel: contenidos por niveles, explicaciones, actividades prácticas, simulaciones de las herramientas, retos y recompensas para aprender de forma progresiva.",
+   "grupo": "portafolio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver Ofimática 9°",
+     "href": "proyectos.html#p-ofi"
+    }
+   ]
+  },
+  {
+   "id": "ajedrez",
+   "titulo": "Ajedrez Inclusivo",
+   "tipo": "funcode",
+   "claves": [
+    "ajedrez",
+    "ajedrez inclusivo",
+    "peones",
+    "batalla de peones",
+    "accesible",
+    "accesibilidad"
+   ],
+   "respuesta": "Ajedrez Inclusivo (disponible) es un proyecto web educativo para facilitar el acceso al ajedrez: no requiere instalación ni registro, se usa con clic, pantalla táctil o teclado, tiene opciones de voz y texto, e incluye ajedrez y batalla de peones.",
+   "grupo": "portafolio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver Ajedrez Inclusivo",
+     "href": "proyectos.html#p-chess"
+    }
+   ]
+  },
+  {
+   "id": "academy",
+   "titulo": "Funcode Academy",
+   "tipo": "funcode",
+   "claves": [
+    "funcode academy",
+    "academy",
+    "academia",
+    "academia de programacion",
+    "plataforma para aprender java"
+   ],
+   "respuesta": "Funcode Academy es un proyecto en desarrollo: una academia digital para aprender programación (Java) con rutas progresivas, ejercicios prácticos y una experiencia gamificada adaptada a distintos niveles. Todavía no está disponible al público.",
+   "grupo": "portafolio",
+   "prioridad": 1.35
+  },
+  {
+   "id": "analyzer",
+   "titulo": "Funcode Code Analyzer",
+   "tipo": "funcode",
+   "claves": [
+    "code analyzer",
+    "analyzer",
+    "analizador",
+    "analizar proyectos",
+    "analizar codigo",
+    "analisis de codigo"
+   ],
+   "respuesta": "Funcode Code Analyzer es un proyecto en desarrollo o planificación, no un producto comercial terminado. La idea es una herramienta para entender proyectos de software: identificar tecnologías, archivos importantes, dependencias y posibles problemas, y documentar su arquitectura.",
+   "grupo": "portafolio",
+   "prioridad": 1.35
+  },
+  {
+   "id": "camisas",
+   "titulo": "Camisas Col",
+   "tipo": "funcode",
+   "claves": [
+    "camisas col",
+    "camisas",
+    "marca textil"
+   ],
+   "respuesta": "Camisas Col es un proyecto realizado en mayo de 2026: un sitio web con automatización en Google Apps Script para una marca textil.",
+   "grupo": "portafolio",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Ver proyectos",
+     "href": "proyectos.html#p-camisas"
+    }
+   ]
+  },
+  {
+   "id": "tecnologias",
+   "titulo": "Tecnologías",
+   "tipo": "funcode",
+   "claves": [
+    "tecnologia",
+    "tecnologias",
+    "lenguaje",
+    "lenguajes",
+    "programan",
+    "herramientas usan",
+    "html",
+    "css",
+    "javascript",
+    "wordpress",
+    "react",
+    "python",
+    "codigo",
+    "java",
+    "php",
+    "que lenguajes",
+    "con que programan"
+   ],
+   "respuesta": "Trabajamos con tecnologías como Java, JavaScript, HTML, CSS y PHP, además de Firebase, Google Apps Script y Capacitor en los proyectos publicados. Elegimos según las necesidades de cada proyecto; otras tecnologías hay que confirmarlas.",
+   "grupo": "tecnologias",
    "enlaces": [
     {
      "texto": "Ver proyectos",
@@ -691,32 +1838,22 @@
    ]
   },
   {
-   "id": "nosotros",
-   "titulo": "Quiénes somos",
+   "id": "sql",
+   "titulo": "Bases de datos",
    "tipo": "funcode",
    "claves": [
-    "quien esta detras",
-    "quienes son",
-    "fundador",
-    "dueno",
-    "equipo",
-    "donde estan",
-    "donde quedan",
-    "ubicados",
-    "ubicacion",
-    "ciudad",
-    "bogota",
-    "de donde son",
-    "quien hizo esta pagina"
+    "sql",
+    "mysql",
+    "base de datos",
+    "bases de datos",
+    "postgres",
+    "sql server",
+    "oracle",
+    "mongodb"
    ],
-   "respuesta": "Funcode Studio CB lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de Licenciatura en Informática en UNIMINUTO, en Bogotá, Colombia. Esta misma página la hizo Funcode.",
-   "grupo": "nosotros",
-   "enlaces": [
-    {
-     "texto": "Conocer más",
-     "href": "nosotros.html"
-    }
-   ]
+   "respuesta": "Podemos evaluar proyectos que usan bases de datos SQL y tecnologías relacionadas; la viabilidad depende de su estructura y complejidad. En nuestros proyectos publicados usamos Firebase.",
+   "grupo": "tecnologias",
+   "prioridad": 1.2
   },
   {
    "id": "resenas",
@@ -739,66 +1876,6 @@
     {
      "texto": "Ver reseñas",
      "href": "index.html#resenas"
-    }
-   ]
-  },
-  {
-   "id": "pago",
-   "titulo": "Formas de pago",
-   "tipo": "funcode",
-   "claves": [
-    "forma de pago",
-    "formas de pago",
-    "como se paga",
-    "como pago",
-    "pagar",
-    "pago",
-    "paga",
-    "anticipo",
-    "cuotas",
-    "nequi",
-    "daviplata",
-    "transferencia",
-    "tarjeta",
-    "efectivo",
-    "medios de pago",
-    "metodos de pago",
-    "por partes"
-   ],
-   "respuesta": "La forma de pago se acuerda en la cotización de cada proyecto; todavía no hay medios de pago publicados en la página. Para confirmar opciones como Nequi o pago por partes, pregúntalo al cotizar o por WhatsApp.",
-   "grupo": "pago",
-   "enlaces": [
-    {
-     "texto": "Pedir cotización",
-     "href": "contacto.html#formulario"
-    }
-   ],
-   "whatsapp": true
-  },
-  {
-   "id": "hosting",
-   "titulo": "Dominio y publicación",
-   "tipo": "funcode",
-   "claves": [
-    "dominio",
-    "hosting",
-    "alojamiento",
-    "servidor",
-    "publicar",
-    "publicacion",
-    "subir pagina",
-    "en internet",
-    "punto com",
-    "incluye dominio",
-    "hosting incluido",
-    "dominio incluido"
-   ],
-   "respuesta": "La entrega incluye publicar el proyecto acordado. Qué incluye exactamente (por ejemplo, si hay que comprar un dominio .com o un alojamiento) se define en la propuesta de tu proyecto.",
-   "grupo": "hosting",
-   "enlaces": [
-    {
-     "texto": "Pedir cotización",
-     "href": "contacto.html#formulario"
     }
    ]
   },
@@ -827,34 +1904,6 @@
    ]
   },
   {
-   "id": "tecnologias",
-   "titulo": "Tecnologías",
-   "tipo": "funcode",
-   "claves": [
-    "tecnologia",
-    "tecnologias",
-    "lenguaje",
-    "lenguajes",
-    "programan",
-    "herramientas usan",
-    "html",
-    "css",
-    "javascript",
-    "wordpress",
-    "react",
-    "python",
-    "codigo"
-   ],
-   "respuesta": "En los proyectos publicados usamos HTML, CSS y JavaScript, Firebase (usuarios y base de datos), Google Apps Script para automatizaciones y Capacitor para la versión Android. Elegimos la herramienta según lo que necesite cada proyecto.",
-   "grupo": "tecnologias",
-   "enlaces": [
-    {
-     "texto": "Ver proyectos",
-     "href": "proyectos.html"
-    }
-   ]
-  },
-  {
    "id": "redes",
    "titulo": "Redes sociales",
    "tipo": "funcode",
@@ -873,7 +1922,7 @@
    "enlaces": [
     {
      "texto": "Ir al pie de página",
-     "href": "#top"
+     "href": "#pie"
     }
    ]
   },
@@ -920,52 +1969,6 @@
     {
      "texto": "Mis solicitudes",
      "href": "mis-solicitudes.html"
-    }
-   ]
-  },
-  {
-   "id": "descuentos",
-   "titulo": "Descuentos",
-   "tipo": "funcode",
-   "claves": [
-    "descuento",
-    "descuentos",
-    "promocion",
-    "promociones",
-    "oferta",
-    "rebaja",
-    "gratis"
-   ],
-   "respuesta": "No hay descuentos ni promociones publicados. Los precios de la página son de referencia «desde» y cada proyecto se cotiza según lo que necesita, así que puedes contarnos tu presupuesto en el formulario.",
-   "grupo": "precio",
-   "prioridad": 1.2,
-   "enlaces": [
-    {
-     "texto": "Ver precios",
-     "href": "precios.html"
-    }
-   ]
-  },
-  {
-   "id": "horario",
-   "titulo": "Horario de atención",
-   "tipo": "funcode",
-   "claves": [
-    "horario",
-    "horarios",
-    "hora",
-    "atienden",
-    "atencion",
-    "fin de semana",
-    "domingo",
-    "sabado"
-   ],
-   "respuesta": "No hay un horario de atención publicado. Puedes enviar el formulario en cualquier momento y te responderemos al correo que indiques.",
-   "grupo": "horario",
-   "enlaces": [
-    {
-     "texto": "Formulario",
-     "href": "contacto.html#formulario"
     }
    ]
   },
@@ -1044,18 +2047,149 @@
  ],
  "sugerencias": [
   "¿Cuánto cuesta una página web?",
-  "¿Cuánto se demora?",
   "¿Qué servicios ofrecen?",
-  "¿Cómo pido una cotización?"
+  "Quiero una aplicación",
+  "📝 Preparar mi solicitud"
  ],
- "sinRespuesta": "No estoy seguro de haber entendido 🤔. ¿Me lo preguntas de otra forma? También puedo contarte sobre estos temas:",
+ "sinRespuesta": "¡Buena pregunta! No tengo información confirmada sobre ese punto y prefiero no darte una respuesta incorrecta. Puedes revisarlo directamente por WhatsApp para recibir información precisa, o preguntarme sobre estos temas:",
  "temas": [
+  "servicios",
   "precio",
   "tiempo",
-  "servicios",
-  "proceso",
   "portafolio",
+  "proceso",
   "cotizar"
  ],
- "sinRespuestaOtraVez": "Esa todavía no la sé responder. Para no inventarte nada, lo mejor es que se la preguntes directamente a Cristian por WhatsApp o en el formulario."
+ "sinRespuestaOtraVez": "Esa tampoco la tengo confirmada 🙏. Para que recibas información precisa, lo mejor es revisarlo directamente por WhatsApp (o en el formulario).",
+ "saludo": "¡Hola! Soy Funi 🤖, el asistente virtual de Funcode Studio CB. Pregúntame lo que quieras sobre servicios, precios, tiempos o proyectos. Si ya tienes una idea, también te ayudo a preparar tu solicitud.",
+ "contextoServicio": {
+  "web": "Página web",
+  "tienda": "Tienda virtual o catálogo",
+  "app": "Aplicación",
+  "educacion": "Plataforma educativa",
+  "clases": "Clases de programación",
+  "mejoras": "Mejorar o corregir un proyecto"
+ },
+ "solicitud": {
+  "boton": "📝 Preparar mi solicitud",
+  "inicio": "¡Perfecto! Te hago unas preguntas rápidas (puedes omitir las que quieras) y al final te muestro un resumen para enviarlo por WhatsApp. No se envía nada hasta que tú lo decidas.",
+  "conContexto": "Veo que te interesa: {servicio}. ",
+  "pasos": [
+   {
+    "campo": "servicio",
+    "pregunta": "¿Qué te gustaría desarrollar?",
+    "opciones": [
+     "Página web",
+     "Tienda virtual o catálogo",
+     "Aplicación",
+     "Plataforma educativa",
+     "Sistema administrativo o automatización",
+     "Clases de programación",
+     "Mejorar o corregir un proyecto",
+     "Todavía no lo sé"
+    ]
+   },
+   {
+    "campo": "necesidad",
+    "pregunta": "Cuéntame en pocas palabras tu idea o el problema que quieres resolver.",
+    "omitir": "Prefiero contarlo por WhatsApp"
+   },
+   {
+    "campo": "negocio",
+    "pregunta": "¿Para qué negocio, proyecto o institución es? (por ejemplo, «una tienda de ropa» o «un colegio»)",
+    "omitir": "Omitir",
+    "saltarSi": [
+     "Clases de programación"
+    ]
+   },
+   {
+    "campo": "plataforma",
+    "pregunta": "¿La aplicación sería para Android, iPhone o para usarse directamente desde el navegador?",
+    "opciones": [
+     "Android",
+     "iPhone",
+     "Desde el navegador",
+     "Varias / no sé"
+    ],
+    "soloSi": [
+     "Aplicación"
+    ]
+   },
+   {
+    "campo": "nivel",
+    "pregunta": "¿Cuál es tu nivel de programación?",
+    "opciones": [
+     "Desde cero",
+     "Sé lo básico",
+     "Ya tengo experiencia"
+    ],
+    "soloSi": [
+     "Clases de programación"
+    ]
+   },
+   {
+    "campo": "funciones",
+    "pregunta": "¿Qué funciones principales debería tener? (por ejemplo: catálogo, formulario, pagos, usuarios)",
+    "omitir": "Aún no lo sé",
+    "saltarSi": [
+     "Clases de programación"
+    ]
+   },
+   {
+    "campo": "plazo",
+    "pregunta": "¿Para cuándo te gustaría tenerlo?",
+    "opciones": [
+     "Lo antes posible",
+     "Este mes",
+     "En 1 a 3 meses",
+     "Sin prisa",
+     "Aún no lo sé"
+    ]
+   },
+   {
+    "campo": "presupuesto",
+    "pregunta": "Si tienes un presupuesto aproximado, puedes contármelo. Es opcional y no es un compromiso.",
+    "omitir": "Prefiero no decirlo"
+   },
+   {
+    "campo": "nombre",
+    "pregunta": "Por último, ¿cómo te llamas? (opcional)",
+    "omitir": "Omitir"
+   }
+  ],
+  "etiquetas": {
+   "servicio": "Servicio",
+   "necesidad": "Idea o necesidad",
+   "negocio": "Negocio o institución",
+   "plataforma": "Plataforma",
+   "nivel": "Nivel",
+   "funciones": "Funciones principales",
+   "plazo": "Plazo deseado",
+   "presupuesto": "Presupuesto aproximado",
+   "nombre": "Nombre"
+  },
+  "categorias": {
+   "Página web": "Desarrollo web",
+   "Tienda virtual o catálogo": "Desarrollo web",
+   "Aplicación": "Software",
+   "Sistema administrativo o automatización": "Software",
+   "Plataforma educativa": "Educativo",
+   "Clases de programación": "Formación",
+   "Mejorar o corregir un proyecto": "Mantenimiento"
+  },
+  "categoriaGeneral": "Consulta general",
+  "interes": {
+   "alto": "alto",
+   "medio": "medio",
+   "ninguno": "no calificado"
+  },
+  "resumen": "¡Listo! Este es el resumen de tu solicitud:",
+  "cierre": "Si está bien, envíalo por WhatsApp y te responderemos personalmente. El valor y el tiempo se confirman después de revisar tu proyecto, en una cotización.",
+  "whatsappInicio": "Hola, Funcode Studio CB. Vengo del chat de la página y quiero solicitar una cotización.",
+  "whatsappClasificacion": "Clasificación del chat",
+  "seguir": "Sigamos con tu solicitud:",
+  "cancelar": "Cancelar",
+  "corregir": "✏️ Corregir",
+  "cancelado": "Listo, dejamos la solicitud a un lado. Si quieres retomarla, toca «📝 Preparar mi solicitud»."
+ }
 }

@@ -19,7 +19,7 @@
     'en entre era es esa ese eso esta este esto estoy fue ha han hay la las le les lo los mas me mi mis muy ' +
     'no nos o para pero por porque puede pueden puedo que quiero quisiera se sea ser si sin sobre son su sus ' +
     'tambien te tengo tiene tienen tu tus un una uno unos unas usted ustedes y ya yo favor necesito hacer hacen hace ' +
-    'saber sabes quisiera gustaria ustedes alguna algun como cuando cuanto cuanta cuantos cuantas mucho poco ' +
+    'saber sabes quisiera gustaria ustedes alguna algun como cuanto cuanta cuantos cuantas ' +
     'funcode studio cb').split(' ');
   var vacias = {};
   VACIAS.forEach(function (w) { vacias[w] = true; });
@@ -88,12 +88,37 @@
     return 0;
   }
 
+  // Mejor parecido entre una palabra de la pregunta y una posición de la clave (con sus alternativas).
+  // Una palabra común de la pregunta («tienen») solo vale si es idéntica: no se confunde con «tienda».
+  function semejanza(w, opciones) {
+    var mejor = 0;
+    for (var i = 0; i < opciones.length; i++) {
+      var s = vacias[w] ? (w === opciones[i] ? 1 : 0) : parecido(w, opciones[i]);
+      if (s > mejor) mejor = s;
+    }
+    return mejor;
+  }
+
   // Prepara las intenciones del archivo de conocimiento (una sola vez).
   function preparar(saber) {
     saber.intenciones.forEach(function (it) {
       it._claves = it.claves.map(function (clave) {
-        var todas = palabras(clave);
-        var utiles = todas.filter(function (w) { return !vacias[w]; });
+        // Cada posición de la clave es una lista de palabras que valen igual:
+        // «cuesta|vale|precio tienda» = (cuesta o vale o precio) + tienda.
+        var todas = [];
+        // «+palabra» obliga a que esté una palabra común: «quienes +son» no responde a «quién ganó».
+        var obligadas = [];
+        String(clave).split(/\s+/).forEach(function (trozo) {
+          var obligada = trozo.charAt(0) === '+';
+          if (obligada) trozo = trozo.slice(1);
+          if (trozo.indexOf('|') === -1) {
+            palabras(trozo).forEach(function (w) { todas.push([w]); obligadas.push(obligada); });
+          } else {
+            var opciones = trozo.split('|').map(function (a) { return palabras(a)[0]; }).filter(Boolean);
+            if (opciones.length) { todas.push(opciones); obligadas.push(obligada); }
+          }
+        });
+        var utiles = todas.filter(function (g, n) { return obligadas[n] || !g.every(function (w) { return vacias[w]; }); });
         // Si la clave es solo de palabras comunes («qué hacen»), se usa completa pero vale menos.
         return { palabras: utiles.length ? utiles : todas, peso: utiles.length ? 1 : 0.5 };
       });
@@ -119,7 +144,7 @@
         var cual = -1;
         for (var j = 0; j < pregunta.length; j++) {
           if (omitir && omitir[j]) continue;
-          var s = parecido(pregunta[j], clave.palabras[i]);
+          var s = semejanza(pregunta[j], clave.palabras[i]);
           if (s > mejor) { mejor = s; cual = j; }
         }
         if (!mejor) return; // a la clave le falta una palabra: no cuenta
@@ -129,6 +154,8 @@
       var firma = usadas.slice().sort().join(',');
       var distintas = usadas.filter(function (u, n) { return usadas.indexOf(u) === n; }).length;
       var valor = clave.peso * (total / clave.palabras.length) * (1 + 1.2 * (distintas - 1));
+      // Una clave de solo palabras comunes («qué es funcode») responde, pero no le gana a una más específica.
+      if (clave.peso < 1) valor = Math.min(valor, 1);
       if (vistas[firma] && vistas[firma] >= valor) return;
       vistas[firma] = valor;
       usadas.forEach(function (u) { cubiertas[u] = true; });
@@ -158,7 +185,7 @@
       it._claves.forEach(function (c) {
         if (c.palabras.length < 2) return;
         var usados = c.palabras.map(function (k) {
-          for (var j = 0; j < pregunta.length; j++) if (parecido(pregunta[j], k) >= 0.8) return j;
+          for (var j = 0; j < pregunta.length; j++) if (semejanza(pregunta[j], k) >= 0.8) return j;
           return -1;
         });
         if (usados.indexOf(-1) === -1) usados.forEach(function (j) { mascara[j] = true; });
