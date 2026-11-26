@@ -13,7 +13,7 @@ propiedad `AVISO_EMAIL` con esa dirección.
 El WhatsApp se ve así:
 
 ```
-🔔 Nueva solicitud en Funcode Studio CB
+🔔 Nueva solicitud en Funcode Edutech CB
 👤 Ana Pérez
 🧩 Página web
 💰 $160.000 – $400.000 COP

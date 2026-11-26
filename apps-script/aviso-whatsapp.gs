@@ -1,5 +1,5 @@
 /**
- * Funcode Studio CB — Aviso de solicitudes nuevas (correo + WhatsApp).
+ * Funcode Edutech CB — Aviso de solicitudes nuevas (correo + WhatsApp).
  *
  * Este código va en Google Apps Script (https://script.google.com), NO en la página.
  * Cada vez que alguien envía el formulario:
@@ -57,8 +57,8 @@ function avisar(nombre, tipo, presupuesto) {
   return {
     ok: true,
     correo: enviarCorreo('🔔 Nueva solicitud: ' + nombre + ' – ' + tipo,
-      'Llegó una nueva solicitud desde la página de Funcode Studio CB.\n\n' + lineas.join('\n')),
-    whatsapp: enviarWhatsApp('🔔 *Nueva solicitud en Funcode Studio CB*\n' + lineas.join('\n'))
+      'Llegó una nueva solicitud desde la página de Funcode Edutech CB.\n\n' + lineas.join('\n')),
+    whatsapp: enviarWhatsApp('🔔 *Nueva solicitud en Funcode Edutech CB*\n' + lineas.join('\n'))
   };
 }
 
@@ -66,7 +66,7 @@ function enviarCorreo(asunto, cuerpo) {
   try {
     var destino = PropertiesService.getScriptProperties().getProperty('AVISO_EMAIL') ||
       Session.getEffectiveUser().getEmail();
-    MailApp.sendEmail({ to: destino, subject: asunto, body: cuerpo, name: 'Funcode Studio CB' });
+    MailApp.sendEmail({ to: destino, subject: asunto, body: cuerpo, name: 'Funcode Edutech CB' });
     return { ok: true, detalle: destino };
   } catch (err) {
     return { ok: false, error: String(err && err.message || err) };

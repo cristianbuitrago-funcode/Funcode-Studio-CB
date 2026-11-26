@@ -6,10 +6,10 @@ En todas las páginas, al tocar a **Funi** (la mascota) se abre el chat **«Preg
 
 | Modo | Qué hace | Qué necesita |
 |---|---|---|
-| **Preguntas frecuentes** (activo ahora) | Responde unas 75 preguntas reales sobre Funcode: servicios, precios, tiempos, proceso, pagos, portafolio, tecnologías y más. Si no sabe algo, lo dice y ofrece WhatsApp. | Nada. Es gratis. |
+| **Preguntas frecuentes** (activo ahora) | Responde unas 90 preguntas reales sobre Funcode Edutech CB: cursos y clases, páginas web, aplicaciones, Funcode QR Orders, precios del catálogo, tiempos, proceso, pagos, portafolio, tecnologías y más. Si no sabe algo, lo dice y ofrece WhatsApp. | Nada. Es gratis. |
 | **Inteligencia artificial** (opcional) | Entiende preguntas escritas de cualquier forma y responde con Claude, usando solo la información de Funcode y las 12 reglas del asistente. Si la IA falla, responde el modo de preguntas frecuentes. | Una llave de la API de Claude (de pago) y un Google Apps Script. |
 
-En los dos modos, Funi se presenta como el asistente virtual de Funcode Studio CB. Tiene prohibido inventar
+En los dos modos, Funi se presenta como el asistente virtual de Funcode Edutech CB. Tiene prohibido inventar
 precios, descuentos, plazos, clientes, garantías o promesas, y no emite cotizaciones definitivas.
 
 ## Qué hace Funi
@@ -21,7 +21,10 @@ precios, descuentos, plazos, clientes, garantías o promesas, y no emite cotizac
 - **Recuerda el tema**: si la persona habló de una tienda y luego pregunta «¿cuánto cuesta?», responde el precio de una
   tienda; y si prepara su solicitud, no le vuelve a preguntar qué servicio quiere.
 - **Dice el estado de cada proyecto**: disponible (LifeCoinQuest, Ofimática 9°, Ajedrez Inclusivo), realizado
-  (Camisas Col) o en desarrollo (Funcode Academy, Funcode Code Analyzer).
+  (Camisas Col) o en desarrollo (Funcode QR Orders, Funcode Academy, Funcode Code Analyzer).
+- **Conoce el catálogo**: los cuatro cursos con su duración y precio, las clases a $35.000 COP la hora, los planes web,
+  la conversión de web a app, QR Orders y el mantenimiento. Lo que el catálogo no dice (modalidad de las clases,
+  certificados, edades) lo reconoce y ofrece WhatsApp.
 - **Si no sabe algo**, usa la respuesta recomendada («prefiero no darte una respuesta incorrecta…»), propone temas y
   ofrece WhatsApp.
 
@@ -30,16 +33,18 @@ precios, descuentos, plazos, clientes, garantías o promesas, y no emite cotizac
 Cuando alguien muestra interés en un servicio, Funi le ofrece (sin insistir) preparar su solicitud: preguntas cortas, de una
 en una, y todas se pueden omitir:
 
-1. qué quiere desarrollar (página web, tienda, aplicación, plataforma educativa, sistema, clases, mejorar un proyecto);
-2. su idea o el problema que quiere resolver;
-3. para qué negocio o institución es;
-4. según el servicio: la plataforma (apps), su nivel (clases) o las funciones principales;
-5. para cuándo lo quiere;
-6. su presupuesto aproximado (opcional, «prefiero no decirlo»);
-7. su nombre (opcional).
+1. qué le interesa (curso o clases, página web, tienda, aplicación, software a medida, plataforma educativa,
+   Funcode QR Orders, mantenimiento o acompañamiento);
+2. si son cursos: cuál curso, para quién son y el nivel del estudiante;
+3. si es un proyecto: su idea o el problema que quiere resolver, para qué negocio es, la plataforma (apps) y las funciones principales;
+4. para cuándo lo quiere;
+5. su presupuesto aproximado (opcional, «prefiero no decirlo»; no se pregunta en cursos ni en QR Orders, que tienen precio publicado);
+6. su nombre (opcional).
+
+Si la persona ya dijo algo antes en el chat (por ejemplo, que le interesa el curso de Unity o una app para Android), no se lo vuelve a preguntar.
 
 Al final muestra un resumen y el botón **«Enviar por WhatsApp»**, que abre WhatsApp con un mensaje organizado para ti,
-con la **categoría** (desarrollo web, software, educativo, formación, mantenimiento o consulta general) y el **nivel de
+con la **categoría** (desarrollo web, software, QR Orders, educativo, formación, mantenimiento o consulta general) y el **nivel de
 interés** (alto, medio o no calificado), como pide la guía de clasificación.
 
 **Privacidad:** nada de esto se guarda en un servidor. Las respuestas quedan solo en el navegador de la persona

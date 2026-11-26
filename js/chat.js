@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — chat «Pregúntale a Funi».
+ * Funcode Edutech CB — chat «Pregúntale a Funi».
  *
  * Dos formas de responder:
  *   1. Con IA, si js/config.js tiene «chatUrl» (Google Apps Script → Claude; ver CHAT-FUNI.md).
@@ -91,7 +91,9 @@
       var cambio = it.segunContexto && estado.contexto && it.segunContexto[estado.contexto];
       var final = (cambio && porId(cambio)) || it;
       if (final.contexto) estado.contexto = final.contexto;
-      if (final.plataforma) estado.perfil.plataforma = final.plataforma;
+      // Lo que la persona ya eligió (plataforma, curso…) no se vuelve a preguntar en la solicitud.
+      var perfil = final.perfil || (final.plataforma ? { plataforma: final.plataforma } : null);
+      if (perfil) Object.keys(perfil).forEach(function (c) { estado.perfil[c] = perfil[c]; });
       return final;
     });
   }
@@ -122,7 +124,7 @@
       texto: texto,
       enlaces: enlaces.slice(0, 3),
       temas: temas,
-      wa: conWa ? whatsappUrl('Hola, Funcode Studio CB. ' + (pregunta ? 'Tengo una pregunta: ' + pregunta.slice(0, 300) : 'Vengo del chat de la página.')) : ''
+      wa: conWa ? whatsappUrl('Hola, Funcode Edutech CB. ' + (pregunta ? 'Tengo una pregunta: ' + pregunta.slice(0, 300) : 'Vengo del chat de la página.')) : ''
     };
   }
 
@@ -137,7 +139,7 @@
       var r = motor.buscar(saber, pregunta);
       if (r.respuestas.length) return componer(r.respuestas, pregunta);
       fallos++;
-      var wa = whatsappUrl('Hola, Funcode Studio CB. Tengo una pregunta: ' + pregunta.slice(0, 300));
+      var wa = whatsappUrl('Hola, Funcode Edutech CB. Tengo una pregunta: ' + pregunta.slice(0, 300));
       if (fallos >= 2) {
         // Segunda pregunta seguida sin respuesta: ahí conviene hablar con una persona.
         fallos = 0;
@@ -170,7 +172,7 @@
       clearTimeout(timer);
       if (!data || !data.ok || !data.respuesta) throw new Error((data && data.error) || 'sin respuesta');
       var wa = /whatsapp/i.test(data.respuesta)
-        ? whatsappUrl('Hola, Funcode Studio CB. Vengo del chat de la página. Mis preguntas:\n' + ultimasPreguntas())
+        ? whatsappUrl('Hola, Funcode Edutech CB. Vengo del chat de la página. Mis preguntas:\n' + ultimasPreguntas())
         : '';
       return { texto: data.respuesta, enlaces: [], wa: wa };
     }, function (err) { clearTimeout(timer); throw err; });
@@ -197,6 +199,9 @@
     var pasos = saber.solicitud.pasos;
     for (var i = f.paso + 1; i < pasos.length; i++) {
       if (pasoAplica(pasos[i], f.datos)) {
+        var sabido = estado.perfil[pasos[i].campo];
+        var valido = sabido && (!pasos[i].opciones || pasos[i].opciones.indexOf(sabido) !== -1);
+        if (valido) { f.datos[pasos[i].campo] = sabido; continue; } // ya lo dijo antes: no se pregunta otra vez
         f.paso = i;
         guardar();
         preguntarPaso(prefijo);
@@ -217,7 +222,6 @@
       datos.servicio = servicio;
       intro = s.conContexto.replace('{servicio}', servicio) + intro;
     }
-    if (estado.perfil.plataforma && (!servicio || servicio === 'Aplicación')) datos.plataforma = estado.perfil.plataforma;
     estado.flujo = { paso: -1, datos: datos };
     agregar({ rol: 'funi', texto: intro, flujo: true });
     siguientePaso();
@@ -247,8 +251,10 @@
   function nivelInteres(d) {
     var s = saber.solicitud.interes;
     var conServicio = d.servicio && d.servicio !== 'Todavía no lo sé';
-    if (conServicio && d.necesidad) return s.alto;
-    if (conServicio || d.necesidad) return s.medio;
+    // Una necesidad clara: describió su idea o eligió un curso concreto.
+    var clara = d.necesidad || (d.curso && d.curso !== 'Aún no lo sé');
+    if (conServicio && clara) return s.alto;
+    if (conServicio || clara) return s.medio;
     return s.ninguno;
   }
 
@@ -476,7 +482,7 @@
     conocimiento().catch(function () { return null; }).then(function () {
       if (!log.children.length) {
         if (!historial.length) {
-          agregar({ rol: 'funi', texto: (saber && saber.saludo) || '¡Hola! Soy Funi 🤖, el asistente virtual de Funcode Studio CB. ¿En qué te ayudo?' });
+          agregar({ rol: 'funi', texto: (saber && saber.saludo) || '¡Hola! Soy Funi 🤖, el asistente virtual de Funcode Edutech CB. ¿En qué te ayudo?' });
         } else {
           historial.forEach(pintar);
         }

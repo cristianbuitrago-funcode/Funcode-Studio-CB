@@ -50,9 +50,9 @@
 .chat-suggest[hidden] { display: none; }
 .chat-chip {
   flex: none; min-height: 36px; padding: 6px 12px; border-radius: 999px; cursor: pointer;
-  border: 1px solid rgba(242, 193, 78, 0.45); background: rgba(242, 193, 78, 0.1); color: var(--gold-soft); font: 600 0.8rem var(--font);
+  border: 1px solid rgba(167, 139, 250, 0.45); background: rgba(167, 139, 250, 0.1); color: var(--violet-soft); font: 600 0.8rem var(--font);
 }
-.chat-chip:hover { background: rgba(242, 193, 78, 0.2); }
+.chat-chip:hover { background: rgba(167, 139, 250, 0.2); }
 
 .chat-form { display: flex; align-items: flex-end; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--line); }
 .chat-form textarea {

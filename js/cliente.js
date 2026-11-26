@@ -1,4 +1,4 @@
-/* Funcode Studio CB — portal del cliente «Mis solicitudes» (Firebase Auth + Firestore) */
+/* Funcode Edutech CB — portal del cliente «Mis solicitudes» (Firebase Auth + Firestore) */
 (function () {
   'use strict';
 

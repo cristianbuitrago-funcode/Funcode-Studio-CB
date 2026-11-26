@@ -1,5 +1,5 @@
 /*
- * Configuración de Funcode Studio CB
+ * Configuración de Funcode Edutech CB
  * ----------------------------------
  * Este es el ÚNICO archivo que hay que editar para conectar los datos de contacto,
  * las redes sociales y el formulario. Todo lo que quede vacío ('') se muestra en la
@@ -18,13 +18,13 @@ window.FUNCODE_CONFIG = {
   // Datos de Funcode para las cotizaciones y propuestas del Generador de documentos
   // (panel del organizador). El WhatsApp y el correo se toman de los campos de arriba.
   estudio: {
-    nombre: 'Funcode Studio CB',
+    nombre: 'Funcode Edutech CB',
     fundador: 'Cristian Camilo Buitrago Espinosa',
     firma: 'Cristian Buitrago',   // nombre que firma las propuestas
     cargo: 'Fundador',
     sitio: 'https://cristianbuitrago-funcode.github.io/Funcode-Studio-CB/',
-    lema: 'Soluciones digitales, productos propios y aprendizaje continuo.',
-    frase: 'Aprender, crear, mejorar y convertir ideas en soluciones digitales.',
+    lema: 'Educación, desarrollo y soluciones tecnológicas.',
+    frase: 'Aprendemos, creamos y desarrollamos tecnología.',
     logo: 'assets/icons/icon-192.png'
   },
 
@@ -60,5 +60,5 @@ window.FUNCODE_CONFIG = {
   },
 
   // Mensaje inicial al abrir WhatsApp desde los botones de la página.
-  whatsappMessage: 'Hola, Funcode Studio CB. Vi su página web y quiero hablar sobre un proyecto.'
+  whatsappMessage: 'Hola, Funcode Edutech CB. Vi su página web y quiero hablar sobre un proyecto.'
 };

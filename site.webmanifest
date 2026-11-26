@@ -1,7 +1,7 @@
 {
-  "name": "Funcode Studio CB",
+  "name": "Funcode Edutech CB",
   "short_name": "Funcode",
-  "description": "Páginas web, aplicaciones y soluciones educativas para proyectos pequeños y medianos.",
+  "description": "Educación, desarrollo y soluciones tecnológicas: cursos de programación, páginas web, aplicaciones y soluciones digitales.",
   "lang": "es-CO",
   "start_url": "./",
   "scope": "./",

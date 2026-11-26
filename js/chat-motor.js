@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — «motor» de preguntas frecuentes del chat de Funi (sin IA).
+ * Funcode Edutech CB — «motor» de preguntas frecuentes del chat de Funi (sin IA).
  *
  * Entiende preguntas escritas de muchas formas:
  *   - sin tildes, con errores de ortografía («pajina», «cueta») y letras repetidas («holaaa»);
@@ -20,7 +20,7 @@
     'no nos o para pero por porque puede pueden puedo que quiero quisiera se sea ser si sin sobre son su sus ' +
     'tambien te tengo tiene tienen tu tus un una uno unos unas usted ustedes y ya yo favor necesito hacer hacen hace ' +
     'saber sabes quisiera gustaria ustedes alguna algun como cuanto cuanta cuantos cuantas ' +
-    'funcode studio cb').split(' ');
+    'funcode studio edutech cb').split(' ');
   var vacias = {};
   VACIAS.forEach(function (w) { vacias[w] = true; });
 
@@ -82,7 +82,8 @@
     if (corta >= 4) {
       var p = 0;
       while (p < corta && w[p] === k[p]) p++;
-      if (p >= Math.max(4, corta - 2)) return 0.8;
+      // «pagina»/«paginas» o «cotizar»/«cotizacion» sí; «java»/«javascript» no (la palabra larga añade demasiado).
+      if (p >= Math.max(4, corta - 2) && !(p === corta && Math.max(w.length, k.length) - corta > 4)) return 0.8;
     }
     if (corta >= 5 && distancia(w, k) <= (corta >= 8 ? 2 : 1)) return 0.6;
     return 0;

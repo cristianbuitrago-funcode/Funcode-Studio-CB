@@ -1,6 +1,6 @@
 rules_version = '2';
 
-// Reglas de seguridad de Funcode Studio CB.
+// Reglas de seguridad de Funcode Edutech CB.
 // Solo los correos de isAdmin() pueden entrar al panel del organizador (admin.html).
 // Para autorizar a alguien más, agrégalo a la lista y vuelve a publicar las reglas.
 service cloud.firestore {

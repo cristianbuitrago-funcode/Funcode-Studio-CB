@@ -1,4 +1,4 @@
-# Seguridad de Funcode Studio CB
+# Seguridad de Funcode Edutech CB
 
 Resumen de cómo está protegida la página, qué se revisó (OWASP Top 10 / ASVS) y qué falta.
 Última auditoría: noviembre de 2026.

@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — animaciones de código, personajes y la mascota Funi.
+ * Funcode Edutech CB — animaciones de código, personajes y la mascota Funi.
  * Todo es decorativo y respeta «movimiento reducido» (prefers-reduced-motion).
  */
 (function () {
@@ -340,8 +340,9 @@
     'Puedes seguir tu solicitud en «Mis solicitudes» entrando con Google.',
     'Las páginas que hacemos se adaptan a celular y computador.',
     'Estoy hecho de código SVG. ¡Sin imágenes!',
-    'Mi antena dorada es el puntito del logo de Funcode.',
-    'Los proyectos empiezan desde $160.000 COP.',
+    'Aprendemos, creamos y desarrollamos tecnología.',
+    'Los cursos empiezan desde $120.000 COP y las páginas web desde $250.000 COP.',
+    '¿Quieres crear tu propio videojuego? Mira los cursos de Scratch y Unity.',
     'Durante el proceso ves avances, no solo el último día.'
   ];
 

@@ -1,7 +1,7 @@
 {
- "version": 3,
- "actualizado": "2026-11-22",
- "datos": "Funcode Studio CB es un emprendimiento tecnológico independiente y en crecimiento, dedicado al desarrollo de software, páginas web, plataformas y herramientas educativas, videojuegos propios y formación en programación. Opera en Colombia (su fundador, Cristian Camilo Buitrago Espinosa, estudiante de sexto semestre de Licenciatura en Informática en la Corporación Universitaria Minuto de Dios (UNIMINUTO), está en Bogotá) y atiende de forma digital, principalmente por WhatsApp. Moneda de referencia: pesos colombianos (COP). No es una gran empresa ni una agencia con departamentos o un equipo numeroso: detrás de cada proyecto está su fundador. No tiene oficinas, sedes, certificaciones, clientes destacados ni alianzas que se puedan mencionar. Los personajes de la página (Bit, Pixela, Profe Byte, Chispa y la mascota Funi) son ilustraciones.\n\nPROPÓSITO: usar la tecnología para resolver necesidades reales, facilitar procesos, crear experiencias digitales y acercar la programación a más personas. Usa herramientas modernas e inteligencia artificial como apoyo a la programación, el diseño y la construcción de soluciones.\nFILOSOFÍA: crear soluciones útiles y funcionales; entender primero las necesidades del cliente; ofrecer soluciones acordes con el alcance; comunicación transparente; no prometer funcionalidades que no se puedan garantizar; reconocer cuando un proyecto supera las capacidades actuales; mejorar continuamente.\nPÚBLICO: emprendedores, pequeñas empresas, negocios locales, instituciones educativas, docentes, estudiantes, personas que quieren aprender programación y personas u organizaciones que necesitan soluciones digitales.\n\nSERVICIOS: desarrollo de software; diseño y desarrollo web (desde cero o mejorando páginas existentes); aplicaciones (web; Android y multiplataforma se evalúan; iPhone se evalúa revisando requisitos, herramientas y publicación); conversión de páginas web en aplicación con Capacitor (previa revisión); catálogos y tiendas virtuales (pagos en línea, inventario e integraciones se analizan individualmente; integraciones con proveedores de pago, Nequi o Daviplata dependen del proveedor, sus requisitos y comisiones, sin garantía de integración automática); herramientas administrativas de alcance definido (sistemas empresariales complejos requieren evaluación especial); automatizaciones con Google Apps Script; plataformas educativas, simuladores y ejercicios interactivos; formación y acompañamiento en programación, también desde cero (además: inteligencia artificial, robótica educativa con Scratch, Arduino y Tinkercad, y convivencia digital); mantenimiento, correcciones y mejoras de proyectos existentes; revisión de errores de código; evaluación de aspectos técnicos de seguridad dentro de un alcance acordado (no es una auditoría certificada ni garantiza invulnerabilidad). Los videojuegos son principalmente proyectos propios: una propuesta de un cliente se puede recibir para evaluar si hay una modalidad de colaboración. El diseño de logos o piezas gráficas no está entre los servicios.\nALCANCE: principalmente proyectos pequeños y medianos (páginas web, aplicaciones web, plataformas educativas, herramientas digitales, integraciones con servicios externos, proyectos con Firebase y prototipos funcionales). Se evalúan caso por caso: sistemas con gran cantidad de usuarios, arquitecturas complejas, bases de datos de gran escala e infraestructura avanzada. Si un proyecto supera las capacidades actuales, se dice con transparencia antes de empezar. Frase sugerida para esos casos: «Queremos ser transparentes contigo. Por las características de tu proyecto, necesitamos realizar una evaluación técnica antes de confirmar si podemos desarrollarlo».\nTECNOLOGÍAS: Java, JavaScript, HTML, CSS, PHP y herramientas relacionadas; en los proyectos publicados también Firebase, Google Apps Script y Capacitor (Android). Bases de datos SQL: se pueden evaluar. Otras tecnologías deben confirmarse.\nINTELIGENCIA ARTIFICIAL: se usa como herramienta de apoyo para desarrollo, aprendizaje, análisis y productividad; no desarrolla todo automáticamente: los resultados se analizan, revisan, prueban y validan.\n\nPRECIOS: no hay un precio único; depende del diseño, funcionalidades, número de secciones, integraciones, plataformas y complejidad. Referencias publicadas en la página de precios («desde», no tarifas fijas): plan Básico desde $160.000 COP (landing o página informativa, galería, botones de WhatsApp y redes, diseño responsive); plan Profesional desde $400.000 COP (varias secciones, diseño personalizado, formularios, catálogos, interacciones); plan Personalizado con cotización (aplicaciones web, sistemas educativos, usuarios, Firebase, integraciones). El asistente no inventa precios, no da valores por hora o por funcionalidad, no asume que proyectos parecidos cuestan lo mismo, no ofrece descuentos y no emite cotizaciones definitivas: explica de qué depende el precio y ofrece una cotización. Una evaluación inicial de la idea se puede pedir; las condiciones de una consultoría o análisis especializado se confirman antes. Con poco presupuesto se pueden estudiar alternativas y priorizar lo esencial para una primera versión. Las modalidades de pago (incluido el pago por partes) se establecen en la propuesta; el asistente no puede confirmarlas. Dominio, alojamiento, servidores, licencias y servicios externos no están incluidos necesariamente: se evalúan, se cotizan y quedan especificados en la propuesta.\nTIEMPOS: dependen del alcance y la complejidad; se estima un tiempo después de revisar los requisitos. Como referencia publicada, para proyectos básicos se establece un plazo de hasta 7 días hábiles, según el alcance y que el cliente entregue el material necesario; el tiempo empieza a contar cuando se recibe. En proyectos más grandes, el tiempo se define en la propuesta.\nPROCESO: conocer la necesidad, evaluar su viabilidad, definir el alcance y preparar una propuesta con condiciones y costos. Etapas de trabajo (página proceso.html): 1) entender la idea y las necesidades; 2) proponer alcance, funcionalidades y presupuesto; 3) desarrollar; 4) mostrar avances con versiones preliminares (su forma y frecuencia se acuerdan según el proyecto); 5) probar funcionamiento, diseño responsive y errores; 6) entregar y publicar lo acordado. Cambios: se manejan según las condiciones y rondas de cambios de la propuesta; lo que implique nuevas funcionalidades puede tener costo adicional, informado antes. Para comenzar se necesita saber qué se quiere desarrollar, para quién, qué funcionalidades y el presupuesto aproximado; luego los materiales (textos, fotos, logo). Proyectos ya comenzados: se evalúan conociendo sus tecnologías, estado, acceso al código y documentación. Ninguna idea se garantiza sin evaluarla y ningún software puede garantizar ausencia total de errores.\n\nPORTAFOLIO (estado de cada proyecto):\n- LifeCoinQuest (disponible, producto propio): productividad gamificada con hábitos, misiones, experiencia (XP), monedas virtuales, pilares personales y sincronización con Google; versión web y experiencia para Android (APK) con temática de videojuego.\n- Ofimática 9° (disponible): plataforma educativa para grado 9° (con Firebase) para practicar Word y Excel, con niveles, explicaciones, simulaciones, retos, recompensas y panel docente.\n- Ajedrez Inclusivo (disponible): ajedrez web accesible, sin instalación ni registro, con clic, pantalla táctil, teclado, voz y texto, e incluye batalla de peones.\n- Camisas Col (proyecto realizado, mayo de 2026): sitio web con automatización en Google Apps Script para una marca textil.\n- Funcode Academy (en desarrollo, no disponible al público): academia digital para aprender Java con rutas progresivas, ejercicios prácticos y gamificación.\n- Funcode Code Analyzer (en desarrollo o planificación, no es un producto comercial): herramienta para analizar la estructura de proyectos de software.\n\nRESEÑAS: solo las escriben clientes con proyecto entregado. CONTACTO: botón de WhatsApp de la página, formulario en contacto.html y correo buitragocristianespinosa@gmail.com. Seguimiento de solicitudes en mis-solicitudes.html. Imágenes o documentos del proyecto se comparten por WhatsApp. Reuniones: se solicitan por WhatsApp y su modalidad se confirma directamente. El asistente responde en cualquier momento; la atención humana depende de la agenda. REDES: LinkedIn y GitHub (Instagram y Facebook aún no están en la página). PRIVACIDAD: los datos del formulario se guardan en Firebase y solo el organizador los lee; cada cliente ve solo sus solicitudes. No hay información publicada sobre horario fijo, descuentos ni posicionamiento SEO.\nPáginas del sitio: precios.html, servicios.html, proyectos.html, proceso.html, nosotros.html, contacto.html, mis-solicitudes.html.",
+ "version": 4,
+ "actualizado": "2026-11-26",
+ "datos": "Funcode Edutech CB (antes Funcode Studio CB; mismo emprendimiento y misma página) es un emprendimiento de educación, desarrollo y soluciones tecnológicas. Lema: «Aprendemos, creamos y desarrollamos tecnología». Desarrolla soluciones de software, aplicaciones, páginas web y experiencias educativas, y ofrece cursos de programación y creación de videojuegos. Su propósito es acercar la tecnología a las personas, los emprendimientos y las empresas, con herramientas digitales y formación tecnológica. Opera en Colombia (su fundador, Cristian Camilo Buitrago Espinosa, estudiante de sexto semestre de Licenciatura en Informática en la Corporación Universitaria Minuto de Dios (UNIMINUTO), está en Bogotá) y atiende de forma digital, principalmente por WhatsApp. Moneda: pesos colombianos (COP). No es una gran empresa ni una agencia con un equipo numeroso: detrás de cada proyecto está su fundador. No tiene oficinas, sedes, certificaciones, clientes destacados ni alianzas que se puedan mencionar. Los personajes de la página (Bit, Pixela, Profe Byte, Chispa y la mascota Funi) son ilustraciones.\n\nPROPÓSITO: usar la tecnología para resolver necesidades reales, facilitar procesos, crear experiencias digitales y acercar la programación a más personas. Usa herramientas modernas e inteligencia artificial como apoyo a la programación, el diseño y la construcción de soluciones.\nFILOSOFÍA: crear soluciones útiles y funcionales; entender primero las necesidades del cliente; ofrecer soluciones acordes con el alcance; comunicación transparente; no prometer funcionalidades que no se puedan garantizar; reconocer cuando un proyecto supera las capacidades actuales; mejorar continuamente.\nPÚBLICO: emprendedores, pequeñas empresas, negocios locales, instituciones educativas, docentes, estudiantes, personas que quieren aprender programación y personas u organizaciones que necesitan soluciones digitales.\n\nSERVICIOS (catálogo de Funcode Edutech CB):\n1) EDUCACIÓN Y FORMACIÓN TECNOLÓGICA. Cursos completos de programación y creación de videojuegos, y capacitaciones personalizadas; la metodología combina teoría, práctica y desarrollo de proyectos. Ruta de aprendizaje «Creación de videojuegos y programación» (todos con 2 clases por semana de 1 h 30 min y un proyecto final del estudiante):\n- Curso 1. Creación de videojuegos con Scratch: fundamentos de programación con bloques y videojuegos desde cero (pensamiento computacional, entorno de Scratch, personajes, escenarios, movimiento y animación, eventos, variables, condicionales y ciclos, colisiones, sonidos, niveles y mecánicas). 4 semanas, 8 clases, 12 horas. Proyecto final: un videojuego funcional. Precio: $120.000 COP.\n- Curso 2. Creación de experiencias interactivas con CoSpaces Edu: entornos 3D, objetos y personajes, programación por bloques, eventos, animaciones, experiencias narrativas e inmersivas y publicación. 5 semanas, 10 clases, 15 horas. Proyecto final: un entorno 3D interactivo o una experiencia virtual propia. Precio: $150.000 COP.\n- Curso 3. Fundamentos de desarrollo web (HTML, CSS y JavaScript): HTML (estructura, etiquetas, multimedia, listas, tablas, formularios), CSS (estilos, márgenes, Flexbox, diseño adaptable) y JavaScript (lógica, variables, condicionales, ciclos, funciones, eventos, manipulación de HTML). 6 semanas, 12 clases, 18 horas. Proyecto final: una página web funcional con estilos e interactividad. Precio: $200.000 COP.\n- Curso 4. Introducción al desarrollo de videojuegos con Unity: motor Unity, escenas, objetos y componentes, C#, scripts, movimiento, colisiones, físicas, mecánicas, pruebas y depuración. 8 semanas, 16 clases, 24 horas. Proyecto final: un videojuego básico funcional con Unity y C#. Precio: $280.000 COP.\n- Capacitaciones y clases personalizadas, individuales o grupales, adaptadas al nivel, ritmo y necesidades del estudiante: fundamentos de programación, Scratch y videojuegos, CoSpaces Edu, HTML/CSS/JavaScript, Unity y C#, ofimática y herramientas digitales, orientación en proyectos tecnológicos e introducción a herramientas de IA. Tarifa: $35.000 COP por hora. Se programan de acuerdo con la disponibilidad del estudiante.\nNo hay información publicada sobre modalidad (virtual o presencial), certificados, edades, fechas de inicio ni cupos de los cursos: eso se confirma por WhatsApp. No hay cursos de robótica (Arduino o Tinkercad) en el catálogo actual.\n2) DESARROLLO WEB para emprendimientos, profesionales, instituciones y empresas: Página web básica desde $250.000 COP (diseño personalizado, presentación del negocio, información de contacto, adaptación a móviles, enlaces a redes y WhatsApp); Página web empresarial desde $450.000 COP (diseño visual personalizado, varias secciones, productos y servicios, formularios de contacto, integración con WhatsApp, diseño adaptable); Página web avanzada desde $700.000 COP (funcionalidades personalizadas, secciones dinámicas, formularios avanzados, integraciones con servicios externos, componentes interactivos); Tiendas virtuales y plataformas web con cotización personalizada (catálogos digitales, gestión de productos, registro de usuarios, compras, integración de servicios de pago, paneles de administración). Integraciones con Nequi, Daviplata u otros proveedores de pago dependen del proveedor, sus requisitos y comisiones: no se garantiza una integración automática sin evaluarla.\n3) DESARROLLO DE APLICACIONES: conversión de páginas web existentes en aplicaciones instalables desde $400.000 COP (por ejemplo con Capacitor, como LifeCoinQuest); aplicaciones personalizadas para Android y otras plataformas (educativas, comerciales, de gestión, de productividad) con cotización personalizada; iPhone se evalúa revisando requisitos y publicación; desarrollo de software a medida (automatización de tareas, herramientas de gestión, sistemas de información de alcance pequeño y mediano, soluciones para emprendimientos, integraciones) con cotización personalizada. Los sistemas empresariales complejos requieren evaluación especial.\n4) SOLUCIONES DIGITALES PARA RESTAURANTES: Funcode QR Orders, producto propio EN DESARROLLO para gestionar pedidos con códigos QR (acceso por QR, menú digital, productos y precios, pedidos desde el celular, gestión de pedidos y herramientas de administración). Modelo comercial inicial: configuración inicial $99.000 COP, suscripción mensual $49.900 COP y prueba piloto inicial de 7 días gratuitos. La oferta comercial definitiva está sujeta a la finalización del desarrollo, validación y pruebas de la plataforma.\n5) SERVICIOS COMPLEMENTARIOS: mantenimiento y actualización de páginas web (corrección de errores, actualización de contenido, modificaciones visuales, ajustes de funcionamiento, mejoras) desde $50.000 COP por intervención; acompañamiento técnico y asesoría para comprender, utilizar y mantener herramientas o proyectos existentes: $35.000 COP por hora.\nLos videojuegos de Funcode son proyectos propios: el desarrollo de videojuegos por encargo no está en el catálogo (sí se enseña a crearlos en los cursos); una propuesta se puede recibir y evaluar. El diseño de logos o piezas gráficas no está entre los servicios. También se evalúan revisiones de errores de código y aspectos técnicos de seguridad dentro de un alcance acordado (no es una auditoría certificada).\nTECNOLOGÍAS: en proyectos, Java, JavaScript, HTML, CSS, PHP, Firebase, Google Apps Script y Capacitor; en los cursos, Scratch, CoSpaces Edu, HTML/CSS/JavaScript, Unity y C#. Bases de datos SQL: se pueden evaluar. Otras tecnologías deben confirmarse.\nINTELIGENCIA ARTIFICIAL: herramienta de apoyo para desarrollo, aprendizaje, análisis y productividad; no desarrolla todo automáticamente: los resultados se revisan, prueban y validan.\nALCANCE: principalmente proyectos pequeños y medianos. Se evalúan caso por caso: sistemas con gran cantidad de usuarios, arquitecturas complejas, bases de datos de gran escala e infraestructura avanzada. Frase sugerida cuando un proyecto puede superar el alcance: «Queremos ser transparentes contigo. Por las características de tu proyecto, necesitamos realizar una evaluación técnica antes de confirmar si podemos desarrollarlo».\n\nPRECIOS: los precios publicados son tarifas iniciales y pueden variar según la complejidad, funcionalidades, integraciones, recursos externos y alcance de cada proyecto. El asistente no inventa precios distintos a los del catálogo, no asume que proyectos parecidos cuestan lo mismo, no ofrece descuentos y no emite cotizaciones definitivas: explica las tarifas iniciales, de qué depende el valor y ofrece una cotización. Una evaluación inicial de la idea se puede pedir; las condiciones de una consultoría especializada se confirman antes. Con poco presupuesto se pueden estudiar alternativas y priorizar lo esencial. Las modalidades de pago (incluido el pago por partes) se establecen en la propuesta; el asistente no puede confirmarlas. Dominio, alojamiento, servidores, licencias y servicios externos no están incluidos necesariamente: se evalúan, cotizan y especifican en la propuesta.\nTIEMPOS: se establecen al definir el alcance. Para proyectos básicos se establece un plazo de hasta 7 días hábiles, según el alcance y que el cliente entregue el material necesario; el tiempo empieza a contar cuando se recibe. En proyectos más grandes, el tiempo se define en la propuesta.\nFORMA DE TRABAJAR: evaluamos cada proyecto antes de aceptar su desarrollo; definimos alcance y funcionalidades; presentamos cotizaciones claras; establecemos tiempos de entrega; informamos cuando una funcionalidad requiere recursos o conocimientos especializados; trabajamos para entregar soluciones funcionales y de calidad.\nPROCESO: conocer la necesidad, evaluar su viabilidad, definir el alcance y preparar una propuesta con condiciones y costos. Etapas de trabajo (página proceso.html): 1) entender la idea y las necesidades; 2) proponer alcance, funcionalidades y presupuesto; 3) desarrollar; 4) mostrar avances con versiones preliminares (su forma y frecuencia se acuerdan según el proyecto); 5) probar funcionamiento, diseño responsive y errores; 6) entregar y publicar lo acordado. Cambios: se manejan según las condiciones y rondas de cambios de la propuesta; lo que implique nuevas funcionalidades puede tener costo adicional, informado antes. Para comenzar se necesita saber qué se quiere desarrollar, para quién, qué funcionalidades y el presupuesto aproximado; luego los materiales (textos, fotos, logo). Proyectos ya comenzados: se evalúan conociendo sus tecnologías, estado, acceso al código y documentación. Ninguna idea se garantiza sin evaluarla y ningún software puede garantizar ausencia total de errores.\n\nPORTAFOLIO (estado de cada proyecto):\n- LifeCoinQuest (disponible, producto propio): productividad gamificada con hábitos, misiones, experiencia (XP), monedas virtuales, pilares personales y sincronización con Google; versión web y experiencia para Android (APK) con temática de videojuego.\n- Ofimática 9° (disponible): plataforma educativa para grado 9° (con Firebase) para practicar Word y Excel, con niveles, explicaciones, simulaciones, retos, recompensas y panel docente.\n- Ajedrez Inclusivo (disponible): ajedrez web accesible, sin instalación ni registro, con clic, pantalla táctil, teclado, voz y texto, e incluye batalla de peones.\n- Camisas Col (proyecto realizado, mayo de 2026): sitio web con automatización en Google Apps Script para una marca textil.\n- Funcode QR Orders (en desarrollo): pedidos con códigos QR para restaurantes (ver SERVICIOS 4).\n- Funcode Academy (en desarrollo, no disponible al público): academia digital para aprender programación con rutas progresivas, ejercicios prácticos y gamificación.\n- Funcode Code Analyzer (en desarrollo o planificación, no es un producto comercial): herramienta para analizar la estructura de proyectos de software.\n\nRESEÑAS: solo las escriben clientes con proyecto entregado. CONTACTO: botón de WhatsApp de la página, formulario en contacto.html y correo buitragocristianespinosa@gmail.com. Seguimiento de solicitudes en mis-solicitudes.html. Imágenes o documentos del proyecto se comparten por WhatsApp. Reuniones: se solicitan por WhatsApp y su modalidad se confirma directamente. El asistente responde en cualquier momento; la atención humana depende de la agenda. REDES: LinkedIn y GitHub (Instagram y Facebook aún no están en la página). PRIVACIDAD: los datos del formulario se guardan en Firebase y solo el organizador los lee; cada cliente ve solo sus solicitudes. No hay información publicada sobre horario fijo, descuentos ni posicionamiento SEO.\nPáginas del sitio: precios.html, servicios.html, proyectos.html, proceso.html, nosotros.html, contacto.html, mis-solicitudes.html.",
  "intenciones": [
   {
    "id": "saludo",
@@ -24,7 +24,7 @@
     "buen dia",
     "parce"
    ],
-   "respuesta": "¡Hola! 👋 Soy Funi, el asistente virtual de Funcode Studio CB. Puedo contarte sobre nuestros servicios, precios, tiempos, proyectos o ayudarte a preparar tu solicitud. ¿En qué te ayudo?"
+   "respuesta": "¡Hola! 👋 Soy Funi, el asistente virtual de Funcode Edutech CB. Puedo contarte sobre nuestros servicios, precios, tiempos, proyectos o ayudarte a preparar tu solicitud. ¿En qué te ayudo?"
   },
   {
    "id": "gracias",
@@ -73,7 +73,7 @@
     "con quien hablo",
     "estoy hablando con"
    ],
-   "respuesta": "Soy Funi, el asistente virtual de Funcode Studio CB 🤖. Estoy aquí para orientarte y resolver tus dudas con la información de Funcode. Si necesitas atención personalizada, puedo dirigirte a nuestro WhatsApp.",
+   "respuesta": "Soy Funi, el asistente virtual de Funcode Edutech CB 🤖. Estoy aquí para orientarte y resolver tus dudas con la información de Funcode. Si necesitas atención personalizada, puedo dirigirte a nuestro WhatsApp.",
    "grupo": "funi",
    "whatsapp": true
   },
@@ -89,9 +89,12 @@
     "que hace funcode",
     "emprendimiento",
     "que es funcode studio cb",
-    "a que se dedica"
+    "a que se dedica",
+    "que es funcode edutech",
+    "que es funcode edutech cb",
+    "que es edutech"
    ],
-   "respuesta": "Funcode Studio CB es un emprendimiento tecnológico en crecimiento dedicado al desarrollo de software, páginas web, plataformas educativas, videojuegos propios y formación en programación. Nuestro propósito es usar la tecnología para resolver necesidades reales y acercar la programación a más personas.",
+   "respuesta": "Funcode Edutech CB es un emprendimiento de educación, desarrollo y soluciones tecnológicas. Desarrollamos soluciones de software, aplicaciones, páginas web y experiencias educativas, y ofrecemos cursos de programación y creación de videojuegos. Nuestro propósito es acercar la tecnología a las personas, los emprendimientos y las empresas.",
    "grupo": "empresa",
    "prioridad": 1.1,
    "enlaces": [
@@ -102,6 +105,32 @@
     {
      "texto": "Ver servicios",
      "href": "servicios.html"
+    }
+   ]
+  },
+  {
+   "id": "nombre",
+   "titulo": "Cambio de nombre",
+   "tipo": "funcode",
+   "claves": [
+    "cambio de nombre",
+    "cambiaron el nombre",
+    "cambiaron nombre",
+    "antes se llamaba",
+    "nombre anterior",
+    "nuevo nombre",
+    "significa +edutech",
+    "+edutech significa",
+    "por que edutech",
+    "+studio eran|era|antes|mismo|misma|mismos|ahora|llama|llaman|llamaba|nombre|cambio|cambiaron|edutech"
+   ],
+   "respuesta": "Sí, es el mismo emprendimiento: Funcode Studio CB ahora se llama Funcode Edutech CB (educación, desarrollo y soluciones tecnológicas). La dirección de la página sigue siendo la misma. «Edutech» une las palabras educación y tecnología.",
+   "grupo": "nombre",
+   "prioridad": 1.3,
+   "enlaces": [
+    {
+     "texto": "Conocer más",
+     "href": "nosotros.html"
     }
    ]
   },
@@ -160,7 +189,7 @@
     "son de colombia",
     "+tienen local"
    ],
-   "respuesta": "Funcode Studio CB opera en Colombia y atiende de forma digital, principalmente por WhatsApp. Lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de Licenciatura en Informática en UNIMINUTO, en Bogotá. No hay una oficina o sede publicada para atención presencial.",
+   "respuesta": "Funcode Edutech CB opera en Colombia y atiende de forma digital, principalmente por WhatsApp. Lo dirige su fundador, Cristian Camilo Buitrago Espinosa, estudiante de Licenciatura en Informática en UNIMINUTO, en Bogotá. No hay una oficina o sede publicada para atención presencial.",
    "grupo": "nosotros",
    "enlaces": [
     {
@@ -264,7 +293,7 @@
     "que tipo de proyectos",
     "a que se dedican"
    ],
-   "respuesta": "En Funcode ofrecemos:\n• Desarrollo de software y aplicaciones\n• Diseño y desarrollo web\n• Plataformas y herramientas educativas\n• Formación en programación\n• Mantenimiento y mejoras de proyectos existentes\n• Automatizaciones e integración de inteligencia artificial\nTambién desarrollamos videojuegos propios.",
+   "respuesta": "En Funcode Edutech CB ofrecemos:\n• Educación: cursos de programación y creación de videojuegos, y clases personalizadas\n• Desarrollo web: páginas, tiendas y plataformas\n• Aplicaciones y software a medida\n• Soluciones para restaurantes: Funcode QR Orders (en desarrollo)\n• Mantenimiento de páginas web y acompañamiento técnico",
    "grupo": "servicios",
    "enlaces": [
     {
@@ -272,7 +301,29 @@
      "href": "servicios.html"
     }
    ],
-   "ofrecerSolicitud": true
+   "ofrecerSolicitud": true,
+   "opciones": [
+    {
+     "id": "cursos",
+     "titulo": "Cursos"
+    },
+    {
+     "id": "planes",
+     "titulo": "Páginas web"
+    },
+    {
+     "id": "app",
+     "titulo": "Aplicaciones"
+    },
+    {
+     "id": "qr_orders",
+     "titulo": "QR Orders"
+    },
+    {
+     "id": "mejoras",
+     "titulo": "Mantenimiento"
+    }
+   ]
   },
   {
    "id": "web",
@@ -299,7 +350,7 @@
     "pagina desde cero",
     "web desde cero"
    ],
-   "respuesta": "¡Sí! Podemos crear tu página web desde cero: primero conocemos tu idea y las funcionalidades que necesitas para definir el alcance. Como referencia, una landing o página informativa empieza desde $160.000 COP y una página con varias secciones, formularios o catálogo desde $400.000 COP. Todas se adaptan a celular y computador.",
+   "respuesta": "¡Sí! Diseñamos páginas web para emprendimientos, profesionales, instituciones y empresas. Tarifas iniciales: página web básica desde $250.000 COP, empresarial desde $450.000 COP y avanzada desde $700.000 COP. Las tiendas virtuales y plataformas web tienen cotización personalizada. Todas se adaptan a celulares y computadores.",
    "grupo": "web",
    "prioridad": 0.6,
    "enlaces": [
@@ -309,7 +360,13 @@
     }
    ],
    "contexto": "web",
-   "ofrecerSolicitud": true
+   "ofrecerSolicitud": true,
+   "opciones": [
+    {
+     "id": "planes",
+     "titulo": "¿Qué incluye cada una?"
+    }
+   ]
   },
   {
    "id": "tienda",
@@ -336,7 +393,7 @@
     "comercio electronico",
     "pedidos en linea"
    ],
-   "respuesta": "Podemos evaluar catálogos de productos, sitios de comercio electrónico y funciones de venta. Para definir tu tienda hay que revisar varios aspectos: cómo se muestran los productos, cómo se gestionan los pedidos, si necesitas pagos en línea (dependen del proveedor de pagos y sus comisiones) y quién la administrará. Los catálogos entran desde el plan Profesional; lo demás se analiza en una cotización.",
+   "respuesta": "Sí. Las tiendas virtuales y plataformas web pueden incluir catálogos digitales, gestión de productos, registro de usuarios, funcionalidades de compra, integración de servicios de pago y paneles de administración. Tienen cotización personalizada: para definirla revisamos cómo se muestran los productos, cómo se gestionan los pedidos, qué pagos necesitas y quién la administrará.",
    "grupo": "tienda",
    "enlaces": [
     {
@@ -452,9 +509,12 @@
     "play store",
     "playstore",
     "apk",
-    "app android"
+    "app android",
+    "app play store",
+    "app playstore",
+    "app google play"
    ],
-   "respuesta": "Podemos evaluar aplicaciones Android y proyectos multiplataforma según sus características. Tenemos experiencia publicada: LifeCoinQuest, uno de nuestros productos propios, tiene versión para Android.",
+   "respuesta": "Sí, desarrollamos aplicaciones para Android y otras plataformas: educativas, comerciales, de gestión, de productividad o con funcionalidades personalizadas. Tienen cotización personalizada. Tenemos experiencia publicada: LifeCoinQuest, uno de nuestros productos propios, tiene versión para Android.",
    "grupo": "app",
    "prioridad": 1.2,
    "enlaces": [
@@ -465,7 +525,9 @@
    ],
    "contexto": "app",
    "ofrecerSolicitud": true,
-   "plataforma": "Android"
+   "perfil": {
+    "plataforma": "Android"
+   }
   },
   {
    "id": "iphone",
@@ -490,7 +552,9 @@
    "whatsapp": true,
    "contexto": "app",
    "ofrecerSolicitud": true,
-   "plataforma": "iPhone"
+   "perfil": {
+    "plataforma": "iPhone"
+   }
   },
   {
    "id": "app_web",
@@ -515,7 +579,9 @@
    ],
    "contexto": "app",
    "ofrecerSolicitud": true,
-   "plataforma": "Desde el navegador"
+   "perfil": {
+    "plataforma": "Desde el navegador"
+   }
   },
   {
    "id": "multiplataforma",
@@ -545,7 +611,9 @@
    ],
    "contexto": "app",
    "ofrecerSolicitud": true,
-   "plataforma": "Varias / no sé"
+   "perfil": {
+    "plataforma": "Varias / no sé"
+   }
   },
   {
    "id": "web_a_app",
@@ -560,7 +628,7 @@
     "volver app",
     "pasar a app"
    ],
-   "respuesta": "Sí, algunas páginas web pueden adaptarse a una aplicación usando tecnologías como Capacitor (así lo hicimos con LifeCoinQuest para Android). Primero debemos revisar la estructura y las funcionalidades de tu sitio.",
+   "respuesta": "Sí. Transformamos páginas web existentes en aplicaciones instalables, aprovechando las funcionalidades del sistema original (así lo hicimos con LifeCoinQuest para Android, usando Capacitor). Empieza desde $400.000 COP y primero revisamos la estructura y las funcionalidades de tu sitio.",
    "grupo": "app",
    "prioridad": 1.3,
    "enlaces": [
@@ -590,7 +658,7 @@
     "erp",
     "nomina"
    ],
-   "respuesta": "Podemos desarrollar herramientas administrativas de alcance definido (por ejemplo, inventario, registro de clientes o paneles de gestión). Los sistemas empresariales complejos requieren una evaluación especial antes de confirmar si podemos asumirlos.",
+   "respuesta": "Sí. Desarrollamos software a medida: automatización de tareas, herramientas de gestión, sistemas de información de alcance pequeño y mediano, soluciones para emprendimientos e integraciones. Tiene cotización personalizada; los sistemas empresariales complejos requieren una evaluación especial antes de confirmar si podemos asumirlos.",
    "grupo": "app",
    "prioridad": 1.2,
    "enlaces": [
@@ -601,6 +669,46 @@
    ],
    "whatsapp": true,
    "contexto": "app",
+   "ofrecerSolicitud": true
+  },
+  {
+   "id": "qr_orders",
+   "titulo": "Funcode QR Orders",
+   "tipo": "funcode",
+   "claves": [
+    "qr",
+    "codigo qr",
+    "codigos qr",
+    "qr orders",
+    "menu digital",
+    "carta digital",
+    "menu qr",
+    "pedidos restaurante",
+    "pedidos con qr",
+    "sistema para restaurante",
+    "sistema para mi restaurante",
+    "app para restaurante",
+    "restaurante pedidos",
+    "pedidos en mesa",
+    "restaurante|restaurantes|cafeteria|comidas menu|pedidos|mesa|domicilios",
+    "restaurante|restaurantes|cafeteria|comidas pidan|pedir|pedidos|celular|qr|menu|carta",
+    "suscripcion",
+    "mensualidad",
+    "suscripcion mensual",
+    "pago mensual",
+    "cuesta|vale|precio|cobra|cuanto suscripcion|mensualidad"
+   ],
+   "respuesta": "Funcode QR Orders es un producto propio en desarrollo para restaurantes: los clientes acceden con un código QR, consultan el menú digital con productos y precios y hacen pedidos desde el celular, y el restaurante los gestiona desde el sistema. Modelo comercial inicial: configuración $99.000 COP y suscripción mensual $49.900 COP, con prueba piloto de 7 días gratis. La oferta definitiva depende de que se termine el desarrollo, la validación y las pruebas.",
+   "grupo": "qr",
+   "prioridad": 1.35,
+   "enlaces": [
+    {
+     "texto": "Conocer QR Orders",
+     "href": "servicios.html#restaurantes"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "qr",
    "ofrecerSolicitud": true
   },
   {
@@ -623,7 +731,7 @@
     "institucion educativa",
     "plataforma|herramienta|app|pagina|juego docente|profesor|estudiante|colegio|alumno|escuela|universidad"
    ],
-   "respuesta": "Sí. Desarrollamos herramientas de aprendizaje, simuladores, ejercicios interactivos y experiencias educativas digitales, como Ofimática 9° (Word y Excel con niveles, retos y panel docente).",
+   "respuesta": "Sí. Ofrecemos cursos de programación y creación de videojuegos, clases personalizadas y desarrollo de aplicaciones educativas, como Ofimática 9° (Word y Excel con niveles, retos y panel docente).",
    "grupo": "educacion",
    "prioridad": 1.1,
    "enlaces": [
@@ -633,48 +741,401 @@
     }
    ],
    "contexto": "educacion",
+   "ofrecerSolicitud": true,
+   "opciones": [
+    {
+     "id": "cursos",
+     "titulo": "Ver cursos"
+    }
+   ]
+  },
+  {
+   "id": "cursos",
+   "titulo": "Cursos",
+   "tipo": "funcode",
+   "claves": [
+    "curso",
+    "cursos",
+    "que cursos",
+    "ruta de aprendizaje",
+    "cursos de programacion",
+    "cursos de videojuegos",
+    "aprender a crear videojuegos",
+    "aprender a programar",
+    "aprender programar",
+    "ensenan a programar",
+    "ensenan",
+    "cuesta|vale|precio|cobra|costo curso|cursos",
+    "curso|cursos economico|barato|precio|valor|cuestan"
+   ],
+   "respuesta": "Tenemos una ruta de aprendizaje en creación de videojuegos y programación (2 clases de 1 h 30 min por semana, con proyecto final):\n• Curso 1 · Videojuegos con Scratch: 4 semanas, $120.000 COP\n• Curso 2 · Experiencias interactivas con CoSpaces Edu: 5 semanas, $150.000 COP\n• Curso 3 · Desarrollo web (HTML, CSS y JavaScript): 6 semanas, $200.000 COP\n• Curso 4 · Videojuegos con Unity y C#: 8 semanas, $280.000 COP\nTambién hay clases personalizadas a $35.000 COP la hora.",
+   "grupo": "cursos",
+   "prioridad": 1.2,
+   "enlaces": [
+    {
+     "texto": "Ver los cursos",
+     "href": "servicios.html#cursos"
+    }
+   ],
+   "contexto": "cursos",
+   "opciones": [
+    {
+     "id": "curso_scratch",
+     "titulo": "Scratch"
+    },
+    {
+     "id": "curso_cospaces",
+     "titulo": "CoSpaces Edu"
+    },
+    {
+     "id": "curso_web",
+     "titulo": "Desarrollo web"
+    },
+    {
+     "id": "curso_unity",
+     "titulo": "Unity"
+    },
+    {
+     "id": "clases",
+     "titulo": "Clases personalizadas"
+    }
+   ],
    "ofrecerSolicitud": true
   },
   {
+   "id": "curso_scratch",
+   "titulo": "Curso de Scratch",
+   "tipo": "funcode",
+   "claves": [
+    "scratch",
+    "curso scratch",
+    "videojuegos scratch",
+    "programacion por bloques",
+    "bloques",
+    "cuesta|vale|precio|cobra|costo|dura|duracion|valor scratch",
+    "curso|cursos scratch"
+   ],
+   "respuesta": "Curso 1 · Creación de videojuegos con Scratch: aprendes los fundamentos de la programación con bloques y creas videojuegos desde cero (personajes, escenarios, eventos, variables, condicionales, colisiones, sonidos y niveles). Dura 4 semanas, 2 clases por semana (12 horas) y terminas con un videojuego propio. Precio: $120.000 COP.",
+   "grupo": "cursos",
+   "prioridad": 1.35,
+   "enlaces": [
+    {
+     "texto": "Ver contenidos",
+     "href": "servicios.html#curso-1"
+    }
+   ],
+   "contexto": "cursos",
+   "ofrecerSolicitud": true,
+   "perfil": {
+    "curso": "Curso 1: Scratch"
+   }
+  },
+  {
+   "id": "curso_cospaces",
+   "titulo": "Curso de CoSpaces Edu",
+   "tipo": "funcode",
+   "claves": [
+    "cospaces",
+    "co spaces",
+    "cospaces edu",
+    "3d",
+    "realidad virtual",
+    "entornos 3d",
+    "experiencias inmersivas",
+    "mundos virtuales",
+    "cuesta|vale|precio|cobra|costo|dura|duracion|valor cospaces",
+    "curso|cursos cospaces"
+   ],
+   "respuesta": "Curso 2 · Creación de experiencias interactivas con CoSpaces Edu: diseño de entornos 3D, objetos y personajes, programación por bloques, animaciones y experiencias narrativas e inmersivas. Dura 5 semanas, 2 clases por semana (15 horas) y terminas con un entorno 3D interactivo o una experiencia virtual propia. Precio: $150.000 COP.",
+   "grupo": "cursos",
+   "prioridad": 1.35,
+   "enlaces": [
+    {
+     "texto": "Ver contenidos",
+     "href": "servicios.html#curso-2"
+    }
+   ],
+   "contexto": "cursos",
+   "ofrecerSolicitud": true,
+   "perfil": {
+    "curso": "Curso 2: CoSpaces Edu"
+   }
+  },
+  {
+   "id": "curso_web",
+   "titulo": "Curso de desarrollo web",
+   "tipo": "funcode",
+   "claves": [
+    "curso|cursos|aprender|ensenan html|css|javascript|web|paginas",
+    "curso de html",
+    "aprender html",
+    "aprender a hacer paginas",
+    "curso desarrollo web",
+    "fundamentos de desarrollo web",
+    "cuesta|vale|precio|cobra|costo|dura|duracion|valor html|css|javascript",
+    "curso|cursos html|css|javascript",
+    "curso|cursos programacion web",
+    "curso|cursos desarrollo web",
+    "curso|cursos paginas web"
+   ],
+   "respuesta": "Curso 3 · Fundamentos de desarrollo web: HTML (estructura, etiquetas, multimedia, tablas y formularios), CSS (estilos, Flexbox y diseño adaptable) y JavaScript (lógica, funciones, eventos e interactividad). Dura 6 semanas, 2 clases por semana (18 horas) y terminas con tu propia página web funcional. Precio: $200.000 COP.",
+   "grupo": "cursos",
+   "prioridad": 1.25,
+   "enlaces": [
+    {
+     "texto": "Ver contenidos",
+     "href": "servicios.html#curso-3"
+    }
+   ],
+   "contexto": "cursos",
+   "ofrecerSolicitud": true,
+   "perfil": {
+    "curso": "Curso 3: Desarrollo web"
+   }
+  },
+  {
+   "id": "curso_unity",
+   "titulo": "Curso de Unity",
+   "tipo": "funcode",
+   "claves": [
+    "unity",
+    "curso unity",
+    "motor de videojuegos",
+    "videojuegos en c#",
+    "c# videojuegos",
+    "juegos en unity",
+    "cuesta|vale|precio|cobra|costo|dura|duracion|valor unity",
+    "curso|cursos unity",
+    "ensenan|curso|cursos|aprender|clases c|csharp"
+   ],
+   "respuesta": "Curso 4 · Introducción al desarrollo de videojuegos con Unity: el motor Unity, escenas, objetos y componentes, el lenguaje C#, scripts, movimiento, colisiones, físicas, mecánicas y depuración. Dura 8 semanas, 2 clases por semana (24 horas) y terminas con un videojuego básico funcional en Unity y C#. Precio: $280.000 COP.",
+   "grupo": "cursos",
+   "prioridad": 1.4,
+   "enlaces": [
+    {
+     "texto": "Ver contenidos",
+     "href": "servicios.html#curso-4"
+    }
+   ],
+   "contexto": "cursos",
+   "ofrecerSolicitud": true,
+   "perfil": {
+    "curso": "Curso 4: Unity"
+   }
+  },
+  {
+   "id": "horario_clases",
+   "titulo": "Horario y duración de las clases",
+   "tipo": "funcode",
+   "claves": [
+    "horario|dias|cuando clases|clase|curso",
+    "cuantas clases por semana",
+    "duracion del curso",
+    "cuanto dura|duran curso|cursos|clase|clases",
+    "clases por semana",
+    "horas curso|cursos|clase|clases",
+    "frecuencia clases|curso|cursos",
+    "lunes|martes|miercoles|jueves|viernes|sabado|sabados|domingo|domingos|noche|noches|tarde|tardes|manana|mananas curso|cursos|clase|clases",
+    "semana|semanal curso|cursos|clase|clases"
+   ],
+   "respuesta": "Los cursos tienen 2 clases por semana de 1 h 30 min (de 4 a 8 semanas según el curso). Las clases se programan de acuerdo con la disponibilidad del estudiante; para acordar días y horas, escríbenos por WhatsApp.",
+   "grupo": "cursos",
+   "prioridad": 1.45,
+   "enlaces": [
+    {
+     "texto": "Ver los cursos",
+     "href": "servicios.html#cursos"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "modalidad_clases",
+   "titulo": "¿Clases virtuales o presenciales?",
+   "tipo": "funcode",
+   "claves": [
+    "virtual|virtuales|presencial|presenciales|online|remoto|remotas|zoom|meet clase|clases|curso|cursos",
+    "linea clase|clases|curso|cursos",
+    "+son virtuales",
+    "+son presenciales",
+    "+es presencial",
+    "+es virtual"
+   ],
+   "respuesta": "¡Buena pregunta! El catálogo no especifica si las clases son virtuales o presenciales, y prefiero no darte una respuesta incorrecta. Puedes confirmarlo directamente por WhatsApp.",
+   "grupo": "cursos",
+   "prioridad": 1.5,
+   "whatsapp": true
+  },
+  {
+   "id": "certificado",
+   "titulo": "¿Dan certificado?",
+   "tipo": "funcode",
+   "claves": [
+    "certificado",
+    "certificados",
+    "certificacion",
+    "diploma",
+    "constancia"
+   ],
+   "respuesta": "No tengo información confirmada sobre certificados para los cursos y prefiero no darte una respuesta incorrecta. Puedes preguntarlo directamente por WhatsApp.",
+   "grupo": "cursos",
+   "prioridad": 1.4,
+   "whatsapp": true
+  },
+  {
+   "id": "edad",
+   "titulo": "¿Para qué edades son los cursos?",
+   "tipo": "funcode",
+   "claves": [
+    "edad",
+    "edades",
+    "anos tiene",
+    "ninos",
+    "nino",
+    "adolescentes",
+    "jovenes",
+    "adultos",
+    "para mi hijo",
+    "para mi hija",
+    "hijo",
+    "hija",
+    "edad curso|cursos|clases|clase|tomar|entrar|minima"
+   ],
+   "respuesta": "El catálogo no indica una edad mínima para los cursos, así que prefiero no inventarla. Los cursos empiezan desde cero (el Curso 1 usa programación por bloques con Scratch). Escríbenos por WhatsApp con la edad y el nivel del estudiante para orientarte.",
+   "grupo": "cursos",
+   "prioridad": 1.45,
+   "enlaces": [
+    {
+     "texto": "Ver los cursos",
+     "href": "servicios.html#cursos"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "robotica",
+   "titulo": "Robótica (Arduino, Tinkercad)",
+   "tipo": "funcode",
+   "claves": [
+    "robotica",
+    "arduino",
+    "tinkercad",
+    "robots",
+    "electronica"
+   ],
+   "respuesta": "En el catálogo actual no hay cursos de robótica con Arduino o Tinkercad. Los cursos disponibles son Scratch, CoSpaces Edu, desarrollo web (HTML, CSS y JavaScript) y Unity con C#, además de clases personalizadas. Si te interesa la robótica, pregúntalo por WhatsApp.",
+   "grupo": "cursos",
+   "prioridad": 1.4,
+   "enlaces": [
+    {
+     "texto": "Ver los cursos",
+     "href": "servicios.html#cursos"
+    }
+   ],
+   "whatsapp": true
+  },
+  {
+   "id": "java_curso",
+   "titulo": "¿Enseñan otros lenguajes?",
+   "tipo": "funcode",
+   "claves": [
+    "curso|cursos|clase|clases|aprender|ensenan|ensenar java|python|php|kotlin|swift|react|sql|android",
+    "aprender java",
+    "aprender python"
+   ],
+   "respuesta": "Por ahora ese lenguaje no tiene un curso en el catálogo. Los cursos son Scratch, CoSpaces Edu, desarrollo web (HTML, CSS y JavaScript) y Unity con C#. En las clases personalizadas ($35.000 COP la hora) se trabajan fundamentos de programación; si buscas un lenguaje en particular, confírmalo por WhatsApp.",
+   "grupo": "cursos",
+   "prioridad": 1.45,
+   "whatsapp": true,
+   "opciones": [
+    {
+     "id": "cursos",
+     "titulo": "Ver los cursos"
+    }
+   ]
+  },
+  {
+   "id": "inscripcion",
+   "titulo": "Cómo inscribirme",
+   "tipo": "funcode",
+   "claves": [
+    "inscribirme",
+    "inscripcion",
+    "inscribir",
+    "matricula",
+    "matricularme",
+    "como entro al curso",
+    "quiero tomar el curso",
+    "apuntarme",
+    "cupos curso",
+    "cupo curso",
+    "inscribo",
+    "inscribe",
+    "inscribirse",
+    "inscripciones",
+    "inscribir|inscribo|inscribirme|inscripcion|matricula curso|cursos|clases"
+   ],
+   "respuesta": "¡Genial! 🎮 Para inscribirte, cuéntanos qué curso o clases te interesan. Puedo preparar tu solicitud con unas preguntas rápidas y enviarla por WhatsApp, o puedes usar el formulario de la página. Los cupos, fechas y forma de pago se confirman directamente.",
+   "grupo": "cursos",
+   "prioridad": 1.35,
+   "enlaces": [
+    {
+     "texto": "Ir al formulario",
+     "href": "contacto.html#formulario"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "cursos",
+   "iniciaSolicitud": true
+  },
+  {
    "id": "clases",
-   "titulo": "Clases de programación",
+   "titulo": "Clases personalizadas",
    "tipo": "funcode",
    "claves": [
     "clases",
     "clase",
-    "curso",
-    "cursos",
-    "aprender programar",
-    "ensenar programar",
-    "ensenan",
-    "taller",
-    "talleres",
-    "robotica",
-    "scratch",
-    "arduino",
-    "tinkercad",
+    "clases personalizadas",
+    "clase personalizada",
+    "tutorias",
+    "tutoria",
     "capacitacion",
+    "capacitaciones",
     "formacion",
     "no se nada de programacion",
     "principiante",
-    "aprender java",
-    "tutorias",
     "aprender desde cero",
     "programacion desde cero",
-    "ensenar desde cero"
+    "ensenar desde cero",
+    "clases particulares",
+    "profesor particular",
+    "clases grupales",
+    "clases individuales",
+    "refuerzo",
+    "cuesta|vale|precio|cobra|costo|tarifa clase|clases|hora",
+    "sale|cuesta|vale|precio|cobra|cobran|valor hora clase|clases",
+    "hora de clase"
    ],
-   "respuesta": "Sí. Ofrecemos formación y acompañamiento en programación, también para personas que empiezan desde cero, con explicaciones progresivas y ejercicios prácticos. Además trabajamos inteligencia artificial y robótica educativa (Scratch, Arduino, Tinkercad). El contenido y las condiciones se definen según tu nivel y tus objetivos.",
+   "respuesta": "Sí. Damos clases individuales o grupales, adaptadas al nivel, el ritmo y las necesidades de cada estudiante, también desde cero: fundamentos de programación, Scratch, CoSpaces Edu, HTML/CSS/JavaScript, Unity y C#, ofimática, acompañamiento en proyectos e introducción a la inteligencia artificial. Cuestan $35.000 COP por hora y se programan según tu disponibilidad.",
    "grupo": "clases",
-   "prioridad": 1.15,
+   "prioridad": 1.2,
    "enlaces": [
     {
-     "texto": "Ver servicios",
-     "href": "servicios.html"
+     "texto": "Ver cursos y clases",
+     "href": "servicios.html#clases"
     }
    ],
-   "whatsapp": true,
    "contexto": "clases",
-   "ofrecerSolicitud": true
+   "ofrecerSolicitud": true,
+   "opciones": [
+    {
+     "id": "cursos",
+     "titulo": "Ver los cursos"
+    }
+   ],
+   "perfil": {
+    "curso": "Clases personalizadas"
+   }
   },
   {
    "id": "ia",
@@ -687,7 +1148,7 @@
     "asistente virtual",
     "automatizar con inteligencia"
    ],
-   "respuesta": "Sí. Usamos herramientas de inteligencia artificial como apoyo para el desarrollo, el aprendizaje, el análisis y la productividad, y podemos evaluar integrar herramientas de IA en tu proyecto, como un asistente que responda preguntas. (Este chat también lo desarrollamos en Funcode 😉.)",
+   "respuesta": "Sí. Usamos herramientas de inteligencia artificial como apoyo para el desarrollo, el aprendizaje, el análisis y la productividad. En las clases personalizadas también hay una introducción a herramientas de inteligencia artificial.",
    "grupo": "ia",
    "prioridad": 1.2,
    "enlaces": [
@@ -734,7 +1195,7 @@
     "desarrollar un juego",
     "juego para mi"
    ],
-   "respuesta": "Nuestra línea de videojuegos está orientada principalmente a proyectos propios. Si tienes una propuesta relacionada, podemos recibirla y evaluar si existe una modalidad de colaboración. También hacemos experiencias educativas con gamificación, como Ofimática 9°.",
+   "respuesta": "¡Enseñamos a crearlos! Tenemos cursos de creación de videojuegos con Scratch ($120.000 COP) y con Unity y C# ($280.000 COP). El desarrollo de videojuegos por encargo no está en nuestro catálogo: los videojuegos de Funcode son proyectos propios, aunque si tienes una propuesta podemos recibirla y evaluarla.",
    "grupo": "juegos",
    "prioridad": 1.2,
    "enlaces": [
@@ -743,7 +1204,17 @@
      "href": "proyectos.html"
     }
    ],
-   "whatsapp": true
+   "whatsapp": true,
+   "opciones": [
+    {
+     "id": "curso_scratch",
+     "titulo": "Curso de Scratch"
+    },
+    {
+     "id": "curso_unity",
+     "titulo": "Curso de Unity"
+    }
+   ]
   },
   {
    "id": "mejoras",
@@ -775,11 +1246,13 @@
     "nuevo diseno",
     "mantenimiento de paginas",
     "actualizaciones",
-    "acompanamiento",
     "actualizar mi pagina",
-    "renovar mi pagina"
+    "renovar mi pagina",
+    "precio mantenimiento",
+    "cuanto cuesta mantenimiento",
+    "cuesta|vale|precio|cobra mantenimiento|actualizar|arreglo"
    ],
-   "respuesta": "Sí. Podemos revisar tu proyecto y evaluar cambios visuales, correcciones, actualizaciones, nuevas funcionalidades y acompañamiento. Cuéntanos qué tienes y qué quieres cambiar.",
+   "respuesta": "Sí. El mantenimiento y la actualización de páginas web incluye corrección de errores, actualización de contenido, modificaciones visuales, ajustes de funcionamiento y mejoras. Empieza desde $50.000 COP por intervención. Cuéntanos qué tienes y qué quieres cambiar.",
    "grupo": "mejoras",
    "prioridad": 1.1,
    "enlaces": [
@@ -790,6 +1263,37 @@
    ],
    "contexto": "mejoras",
    "ofrecerSolicitud": true
+  },
+  {
+   "id": "acompanamiento",
+   "titulo": "Acompañamiento y asesoría",
+   "tipo": "funcode",
+   "claves": [
+    "acompanamiento",
+    "asesoria",
+    "asesoria tecnica",
+    "consultoria",
+    "orientacion",
+    "soporte tecnico",
+    "ayuda tecnica",
+    "me ayudan a usar",
+    "ensenarme a usar",
+    "cuesta|vale|precio|cobra asesoria|acompanamiento|consultoria",
+    "explique|explicar|explicacion|ensenen|ensenar usar",
+    "como usar mi pagina|sistema|herramienta|app",
+    "aprender a usar mi pagina|sistema|herramienta|app"
+   ],
+   "respuesta": "Ofrecemos acompañamiento técnico y asesoría: orientación para comprender, utilizar y mantener herramientas o proyectos tecnológicos que ya tienes. La tarifa es de $35.000 COP por hora.",
+   "grupo": "mejoras",
+   "prioridad": 1.25,
+   "enlaces": [
+    {
+     "texto": "Ver tarifas",
+     "href": "precios.html#complementarios"
+    }
+   ],
+   "whatsapp": true,
+   "contexto": "mejoras"
   },
   {
    "id": "proyecto_existente",
@@ -980,7 +1484,7 @@
     "sale pagina",
     "cobra pagina"
    ],
-   "respuesta": "No hay un precio único: depende del diseño, las funcionalidades, la cantidad de secciones, las integraciones y la complejidad. Como referencia, en la página de precios los proyectos empiezan desde $160.000 COP (plan Básico) y $400.000 COP (plan Profesional); los proyectos personalizados se cotizan. El valor definitivo se confirma en una cotización según tu proyecto.",
+   "respuesta": "Estas son las tarifas iniciales del catálogo:\n• Cursos: desde $120.000 COP; clases personalizadas: $35.000 COP la hora\n• Páginas web: desde $250.000 COP (básica), $450.000 (empresarial) y $700.000 (avanzada)\n• Convertir tu página en app: desde $400.000 COP\n• Mantenimiento web: desde $50.000 COP por intervención\nTiendas, apps personalizadas y software a medida se cotizan. El valor final depende de la complejidad, las funcionalidades y el alcance.",
    "grupo": "precio",
    "prioridad": 1.15,
    "enlaces": [
@@ -991,7 +1495,11 @@
    ],
    "segunContexto": {
     "tienda": "precio_tienda",
-    "app": "precio_app"
+    "app": "precio_app",
+    "cursos": "cursos",
+    "clases": "clases",
+    "qr": "qr_orders",
+    "mejoras": "mejoras"
    },
    "ofrecerSolicitud": true
   },
@@ -1008,18 +1516,27 @@
     "que incluye",
     "que trae",
     "incluye el plan",
-    "diferencia",
     "basico",
-    "profesional"
+    "profesional",
+    "pagina basica",
+    "pagina empresarial",
+    "pagina avanzada",
+    "empresarial",
+    "avanzada",
+    "tipos de pagina",
+    "cuesta|vale|precio|cobra|costo pagina|web basica|empresarial|avanzada",
+    "diferencia basico|basica|profesional|empresarial|avanzada|planes|plan|paginas",
+    "cuesta|vale|precio|cobra|costo pagina web basica|empresarial|avanzada"
    ],
-   "respuesta": "• Básico (desde $160.000 COP): landing o página informativa, información del negocio, galería, botones de WhatsApp y redes, diseño adaptable a celular.\n• Profesional (desde $400.000 COP): varias secciones, diseño personalizado, formularios, catálogos e interacciones.\n• Personalizado (con cotización): aplicaciones web, sistemas educativos, usuarios, Firebase e integraciones.\nSon precios de referencia «desde»: el valor final depende de tu proyecto.",
+   "respuesta": "• Página web básica (desde $250.000 COP): diseño personalizado, presentación del negocio, información de contacto, adaptación a móviles y enlaces a redes sociales y WhatsApp.\n• Empresarial (desde $450.000 COP): diseño visual personalizado, varias secciones, productos y servicios, formularios de contacto e integración con WhatsApp.\n• Avanzada (desde $700.000 COP): funcionalidades personalizadas, secciones dinámicas, formularios avanzados, integraciones y componentes interactivos.\n• Tiendas virtuales y plataformas web (cotización personalizada): catálogos, gestión de productos, usuarios, compras, pagos y paneles de administración.",
    "grupo": "precio",
    "enlaces": [
     {
      "texto": "Ver planes",
      "href": "precios.html"
     }
-   ]
+   ],
+   "prioridad": 1.2
   },
   {
    "id": "precio_app",
@@ -1036,7 +1553,7 @@
     "precio sistema",
     "cuesta|vale|cobra|cobran|precio|costo|sale|valor|cotizar|cotizacion|presupuesto app|sistema|plataforma"
    ],
-   "respuesta": "No existe un precio único para una aplicación: depende de las plataformas, las funcionalidades, el diseño, las integraciones y la complejidad técnica. Entra en el plan Personalizado, que se cotiza después de conocer tu idea.",
+   "respuesta": "Convertir una página web existente en una aplicación instalable empieza desde $400.000 COP. Las aplicaciones personalizadas (Android y otras plataformas) y el software a medida tienen cotización personalizada, porque dependen de las plataformas, las funcionalidades, el diseño y la complejidad.",
    "grupo": "precio",
    "prioridad": 1.3,
    "enlaces": [
@@ -1062,7 +1579,7 @@
     "precio catalogo",
     "cuesta|vale|cobra|cobran|precio|costo|sale|valor|cotizar|cotizacion|presupuesto tienda|catalogo|ecommerce"
    ],
-   "respuesta": "El precio de una tienda virtual depende del catálogo, la gestión de productos y pedidos, los pagos y la administración. Como referencia, los catálogos entran desde el plan Profesional (desde $400.000 COP); una tienda con pagos en línea se cotiza según lo que necesite.",
+   "respuesta": "Las tiendas virtuales y plataformas web tienen cotización personalizada: el precio depende del catálogo, la gestión de productos y pedidos, el registro de usuarios, los pagos y la administración. Si solo necesitas mostrar productos y servicios, la página web empresarial empieza desde $450.000 COP.",
    "grupo": "precio",
    "prioridad": 1.3,
    "enlaces": [
@@ -1153,7 +1670,7 @@
     "mucho dinero",
     "presupuesto ajustado"
    ],
-   "respuesta": "Sí. Podemos estudiar alternativas, priorizar las funcionalidades esenciales y ver si existe una primera versión viable para tu presupuesto. El plan Básico empieza desde $160.000 COP como referencia.",
+   "respuesta": "Sí. Podemos estudiar alternativas, priorizar lo esencial y ver si existe una primera versión viable para tu presupuesto. Como referencia, la página web básica empieza desde $250.000 COP, el mantenimiento desde $50.000 COP por intervención y las clases personalizadas cuestan $35.000 COP la hora.",
    "grupo": "cotizacion",
    "prioridad": 1.3,
    "enlaces": [
@@ -1659,7 +2176,7 @@
     "referencias",
     "demo"
    ],
-   "respuesta": "Estos son nuestros proyectos:\n• Disponibles: LifeCoinQuest (productividad gamificada), Ofimática 9° (Word y Excel interactivos) y Ajedrez Inclusivo (ajedrez accesible).\n• Realizado: sitio con automatización para Camisas Col.\n• En desarrollo: Funcode Academy (aprender Java) y Funcode Code Analyzer (análisis de proyectos de software).",
+   "respuesta": "Estos son nuestros proyectos:\n• Disponibles: LifeCoinQuest (productividad gamificada), Ofimática 9° (Word y Excel interactivos) y Ajedrez Inclusivo (ajedrez accesible).\n• Realizado: sitio con automatización para Camisas Col.\n• En desarrollo: Funcode QR Orders (pedidos con QR para restaurantes), Funcode Academy (aprender programación) y Funcode Code Analyzer (análisis de proyectos de software).",
    "grupo": "portafolio",
    "enlaces": [
     {
@@ -1679,6 +2196,10 @@
     {
      "id": "ajedrez",
      "titulo": "Ajedrez Inclusivo"
+    },
+    {
+     "id": "qr_orders",
+     "titulo": "QR Orders"
     },
     {
      "id": "academy",
@@ -1766,9 +2287,15 @@
     "academia de programacion",
     "plataforma para aprender java"
    ],
-   "respuesta": "Funcode Academy es un proyecto en desarrollo: una academia digital para aprender programación (Java) con rutas progresivas, ejercicios prácticos y una experiencia gamificada adaptada a distintos niveles. Todavía no está disponible al público.",
+   "respuesta": "Funcode Academy es un proyecto en desarrollo: una academia digital para aprender programación con rutas progresivas, ejercicios prácticos y una experiencia gamificada. Todavía no está disponible al público. Mientras tanto, puedes tomar nuestros cursos de programación y creación de videojuegos.",
    "grupo": "portafolio",
-   "prioridad": 1.35
+   "prioridad": 1.35,
+   "opciones": [
+    {
+     "id": "cursos",
+     "titulo": "Ver cursos"
+    }
+   ]
   },
   {
    "id": "analyzer",
@@ -1826,9 +2353,12 @@
     "java",
     "php",
     "que lenguajes",
-    "con que programan"
+    "con que programan",
+    "c#",
+    "c sharp",
+    "csharp"
    ],
-   "respuesta": "Trabajamos con tecnologías como Java, JavaScript, HTML, CSS y PHP, además de Firebase, Google Apps Script y Capacitor en los proyectos publicados. Elegimos según las necesidades de cada proyecto; otras tecnologías hay que confirmarlas.",
+   "respuesta": "En los proyectos trabajamos con Java, JavaScript, HTML, CSS y PHP, además de Firebase, Google Apps Script y Capacitor. En los cursos se enseña Scratch, CoSpaces Edu, HTML, CSS y JavaScript, y Unity con C#. Otras tecnologías hay que confirmarlas según el proyecto.",
    "grupo": "tecnologias",
    "enlaces": [
     {
@@ -2011,7 +2541,7 @@
     "que es landing page",
     "significa landing"
    ],
-   "respuesta": "Una landing page es una página de una sola sección larga, pensada para un objetivo: presentar tu negocio o producto y llevar a la persona a contactarte (por ejemplo, por WhatsApp). Es el plan Básico, desde $160.000 COP.",
+   "respuesta": "Una landing page es una página de una sola sección larga, pensada para un objetivo: presentar tu negocio o producto y llevar a la persona a contactarte (por ejemplo, por WhatsApp). Entra en la página web básica, desde $250.000 COP.",
    "grupo": "web",
    "prioridad": 1.3,
    "enlaces": [
@@ -2046,29 +2576,31 @@
   }
  ],
  "sugerencias": [
+  "¿Qué cursos tienen?",
   "¿Cuánto cuesta una página web?",
   "¿Qué servicios ofrecen?",
-  "Quiero una aplicación",
   "📝 Preparar mi solicitud"
  ],
  "sinRespuesta": "¡Buena pregunta! No tengo información confirmada sobre ese punto y prefiero no darte una respuesta incorrecta. Puedes revisarlo directamente por WhatsApp para recibir información precisa, o preguntarme sobre estos temas:",
  "temas": [
   "servicios",
+  "cursos",
   "precio",
-  "tiempo",
-  "portafolio",
+  "qr_orders",
   "proceso",
   "cotizar"
  ],
  "sinRespuestaOtraVez": "Esa tampoco la tengo confirmada 🙏. Para que recibas información precisa, lo mejor es revisarlo directamente por WhatsApp (o en el formulario).",
- "saludo": "¡Hola! Soy Funi 🤖, el asistente virtual de Funcode Studio CB. Pregúntame lo que quieras sobre servicios, precios, tiempos o proyectos. Si ya tienes una idea, también te ayudo a preparar tu solicitud.",
+ "saludo": "¡Hola! Soy Funi 🤖, el asistente virtual de Funcode Edutech CB. Pregúntame lo que quieras sobre servicios, precios, tiempos o proyectos. Si ya tienes una idea, también te ayudo a preparar tu solicitud.",
  "contextoServicio": {
   "web": "Página web",
-  "tienda": "Tienda virtual o catálogo",
+  "tienda": "Tienda virtual o plataforma web",
   "app": "Aplicación",
   "educacion": "Plataforma educativa",
-  "clases": "Clases de programación",
-  "mejoras": "Mejorar o corregir un proyecto"
+  "clases": "Curso o clases",
+  "cursos": "Curso o clases",
+  "mejoras": "Mantenimiento o mejora de una página",
+  "qr": "Funcode QR Orders (restaurante)"
  },
  "solicitud": {
   "boton": "📝 Preparar mi solicitud",
@@ -2077,29 +2609,69 @@
   "pasos": [
    {
     "campo": "servicio",
-    "pregunta": "¿Qué te gustaría desarrollar?",
+    "pregunta": "¿Qué te interesa?",
     "opciones": [
+     "Curso o clases",
      "Página web",
-     "Tienda virtual o catálogo",
+     "Tienda virtual o plataforma web",
      "Aplicación",
+     "Software a medida o automatización",
      "Plataforma educativa",
-     "Sistema administrativo o automatización",
-     "Clases de programación",
-     "Mejorar o corregir un proyecto",
+     "Funcode QR Orders (restaurante)",
+     "Mantenimiento o mejora de una página",
+     "Acompañamiento o asesoría",
      "Todavía no lo sé"
+    ]
+   },
+   {
+    "campo": "curso",
+    "pregunta": "¿Qué curso te interesa?",
+    "opciones": [
+     "Curso 1: Scratch",
+     "Curso 2: CoSpaces Edu",
+     "Curso 3: Desarrollo web",
+     "Curso 4: Unity",
+     "Clases personalizadas",
+     "Aún no lo sé"
+    ],
+    "soloSi": [
+     "Curso o clases"
+    ]
+   },
+   {
+    "campo": "para_quien",
+    "pregunta": "¿Para quién son las clases? (por ejemplo, para ti, tu hijo o un grupo)",
+    "omitir": "Omitir",
+    "soloSi": [
+     "Curso o clases"
+    ]
+   },
+   {
+    "campo": "nivel",
+    "pregunta": "¿Cuál es el nivel de programación del estudiante?",
+    "opciones": [
+     "Desde cero",
+     "Sabe lo básico",
+     "Ya tiene experiencia"
+    ],
+    "soloSi": [
+     "Curso o clases"
     ]
    },
    {
     "campo": "necesidad",
     "pregunta": "Cuéntame en pocas palabras tu idea o el problema que quieres resolver.",
-    "omitir": "Prefiero contarlo por WhatsApp"
+    "omitir": "Prefiero contarlo por WhatsApp",
+    "saltarSi": [
+     "Curso o clases"
+    ]
    },
    {
     "campo": "negocio",
-    "pregunta": "¿Para qué negocio, proyecto o institución es? (por ejemplo, «una tienda de ropa» o «un colegio»)",
+    "pregunta": "¿Para qué negocio, proyecto o institución es? (por ejemplo, «una tienda de ropa» o «un restaurante»)",
     "omitir": "Omitir",
     "saltarSi": [
-     "Clases de programación"
+     "Curso o clases"
     ]
    },
    {
@@ -2116,28 +2688,18 @@
     ]
    },
    {
-    "campo": "nivel",
-    "pregunta": "¿Cuál es tu nivel de programación?",
-    "opciones": [
-     "Desde cero",
-     "Sé lo básico",
-     "Ya tengo experiencia"
-    ],
-    "soloSi": [
-     "Clases de programación"
-    ]
-   },
-   {
     "campo": "funciones",
     "pregunta": "¿Qué funciones principales debería tener? (por ejemplo: catálogo, formulario, pagos, usuarios)",
     "omitir": "Aún no lo sé",
     "saltarSi": [
-     "Clases de programación"
+     "Curso o clases",
+     "Funcode QR Orders (restaurante)",
+     "Acompañamiento o asesoría"
     ]
    },
    {
     "campo": "plazo",
-    "pregunta": "¿Para cuándo te gustaría tenerlo?",
+    "pregunta": "¿Para cuándo te gustaría empezar o tenerlo listo?",
     "opciones": [
      "Lo antes posible",
      "Este mes",
@@ -2149,7 +2711,11 @@
    {
     "campo": "presupuesto",
     "pregunta": "Si tienes un presupuesto aproximado, puedes contármelo. Es opcional y no es un compromiso.",
-    "omitir": "Prefiero no decirlo"
+    "omitir": "Prefiero no decirlo",
+    "saltarSi": [
+     "Curso o clases",
+     "Funcode QR Orders (restaurante)"
+    ]
    },
    {
     "campo": "nombre",
@@ -2166,16 +2732,20 @@
    "funciones": "Funciones principales",
    "plazo": "Plazo deseado",
    "presupuesto": "Presupuesto aproximado",
-   "nombre": "Nombre"
+   "nombre": "Nombre",
+   "curso": "Curso",
+   "para_quien": "Para quién"
   },
   "categorias": {
+   "Curso o clases": "Formación",
    "Página web": "Desarrollo web",
-   "Tienda virtual o catálogo": "Desarrollo web",
+   "Tienda virtual o plataforma web": "Desarrollo web",
    "Aplicación": "Software",
-   "Sistema administrativo o automatización": "Software",
+   "Software a medida o automatización": "Software",
+   "Funcode QR Orders (restaurante)": "Software (QR Orders)",
    "Plataforma educativa": "Educativo",
-   "Clases de programación": "Formación",
-   "Mejorar o corregir un proyecto": "Mantenimiento"
+   "Mantenimiento o mejora de una página": "Mantenimiento",
+   "Acompañamiento o asesoría": "Mantenimiento"
   },
   "categoriaGeneral": "Consulta general",
   "interes": {
@@ -2185,7 +2755,7 @@
   },
   "resumen": "¡Listo! Este es el resumen de tu solicitud:",
   "cierre": "Si está bien, envíalo por WhatsApp y te responderemos personalmente. El valor y el tiempo se confirman después de revisar tu proyecto, en una cotización.",
-  "whatsappInicio": "Hola, Funcode Studio CB. Vengo del chat de la página y quiero solicitar una cotización.",
+  "whatsappInicio": "Hola, Funcode Edutech CB. Vengo del chat de la página y quiero solicitar información o una cotización.",
   "whatsappClasificacion": "Clasificación del chat",
   "seguir": "Sigamos con tu solicitud:",
   "cancelar": "Cancelar",

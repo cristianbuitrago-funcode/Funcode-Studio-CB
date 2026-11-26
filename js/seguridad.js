@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — protección contra clickjacking para las páginas privadas
+ * Funcode Edutech CB — protección contra clickjacking para las páginas privadas
  * (panel del organizador y «Mis solicitudes»).
  * GitHub Pages no permite enviar la cabecera X-Frame-Options / frame-ancestors, así que si otra
  * página intenta mostrar esta dentro de un marco (iframe) para engañar a quien la usa, se oculta

@@ -1,4 +1,4 @@
-/* Funcode Studio CB — panel del organizador (Firebase Auth + Firestore) */
+/* Funcode Edutech CB — panel del organizador (Firebase Auth + Firestore) */
 (function () {
   'use strict';
 
@@ -85,7 +85,7 @@
     $('admin-user').hidden = !user;
     if (!user) {
       items = [];
-      document.title = 'Panel del organizador | Funcode Studio CB';
+      document.title = 'Panel del organizador | Funcode Edutech CB';
       show('login');
       return;
     }
@@ -370,7 +370,7 @@
       contact.appendChild(el('a', {
         class: 'btn btn-primary btn-sm',
         href: 'mailto:' + item.correo +
-          '?subject=' + encodeURIComponent('Tu solicitud en Funcode Studio CB') +
+          '?subject=' + encodeURIComponent('Tu solicitud en Funcode Edutech CB') +
           '&body=' + encodeURIComponent('Hola, ' + firstName(item) + ':\n\nGracias por escribirnos sobre tu proyecto (' + item.tipo + ').\n\n')
       }, 'Responder por correo'));
     }
@@ -379,7 +379,7 @@
     if (wa) {
       contact.appendChild(el('a', {
         class: 'btn btn-ghost btn-sm',
-        href: 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Hola, ' + firstName(item) + '. Te escribo de Funcode Studio CB por tu solicitud de ' + String(item.tipo).toLowerCase() + '.'),
+        href: 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Hola, ' + firstName(item) + '. Te escribo de Funcode Edutech CB por tu solicitud de ' + String(item.tipo).toLowerCase() + '.'),
         target: '_blank',
         rel: 'noopener'
       }, 'WhatsApp'));
@@ -462,7 +462,7 @@
       span.textContent = counts[span.getAttribute('data-count')] || 0;
     });
     var pendientes = counts.nuevo + resenas.filter(function (r) { return r.estado === 'pendiente'; }).length;
-    document.title = (pendientes ? '(' + pendientes + ') ' : '') + 'Panel del organizador | Funcode Studio CB';
+    document.title = (pendientes ? '(' + pendientes + ') ' : '') + 'Panel del organizador | Funcode Edutech CB';
 
     var visible = items.filter(matches);
     list.innerHTML = '';

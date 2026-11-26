@@ -1,7 +1,8 @@
-# Funcode Studio CB — sitio web oficial
+# Funcode Edutech CB — sitio web oficial
 
-Página web de Funcode Studio CB: estudio tecnológico en crecimiento que desarrolla páginas web,
-aplicaciones y soluciones educativas para proyectos pequeños y medianos, y construye productos propios.
+Página web de Funcode Edutech CB (antes Funcode Studio CB): educación, desarrollo y soluciones tecnológicas.
+Cursos de programación y creación de videojuegos, páginas web, aplicaciones, software a medida y productos propios
+como Funcode QR Orders (en desarrollo). La dirección del sitio y del repositorio siguen siendo `Funcode-Studio-CB`.
 
 HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y sin dependencias.
 
@@ -32,8 +33,8 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |
 | `assets/img/projects/` | Capturas reales de los proyectos (WebP) |
 | `assets/img/og-image.jpg` | Imagen para compartir en redes (1200×630) |
-| `assets/icons/` | Emblema «FCB» del logo (`emblema.webp`), favicon e iconos de la app |
-| `assets/img/logo-funcode.webp` | Logo completo de Funcode (pie de página, Nosotros, Inicio) |
+| `assets/icons/` | Emblema del logo (el libro con «FCB», `emblema.webp`), favicon e iconos de la app |
+| `assets/img/logo-funcode-edutech.webp` (y `-360`) | Logo completo de Funcode Edutech CB sin fondo y con el texto en blanco, para fondo oscuro (pie de página, Nosotros, Inicio) |
 | `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` | Manifest, SEO y página de error |
 
 ## Editar las páginas
@@ -129,4 +130,4 @@ certificaciones. Los personajes y la mascota son ilustraciones y se presentan co
 mensajes solo dicen cosas que son ciertas sobre Funcode. Al agregar contenido nuevo, mantén ese criterio y usa solo proyectos y
 funcionalidades reales.
 
-© 2026 Funcode Studio CB
+© 2026 Funcode Edutech CB

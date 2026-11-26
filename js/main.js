@@ -1,4 +1,4 @@
-/* Funcode Studio CB — interacciones de la página (sin dependencias) */
+/* Funcode Edutech CB — interacciones de la página (sin dependencias) */
 (function () {
   'use strict';
 
@@ -281,7 +281,7 @@
     nombre: { valueMissing: 'Escribe tu nombre.' },
     correo: { valueMissing: 'Escribe tu correo.', typeMismatch: 'Revisa el correo: debe tener el formato nombre@dominio.com.' },
     whatsapp: { patternMismatch: 'Usa solo números y, si quieres, el indicativo (+57).' },
-    tipo: { valueMissing: 'Elige el tipo de proyecto.' },
+    tipo: { valueMissing: 'Elige una opción.' },
     descripcion: { valueMissing: 'Cuéntanos tu idea.', tooShort: 'Cuéntanos un poco más (mínimo 20 caracteres).' },
     fecha: { rangeUnderflow: 'Elige una fecha a partir de hoy.' }
   };
@@ -345,7 +345,7 @@
   function summary() {
     var f = form.elements;
     var lines = [
-      'Solicitud de proyecto — Funcode Studio CB',
+      'Solicitud de proyecto — Funcode Edutech CB',
       '',
       'Nombre: ' + f.nombre.value.trim()
     ];
