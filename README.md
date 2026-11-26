@@ -33,6 +33,7 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |
 | `assets/img/projects/` | Capturas reales de los proyectos (WebP) |
 | `assets/img/og-image.jpg` | Imagen para compartir en redes (1200×630) |
+| `assets/qr/` | Código QR que abre la página de Servicios (`…/Funcode-Studio-CB/servicios.html`): `qr-servicios-tarjeta.png` para redes (1080×1350), `qr-servicios.png` con el emblema en el centro y `qr-servicios.svg` para imprimir en cualquier tamaño |
 | `assets/icons/` | Emblema del logo (el libro con «FCB», `emblema.webp`), favicon e iconos de la app |
 | `assets/img/logo-funcode-edutech.webp` (y `-360`) | Logo completo de Funcode Edutech CB sin fondo y con el texto en blanco, para fondo oscuro (pie de página, Nosotros, Inicio) |
 | `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` | Manifest, SEO y página de error |
