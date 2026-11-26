@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Panel del organizador | Funcode Studio CB</title>
+  <title>Panel del organizador | Funcode Edutech CB</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#050a18">
   <meta name="color-scheme" content="dark">
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <!-- Seguridad (ver SEGURIDAD.md): orígenes permitidos (Firebase y Google) y protección contra clickjacking. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com https://www.gstatic.com https://www.google.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://script.google.com https://script.googleusercontent.com http://127.0.0.1:8085 http://127.0.0.1:9099; frame-src https://funcode-studio-cb.firebaseapp.com https://accounts.google.com https://apis.google.com https://www.google.com; manifest-src 'self'; object-src 'none'; worker-src 'self' blob:; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script src="js/seguridad.js"></script>
+  <link rel="icon" href="assets/icons/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +22,8 @@
 <body class="admin">
   <header class="site-header is-scrolled">
     <div class="container header-inner">
-      <a class="brand" href="./" aria-label="Volver a la página de Funcode Studio CB">
-        <img src="assets/icons/logo.svg" alt="" width="36" height="36">
+      <a class="brand" href="./" aria-label="Volver a la página de Funcode Edutech CB">
+        <img src="assets/icons/emblema.webp" alt="" width="77" height="36">
         <span class="brand-name">Funcode <span>Panel</span></span>
       </a>
       <div class="admin-user" id="admin-user" hidden>
@@ -347,7 +351,7 @@
 
               <fieldset class="doc-group" data-solo="cotizacion">
                 <legend>7. Aceptación</legend>
-                <p class="field-hint">El documento incluye espacio para la firma, el nombre y la fecha del cliente, la firma de Funcode Studio CB y el valor acordado. No hay que llenar nada aquí.</p>
+                <p class="field-hint">El documento incluye espacio para la firma, el nombre y la fecha del cliente, la firma de Funcode Edutech CB y el valor acordado. No hay que llenar nada aquí.</p>
               </fieldset>
 
               <fieldset class="doc-group" data-solo="propuesta">
@@ -358,7 +362,7 @@
               </fieldset>
 
               <fieldset class="doc-group" data-solo="propuesta">
-                <legend>7. Compromiso de Funcode Studio CB</legend>
+                <legend>7. Compromiso de Funcode Edutech CB</legend>
                 <p class="field-hint">Texto fijo de la plantilla. Aparece igual en todas las propuestas:</p>
                 <blockquote class="doc-fixed" id="doc-compromiso"></blockquote>
               </fieldset>

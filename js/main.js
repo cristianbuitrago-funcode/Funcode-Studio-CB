@@ -1,4 +1,4 @@
-/* Funcode Studio CB — interacciones de la página (sin dependencias) */
+/* Funcode Edutech CB — interacciones de la página (sin dependencias) */
 (function () {
   'use strict';
 
@@ -281,7 +281,7 @@
     nombre: { valueMissing: 'Escribe tu nombre.' },
     correo: { valueMissing: 'Escribe tu correo.', typeMismatch: 'Revisa el correo: debe tener el formato nombre@dominio.com.' },
     whatsapp: { patternMismatch: 'Usa solo números y, si quieres, el indicativo (+57).' },
-    tipo: { valueMissing: 'Elige el tipo de proyecto.' },
+    tipo: { valueMissing: 'Elige una opción.' },
     descripcion: { valueMissing: 'Cuéntanos tu idea.', tooShort: 'Cuéntanos un poco más (mínimo 20 caracteres).' },
     fecha: { rangeUnderflow: 'Elige una fecha a partir de hoy.' }
   };
@@ -289,7 +289,8 @@
   var extraChecks = {
     nombre: { test: /\S/, msg: 'valueMissing' },
     descripcion: { test: /^[\s\S]{20,}$/, msg: 'tooShort' },
-    correo: { test: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, msg: 'typeMismatch' },
+    // Igual que en firestore.rules: solo caracteres normales de un correo.
+    correo: { test: /^[a-z0-9._%+-]+@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i, msg: 'typeMismatch' },
     whatsapp: { test: /^\+?[0-9()\s-]{7,20}$/, msg: 'patternMismatch' }
   };
 
@@ -344,7 +345,7 @@
   function summary() {
     var f = form.elements;
     var lines = [
-      'Solicitud de proyecto — Funcode Studio CB',
+      'Solicitud de proyecto — Funcode Edutech CB',
       '',
       'Nombre: ' + f.nombre.value.trim()
     ];
@@ -451,9 +452,11 @@
       value = String(value || '').trim();
       if (value) fields[key] = { stringValue: value };
     }
-    ['nombre', 'negocio', 'whatsapp', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
+    ['nombre', 'negocio', 'tipo', 'descripcion', 'presupuesto', 'fecha'].forEach(function (name) {
       put(name, f[name].value);
     });
+    // Cualquier espacio raro (tabulación, espacio duro) se vuelve un espacio normal, como exigen las reglas.
+    put('whatsapp', f.whatsapp.value.replace(/\s+/g, ' '));
     // En minúsculas: así el cliente puede seguirla en «Mis solicitudes» entrando con ese correo.
     put('correo', f.correo.value.toLowerCase());
     put('estado', 'nuevo');

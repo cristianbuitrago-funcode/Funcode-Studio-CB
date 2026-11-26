@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — contenido de las cotizaciones y propuestas.
+ * Funcode Edutech CB — contenido de las cotizaciones y propuestas.
  * Sigue las plantillas oficiales: mismas secciones, mismo orden y mismos textos fijos.
  * El documento se describe como una lista de bloques que luego se dibuja en la vista
  * previa (HTML), en Word (.docx) y en PDF (ver documentos-archivos.js).
@@ -22,7 +22,7 @@
       'podrán generar un costo adicional, previamente informado al cliente.',
     condiciones: '- El cliente debe proporcionar la información y materiales necesarios para el proyecto.\n' +
       '- El alcance final será el acordado antes de comenzar.\n' +
-      '- Si Funcode Studio CB identifica una solicitud que no puede realizar, será comunicada directamente antes de iniciar dicha funcionalidad.\n' +
+      '- Si Funcode Edutech CB identifica una solicitud que no puede realizar, será comunicada directamente antes de iniciar dicha funcionalidad.\n' +
       '- Los precios mostrados son específicos para este proyecto y pueden variar según sus requisitos.',
     proximoPaso: 'Si la propuesta es de tu interés, el siguiente paso será confirmar:\n' +
       '- Alcance definitivo.\n- Precio final.\n- Tiempo de desarrollo.\n- Forma de pago.\n- Condiciones del proyecto.\n\n' +
@@ -36,7 +36,7 @@
     ]
   };
 
-  // Compromiso de Funcode Studio CB: texto fijo de la plantilla de propuesta (no se edita).
+  // Compromiso de Funcode Edutech CB: texto fijo de la plantilla de propuesta (no se edita).
   var COMPROMISO = [
     'Buscamos trabajar de manera clara y directa.',
     'Si existe una funcionalidad que no podamos realizar, lo diremos desde el principio.',
@@ -336,7 +336,7 @@
       h1('1. Sobre el proyecto');
       p([v(cliente, 'Nombre del cliente'), { text: ' busca una solución que permita:' }]);
       texto(d.problema, 'Problema o necesidad del cliente');
-      p([{ text: 'A partir de esta necesidad, Funcode Studio CB propone desarrollar:' }]);
+      p([{ text: 'A partir de esta necesidad, Funcode Edutech CB propone desarrollar:' }]);
       var solucion = v(txt(d.solucionNombre) || proyecto, 'Nombre de la solución');
       solucion.bold = true;
       p([solucion], { strong: true });
@@ -381,7 +381,7 @@
         texto(etapa.texto);
       });
 
-      h1('7. Compromiso de Funcode Studio CB');
+      h1('7. Compromiso de Funcode Edutech CB');
       COMPROMISO.forEach(function (t) { p([{ text: t }]); });
 
       h1('8. Próximo paso');
@@ -403,7 +403,7 @@
 
     return {
       titulo: nombres.titulo,
-      pie: nombres.numero + ' ' + (numero || '') + ' · ' + (estudio.nombre || 'Funcode Studio CB'),
+      pie: nombres.numero + ' ' + (numero || '') + ' · ' + (estudio.nombre || 'Funcode Edutech CB'),
       asunto: nombres.corto + ' para ' + cliente + (proyecto ? ' — ' + proyecto : ''),
       bloques: b
     };
@@ -414,7 +414,7 @@
     var c = window.FUNCODE_CONFIG || {};
     var e = c.estudio || {};
     return {
-      nombre: e.nombre || 'Funcode Studio CB',
+      nombre: e.nombre || 'Funcode Edutech CB',
       fundador: e.fundador || '',
       firma: e.firma || e.fundador || '',
       cargo: e.cargo || '',

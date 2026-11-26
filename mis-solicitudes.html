@@ -3,12 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Mis solicitudes | Funcode Studio CB</title>
-  <meta name="description" content="Sigue el estado de tus solicitudes de proyecto en Funcode Studio CB.">
+  <title>Mis solicitudes | Funcode Edutech CB</title>
+  <meta name="description" content="Sigue el estado de tus solicitudes de proyecto en Funcode Edutech CB.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#050a18">
   <meta name="color-scheme" content="dark">
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <!-- Seguridad (ver SEGURIDAD.md): orígenes permitidos (Firebase y Google) y protección contra clickjacking. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com https://www.gstatic.com https://www.google.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://script.google.com https://script.googleusercontent.com http://127.0.0.1:8085 http://127.0.0.1:9099; frame-src https://funcode-studio-cb.firebaseapp.com https://accounts.google.com https://apis.google.com https://www.google.com; manifest-src 'self'; object-src 'none'; worker-src 'self' blob:; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script src="js/seguridad.js"></script>
+  <link rel="icon" href="assets/icons/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +26,9 @@
 
   <header class="site-header is-scrolled">
     <div class="container header-inner">
-      <a class="brand" href="./" aria-label="Volver a la página de Funcode Studio CB">
-        <img src="assets/icons/logo.svg" alt="" width="36" height="36">
-        <span class="brand-name">Funcode <span>Studio CB</span></span>
+      <a class="brand" href="./" aria-label="Volver a la página de Funcode Edutech CB">
+        <img src="assets/icons/emblema.webp" alt="" width="77" height="36">
+        <span class="brand-name">Funcode <span>Edutech CB</span></span>
       </a>
       <div class="admin-user" id="admin-user" hidden>
         <span class="admin-email" id="admin-email"></span>

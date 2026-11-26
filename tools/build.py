@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera las páginas públicas de Funcode Studio CB.
+"""Genera las páginas públicas de Funcode Edutech CB.
 
 Las partes comunes (cabecera, menú, iconos y pie de página) viven una sola vez
 en src/partials/, y el contenido de cada página en src/pages/<nombre>.html.
@@ -93,6 +93,7 @@ def render(name, meta, body):
         + '\n  <script src="js/config.js" defer></script>\n'
         + '  <script src="js/main.js" defer></script>\n'
         + '  <script src="js/animaciones.js" defer></script>\n'
+        + '  <script src="js/chat-motor.js" defer></script>\n'
         + '  <script src="js/chat.js" defer></script>\n'
         + '</body>\n</html>\n'
     )

@@ -1,7 +1,8 @@
-# Funcode Studio CB — sitio web oficial
+# Funcode Edutech CB — sitio web oficial
 
-Página web de Funcode Studio CB: estudio tecnológico en crecimiento que desarrolla páginas web,
-aplicaciones y soluciones educativas para proyectos pequeños y medianos, y construye productos propios.
+Página web de Funcode Edutech CB (antes Funcode Studio CB): educación, desarrollo y soluciones tecnológicas.
+Cursos de programación y creación de videojuegos, páginas web, aplicaciones, software a medida y productos propios
+como Funcode QR Orders (en desarrollo). La dirección del sitio y del repositorio siguen siendo `Funcode-Studio-CB`.
 
 HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y sin dependencias.
 
@@ -15,7 +16,7 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | `apps-script/aviso-whatsapp.gs` | Código para Google Apps Script que te avisa por WhatsApp de cada solicitud (ver `AVISO-WHATSAPP.md`) |
 | `tools/build.py` | Une `src/partials` + `src/pages` y genera las páginas públicas |
 | `css/animaciones.css`, `js/animaciones.js` | Animaciones de código (lluvia de símbolos, cinta de código, editor que escribe solo, títulos que se descifran), los personajes ilustrados y la mascota Funi. Todo decorativo y quieto con «movimiento reducido» |
-| `js/chat.js`, `css/chat.css`, `assets/chat/conocimiento.json` | Chat «Pregúntale a Funi»: responde con las preguntas frecuentes del JSON y, si se configura `chatUrl`, con IA (ver `CHAT-FUNI.md`) |
+| `js/chat.js`, `js/chat-motor.js`, `css/chat.css`, `assets/chat/conocimiento.json` | Chat «Pregúntale a Funi»: `chat-motor.js` entiende la pregunta (errores de ortografía, abreviaturas, dos temas a la vez) y la responde con las preguntas frecuentes del JSON; recuerda el tema de la conversación y ofrece «Preparar mi solicitud», que arma un resumen para enviar por WhatsApp; si se configura `chatUrl`, responde con IA (ver `CHAT-FUNI.md`) |
 | `apps-script/chat-funi.gs` | Código para Google Apps Script que conecta el chat con la API de Claude (opcional) |
 | `src/partials/personajes/*.html`, `src/partials/mascota.html` | Personajes en SVG (Bit, Pixela, Profe Byte, Chispa) y la mascota Funi. En las páginas se insertan con `{{char:bit}}` |
 | `css/styles.css` | Estilos, variables de color (`:root`), responsive y `prefers-reduced-motion` |
@@ -26,12 +27,14 @@ HTML5 + CSS3 + JavaScript puro. Sin frameworks, sin proceso de compilación y si
 | Reseñas | Colección `resenas` en Firestore: las escriben clientes con proyecto entregado desde `mis-solicitudes.html`, se moderan en `admin.html` y las publicadas se muestran en Inicio (`js/main.js`) |
 | `js/documentos.js`, `js/documentos-modelo.js`, `js/documentos-archivos.js` | Generador de documentos del panel: cotizaciones y propuestas (plantillas oficiales) con vista previa y descarga en Word y PDF. Borradores en la colección `documentos` |
 | `assets/vendor/jspdf/` | jsPDF 4.2.1 (MIT): crea los PDF del generador. Se carga solo al generar el primer PDF |
+| `js/seguridad.js`, `SEGURIDAD.md` | Protección contra clickjacking del panel y del portal; resumen de las medidas de seguridad y tareas pendientes |
 | `js/estados.js` | Estados de una solicitud, compartidos por el panel y el portal |
 | `firestore.rules`, `firebase.json` | Reglas de seguridad de Firestore y configuración de emuladores |
 | `assets/vendor/firebase/` | SDK de Firebase 12.19.0 (compat), solo lo usa el panel |
 | `assets/img/projects/` | Capturas reales de los proyectos (WebP) |
 | `assets/img/og-image.jpg` | Imagen para compartir en redes (1200×630) |
-| `assets/icons/` | Logo, favicon e iconos de la app |
+| `assets/icons/` | Emblema del logo (el libro con «FCB», `emblema.webp`), favicon e iconos de la app |
+| `assets/img/logo-funcode-edutech.webp` (y `-360`) | Logo completo de Funcode Edutech CB sin fondo y con el texto en blanco, para fondo oscuro (pie de página, Nosotros, Inicio) |
 | `site.webmanifest`, `robots.txt`, `sitemap.xml`, `404.html` | Manifest, SEO y página de error |
 
 ## Editar las páginas
@@ -127,4 +130,4 @@ certificaciones. Los personajes y la mascota son ilustraciones y se presentan co
 mensajes solo dicen cosas que son ciertas sobre Funcode. Al agregar contenido nuevo, mantén ese criterio y usa solo proyectos y
 funcionalidades reales.
 
-© 2026 Funcode Studio CB
+© 2026 Funcode Edutech CB

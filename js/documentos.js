@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — Generador de documentos del panel del organizador.
+ * Funcode Edutech CB — Generador de documentos del panel del organizador.
  * Flujo: Datos → Contenido → Vista previa → Descargar (Word o PDF).
  * Los borradores se guardan en Firestore (colección «documentos», solo el organizador).
  * admin.js lo inicia cuando confirma que la cuenta tiene acceso.

@@ -1,7 +1,7 @@
 {
-  "name": "Funcode Studio CB",
+  "name": "Funcode Edutech CB",
   "short_name": "Funcode",
-  "description": "Páginas web, aplicaciones y soluciones educativas para proyectos pequeños y medianos.",
+  "description": "Educación, desarrollo y soluciones tecnológicas: cursos de programación, páginas web, aplicaciones y soluciones digitales.",
   "lang": "es-CO",
   "start_url": "./",
   "scope": "./",
@@ -11,7 +11,6 @@
   "icons": [
     { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

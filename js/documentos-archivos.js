@@ -1,5 +1,5 @@
 /*
- * Funcode Studio CB — convierte los bloques de un documento (documentos-modelo.js) en:
+ * Funcode Edutech CB — convierte los bloques de un documento (documentos-modelo.js) en:
  *   - Vista previa HTML.
  *   - Word (.docx): se arma aquí mismo (XML de Office + ZIP), sin librerías.
  *   - PDF: con jsPDF (assets/vendor/jspdf), que se carga solo al generar el primer PDF.
@@ -255,7 +255,7 @@
 
   function wLogo() {
     return '<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0">' +
-      '<wp:extent cx="' + LOGO_EMU + '" cy="' + LOGO_EMU + '"/><wp:docPr id="1" name="Logo" descr="Logo de Funcode Studio CB"/>' +
+      '<wp:extent cx="' + LOGO_EMU + '" cy="' + LOGO_EMU + '"/><wp:docPr id="1" name="Logo" descr="Logo de Funcode Edutech CB"/>' +
       '<wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/></wp:cNvGraphicFramePr>' +
       '<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">' +
       '<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:nvPicPr><pic:cNvPr id="1" name="logo.png"/><pic:cNvPicPr/></pic:nvPicPr>' +

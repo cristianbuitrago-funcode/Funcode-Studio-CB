@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Funcode Studio CB — animaciones de código, personajes y la mascota Funi.
+   Funcode Edutech CB — animaciones de código, personajes y la mascota Funi.
    Todo es decorativo: con «movimiento reducido» queda quieto (ver final).
    js/animaciones.js pausa las animaciones que no están en pantalla.
    ========================================================================== */
@@ -14,7 +14,7 @@
   color: var(--blue-soft); white-space: nowrap; opacity: 0;
   animation: code-rise var(--d, 16s) linear var(--delay, 0s) infinite;
 }
-.code-rain span:nth-child(3n) { color: var(--gold); }
+.code-rain span:nth-child(3n) { color: var(--violet); }
 .code-rain span:nth-child(4n) { color: var(--cyan); }
 @keyframes code-rise {
   0% { transform: translate3d(0, 0, 0); opacity: 0; }
@@ -43,7 +43,7 @@
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.85rem; color: var(--muted);
 }
 .cm-row span:nth-child(3n) { color: var(--blue-soft); }
-.cm-row span:nth-child(4n) { color: var(--gold-soft); }
+.cm-row span:nth-child(4n) { color: var(--violet-soft); }
 @keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
 
 /* ---------- Editor que escribe solo ---------- */
@@ -53,7 +53,7 @@
 .code-copy p { color: var(--muted); }
 .code-points { display: grid; gap: 10px; margin-top: 20px; }
 .code-points li { display: flex; align-items: center; gap: 10px; color: #dbe6ff; }
-.code-points .icon { color: var(--gold); }
+.code-points .icon { color: var(--violet); }
 
 .code-editor {
   position: relative; margin: 0; border-radius: 18px; overflow: visible;
@@ -81,18 +81,18 @@
 .tk-key { color: #c792ea; }
 .tk-str { color: #a5e28a; }
 .tk-fn { color: #7cb4ff; }
-.tk-num { color: var(--gold); }
+.tk-num { color: var(--violet); }
 .tk-pun { color: #8fa3c7; }
 .type-caret {
   display: inline-block; width: 0.55em; height: 1.1em; margin-left: 1px; vertical-align: -0.15em;
-  background: var(--gold); animation: caret 1s steps(1) infinite;
+  background: var(--violet); animation: caret 1s steps(1) infinite;
 }
 @keyframes caret { 50% { opacity: 0; } }
 .editor-terminal {
   margin: 0; padding: 12px 18px 16px; border-top: 1px solid var(--line);
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.85rem; color: var(--ok); min-height: 3.2em;
 }
-.et-prompt { color: var(--gold); }
+.et-prompt { color: var(--violet); }
 .editor-bit { position: absolute; right: -18px; bottom: -34px; width: clamp(110px, 16vw, 150px); filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.45)); }
 
 /* ---------- Personajes (comunes) ---------- */
@@ -235,7 +235,7 @@
 .cast-card:hover { border-color: var(--blue-soft); transform: translateY(-4px); }
 .cast-art { width: min(100%, 220px); margin-bottom: 6px; }
 .cast-card h3 { margin: 0; font-size: 1.25rem; }
-.cast-role { margin: 0 0 6px; color: var(--gold-soft); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.cast-role { margin: 0 0 6px; color: var(--violet-soft); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
 .cast-card p:last-child { margin: 0; color: var(--muted); font-size: 0.94rem; }
 
 /* ---------- Personaje en la cabecera de las páginas internas ---------- */
@@ -257,7 +257,7 @@
   font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.78rem; color: #a5e28a;
 }
 .fc-prompt { color: var(--blue-soft); }
-.fc-caret { width: 0.5em; height: 1em; background: var(--gold); animation: caret 1s steps(1) infinite; }
+.fc-caret { width: 0.5em; height: 1em; background: var(--violet); animation: caret 1s steps(1) infinite; }
 
 /* ==========================================================================
    Funi, la mascota
@@ -284,8 +284,8 @@
 /* Etiqueta «Pregúntame» */
 .mascota-chip {
   position: absolute; left: calc(100% - 6px); bottom: 22px; padding: 6px 12px; border-radius: 999px; white-space: nowrap;
-  background: var(--gold); color: #1d1500; font-size: 0.78rem; font-weight: 700; pointer-events: none;
-  box-shadow: 0 10px 24px -8px rgba(242, 193, 78, 0.7); animation: chip-pop 3.2s ease-in-out infinite;
+  background: var(--violet); color: var(--violet-ink); font-size: 0.78rem; font-weight: 700; pointer-events: none;
+  box-shadow: 0 10px 24px -8px rgba(167, 139, 250, 0.7); animation: chip-pop 3.2s ease-in-out infinite;
   transition: opacity 0.2s;
 }
 @keyframes chip-pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.08) rotate(-3deg); } 90% { transform: scale(1) rotate(2deg); } }
@@ -298,7 +298,7 @@
   display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer;
   -webkit-tap-highlight-color: transparent; border-radius: 30px;
 }
-.mascota-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.mascota-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
 .funi { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.5)); }
 .funi * { transform-box: fill-box; }
 .fu-all { animation: fu-bob 3s ease-in-out infinite; }
@@ -363,7 +363,7 @@
 /* ---------- Barra de progreso de lectura ---------- */
 .scroll-code {
   position: fixed; z-index: 51; top: var(--header-h); left: 0; right: 0; height: 3px; pointer-events: none;
-  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--gold));
+  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--violet));
   transform: scaleX(0); transform-origin: 0 50%; box-shadow: 0 0 10px rgba(56, 198, 255, 0.6);
 }
 
@@ -374,9 +374,9 @@
   text-shadow: 0 0 8px rgba(56, 198, 255, 0.8);
 }
 .code-trail { animation: trail 0.9s ease-out forwards; }
-.code-trail:nth-of-type(3n) { color: var(--gold); text-shadow: 0 0 8px rgba(242, 193, 78, 0.8); }
+.code-trail:nth-of-type(3n) { color: var(--violet); text-shadow: 0 0 8px rgba(167, 139, 250, 0.8); }
 @keyframes trail { from { opacity: 0.9; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-26px) scale(0.6); } }
-.code-burst { font-size: 14px; color: var(--gold); animation: burst 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
+.code-burst { font-size: 14px; color: var(--violet); animation: burst 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
 @keyframes burst { from { opacity: 1; transform: translate(0, 0) scale(0.6); } to { opacity: 0; transform: translate(var(--bx), var(--by)) scale(1.2) rotate(25deg); } }
 
 /* ---------- Tarjetas que se inclinan ---------- */
@@ -446,3 +446,24 @@
   .footer-flyer { left: auto; right: 16px; }
   .scroll-code { display: none; }
 }
+
+/* ---------- Logo de Funcode Edutech CB (dibujo sin fondo) ---------- */
+.brand img { filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.45)); }
+.footer-logo { display: inline-block; line-height: 0; }
+.footer-logo img { width: 210px; height: auto; filter: drop-shadow(0 14px 24px rgba(91, 75, 255, 0.35)); }
+.page-hero-logo { width: clamp(240px, 30vw, 380px); }
+.page-hero-logo img {
+  display: block; width: 100%; height: auto;
+  filter: drop-shadow(0 18px 34px rgba(91, 75, 255, 0.45));
+  animation: logo-glow 5s ease-in-out infinite alternate;
+}
+@keyframes logo-glow { to { filter: drop-shadow(0 18px 42px rgba(56, 198, 255, 0.55)); } }
+.cta-logo { display: block; width: 230px; height: auto; margin: 0 auto 18px; filter: drop-shadow(0 16px 30px rgba(91, 75, 255, 0.45)); }
+@media (max-width: 900px) {
+  .page-hero-logo { width: 260px; margin: 22px auto 0 16px; }
+}
+@media (max-width: 600px) {
+  .page-hero-logo { width: 230px; }
+  .cta-logo { width: 190px; }
+}
+@media (prefers-reduced-motion: reduce) { .page-hero-logo img { animation: none; } }
